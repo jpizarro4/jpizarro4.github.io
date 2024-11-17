@@ -7,55 +7,18 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         body {
-            font-family: 'Quantico', sans-serif;
+            font-family: Quantico, sans-serif;
             text-align: center;
-            background-color: #003366; /* Azul oscuro cobalto */
-            color: #FFA500; /* Naranja vibrante */
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 8px #000;
-        }
-        .controls {
-            margin: 30px;
-            padding: 20px;
-            border: 2px solid #FFA500;
-            border-radius: 10px;
-            background: linear-gradient(145deg, #004080, #00264d); /* Gradiente azul oscuro */
-            box-shadow: 5px 5px 15px #001933, -5px -5px 15px #00509e;
-            display: inline-block;
-        }
-        label {
-            font-size: 1.2em;
-            margin-right: 10px;
-            color: #FFD27F; /* Naranja más claro */
-        }
-       <input type="file" id="audioFile" accept="audio/*">
-<audio id="audioPlayer" controls></audio>
-
-            font-family: inherit;
-            font-size: 1em;
-            padding: 5px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            color: #FFA500;
-            background: #004080; /* Azul oscuro */
-            border: 2px solid #FFD27F;
-            border-radius: 5px;
-            outline: none;
-        }
-        input[type="file"]:hover, select:hover, audio:hover {
-            background: #00509e;
+            background-color: #293696;
+            color: #708DC7
         }
         svg {
             display: block;
             margin: 20px auto;
-            background-color: #003366;
-            border: 2px solid #FFA500;
-            border-radius: 10px;
+            background-color: #293696;
+        }
+        .controls {
+            margin: 20px;
         }
     </style>
 </head>
@@ -64,10 +27,10 @@
     <div class="controls">
         <label for="songSelect">Choose Song:</label>
         <select id="songSelect">
-            <option value="song1">iAAM </option>
+            <option value="song1">All my love</option>
             <option value="song2">Song 2</option>
             <!-- Easily add more songs here -->
-         </select>
+        </select>
         <br><br>
         <input type="file" id="audioFile" accept="audio/*">
         <br><br>

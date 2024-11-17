@@ -9,8 +9,8 @@
         body {
             font-family: 'Quantico', sans-serif;
             text-align: center;
-            background-color: #0000ff;
-            color: #ff6f61;
+            background-color: #003366; /* Azul oscuro cobalto */
+            color: #FFA500; /* Naranja vibrante */
             margin: 0;
             padding: 0;
         }
@@ -22,16 +22,16 @@
         .controls {
             margin: 30px;
             padding: 20px;
-            border: 2px solid #ff6f61;
+            border: 2px solid #FFA500;
             border-radius: 10px;
-            background: linear-gradient(145deg, #29293d, #1e1e2f);
-            box-shadow: 5px 5px 15px #161625, -5px -5px 15px #24243b;
+            background: linear-gradient(145deg, #004080, #00264d); /* Gradiente azul oscuro */
+            box-shadow: 5px 5px 15px #001933, -5px -5px 15px #00509e;
             display: inline-block;
         }
         label {
             font-size: 1.2em;
             margin-right: 10px;
-            color: #ff9a8d;
+            color: #FFD27F; /* Naranja más claro */
         }
         select, input[type="file"], audio {
             font-family: inherit;
@@ -39,25 +39,41 @@
             padding: 5px;
             margin-top: 10px;
             margin-bottom: 20px;
-            color: #ff6f61;
-            background: #2e2e4f;
-            border: 2px solid #ff9a8d;
+            color: #FFA500;
+            background: #004080; /* Azul oscuro */
+            border: 2px solid #FFD27F;
             border-radius: 5px;
             outline: none;
         }
         input[type="file"]:hover, select:hover, audio:hover {
-            background: #3a3a5e;
+            background: #00509e;
         }
         svg {
             display: block;
             margin: 20px auto;
-            background-color: #1e1e2f;
-            border: 2px solid #ff6f61;
+            background-color: #003366;
+            border: 2px solid #FFA500;
             border-radius: 10px;
         }
     </style>
 </head>
 <body>
+    <h1>SVG Audio Visualizer</h1>
+    <div class="controls">
+        <label for="songSelect">Choose Song:</label>
+        <select id="songSelect">
+            <option value="song1">All My Love</option>
+            <option value="song2">Song 2</option>
+            <!-- Easily add more songs here -->
+        </select>
+        <br><br>
+        <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+</body>
+</html>
+
     <h1>SVG Audio Visualizer</h1>
     <div class="controls">
         <label for="songSelect">Choose Song:</label>

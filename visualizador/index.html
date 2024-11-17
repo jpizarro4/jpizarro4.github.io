@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Audio Visualizer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        body {
+            font-family: Quantico, sans-serif;
+            text-align: center;
+            background-color: #293696;
+            color: #708DC7
+        }
+        svg {
+            display: block;
+            margin: 20px auto;
+            background-color: #293696;
+        }
+        .controls {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG Audio Visualizer</h1>
+    <div class="controls">
+        <label for="songSelect">Choose Song:</label>
+        <select id="songSelect">
+            <option value="song1">All my love</option>
+            <option value="song2">Song 2</option>
+            <!-- Easily add more songs here -->
+        </select>
+        <br><br>
+        <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+   <svg id="svgVisualizer" width="500" height="500" viewBox="-600 -600 1200 1200">
+   <path id="path272" d="m 97.45315,180.34011 0.200453,-68.55463 -4.042452,-3.842 H 64.512181 V 92.6423 h 24.822658 c 2.232567,-2.425985 4.260604,-3.641448 6.121675,-4.088866 4.040579,-0.971392 7.123776,1.648715 9.998846,4.617697 2.43904,-2.564063 5.64489,-5.094784 9.27824,-4.659109 2.15627,0.258558 4.44456,1.287499 6.78575,4.470119 l 24.75743,-0.377975 -0.0945,15.497024 -29.00967,-0.37798 -4.44122,4.65383 0.47247,67.63412 z"style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path id="path274" d="m 97.653601,111.78548 7.896249,8.12747 7.18154,-7.53591" style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path id="path276" d="m 117.17261,107.72321 c 6.62149,-4.97669 6.96247,-9.764384 4.34674,-14.741069" style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path id="path278" d="M 93.611151,107.94348 C 89.168016,103.939 85.401631,99.690486 89.308685,92.675037" style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path id="path280" d="m 97.45315,88.365988 v -29.09897 h 15.70208 V 88.53303" style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <circle r="0.84356946" cy="100.24277" cx="138.64607" id="path286" style="opacity:0.5;stroke-width:0.373747;fill:#000000" />
+    <circle style="opacity:0.5;stroke-width:0.373748;fill:#000000" id="path286-6" cx="72.229591" cy="100.31795" r="0.84356946" />
+    <circle style="opacity:0.5;stroke-width:0.373748;fill:#000000" id="path286-3" cx="105.45536" cy="67.138016" r="0.84356946" />
+    <circle style="opacity:0.5;stroke-width:0.373748;fill:#000000" id="path286-1" cx="105.40811" cy="172.64062" r="0.84356946" />
+  </g>
+  <path id="path193" d="m 98.721668,88.348507 6.733692,4.822624 7.69987,-4.638101 z" style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+</svg>
 

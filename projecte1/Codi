@@ -53,3 +53,8 @@ void loop()
   }
   delay(100); // Delay mayor para observación perceptible
 }
+
+<h3> Eines</h>
+<p>Eines compatibles amb el nostre microcontrolador</p>
+<p>Hem de comprovar que funcionen amb els nostres controladors</p>
+<li><a href="https://codewith.mu/">Mu Editor + CicuitPython</li>

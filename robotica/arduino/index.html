@@ -17,10 +17,16 @@
   <a href="https://store.arduino.cc/en-es/products/arduino-uno-rev3"> fabricant</a>, mentres en el cas
 d'Arduino Uno Rev 4 és de 12 bits, segons el <a href="https://docs.arduino.cc/resources/datasheets/ABX00080-datasheet.pdf"> fabricant</a> que l'anomena DAC, que vol dir Digital Analog
 Converter</p>
-<p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC tipus PWM fa que tinguem 2<sup>8</sup> 
+<p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC (Digital analog Converter) tipus PWM fa que tinguem 2<sup>8</sup> 
   o 2<sup>10</sup> nivells diferents de corrent, es a dir 256 nivells diferents o 2048 nivells diferents</p>
 <p>Suposem que tan Arduino Uno Rev3 o Rev4 poden donar 5 volts com a màxim. Quina seria la resolució en milivolts
 de cada Arduino?</p>
 <p>5 volts dividit entre 256 dona 0.01953125 volts= 19,53125 milivolts per Arduino uno Rev3</p>
 <p>5 volts dividit entre 2048 dona 0.00244140625 volts= 2,44140625 milivolts per Arduino uno Rev4</p>
-</body></html>
+<p>Els minivolts anteriors són la resolució que aconseguim. Imaginem que volem regular la intensitat d'un LED 
+amb un Arduino Uno Rev3 aconseguim menys fluid i amb graons més grans, es a dir canvis mé bruscs perque 256 canvis
+son menys que 2048 volts. A continuació veurem una imatge que representa com conbinant moltes senyals digitals 
+  ràpidament sembla que generem un senyal analògic i aixó És la base del PWM.</p>
+<img src="pwm.png" width="600" height="450">
+</body>
+</html>

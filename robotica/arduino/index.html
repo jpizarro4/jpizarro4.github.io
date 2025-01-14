@@ -1,3 +1,14 @@
+<html>
+  <head>
+    <style>
+      table{
+        width:50%;  //Ocupa el 50% de la pàgina
+        border-collapse: collapse;  //Evita que aparegin dobles linias a la cel·la
+        margin: 20px auto;  //Marge de 20pz a la part superior i centra la taula
+      }
+      th,td(
+    </style>
+  </head>
 <h1>Arduino</h1>
 <p>Els diferents microcontroladors tenen en comú els següents aspectes:</p>
 <ul>
@@ -20,7 +31,7 @@ Converter</p>
 <p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC (Digital analog Converter) tipus PWM fa que tinguem 2<sup>8</sup> 
   o 2<sup>10</sup> nivells diferents de corrent, es a dir 256 nivells diferents o 2048 nivells diferents</p>
 <p>Suposem que tan Arduino Uno Rev3 o Rev4 poden donar 5 volts com a màxim. Quina seria la resolució en milivolts
-de cada Arduino?</p>
+de cada Arduino?</p> 
 <p>5 volts dividit entre 256 dona 0.01953125 volts= 19,53125 milivolts per Arduino uno Rev3</p>
 <p>5 volts dividit entre 2048 dona 0.00244140625 volts= 2,44140625 milivolts per Arduino uno Rev4</p>
 <p>Els minivolts anteriors són la resolució que aconseguim. Imaginem que volem regular la intensitat d'un LED 
@@ -28,6 +39,33 @@ amb un Arduino Uno Rev3 aconseguim menys fluid i amb graons més grans, es a dir
 son menys que 2048 volts. A continuació veurem una imatge que representa com conbinant moltes senyals digitals 
   ràpidament sembla que generem un senyal analògic i aixó És la base del PWM.</p>
 <img src="PWM.png" width="600" height="450">
-<p>Quan major és l'amplada </p>
+<p>Quan major és l'amplada del pols vol dir que major és el temps que la sortida digital està en voltatge alt,
+   per exemple 5V i menys temps està a 0V, i per tant el promig  de tots els polsos és més alt. En canvi si 
+   per exemple si cada pols és més estret a 5V vol dir que estarà més temps a 0V, i per tant el promig  de
+   tots els polsos és més baix. A la imatge de dalt es pot veure com s'encendria un LED o un motor
+   funcionatria a una velocitat del 10%, 30%, 50%, 90%. Quin percentatge del senyal canviaria en un cas i
+  en un altre? 
+  <ul>
+    <li>(0.01953125/5)*100 = 0,390625%</li>
+    <li>(1,220703125/5)*100 = 0,390625%</li>
+  </ul>
+<p>A la taula a continuació veuras els valors per defecte de la freqüència PWM en Arduino Uno Rev3</p>
+<table>
+  <thead>
+  <tr>
+  <th>PIN de Sortida</th><th>FreqüènciaPWM (Hz)</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PINS: 3, 9, 10, 11</td>
+      <td>490 Hz</td>
+    </tr>
+    <tr>
+      <td>PINS: 5 i 6</td>
+      <td>975 Hz</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

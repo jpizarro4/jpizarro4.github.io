@@ -125,10 +125,29 @@ son menys que 2048 volts. A continuació veurem una imatge que representa com co
         <td>16 (0-65536)</td>
         <td>0-3,3V</td> 
       </tr>
+      <p>A continuació  tenim un codi general que pot servir per moltissimes coses diferents i totes relacionades
+        amb capacitat que té l'Arduino de llegir de 0 a 1023 en una entrada analògica, si fos un ESP32S3
+      llegiria de 0 a 4095 i si fos un ADS1115 llegiria de 0 a 65536. Per què?
+      Els microxips i els microcontroladors tenen transistors i els transistors nomes poden fer una cosa encendres o apagarse,
+      es a dir 0 a 1 i cada bit és un 0 o un 1. Si tenim 10 bits en un ADC (Analog Digital Coverter) significa que t´2 <sup>10</sup>
+      combinacions de zeros i uns es a dir 1024 nivells diferents que numericament van des del 0 a 1023</p>
+      <p> Si tenim 12 bits en un ADC (Analog Digital Coverter) significa que t´2 <sup>12</sup>
+      combinacions de zeros i uns es a dir 4096 nivells diferents que numericament van des del 0 a 4096. Ara justifiquem 
+      el número 65536 seria correcte si fos 2<sup>16</sup> com diu el fabricant, pero al datasheet parla parla d'un nivell màxim
+      de 8000h (Número hexadecimal que correspon a 32768) es a dir, són 15 bits utilitzables. Sempre s'ha de comprobar 
+      el <a href="https://cdn-shop.adafruit.com/datasheets/ads1115.pdf" datasheet o
+           fulla de carasteristiques del fabricant</a></p>
       <pre>
         <code>
-          int valorADC=0;
-          voidsetup(){
+          int valorADC=0; // Int significa integr o valor numèric (float seria floating point number o decimal, char 
+          seria un character o caracter de lletra de l'alfabet, string seria una cadena de caracters o paraula, etc. El més important
+          es entendre que a primera paraula defineix el tipus de variable que tenim, en aquest cas enter). "valor_ADC" és un nom
+          que triem nosalters per definir una variable, es a dir, un valor que no serà constant i que t´inicialment un valor 0,
+          si posem int valor_ADC; es a dir no posem que és = a 0 per defecte hauria de donar valor 0. Si jo volgues posar un potenciometre 
+          posaria pot i si volgues posar un LED posaria ldr. Sempre la priera linia és la definició de les variables. A vegades
+          avanç de la primera linia necesstem carregar biblioteques.
+          voidsetup(){ // Sempre hi ha un setup o funció de configuració del microcontrolagor en llenguatge Arduino que té un 
+          parentesisbuit perquè no té cap parametre o argument del qual depengui en molts casos.
           Serial.begun(9600); //9600 en Arduino //115200 en S3
           }
           void loop(){

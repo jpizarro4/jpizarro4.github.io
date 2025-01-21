@@ -147,8 +147,12 @@ son menys que 2048 volts. A continuació veurem una imatge que representa com co
           posaria pot i si volgues posar un LED posaria ldr. Sempre la priera linia és la definició de les variables. A vegades
           avanç de la primera linia necesstem carregar biblioteques.
           voidsetup(){ // Sempre hi ha un setup o funció de configuració del microcontrolagor en llenguatge Arduino que té un 
-          parentesisbuit perquè no té cap parametre o argument del qual depengui en molts casos.
-          Serial.begun(9600); //9600 en Arduino //115200 en S3
+          parentesisbuit perquè no té cap parametre o argument del qual depengui en molts casos. La paraula void seria l'equivalent 
+          a la paraula fuction en JavaScript. També es diu void setupnen Processing perquè deriva de Processing aquest llenguatge.
+          Posem una clau per agrupar totes les instruccions que volem executar una sola vegada, perquè setup s'executa només al
+          quan arranquem o encenem l'Arduino o microcontrolador.
+          Serial.begun(9600); //Serial s'escriu amb mayuscules perquè és una classe que és una part important del codi Arduino 
+          consisteix en que quan jo escric un punt 
           }
           void loop(){
           valorADC=analogRead(AO) //34 en S3

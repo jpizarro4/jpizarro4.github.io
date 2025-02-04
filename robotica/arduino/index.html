@@ -202,30 +202,9 @@
             background-color: #e2e2e2;
         }
 
-    <style>
-      table{ 
-        width:50%; //Ocupa el 50% de l'amplada de la pàgina
-        border-collapse: collapse;// Evita que apareixin dobles linies a les cel·les 
-        margin: 20px auto; //Marge de 20px a la part superior i centra la taulq
-      }
-      th,td{
-        border: 1px solid #ddd; // Afegeix una vora fina d'un pixel de color gris calr al voltant de totes les cel·les (th i td).
-        padding: 10px; // Espai intern dins de cada cel·la, per fer-la més llegible.
-        text-align: center; // Centrar el text dins de cada cel·la.
-      }
-      thead{
-          background: #f4f4f4; // Canvia el color del fons del thead a gris clar.
-          font-weight: blod; // Fa que la capçalera de la taula estigui en negreta.
-          }
-           tr: nth-child(even){ // Ésuna pseudoclasse aplicada a tr segons si es parell o senar, even és parell i odd és senar.
-            background-color: #f9f9f9;
-          }
-         tr: hover{
-          background-color: #e2e2e2; // És una pseudoclasse hover per quan passo per sobre amb el ratolí pel contigut de la taula es fa més fosc.
-          }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -241,9 +220,6 @@
                 <ul.n class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="https://ecastro4.github.io">Inici</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tema 1</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -272,150 +248,218 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tema 2</a>
+                        <a class="nav-link" href="https://ecastro4.github.io/enllaços">Enllaços</a>
                     </li>
                 </ul.n>
             </div>
         </div>
     </nav>
-<h1>Arduino</h1>
-<p>Els diferents microcontroladors tenen en comú els següents aspectes:</p>
-<ul>
-  <li>Tipus d'entrades i sortides: el microcontrolador té un processador tipus AVR o Espressif on es conecta
-  entrades digitals, entrades analogiques, sortides digitals i sortides analogiques.</li>
-  <li>Les entrades i sortides digitals només funcionen amb 0 o 1 es a dir codi binari, o significa
-  0V i 1 pot significar 5V o 3,3V depenent del microcontrolador o pin que utilitzem.
-  A aquestes entrades podem connectar per exemple interrumptors, sense "fuscor/claror"</li>
-</ul>
-<h2>Sortides analògiques tipus PWM</h2>
-<p>PWM significa modulació de l'ample de banda, en anglès <i>Pulse Width Modulation</i> i és una forma 
-  d'aconseguir una sortida analògica a partir de diverses sortides digitals, molt ràpides.</p>
-  <p>PWM es representa amb el símbol "~" tal com podem veure ala imatge següent d'un Arduino Uno</p>
-  <img src="arduinouno.jpg" width="600" height="400">
-<p>Més amunt podem veure que els pins números 3, 5, 6, 9, 10 i 11.</p>
-<p>Aquests PWM són sortides analògiqes de 8 bits, en el cas de Arduino Uno Rev3, d'acord amb el 
-  <a href="https://store.arduino.cc/en-es/products/arduino-uno-rev3"> fabricant</a>, mentres en el cas
-d'Arduino Uno Rev 4 és de 12 bits, segons el <a href="https://docs.arduino.cc/resources/datasheets/ABX00080-datasheet.pdf"> fabricant</a> que l'anomena DAC, que vol dir Digital Analog
-Converter</p>
-<p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC (Digital analog Converter) tipus PWM fa que tinguem 2<sup>8</sup> 
-  o 2<sup>10</sup> nivells diferents de corrent, es a dir 256 nivells diferents o 2048 nivells diferents</p>
-<p>Suposem que tan Arduino Uno Rev3 o Rev4 poden donar 5 volts com a màxim. Quina seria la resolució en milivolts
-de cada Arduino?</p> 
-<p>5 volts dividit entre 256 dona 0.01953125 volts= 19,53125 milivolts per Arduino uno Rev3</p>
-<p>5 volts dividit entre 2048 dona 0.00244140625 volts= 2,44140625 milivolts per Arduino uno Rev4</p>
-<p>Els minivolts anteriors són la resolució que aconseguim. Imaginem que volem regular la intensitat d'un LED 
-amb un Arduino Uno Rev3 aconseguim menys fluid i amb graons més grans, es a dir canvis mé bruscs perque 256 canvis
-son menys que 2048 volts. A continuació veurem una imatge que representa com conbinant moltes senyals digitals 
-  ràpidament sembla que generem un senyal analògic i aixó És la base del PWM.</p>
-<img src="PWM.png" width="600" height="450">
-<p>Quan major és l'amplada del pols vol dir que major és el temps que la sortida digital està en voltatge alt,
-   per exemple 5V i menys temps està a 0V, i per tant el promig  de tots els polsos és més alt. En canvi si 
-   per exemple si cada pols és més estret a 5V vol dir que estarà més temps a 0V, i per tant el promig  de
-   tots els polsos és més baix. A la imatge de dalt es pot veure com s'encendria un LED o un motor
-   funcionatria a una velocitat del 10%, 30%, 50%, 90%. Quin percentatge del senyal canviaria en un cas i
-  en un altre? 
-  <ul>
-    <li>(0.01953125/5)*100 = 0,390625%</li>
-    <li>(1,220703125/5)*100 = 0,390625%</li>
-  </ul>
-<p>A la taula a continuació veuras els valors per defecte de la freqüència PWM en Arduino Uno Rev3</p>
-<table>
-  <thead>
-  <tr>
-  <th>PIN de Sortida</th><th>FreqüènciaPWM (Hz)</th>
-</tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>PINS: 3, 9, 10, 11</td>
-      <td>490 Hz</td>
-    </tr>
-    <tr>
-      <td>PINS: 5 i 6</td>
-      <td>975 Hz</td>
-    </tr>
-    </tbody>
-</table>
-  <p>Nota: La taula HTML anterior té una capçalera com un document HTML, però és diu thead,
-  en comptes de head i es la primera filera de la taula.
-  Té un cos anomentar tbody, en comptes de body i és la resta de la taula.
-  La taula la defineix el tag table que agrupa thead i tbody. Totes les fileres
-  tant del thead com el tbody es defineixen amb tg tr, que vol dir table row.
-  Dintre de thead hi ha elements individuals que són cel·les que pertanyen a la primera filera 
-  i s'anomenen th o table heading.
-  En el table body hi ha tmbé fileres tr però dintre d'aquestes fileres els elements individuals han de ser td,
-  que significa table data. Per últim, s'han de tancar el table o el body. Tots aquests elements es poden
-  modificar amb CSS i fer la taula amb un estil propi.</p>
 
-  <p>Les freqüències baixes produeixen soroll en els motors. Per tant, és preferible connectar mootors als pins 5 i 6.</p>
-  <p>La dreqüències ésla inversa del període, 976Hz o cicles per segon correspon a un període de 1/976 segons, que són 1,024 milisegons.</p>
-  <h2>Convertidor analògic - digital</h2>
-   <p>Apliquem el teorema de Nyquist que diu que hem de fer el doble de mostres com a mínim que la freqüencia màxima per aconseguir convertir
-   una senyal digital que pot se processat pel microcontrolador mostrejat amb la figura següent:</p>
-  <img src="nyquist.png" width="600"height="400">
-  <p>Nyquist és important perque si en el codi poso una freqüència de moatreig de 20Hz per un so no funcionarà perque la 
-    freqüència mínima del so es 20 Hz i la màxima 20kHz perque es refereix al so audible en humans. Això es perque agafem
-  mstres massa grans i no podem veure pujades i baixades de la senyal.</p>
-  <p>A continuació veurem una taula comparativa sobre els microcontroladors Arduino Uno i ESP32S3 i el circuit ADS1115 
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Microcontrolador o circuit</th>
-        <th>Nùmero de bits (nivells)</th>
-        <th>Voltatge</th>
-      </tr>
-      <tr>
-        <td>Arduino Uno</td>
-        <td>10 (0-1023)</td>
-        <td>0-5V, 0-3,3V</td>
-      </tr>
-      <tr>
-        <td>ESP32S3</td>
-        <td>12 (0-4095)</td>
-        <td>0-3,3V</td>
-      </tr>
-      <tr>
-       <td>ADS1115</td>
-        <td>16 (0-65536)</td>
-        <td>0-3,3V</td> 
-      </tr>
-      <p>A continuació  tenim un codi general que pot servir per moltissimes coses diferents i totes relacionades
-        amb capacitat que té l'Arduino de llegir de 0 a 1023 en una entrada analògica, si fos un ESP32S3
-      llegiria de 0 a 4095 i si fos un ADS1115 llegiria de 0 a 65536. Per què?
-      Els microxips i els microcontroladors tenen transistors i els transistors nomes poden fer una cosa encendres o apagarse,
-      es a dir 0 a 1 i cada bit és un 0 o un 1. Si tenim 10 bits en un ADC (Analog Digital Coverter) significa que t´2 <sup>10</sup>
-      combinacions de zeros i uns es a dir 1024 nivells diferents que numericament van des del 0 a 1023</p>
-      <p> Si tenim 12 bits en un ADC (Analog Digital Coverter) significa que t´2 <sup>12</sup>
-      combinacions de zeros i uns es a dir 4096 nivells diferents que numericament van des del 0 a 4096. Ara justifiquem 
-      el número 65536 seria correcte si fos 2<sup>16</sup> com diu el fabricant, pero al datasheet parla parla d'un nivell màxim
-      de 8000h (Número hexadecimal que correspon a 32768) es a dir, són 15 bits utilitzables. Sempre s'ha de comprobar 
-      el <a href="https://cdn-shop.adafruit.com/datasheets/ads1115.pdf" datasheet o
-           fulla de carasteristiques del fabricant</a></p>
-      <pre>
-        <code>
-          int valorADC=0; // Int significa integr o valor numèric (float seria floating point number o decimal, char 
-          seria un character o caracter de lletra de l'alfabet, string seria una cadena de caracters o paraula, etc. El més important
-          es entendre que a primera paraula defineix el tipus de variable que tenim, en aquest cas enter). "valor_ADC" és un nom
-          que triem nosalters per definir una variable, es a dir, un valor que no serà constant i que t´inicialment un valor 0,
-          si posem int valor_ADC; es a dir no posem que és = a 0 per defecte hauria de donar valor 0. Si jo volgues posar un potenciometre 
-          posaria pot i si volgues posar un LED posaria ldr. Sempre la priera linia és la definició de les variables. A vegades
-          avanç de la primera linia necesstem carregar biblioteques.
-          voidsetup(){ // Sempre hi ha un setup o funció de configuració del microcontrolagor en llenguatge Arduino que té un 
-          parentesisbuit perquè no té cap parametre o argument del qual depengui en molts casos. La paraula void seria l'equivalent 
-          a la paraula fuction en JavaScript. També es diu void setupnen Processing perquè deriva de Processing aquest llenguatge.
-          Posem una clau per agrupar totes les instruccions que volem executar una sola vegada, perquè setup s'executa només al
-          quan arranquem o encenem l'Arduino o microcontrolador.
-          Serial.begun(9600); //Serial s'escriu amb mayuscules perquè és una classe que és una part important del codi Arduino 
-          consisteix en que quan jo escric un punt 
-          }
-          void loop(){
-          valorADC=analogRead(AO) //34 en S3
-          Serial.println(valor ADC); //O-1023 //0-4095
-          delay(500);} 
-        </code>
-      </pre>
-    </thead>
-  </table>
+    <div class="content-container">
+        <h1>Conceptes generals de microcontroladors</h1>
+        <p>Els diferents microcontroladors tenen en comú els següents aspectes:</p>
+    <ul>
+        <li>Tipus d'entrades i sortides: el microcontrolador té un processador tipus AVR o Espressif on es conecta
+        entrades digitals, entrades analògiques, sortides digitals i sortides analògiques</li>
+        <li>Les entrades i sortides digitals només funcionen amb 0 o 1 es a dir codi binari, zero significa 
+        0 volts i 1 pot significar 5 volts o 3,3 volts depenent del microcontrolador i del pin que utilitzem.
+        A aquestes entrades podem connectar per exemple interruptors, sensor "foscor/claror" </li>
+    </ul>
+        <h2>Sortides analògiques tipus PWM: DAC (Convertidor de digital a analògic)</h2>
+        <p>PWM significa modulació de l'ample de banda, en anglès <i>Pulse Width Modulatios</i> i és una forma 
+            d'aconseguir una sortida analògica a partir de diverses sortides digitals, molt ràpides</p>
+        <p>PWM es representa amb el síbol "∼" tal com podem veure en la imatge següent d'un Arduino Uno</p>
+        <img src="arduinouno.png" width="600" height="400">
+        <p>Més amunt podem veure que els pins numeros 3, 5, 6, 9, 10 i 11</p>
+        <p>Aquests PWM són sortides analògiques de 8 bits, en el cas de Arduino Uno Rev3 d'acord amb el <a href="https://store.arduino.cc/en-es/products/arduino-uno-rev3">fabricant</a>, 
+        mentres que en el cas d'arduino Uno Rev4 és de 12 bits segons el <a href="https://docs.arduino.cc/resources/datasheets/ABX00080-datasheet.pdf">fabricant</a> que l'anomenar Converter. </p>
+        <p>Tenir 8 o 12 bits en un cinvertidor digital analògic o DAC (Digital Analog Converter) tipus PWM fa que tinguem 2<sup>8</sup> o 2<sup>10</sup> 
+        nivells diferents de corrent, és a dir 256 nivells diferents o 2048 nivells diferents.</p>
+        <p>Suposem que tant Arduino Uno Rev 3 o Rev 4 poden donar 5V com a màxim. Quina seria la resolució en milivolts
+            de cada Arduino?</p>
+        <p>5 volts dividit entre 256 dona 0.01953125 volts = 10,53125 milivolts per Arduino Uno Rev3</p>
+        <p>5 volts dividit entre 2048 dona 0.00244 volts = 2,44 milivolts per Arduino Uno Rev4</p>
+        <p>Els milivolts anteriors són la resolució que aconseguim. Imaginem que volem regular la intensitat d'un llum led amb un Arduino Uno 
+            Rev3 aconseguim un canvi menys fluid i amb graons més grans, es a dir canvis més bruscs perque siguin 2566 canvis
+            són menys que 2048 volts. A continuació veurem una imatge que representa com combinant moltes senyals digitals ràpidament sembla que 
+            generem un senyal analògic, aixo és la base del PWM </p>
+        <img src="pwm.png" width="600" height="400">
+        <p>Quan major és la amplada del pols vol dir que major és el temps que la sortida digital està en voltatge alt, per exemple 5V 
+            i menys temps està a 0V, i per tant el promig de tots els polsos és més alt. En canvi si per exemple si cada pols és més estret 
+            a 5V vol dir que estarà més temps a 0V, i el promig de tots ells polsos és més baix. A la imatge de dalt es pot veure com s'encenderia un LED 
+            o un motor funcionaria a una velocitat del 10%, 30%, 50%, 90%. Quin percentatge del senyal canviaria en un cas i en un altre?</p>
+        <ul>
+            <li>(0,01953125/5)*100 = 0,390625%</li>
+            <li>(0,00244140625/5)*100 = 0,048828125%</li>
+        </ul>
+        <p>A la taula a continuació veuràs els valor per defecte de la freqüència PWM en Arduino Uno Rev3</p>
+        <table>
+            <thead>
+              <tr>
+                <th>PIN de Sortida</th><th>Freqüència PWM (Hz)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PINS: 3, 9, 10, 11</td>
+                <td>490 Hz</td>
+              </tr>
+              <tr>
+                <td>PINS: 5, 6</td>
+                <td>976 Hz</td>
+              </tr>
+            </tbody>
+          </table>
+          <p></p>
+          <p>Nota: la taula HTML anterior té una capçalera xom un document HTML, però és diu "thead" en comptes de "head". 
+            Té un cos anomenat "tbody", en comptes de "body" i és la resta de la taula. La taula la defineix la "tag table" que agrupa "thead" i "tbody". 
+            Totes les fieres com les del "thead" i "tbody" es defineixen amb el tag "tr", que vol dir "table row". 
+            Dintre de "thead" hi ha elements individuals que són cel·les que pertanyen a la primera filera que s'anomenen "th" o "table heading". 
+            En el "table body" hi ha també fileres "tr" però dntre d'aquestes  fileres els elements individuals han de ser "td", que significa "table data." 
+            Tots aquests elements es poden modificar amb CSS i fer la taula amb un estil propi.</p>
+            <p>Les freqüències baixes produeixen soroll en els motors. Per tant, és preferible connectar motors als pins 5 i 6.</p>
+            <p>La freqüència és la inversa del període, 976Hz o cicles per segon correspon a un període de 1/976 segons, que són 1,024 milisegons.</p>
+  
+            <h2>Convertidor analògic - digital</h2>
+            <h3>Entrades analògiques ADC</h3>
+            <p>Apliquem el teorema de Nyquist que diu que hem de fer el doble de mostres com a mínim que la freqüencia màxima per aconseguir convertir
+            un senyal contínu analògic en un senyal digital que pot ser processat pel microcontrolador mostrejat amb la figura següent:</p>
+            <img src="nyquist.png" width="600" height="400">
+            <p>Nyquist és important perquè si en el codi poso una freqüència de mostreig de 20 Hz per un so no funcionarà perquè 
+                la freqüència mínima del so és 20 Hz i la màxima és 20 kHz perquè es refereix al so audible en humans. Això és perquè agafem mostres 
+                massa grans i no podem veure pujades i baixades de la senyal.</p>
+            <p>A continució veurem una taula comparativa sobre els microcontroladors Arduino Uno i ESP32S3 i el circuit ADS1115:</p>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Microcontrolador o Circuit</th>
+                    <th>Nº bits (nivells)</th>
+                    <th>Voltatge</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Arduino Uno</td>
+                    <td>10 (0-1023)</td>
+                    <td>0-5V, 0-3,3V</td>
+                  </tr>
+                  <tr>
+                    <td>ESP32S3</td>
+                    <td>12 (0-4095)</td>
+                    <td>0-3,3V</td>
+                  </tr>
+                  <tr>
+                    <td>ADS1115</td>
+                    <td>16 (0-65536)</td>
+                    <td>0-3,3V</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p> A continuació tenim un codi general que pot servir per moltissimes coses diferents i totes relacionades 
+                amb la capacitat que té l'Arduino de llegir de 0 a 1023 en una entrada analògica, si fos un ESP32S3
+                llegiria de 0 a 4095 i si fos un ADS1115 llegiria de 0 a 65536. Per què?
+                Els microxips i els microcontroladors tenen transistors i els transistors nomes poden fer una cosa encendres o apagarse,
+                es a dir 0 o 1 i cada bit és un 0 o un 1. Si tenim 10 bits en un ADC (Analog Digital Converter) significa que té 2<sup>10</sup>
+                combinacions de zeros i uns es a dir 1024 nivells diferents que numericament van des del 0 a 1023</p>
+                <p>Si tenim 12 bits en un ADC (Analog Digital Converter) significa que té 2<sup>12</sup>
+                combinacions de zeros i uns es a dir 4096 nivells diferents que numericament van des del 0 a 4095. Ara justifiquem
+                el número 65536 seria correcte si fos 2<sup>16</sup> com diu el fabricant, pero al datasheet parla d'un nivell màxim
+                de 8000h (Número hexadecimal que correspon a 32768) es a dir, són 15 bits utilitzables. Sempre s'ha de comprobar 
+                la <a href="https://cdn-shop.adafruit.com/datasheets/ads1115.pdf">datasheet o 
+                fulla de caracteristiques del fabricant</a></p>
+            <pre><code>
+                int valorADC=0; // Int significa integer o valor numèric (float serial floating ), serveix per craer una variable amb el nom que volguem, sempre és la primera linia però a vegades ha d'haver una avans carregant les biblioteques.
+                void setup(){ // Serveix per introduir funcions i paràmetres amb què iniciarem el nostre programa i codi que no varia.
+                    Serial.begin(9600); //9600 en Arduino i 115200 en S3 //Seial s'escriu en majuscules ja que és una classe que és una part important del codi Arduuino. El punt és que estem aplicant un mètode, el mètode begin connecta el cable amb l'ordinador per transmetre un parametre en numero enter que correspon a la velocitat en bits/segon. És molt important possar un ; al final de cada instrucció.
+                }
+                void loop(){ // És una funció que es repeteix per sempre fins que desconnector l'aparell o posso un codi per aturar-ho
+                    valor_ADC=analogRead(A0); //34 en S3 // La variable que hem creat abans que era 0 inicialment ara canviarà perquè la instucció analogRead el que fa és llegir valors entre 0 i 1023 si és un Arduino uno, A0 és una de les 6 entrades analògiques d'Arduino uno
+                    valor_ADC=analogRead(34); // La variable de valor 0 ara estarà entre els valors 0 i 4095 Perquè és un microcontrolador de 12 bits ADC
+                    //ADC és Analog Digital converter, és a dir que convertim un valor analògic en digital (convertidor analògic digital)
+                    // DAC és Digital Analog Converter, és a dir el contrari que ADC, convertim digital a analògic com el PWM (Pulse Width Modlation) 
+                    que vol dir modulació de l'ample de banda
+                // D'acord amb el <a src="https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf"> datasheet o fulla de caracterísitques de ESP32S3 </a>
+                // Hi ha 20 entrades analògiques de 12 bits mentres que en Arduino Uno hi ha 6 entrades analògiques de
+                10 bits
+                    Serial.println(valorADC); // Println significa que imprimeixi via serial el valor de ADC (0-1023 o 0-4095)
+                    delay(500); //Espera 500 milisegons o mig segons per mostrar el resultat
+                }
+            </code></pre>
+        <p>Com podem veure a la foto de més amint d'arduino a la cantonada inferior dreta es troben els 6 ADCs o entrades analògiques amb les 
+        lletres d'A0 fins a A6, i a la part superior de l'arduino podem veure els pins que son els 6 DACs o sortides analògiques de tipus PWM
+        que estan senyalaeds amb ~ (Pins 3, 5, 6, 9, 10, 11).</p>
+        <p>En la imatge següent podem veure un esquema de ESP32S3</p>
+        <img src="esp32s3.jpg" width="800" height="429">
+        <p>Podem observar que a diferèndia d'Arduino Uno la gran majoria de pins son GPIO, que significa General Purpose Input Output, en català 
+        Pin d'Entrada i Sortida de Propòsit General, és a dir, que pot tenir moltes utilitats, entrada digital, sortida digital, entrada analògica, 
+        sortida analògica. Si volem veure un esquema dels pins podem escriure "pinout".</p>
+        <p>Alguns pins són RTC</p>
+        <h3>Com funciona les entrades analògiques dels microcontroladors?</h3>
+        <p>Els pins A0 a A5 son entrades analògiques i podem conectar una serie d'elements:</p>
+        <ul>
+        <li>Sensors de llum: LDR(Light Dependent Resistor), fotodiodes, cel·lules solars</li>
+        <li>Sensors de temperatura: LM35(Té una sortida lineal, 10 milivolts és un grau centrigrat i rang -55+150 semblant a TMP36,
+        té menys rang i és menys precís), DHT11 o DHT22, mesuren temperatura i humitat i el 22 és més precís que el 11, DS18B20 té protocol one-wire</li>               
+        </ul>
+        <h4>Exemple amb el sensor de temperatura LM35</h4>
+        <pre><code>
+            const int sensorPin= A0;
+
+            void setup(){
+            Serial.begin(9600);
+            }
+    
+            void loop(){
+            int value = analogRead(sensorPin);
+            float millivolts = (value / 1023.0) * 5000;
+            float celsius = millivolts / 10; 
+            Serial.print(celsius);
+            Serial.println(" C");
+            delay(1000);
+            }
+        </code></pre>
+        <p> El codi de més amunt funcionaria amb un sensor de temperatura LM35, però es podria adaptar per qualsevol sensor perquè?
+            Si soc un Arduino, els pins A0 - A5 només soc capaç de fer una cosa, llegir el senyal del sensor entre 0 i 1023. Mentres 
+            que en els pins PWM seria capaç d'escriure de 0 - 255</p>
+        <p><i>cons int sensorPin = A0;</i> Significa que el valor és cons o constant, i que no variarà en tot el codi, int que és un variable
+            que és tipus integer o numero enter, sensorPin és el nom que trio per identificar el pin anomenat A0 i podia haver triat 
+            qualsevol altre nom, com: sensorT, sensorTempertura, sensorLM53... Per tant la instrucció sencera que fa? 
+            Estem donant un valor al pin A0 per identificar-lo i que sigui una constant en tot el codi que no pot variar, perquè si varia, 
+            canvai el número de pin</p>
+        <p>
+            <pre>
+            void setup(){
+            Serial.begin(9600);
+            }</pre>
+            Tots els codis sempre tenen les mateixes parts, al principi es posarien les biblioteques necessaries, seguides de les variables
+            que necessiten (en aquest cas sensorPin) i a continuació va el bloc de codi o funció de configuració anomenada setup,
+            el setup s'executa una sola vegada i  Serial.begin(9600); el que fa és aplicar el mètode begin amb la sintaxi del punt 
+            (dot syntax) amb un argument o paràmetre que està entre parèntesis. Serial vol dir comunicació en serie a través d'una
+            cable USB, 9600 és la velocitat en bits per segon a través del cable USB. En un ESP32S3 es comunica una velocitat més alta
+            115200 bits per segon i aquesta velocitat no només ha d'estar al codi, sinó que ha de coincidir en el IDE o entorn de 
+            programació d'Arduino, concretament a la consola de sortida de comunicació sèrie. Si no ho faig poden sortir caràcters
+            extranys quan premo el botó superior dret de comunicació sèrie. El punt i coma final és molt important, prque indica que he 
+            acabat la instrucció. </p>
+        <p> Per finalitzar hi ha el codi principal o loop que es repeteix sense parar </p>
+        <p> int value = analogRead(sensorPin); int és integer i només agafa números enters, value és el nom que vull posar per
+            enmmagatzemar tots els valor que va agafant Arduino. Com els emmagatzemo? Amb la instrucció analogRead que llegeix de 
+            0 a 1023 i un cop llegit, el sensor pin (el paràmetre) el guarda dins de value.</p>
+        <p> <b>float millivolts = (value / 1023.0) * 5000; </b> float significa floating point number, o número decimal en anglés, millivolts
+            és el nom de la variable on emmagatzemem els mollivolts reals que està generant el sensor de temperatura. Perquè genera en 
+            millivolts? Perque l'Arduino Uno funciona a 5V o 5000mV, que passa si divideixo el valor entre 1023, que tinc el valor en tant
+            per 1, i si aquest valor en tant per 1 ho multiplico per 5000 em donen 1023 valors diferents entre 0 i 5000.
+            Posem diversos exemples: que passaria si el value és 0, que passaria si el value és 10? 10/1023x5000 = 49 millivolts, si 
+            fosin 100 = 488 millivolts, si fosin 500 donaria 500/1023x5000= 2443 millivolts. Això passaria amb tots els sensors</p>
+        <p> Com seria si fos un ESP32S3? Seria 3.3V i 4095, per tant el codi seria <b>float millivolts = (value / 4095.0) * 3300; </b>
+            i aconseguiriem millor resolució o presició, es a dir, el termometre o sensor agafaria més valors diferents (seria més precis).
+            value / 4095 sempre serà un número entre 0 i 1 perque value va enttre 0 i 4095, i si el multiplico per 3300 tindré un número de 0 a 3300 millivolts
+        <p> float celsius = millivolts / 10; float demana un número decimal </p>
+        </div>
+
+    <!-- Scripts necessaris -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

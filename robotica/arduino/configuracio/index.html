@@ -209,10 +209,18 @@
             hexadecimal (els números hexadcimals comencen amb 0x, als binaris amb 0b i els octals de 0o), dintre del número pot haver el valor
             per convertir en celsius </p>
                 <img src="MAX6675.png">
-        <p> A la imatge superior podem veure que MAX6675 està conectat a SP32S3 per alimentació electrica al pin de
-            3,3 volts i a un GND, també a de estar connectat a un MISO perque volem que funcioni com un sensor, es a dir, master input
+         <p> A la imatge superior podem veure que MAX6675 està conectat a SP32S3 per alimentació electrica al pin de
+            3,3 volts (cable vermell) i  un GND (cable negre), també a de estar connectat a un MISO perque volem que funcioni com un sensor, es a dir, master input
             que vol dir que al microcontrolador actua com a mestre, que rep eentrades o inputs i el sensor és un esclau que dona a output.
-            En ESP32 MISO és posa amb les sigles SO que vol dira serial out, vol dir que surt informació sèrie cap al mestre </p>
+            En ESP32 MISO és posa amb les sigles SO que vol dira serial out que està en el GPIO19, vol dir que surt informació sèrie cap al mestre </p>
+        
+            <p> La comunicació SPI necessita ser sincrona i per aixo conectem el cable GPIO5 que és un SSK o serial clock o rellotge serie
+                que sincronitza el enviament de temperaturas mal microcontrolador </p>
+        
+        <p> Necesitem connectar un cable CS al PIN CS que significa Chip select ens permet comunicació serie i esta en el
+            GPIO23. </p>
+        <p> Resumint,necessitem molts cables per comunicació entre el sensor de temperatura i el microcontrolador. Hi ha tecnologies
+            que necessiten un cable i es diuen one-wire com per exemple com el sensor de temperatura DS20
             
       
 

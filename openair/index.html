@@ -102,16 +102,180 @@ class (city2)
   <pre><code>
     levels(city2$pollutant)
   </code></pre>
-  <p>Creem una nova variable on posem ampliat tots els contaminats en més columnes què els contaminants que eren factors que estaven
-  a la mateixa columna ara estàn tots en diferents columnes</p>
-
-
-
-  
-  <h1>Codis de Python: pandas</h1>
-  <p></p>
-  <pre><code>
-    
+  <p>Creem una nova variable on posem ampliant tots els contaminants en més columnes, de forma què els contaminants
+      que
+      eren factors
+      que estaven a la mateixa columna ara estàn tots en diferents columnes
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    city3<-pivot_wider(city2,names_from = pollutant, values_from = value)
   </code></pre>
-</body>  
+
+    <p>Convertim city 3 en un dataframe</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    city3 <- as.data.frame(city3)
+  </code></pre>
+
+    <p>La funció timeVariation és una funció de Openair que obliga a que existeixi diverses columnes amb minúscules,
+      cada columna en minúscules
+      correspon a un pollutant. L'atribut main és un atribut de moltes funcions de openair i correspon al títol del
+      gràfic. La funció time timeVariation
+      pot contenir diversos arguments, el primer és el nom del dataframe o cinjunt de dades a analitzar, el segon
+      argument sempre és pollutant i
+      pot ser un valor únic (pollutant = "o3") o un vector R (pollutant = c("o3", "no2",...)), el tercer argument és
+      main, altres arguments es
+      veuen al tutorial de R. És pot utilitzar filter per filtrar les dades xlab i ylab (les etiquetes "label" o títols
+      del eix x i del eix y),
+      es pot agrupar per anys o per dates o es pot normalitzar en base 100 com a màxim en diferents arguments.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    timeVariation(city4, pollutant=c("o3","no2","h2s","no","hcnm","co","so2","hct","nox","pm10","pm2.5"), main="Air pollution in Lleida (1991-2024)")
+  </code></pre>
+    <img src="timeVariation.png" width="800" height="500">
+
+    <p>S'utilitza trendLevel per veure les tendències i la evolució temporal de diversos anys.</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    trendLevel(city4, pollutant = "h2s", main="Hydrogen sulfide evolution in Lleida")
+  </code></pre>
+    <img src="trendLevel.png" width="800" height="500">
+
+    <p>Hem de fer una mitjana diària i ho fem amb un tiemAverage, què és una funció que està en Openair i que
+      permet tot tipus de timeAverage (dies, mesos, setmanes, anys...). Aquesta funció té un problema, dona l'hora de
+      cada dia 00:00:00 i volem
+      que solament surti el dia.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    daily<-timeAverage(city4,avg.time = "day")
+  </code></pre>
+
+    <p>Per a que surti el dia hem d'utilitzar el següent codi que elimina o reemplaça la hora 00:00:00 per res, amb la
+      funció replaceAll de la
+      biblioteca lares, però primer hem de carregar la biblioteca.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    library (lares)
+    daily<-replaceall(daily, c("00:00:00"), c(""))
+  </code></pre>
+
+    <p>Hem de convertir els caràcter a POSIXct que és un tipus de data internacional ISO 8601, significa: ANY-MES- DIA
+      HORA:MINUT:SEGON en aquest
+      cas nomès els tres primers. La classe POSIXct emmagatzema les dates com un número enter que són els segons que han
+      passat des del 1 de gener
+      de 1970. La classe POSIXlt l'emmagatzema en diversos números i la classe Date no sempre funciona perquè
+      emmagatzema el
+      número de dies desde el 1 de gener de 1870. Hi ha una biblioteca R molt coneguda quan hi ha problemes en dates, es
+      diu <b>lubridate</b>.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    daily$date<-as.POSIXct(daily$date,"%Y-%m-%d", tz="Europe/Madrid")
+  </code></pre>
+
+    <p>El calendarPlot ens permet veure un calendari molt personalitzable, puc fer que en vegin per defecte més
+      contaminació amb més color vermell
+      o canviar l'esquema de color o posar en comptes del dia del mes el nivell de contaminant en números.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    calendarPlot(daily, pollutant="no2", year="2024")
+  </code></pre>
+    <img src="calendarPlot.png" width="800" height="500">
+
+    <p>El timePlot l'apliquem emb les dades anuals i peraixò abans hem de primer la mitjana anual, esborrar amb
+      replaceall els -01-01 que apareixen,
+      convertir-lo en un caràcter per desprès convertir-lo en un POSIXct.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    yearly<-timeAverage(daily,avg.time = "year")
+    yearly<-replaceall(daily, c("-01-01"), c(""))
+    yearly$date<-as.POSIXct(yearly$date,"%Y-%m-%d", tz="Europe/Madrid")
+    yearly2<-timeAverage(yearly,avg.time = "year")
+    yearly2<-replaceall(yearly2, c("-01-01"), c(""))
+    yearly2$date<-as.character(yearly2$date)
+    yearly2$date<-as.POSIXct(yearly2$date,"%Y", tz="Europe/Madrid")
+    timePlot(yearly2, pollutant =  c("co", "h2s", "hcnm", "hct","no", "no2", "nox", "o3", "pm10", "pm2.5", "so2"), avg.time = "year", lwd= 2, lty=1, group = TRUE, main="Lleida line Plot", ref.y = list(h = c(40, 20, 10), lty = c(1, 2, 3), lwd=c(3, 3, 3) ))
+  </code></pre>
+    <img src="timePlot.png" width="800" height="500">
+
+
+  </div>
+
+  <div class="content-container">
+    <h1>Codis de Python: pandas</h1>
+    <p></p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-python">
+    
+# Instal·lem llibreries necessàries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Pas 1: Pujar el fitxer CSV
+from google.colab import files
+uploaded = files.upload()
+
+# Pas 2: Carregar les dades
+filename = list(uploaded.keys())[0]
+df = pd.read_csv(filename)
+
+# Pas 3: Convertim la columna 'data' a format datetime
+df['data'] = pd.to_datetime(df['data'])
+
+# Pas 4: Transformem les hores en columnes a una sola mitjana diària
+hores = [f'h{i:02d}' for i in range(1, 25)]
+df['mitjana_diària'] = df[hores].mean(axis=1)
+
+# Pas 5: Afegim columnes 'any' i 'mes'
+df['any'] = df['data'].dt.year
+df['mes'] = df['data'].dt.month
+
+# Pas 6: Càlcul de les mitjanes anuals per cada contaminant
+mitjanes_anuals = df.groupby(['any', 'contaminant'])['mitjana_diària'].mean().reset_index()
+
+# Pas 7: Càlcul de les mitjanes mensuals i anuals només per 2024
+df_2024 = df[df['any'] == 2024]
+mitjanes_mensuals_2024 = df_2024.groupby(['mes', 'contaminant'])['mitjana_diària'].mean().reset_index()
+mitjana_anual_2024 = df_2024.groupby('contaminant')['mitjana_diària'].mean().reset_index()
+
+# Pas 8: Visualització de resultats
+# Mitjanes anuals
+plt.figure(figsize=(15, 7))
+for contaminant in mitjanes_anuals['contaminant'].unique():
+    data = mitjanes_anuals[mitjanes_anuals['contaminant'] == contaminant]
+    plt.plot(data['any'], data['mitjana_diària'], marker='o', label=contaminant)
+plt.title('Mitjanes Anuals per Contaminant')
+plt.xlabel('Any')
+plt.ylabel('Mitjana Diària (µg/m3 o mg/m3)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Pas 9: Guardar els resultats en fitxers CSV
+mitjanes_anuals.to_csv('mitjanes_anuals.csv', index=False)
+mitjanes_mensuals_2024.to_csv('mitjanes_mensuals_2024.csv', index=False)
+mitjana_anual_2024.to_csv('mitjana_anual_2024.csv', index=False)
+
+# Pas 10: Descarregar els fitxers
+from google.colab import files
+files.download('mitjanes_anuals.csv')
+files.download('mitjanes_mensuals_2024.csv')
+files.download('mitjana_anual_2024.csv')
+  </code></pre>
+    <img src="annual.png" width="800" height="500">
+  </div>
+
+  <div class="content-container">
+    <h1>Descàrrega</h1>
+    <p>També teniu l'opció de
+      <a href="https://ecastro4.github.io/openair/lleida.zip" download="lleida.zip">descarregar</a> un ZIP amb tot el
+      projecte que he fet en RStudio
+    </p>
+  </div>
+
+  <!-- Scripts necessaris -->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+
 </html>

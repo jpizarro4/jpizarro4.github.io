@@ -603,8 +603,18 @@ void flash(int duration) {
             <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
                 const int ledPin = 13;
 const int dotDelay = 200;
-
-char* letters[] = {
+//El principi del codi, abans de la funció de configuració "setup" i la funcio principal "loop" que s'executa continuament, hem d'escriure sempre variables
+  o contants. A és davant de les constants i variables globals anomenades així perqué es poden cridar o executar des de qualsevol part del codi,
+  a diferencia de les variableslocals que es defineixen i s'utilitzen dintre de la mateixa funció "loop" o una funció adicional. Davant
+  de les variables i constants globals hauriem d'afegir les biblioteques necessàries per fer funcionar el nostre codi (amb #iclude <nom_biblioteca.h>)
+  l'extensió "h" deriva  de C
+  i significa "biblioteca de headers" o encapçalaments.
+      const int ledPin = 13;
+  const int dorDelay = 200
+  // "const" vol dir que la variable no es modificarà dins del codi, "int" vol dir integer, o sigui que el nombre que agafem haurà 
+      de ser enter, ja que el cas d'Arduino uno que permet connectar directament un led, perquè està al costat i s'anomena així per l'usuari,
+      
+  char* letters[] = {
   ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",    // A-I
   ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",  // J-R
   "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."          // S-Z

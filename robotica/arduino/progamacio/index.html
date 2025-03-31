@@ -34,26 +34,7 @@
     </script>
 </head>
     <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-python">
-//El meu primer codi: Blink
-void setup() { //Codi que s'executa una vegada i és la configuració.
-  pinMode(13, OUTPUT); //Estem dient que el pin 13 és una sortida de corrent o OUTPUT on puc 
-    // connectar un led.
-}
-
-void loop() { //És un codi que s'executa sense parar fins que desconnecto l'Arduino o li dono una 
-    // instrucció de parada.
- digitalWrite(13, HIGH); // <b>digitalWrite</b> és una sortida digital i permet encendre i apagar
-    // Només té 2 valors, HIGH i LOW (Encès i apagat)
- delay(500);//És el temps en milisegons que ha d'estar, en aquest cas encès.
- digitalWrite(13, LOW);//Aqui <b>digitalWrite</b> fa que s'apagui
- delay(500);
-}
-    </code></pre>
-
-    </div>
-
-    <div class="content-container">
-        <h3>El meu primer codi: Blink</h3>
+<h3>El meu primer codi: Blink</h3>
         <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
 //El meu primer codi: Blink
 void setup() { //Codi que s'executa una vegada i és la configuració.
@@ -287,7 +268,7 @@ void loop() {
             20 vegades en un void loop. En el següent codi, posarem un contador i quan arribi a 20 repeticions s'aturarà
         </p>
         <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
-        // 02_09_blink_20_loop (Aqui es nota perqué
+        // 02_09_blink_20_loop (Aqui es nota perqué)
         
         int ledPin = 13;
         int delayPeriod = 100;
@@ -369,15 +350,16 @@ void loop() {
         // numFlashes no esta definit com a variable global, és una variable local definida dins de la funció "flash"
         // i no te un valor predeterminat, només ha de complir que sigui un valor enter. El mateix per a la variable "d"
         void flash(int numFlashes, int d) {
-            for (int i = 0; i numFlashes; i++) {
+            for (int i = 0; i &lt; numFlashes; i++) {
             digitalWrite(ledPin, HIGH);
             delay(d);
             digitalWrite(ledPin, LOW);
             delay(d);
             }
             }
+
         </code></pre>
-        </div>
+    </div>
     
         <div class="content-container">
             <h1>Funcions en Arduino</h1>
@@ -521,6 +503,7 @@ void flash(int duration) {
             </code></pre>
         </div>
         <div class="content-container">
+        <h1>Codi ASCII</h1>
         <p>L'objectiu del codi següent és entendre que les cadenes o strings són conjunts de caràcters ASCII i podem accedir 
             amb ells amb arrays que esta formats per parèntesis quadrats i el primer element és el 0. En llenguatge C i derivats
             del C com Arduino podem utilitzar punters o pointers que permeten apuntar a un element. En python o JavaScript no hi
@@ -578,7 +561,9 @@ void flash(int duration) {
                   Serial.println(message);
                   delay(1000);
                 }
-                </div>
+            </code></pre>
+
+        </div>
         <div class="content-container">
             <h3>Importància dels punters + Exemple de codi Morse</h3>
             <p>Hi ha llenguatges amb i sense punters.</p> 
@@ -602,19 +587,21 @@ void flash(int duration) {
             </ul>
             <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
                 const int ledPin = 13;
+
+// Al principi del codi, abans de la funció de configuració "setup" i la funció principal "loop" que s'executa contínuament hem d'escriure sempre
+// variables o constants.
+// A més, al principi del codi trobem les constants i variables globals anomenades així perquè es poden cridar o executar des de qualsevol part del codi, a 
+// diferència de les variables locals que es defineixen i s'utilitzen dintre de la mateixa funció loop o una unció addicional.
+// Davent de les variables globals haurien d'afegir les biblioteques necessàries per fer funcionar el nostre codi, (amb "<i>#include <biblioteca></i>") i l'extensió 
+// "h" deriva de C i significa "biblioteca de headers" o encapçalament.
+
 const int dotDelay = 200;
-//El principi del codi, abans de la funció de configuració "setup" i la funcio principal "loop" que s'executa continuament, hem d'escriure sempre variables
-  o contants. A és davant de les constants i variables globals anomenades així perqué es poden cridar o executar des de qualsevol part del codi,
-  a diferencia de les variableslocals que es defineixen i s'utilitzen dintre de la mateixa funció "loop" o una funció adicional. Davant
-  de les variables i constants globals hauriem d'afegir les biblioteques necessàries per fer funcionar el nostre codi (amb #iclude <nom_biblioteca.h>)
-  l'extensió "h" deriva  de C
-  i significa "biblioteca de headers" o encapçalaments.
-      const int ledPin = 13;
-  const int dorDelay = 200
-  // "const" vol dir que la variable no es modificarà dins del codi, "int" vol dir integer, o sigui que el nombre que agafem haurà 
-      de ser enter, ja que el cas d'Arduino uno que permet connectar directament un led, perquè està al costat i s'anomena així per l'usuari,
-      
-  char* letters[] = {
+
+/* Cons
+
+*/
+
+char* letters[] = {
   ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",    // A-I
   ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",  // J-R
   "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."          // S-Z
@@ -669,8 +656,8 @@ void flashDotOrDash(char dotOrDash) {
   delay(dotDelay); // gap between flashes
 }
             </code></pre>
-
         </div>
+
 
         <!-- Scripts necessaris -->
 

@@ -719,7 +719,11 @@ const int outPin = 3;
 // pinMode és una funció predeterminada o "built-in", vol dir que està predefinida en el llenguatje
 // arduino i sempre ha de rebre 2 argument o parametres, el primer sempre ha de ser un númer enter o "int"
 // (integer) que correspon al número de pin que volem conectar (en aquet cas 3), el segon argument és el mode
-// que pot ser OUTPUT que significa sortida, o INPUT que significa entrada, també existeix INPUT_PULLUP
+// que pot ser OUTPUT que significa sortida, o INPUT que significa entrada, també existeix INPUT_PULLUP.
+// Posarem un exemple per entendre millor el input 'pullup'. Tenim un ascensor que s'atura a l' inici i al final gracies al
+// interruptor del final de cursa (palanca que al arribar al final o principi fa). El pullup per definició  que és 
+// conecti a una resistencia física de entre 20 i 50 kOhms que per defecte està en HIGH, al arribar al final en cursa
+// es defieix el canvi a LOW. El cas 'pulldown' no existeix com a mode Arduino, però si existeix el modo input (faria el contrari)
 void setup() {
   pinMode(outPin, OUTPUT);
   Serial.begin(9600); //Miguel Angel

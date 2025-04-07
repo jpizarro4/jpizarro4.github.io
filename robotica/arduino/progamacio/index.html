@@ -742,68 +742,126 @@ void loop() {
   }
             </code></pre>
         </div>
-        <div class="content-container">
-    // Quan tenim una entrada hem de possar mode input i en comptes de fer un digitalWrite que fem a les sortides
-    // hem de fer un digitalRead per obtenir l'entrada, que només pot ser un valor digital de 0 o 1 (binari)
-    // Si el voltatge és menor a 2,5 volts es traduirà com un 0, en canvi si és superior com un 1
-    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+       char ch;
+  if (Serial.available() > 0) {
+    ch = Serial.read();
+    if (ch >= 'a' && ch <= 'z') {
+      flashSequence(letters[ch - 'a']);
+    }
+    else if (ch >= 'A' && ch <= 'Z') {
+      flashSequence(letters[ch - 'A']);
+    }
+    else if (ch >= '0' && ch <= '9') {
+      flashSequence(numbers[ch - '0']);
+    }
+    else if (ch == ' ') {
+      delay(dotDelay * 4);  // gap between words  
+    }
+  }
+}
+
+void flashSequence(char* sequence) {
+  int i = 0;
+  while (sequence[i] != NULL) {
+    flashDotOrDash(sequence[i]);
+    i++;
+  }
+  delay(dotDelay * 3);    // gap between letters
+}
+
+void flashDotOrDash(char dotOrDash) {
+  digitalWrite(ledPin, HIGH);
+  if (dotOrDash == '.') {
+    delay(dotDelay);           
+  }
+  else { 
+    // must be a dash 
+    delay(dotDelay * 3);           
+  }
+  digitalWrite(ledPin, LOW);    
+  delay(dotDelay); // gap between flashes
+}
+</code></pre>
+<p> Negació. El signe d'admiració "!" significa negar la variable que es posa després del signe.</p>
+<p> Hi ha dos variables inicials, que son constants per definició del codi. La variable ledPin es el pin el qual conectem
+el led, que es 13 normalment. I el pin 5 es un pin on conectem un interruptor per entrada de dades. El pin 5 esta encés per defecte
+perque li hem dit que es un input pull-up, significa que l'interruptor deixa pasar la corrent per defecte. Si fos un input només 
+estaria a 0, es a dir, l'interruptor estaria obert. La variable switch open esta al principi amb valor 1 i quan movem el botó, 
+l'apaguem perqué la variable switchOpen que estava a 1 es transforma a !switchOpen que esta a 0. I si li torno a negar, sortira 1.</p>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
     const int inputPin = 5;
-    
+    const int ledPin = 13
     void setup() {
-      pinMode(inputPin, INPUT);
-      Serial.begin(9600);
+     pinMode(ledPin, OUTPUT);
+     pinMode(inputPin, INPUT_PULLUP);
     }
-    
     void loop() {
-      int reading = digitalRead(inputPin);
-      Serial.println(reading);
-      delay(1000);
-    }
-    </code></pre>  
-    </div>
-    
-    <div class="content-container">
-    // El pullup estabilitza la senyal que rep per a que la transcripció a binari (0 i 1) sigui correcta. Si analitzem el que
-    // passa amb un oscil·loscopi (mesura les oscil·lacions de la corrent) si mirem un oscil·loscopi unveurem que hi han 
-    // pujades i baixades quan premo el botó no baixa de forma ideal sinó que té alguns pics que es diuen rebots 
-    // (bouncing / debouncing) en el cas de debouncing és més correcte ja que el senyal per defecte és inestable i el que fem
-    // és estabilitzar-lo -> desrebotar.
-    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
-    const int inputPin = 5;
-    
-    void setup() {
-      pinMode(inputPin, INPUT_PULLUP);
-      Serial.begin(9600);
-    }
-    
-    void loop() {
-      int reading = digitalRead(inputPin);
-      Serial.println(reading);
-      delay(1000);
+     int switchOpen = digitalRead(inputPin);
+     digitalWrite(ledPin, ! switchOpen);
     }
     </code></pre>
-    </div>
+<p> Clica a la imatge següent per veure la simulació </p>
+<a href = "https://www.tinkercad.com/things/6kmvYJBnQFx-circuit-54-monk" target = "_blank"> <img src = "54.PNG"> </a>
+<p> Toggles. </p>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    const int inputPin = 5;
+    const int ledPin = 13;
+    int ledValue = LOW;
 
-    <div class="content-container">
-    // El togger 
-    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    void setup()  {
+    pinMode(inputPin, INPUT_PULLUP);
+    pinMode(ledPin, OUTPUT);
+    }
+    void loop()  {
+    if (digitalRead(inputPin) == LOW) {
+     ledValue = ! ledValue;
+     digitalWrite(ledPin, ledValue);
+  }
+}
+</code></pre>
+<a href = "https://www.tinkercad.com/things/ijQ7CKiIRbu-circuit-55-monk" target = "_blank"> <img src = "55.PNG"> </a>
+
+<p>solució amb llibreria </p>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
     const int inputPin = 5;
     const int ledPin = 13;
     int ledValue = LOW;
     
     void setup()  {
-      pinMode(inputPin, INPUT_PULLUP);
-      pinMode(ledPin, OUTPUT);
+    pinMode(inputPin, INPUT_PULLUP);
+    pinMode(ledPin, OUTPUT);
     }
     
-    void loop()  {
-      if (digitalRead(inputPin) == LOW) {
-         ledValue = ! ledValue;
-         digitalWrite(ledPin, ledValue);
-      }
+    void loop() {
+    if (digitalRead(inputPin) == LOW) {
+     ledValue = ! ledValue;
+     digitalWrite(ledPin, ledValue);
+     delay(500);
     }
-    </code></pre>
-    </div>
+    }
+</code></pre>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    #include <Bounce2.h>
+        const int inputPin = 5;
+        const int ledPin = 13;
+        int ledValue = LOW;
+        Bounce bouncer = Bounce(); 
+
+        void setup() {
+        pinMode(inputPin, INPUT_PULLUP);
+        pinMode(ledPin, OUTPUT);
+        bouncer.attach(inputPin);
+        // bouncer.interval(50); // interval in ms
+        }
+
+        void loop() {
+        if (bouncer.update() && bouncer.read() == LOW) {
+          ledValue = ! ledValue;
+          digitalWrite(ledPin, ledValue);
+        }
+        }
+ </code>
+</pre>
 
 
         <!-- Scripts necessaris -->

@@ -585,6 +585,8 @@ void flash(int duration) {
                 <li><b>Creació d'estructures dinamiques:</b> Es pot crear coses com grafics o llistes enllaçades de forma facil</li>
                 <li><b>Interacció amb microcontroladors senzilla:</b> Els microcontroladors utilitzen llenguatges de baix nivell (low-level languages) que son mes properes al hardware. Encara que, gracies a l'augment de la memoria, s'han pogut crear llenguatges com micropython o circutpython.</li>
             </ul>
+            <h2>Sortides analògiques</h2>
+            <p>Algunes sortides d'Arduino i altres microcontroladors són PWM (pulse with modulation), significa</p>
             <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
                 const int ledPin = 13;
 
@@ -821,7 +823,7 @@ l'apaguem perqué la variable switchOpen que estava a 1 es transforma a !switchO
 </code></pre>
 <a href = "Enlace" target = "_blank"> <img src = "Imagen"> </a>
 
-<p>solució amb llibreria </p>
+<p>solució sense llibreria: Simplement posant un delay de 500 milisengons que aconsegueix que el senyal que era inestable despres de 500 milisengons ja sigui estable perque ha passat prou temps </p>
 <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
     const int inputPin = 5;
     const int ledPin = 13;
@@ -844,28 +846,42 @@ l'apaguem perqué la variable switchOpen que estava a 1 es transforma a !switchO
  <p>El "contactBounce" podríem traduir-ho com a rebot de contacte, és un problema comú a diferents dispositius com per exemple interruptors mècanics, com reles (interruptor que canvia la posició
  d'una palanca interna mitjançant electromagnestisme), contactes de bateria. Tots aquests elemets tenen en comú que estan fets per metalls elastics, de forma que quan areto un interruptor mecanic
  el metall que calca el circuit rebota diverses vegades sobre el contacte provocant una inestabilitat en la senyal.</p>
-    #include <Bounce2.h>
-        const int inputPin = 5;
-        const int ledPin = 13;
-        int ledValue = LOW;
-        Bounce bouncer = Bounce(); 
+    <img src = "Bouncy_Switch.png">
+    <p>Els moviments que veiem a dalt poden ser poc importants en un circuit de potència que utilita 220 volts moltes vegades no s'aprecien aquests canvis, però en un circuit de control
+    que funciona amb un voltatge de 3.3 volts o 5 volts i què esta dissenyat per entrende i respondre senyals digitals i analògiques pot provocar que entenguin les pujades i baixades
+    com un flux de dades</p>
+    <p>Com es pot evitar?</p>
+    <p> Ho podem evitar per software com veiem més avall amb una biblioteca o per hardware que vol dir modificar fisicament els elements per reduir el rebot. Per exemple, una superficie llisa
+    de contacte seria meillor perque donaria menys rebot, si el metall fos menys elastic, rebotaria menys. Antigament els contactes dels interruptors es mullaven en mercuri per evitar el rebot
+    També es pot afegir un filtre com un condensador per exemple que emmagatzemaria tots els excesos de càrrega produits.</p>
 
+    #include <Bounce2.h> // Instal·la i inclou la llibreria< a href = "https://docs.arduino.cc/libraries/bounce2/"> "Bounce2.h"</a> que és compatible amb totes les plaques arduino.
+        const int inputPin = 5; // Aquest valor és costant i correspon al interruptor
+        const int ledPin = 13; // Aquest valor és constant i correspon al LED
+        int ledValue = LOW; // Aquest valor no es constant, és un valor enter, que en aquest cas té un valor inicial de 0 o LOW.
+        Bounce bouncer = Bounce(); 
+        // La majúscula de "Bounce" m'indica que es una classe i al costat de la classe poso el nom del objecte que tindra totes les caracteristiques e la classe anterior.
+        Per exemple: Homosapiens matrí. Bounce(); escrit amb majuscules és un metode d'una calsse que s'aplica a l'objecte "bounce". Aquest sistema està basat en el llenguatge C++ perquè l'autor
+        de la biblioteca ho ha descrit així.
         void setup() {
         pinMode(inputPin, INPUT_PULLUP);
         pinMode(ledPin, OUTPUT);
-        bouncer.attach(inputPin);
+        bouncer.attach(inputPin); //La sintaxi del punt o dot syntax és molt important perquè apliquem un mètode o un funció definida a la classe a un objecte concret que és bouncer. Aquesta funció
+        attach depèn només d'un argument o paràmetre que és inputPin. L'attach lliga l'interruptor fisic que està en inputPin a l'objecte bouncer que hem de controlar.
         // bouncer.interval(50); // interval in ms
         }
 
         void loop() {
-        if (bouncer.update() && bouncer.read() == LOW) {
-          ledValue = ! ledValue;
+        if (bouncer.update() && bouncer.read() == LOW) { // Linea clau perque esta comprovant si ha canviat (bouncer.update retona verdader o TRUE si alguna cosa ha canviat al objecte
+        bouncer i la segona part de codi comprova si més a més comprova si el botó (&&) del interruptor està apagat, perquè està obert. Si està apagat, el condicional seguent es farà.
+          ledValue = ! ledValue; // Si està encés, apaga. Si està apagat, encén.
           digitalWrite(ledPin, ledValue);
         }
         }
  </code>
 </pre>
 
+        
 
         <!-- Scripts necessaris -->
 

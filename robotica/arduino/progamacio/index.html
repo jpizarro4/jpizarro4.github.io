@@ -918,20 +918,28 @@ la llum en un percentatge que depen del percentatge de temps que ha estat ences 
 
 void setup() {
   pinMode(outputPin, OUTPUT);
-  Serial.begin(9600);
-  Serial.println("Enter Volts 0 to 5");
+  Serial.begin(9600); //L'objecte Serial és de la classe Serial (objectes en minuscula i classe en majuscula) i l'apliquem amb la sintaxi del punt el metode begin que te com parametre o argument
+un número enter que correspondrà amb bauds.
+  Serial.println("Enter Volts 0 to 5"); //println significa imprimeix una linia i li apliquem en la sintaxis del punt a la clase serial, pot rebre diversos parametres, si els posem
+entre cometes s'escriu tal qual i si no, escriu el valor de la variable
 }
 
-void loop() {
-  if (Serial.available() > 0) {
-    float volts = Serial.parseFloat();
-    int pwmValue = volts * 255.0 / 5.0;
+void loop() { //Codi principal o sistema que no s'atura mai, es repeteix fins que desconecto l'arduino
+  if (Serial.available() > 0) { //Serial.available és un metode que espera caracters, que es a dir nombres mes grans de 0.
+    float volts = Serial.parseFloat(); //parse.Float és una funció o mètode que s'aplica a l'objecte "Serial" i la seva funció és parsejar o analitzar el contingut de caràcters que
+    //arriba pel port "Serial" i si és de tipus decimal o "Floating point number" (número amb coma flotant) o variable tipus "Float". Les variables tipus "Float" incliouen les variables int o integer
+    //o números sencers. També existeix el mètode "parseInt", qu només acceptaria números enters. Volts emmagatzema el númreo decimal que escriu l'usuari.
+    //El "float volts" crea un espai en la memoria de l'ordinador anomenat volts que haurà de ser del tipus floating point number que emmmagatzemarà el que li arribi del "port Serial" escrit
+    //per l'usuari.
+    int pwmValue = volts * 255.0 / 5.0;// Els valors no serveixen directament perquè volem no valors entre 0 i 5 sino entre 0 i 255.
+    //és entre 0 i 255 perque és el número de bits (2^8 = 256). Faig una regla de tres i multiplico el valor per 255 i divideixo entre 5.
+    //Per exemple si l'usuari inserta 2.5, tindras 2.*255/5 igal a 127.5. Aquest valor es transformara en 127 perque ha de ser interger i es guarda en pwmValue.
     analogWrite(outputPin, pwmValue);
   }
 }
 </code></pre>
 <p> El "const int outputPin" defineix el pin de sortida constant que no es pot canviar. Després de definir
-el pin de sortida 3 i en output (sortida) i la velocitat bauds (9600), el codi demana que escrigui a la consola
+el pin de sortida 3 i en output (sortida) i la velocitat bauds (símbols per segons) (9600), el codi demana que escrigui a la consola
 del programa Arduino IDE: Enter volts 0-5.</p>
 <p> Al loop principal comprova que hi hagi caràcters escrits a la consola, després agafa el valor que hem 
 donat i el guarda en la variable volts. El valor pot ser en decimals perquè posa float ("Floating point number").

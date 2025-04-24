@@ -933,8 +933,10 @@ void loop() { //Codi principal o sistema que no s'atura mai, es repeteix fins qu
     //per l'usuari.
     int pwmValue = volts * 255.0 / 5.0;// Els valors no serveixen directament perquè volem no valors entre 0 i 5 sino entre 0 i 255.
     //és entre 0 i 255 perque és el número de bits (2^8 = 256). Faig una regla de tres i multiplico el valor per 255 i divideixo entre 5.
-    //Per exemple si l'usuari inserta 2.5, tindras 2.*255/5 igal a 127.5. Aquest valor es transformara en 127 perque ha de ser interger i es guarda en pwmValue.
-    analogWrite(outputPin, pwmValue);
+    //Per exemple si l'usuari inserta 2.5, tindras 2.5*255/5 igual a 127.5. Aquest valor es transformara en 127 perque ha de ser interger i es guarda en pwmValue.
+    analogWrite(outputPin, pwmValue);//analogWrite és una funció predifinidia en el llenguatge Arduino, derivada de C++ i és també una biblioteca de processing. Té dos arguments o pàrametres
+    el pin on està connectat i el valor que volem escriure en el pin (0-255), que farà que el LED s'encengui de forma proporcional als volts que l'usuari ha escrit. No té sentit utilitzar
+    volts perquè són valors de 0 a 5 i no notaria el canvi d'intensitat
   }
 }
 </code></pre>
@@ -955,6 +957,61 @@ sheet o fulla de caracteristiques de el ESP32-S3la linea de codi seria:
 Aixó pot que no es noti en un led, peró es nota en un motor, on l'ESP32 permet accedir a més velocitats diferents. Els
 motors poden arribar a 16 bits, que es 2^16 o 65536 valors diferents, depenent del tipus de motor, pot ser observat o no
 </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    const int analogPin = 0;//El pin 0 en Arduino és el pin A0 (analog)
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int reading = analogRead(analogPin); //analogRead llegeix els valors analogics del analogics del anlogPin de 0 a 5 volts
+  float voltage = reading / 204.6;//1023 / 5 = 204,6 Dividim 1023 (2^10 - 1 per a Arduino) entre 5 (volts d'Arduino)
+                           // Ara ens interesa els volts perquè jo connecto un sensor per exemple de temperatura (de 0 a 100 graus, d'humitat 0% - 100%) i els valors de 0 a 1023 no tenen 
+        sentit perquè si fos un altre ESP32 seria de 0 a 4095 i el valor 500 en el primer cas estaria per la meitat i en el segon cas seria menys.Si utilizem voltatge tenim una mesura
+        real del que està passant en el sensor i buscarem la relació entre els volts i la temperatura / humitat a la fulla de característiques (datasheet), una vegada tenim la relació 
+        farem una regla de 3 o un mapejat.
+  Serial.print("Reading=");// Quan poso entre coometes el print em surt tal qual la paraula reading = que significa lectura.
+  Serial.print(reading);// reading no té cometes i és una variable que conté valors entre o i 1023
+  Serial.print("\t\tVolts=");// \t deixa un espai de tabulador. 
+  Serial.println(voltage);// Ens donarà el valor en volts al costat de Volts =
+        // Com quedarà en el cas de reading 512?
+        // Reading=512        Volts=2.5 // espera mig segon per fer un altre lectura
+        // Reading=256        Volts=1,25
+  delay(500);
+}
+    </code></pre>
+   
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
+    void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int number = random(1, 7); // escull un número enter aleatoriament del 1 al 7. (1-7) és un iterval així que agafem el 1, 2, 3...7
+         // Els números aleatoris són importants per exemple en control de qualitat perquè ens asegurem de que tot no està decidit per ningú
+  Serial.println(number);// Perquè fem println i no print, perquè volem que surti una línia sobre una altre.
+  delay(500); 
+}
+        
+    </code></pre>
+
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
+        void setup() {
+  Serial.begin(9600);
+  randomSeed(analogRead(0));// seed significa llavor i té com argument un número, si per exemple poso randoSeed (4) sempre em sortira la mateixa caena de números aleatoris (4444...)
+}
+
+void loop() {
+  int number = random(1, 7); // escull un número enter aleatoriament del 1 al 7. (1-7) és un iterval així que agafem el 1, 2, 3...7
+        // Els números aleatoris són importants per exemple en control de qualitat perquè ens asegurem de que tot no està decidit per ningú
+  Serial.println(number);// Perquè fem println i no print, perquè volem que surti una línia sobre una altre.
+  delay(500); 
+}
+       </code></pre>
+
         <!-- Scripts necessaris -->
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

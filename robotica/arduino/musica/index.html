@@ -6,8 +6,27 @@
          <li>El tercer argument és optatiu i és "el temps de durada"</li>
        </ul>
 <img src="Tonos-con-Arduino4.webp">
+<img src="Notación_Latina_y_Anglosajona.png">
+
        void setup() {
-  #define NOTE_F4
+  #define NOTE_D4 293.665
+  #define NOTE_A4 293.665
+  #define NOTE_E4 440.000
+int noidelamare[]{
+NOTE_D4, NOTE_E4, NOTE_A4, NOTE_E4, NOTE_A4
 }
 
-void loop() {}
+int durades[]{
+   500, 125, 250, 500, 125
+}
+void loop() {
+
+}
+
+void loop(){
+int numNotes= siezof(noidelamare)/siezof(noidelamare[]),
+//Calculem el número de notes dividint el número de bytes totals de la cançó que ho calcula la funcio "sizeof" entre el número de bytes
+de una de les notes (en aquest cas la primera). En aquest exemple tenim 5 notes i cada nota ocuparà un número enter que es igual a 2 bytes
+en arduino. Per tant el noi de la mare ocupa 10 bytes que dividit entre el tamany de la primera nota que son 2 bytes dona 5 notes musicals.
+El número 5 el guardem a la variabble numNotes.
+//L'avantatge que té aquest codi és que sempre contarà les notes i puc canviar qual vulgui la cançó

@@ -31,19 +31,6 @@
     let modelsReady = false;
     let currentExpression = { dominant: 'neutral', intensity: 0 };
     let smoothIntensity = 0;
-    
-    // Colores base
-    colorNubes = color(168, 170, 169);
-    colorMar = color(135, 162, 178);
-    colorMuro = color(180, 132, 115);
-    colorChaqueta = color(57, 53, 60);
-    colorCamisa = color(255,255,255);
-    colorCorbata = color(189, 25, 10);
-    colorSombrero = color(0,0,0);
-    colorCara = color(253,221,202);
-    colorManzana = color(158, 216, 43);
-    colorCuello = color(253,221,202);
-    colorMano = color(253,221,202);
 
     // Traducció d'emocions a català
     const emotionsCA = {
@@ -178,8 +165,20 @@ endShape();
 pop();
 break; // <-- Només necessari dins d'un switch/case AQUI NO
 
-      
       */
+     // Colores base
+    colorNubes = color(168, 170, 169);
+    colorMar = color(135, 162, 178);
+    colorMuro = color(180, 132, 115);
+    colorChaqueta = color(57, 53, 60);
+    colorCamisa = color(255,255,255);
+    colorCorbata = color(189, 25, 10);
+    colorSombrero = color(0,0,0);
+    colorCara = color(253,221,202);
+    colorManzana = color(158, 216, 43);
+    colorCuello = color(253,221,202);
+    colorMano = color(253,221,202);
+      
       let n = 14;
       let rBase = map(intensity, 0, 1, min(width, height)*0.22, min(width, height)*0.36);
       fill(255, 220, 60, 120 + 120*intensity);

@@ -107,18 +107,17 @@
 
       // Dibuixa la figura geomètrica gran centrada segons el sentiment
       push();
-      translate(width/2, height/2);
       switch(currentExpression.dominant) {
         case 'happy':
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800  
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800  
         figuraFelic(smoothIntensity);
         pop();
         break;
         
         case 'sad':
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800       
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800       
         figuraTrist(smoothIntensity); 
         pop();
         break;
@@ -126,7 +125,7 @@
         //Enfadat
         case 'angry':
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800      
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800      
         figuraEnfadat(smoothIntensity); 
         pop();
         break;
@@ -134,7 +133,7 @@
         //Disgustat
         case 'disgusted':  
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800
         figuraFastiguejat(smoothIntensity); 
         pop();
         break;
@@ -142,21 +141,21 @@
         //Sorprès
         case 'surprised': 
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800
         figuraSorprès(smoothIntensity); 
         pop();
         break;
 
         case 'fearful':    
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800
         figuraEspantat(smoothIntensity); 
         pop();
         break;
 
         default:       
         push();
-        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800    
+        translate(width / 2 - 400, height / 2 - 400); // 300 i 400 són la meitat de 600x800    
         figuraNeutral(smoothIntensity); 
         pop();
         break;
@@ -195,12 +194,7 @@
    r = map(intensity, 0, 1, 232, 232);
    g = map(intensity, 0, 1, 166, 166);
    b = map(intensity, 0, 1, 138, 138);
-      
-   function setup() {
-    createCanvas(800, 800);
-    noLoop();
-  }
-
+    
   function draw() {
     background(220);
     dibujarNubes();
@@ -904,7 +898,7 @@
   vertex(547, 702.1875);
   endShape();
   }
-  }  
+  }
  }
 
     function figuraTrist(intensity) {
@@ -1627,30 +1621,18 @@
 
     function figuraEnfadat(intensity) {
 
-    r = map(intensity, 0, 1, 253, 199);
-    g = map(intensity, 0, 1, 221, 90);
-    b = map(intensity, 0, 1, 202, 89);
-    
-  function setup() {
-    createCanvas(800, 800);
-    noLoop();
-  }
+    let r = map(intensity, 0, 1, 253, 199);
+   let g = map(intensity, 0, 1, 221, 90);
+   let b = map(intensity, 0, 1, 202, 89);
+   
+    function setup() {
+  createCanvas(800, 800);  // o el tamaño que necesites
+  noLoop(); // si solo quieres dibujar una vez
+  figuraEnfadat(0.5); // intensidad entre 0 y 1
+}
 
-  function draw() {
-    background(220);
-    dibujarNubes();
-    dibujarMar();
-    dibujarMuro();
-    dibujarChaqueta();
-    dibujarCamisa();
-    dibujarCorbata();
-    dibujarSombrero();
-    dibujarCara();
-    dibujarManzana();
-    dibujarCuello();
-    dibujarManos();
   
-    function dibujarNubes() {
+    //  dibujarNubes()
     beginShape();
     fill(168, 170, 169);
     vertex(115, 450.1875);
@@ -1659,9 +1641,9 @@
     vertex(683, 451.1875);
     vertex(115, 451.1875);
     endShape();
-  }
+  
 
-  function dibujarMar() {
+  //  dibujarMar() {
     beginShape();
     fill(135, 162, 178);
     vertex(114, 446.1875);
@@ -1670,9 +1652,9 @@
     vertex(114, 639.1875);
     vertex(115, 446.1875);
     endShape();
-  }
+  
 
-  function dibujarMuro() {
+  //  dibujarMuro() {
     beginShape();
     fill(180, 132, 115);
     vertex(114, 659.1875);
@@ -1709,9 +1691,9 @@
     vertex(659, 753.1875);
     vertex(683, 753.1875);
     endShape();
-  }
+  
 
-  function dibujarChaqueta() {
+//  dibujarChaqueta() {
   beginShape();
   fill(57, 53, 60)
   vertex(361, 254.1875);
@@ -1877,9 +1859,9 @@
   vertex(410, 617.1875);
   vertex(401, 617.1875);
   vertex(400, 618.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCamisa() {
+//  dibujarCamisa() {
   beginShape();
   fill(255,255,255)
   vertex(363, 258.1875);
@@ -1916,9 +1898,9 @@
   vertex(397, 415.1875);
   vertex(393, 441.1875);
   vertex(392, 449.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCorbata() {
+  //  dibujarCorbata() {
   beginShape();
   fill(189, 25, 10)
   vertex(394, 288.1875);
@@ -1935,9 +1917,9 @@
   vertex(393, 312.1875);
   vertex(389, 305.1875);
   vertex(393, 288.1875);
-  endShape();}
+  endShape();
 
-  function dibujarSombrero() {
+//  dibujarSombrero() {
   beginShape();
   fill(0,0,0)
   vertex(349, 173.1875);
@@ -1985,9 +1967,9 @@
   vertex(437, 165.1875);
   vertex(444, 169.1875);
   vertex(447, 172.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCara() {
+//  dibujarCara() {
   beginShape();
   fill(r,g,b)
   vertex(397, 273.1875);
@@ -2073,9 +2055,9 @@
   vertex(415, 268.1875);
   vertex(407, 271.1875);
   vertex(397, 273.1875);
-  endShape();}
+  endShape();
 
-  function dibujarManzana() {
+//  dibujarManzana() {
     beginShape();
   fill(158, 216, 43)
   vertex(399, 187.1875);
@@ -2185,9 +2167,9 @@
   vertex(409, 243.1875);
   vertex(396, 246.1875);
   endShape();
-  }
+  
 
-  function dibujarCuello() {
+  //  dibujarCuello() {
     beginShape();
   fill(r,g,b)
   vertex(410, 269.1875);
@@ -2211,8 +2193,8 @@
   vertex(396, 272.1875);
   vertex(409, 270.1875);
   endShape();
-  }
-  function dibujarManos() {
+  
+  //  dibujarManos() {
     beginShape();
     fill(r,g,b)
   vertex(280, 702.1875);
@@ -2339,9 +2321,7 @@
   vertex(541, 704.1875);
   vertex(547, 702.1875);
   endShape();
-  }
-  }
-}
+    }
     function figuraFastiguejat(intensity) {
     r = map(intensity, 0, 1, 255, 0);
     g = map(intensity, 0, 1, 255, 255);
@@ -3368,7 +3348,7 @@ endShape();
   endShape();
   }
   }
-}
+ }
 
     function figuraEspantat(intensity) {
    r = map(intensity, 0, 1, 29, 29);
@@ -4090,7 +4070,8 @@ endShape();
   endShape();
   }
   }
-    }
+ }
+
     function figuraNeutral(intensity) {
      function setup() {
     createCanvas(800, 800);

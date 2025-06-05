@@ -1626,26 +1626,14 @@
     g = map(intensity, 0, 1, 90, 90);
     b = map(intensity, 0, 1, 89, 89);
 
-  function setup() {
+    function setup() {
     createCanvas(800, 800);
     noLoop();
   }
 
-  function draw() {
-    background(220);
-    dibujarNubes();
-    dibujarMar();
-    dibujarMuro();
-    dibujarChaqueta();
-    dibujarCamisa();
-    dibujarCorbata();
-    dibujarSombrero();
-    dibujarCara();
-    dibujarManzana();
-    dibujarCuello();
-    dibujarManos();
-  
-    function dibujarNubes() {
+function draw() {
+  background(255);  // Puedes cambiar el fondo si quieres
+
     beginShape();
     fill(168, 170, 169);
     vertex(115, 450.1875);
@@ -1654,9 +1642,8 @@
     vertex(683, 451.1875);
     vertex(115, 451.1875);
     endShape();
-  }
+  
 
-  function dibujarMar() {
     beginShape();
     fill(135, 162, 178);
     vertex(114, 446.1875);
@@ -1665,9 +1652,8 @@
     vertex(114, 639.1875);
     vertex(115, 446.1875);
     endShape();
-  }
+  
 
-  function dibujarMuro() {
     beginShape();
     fill(180, 132, 115);
     vertex(114, 659.1875);
@@ -1704,9 +1690,8 @@
     vertex(659, 753.1875);
     vertex(683, 753.1875);
     endShape();
-  }
+  
 
-  function dibujarChaqueta() {
   beginShape();
   fill(57, 53, 60)
   vertex(361, 254.1875);
@@ -1872,9 +1857,8 @@
   vertex(410, 617.1875);
   vertex(401, 617.1875);
   vertex(400, 618.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCamisa() {
   beginShape();
   fill(255,255,255)
   vertex(363, 258.1875);
@@ -1911,9 +1895,8 @@
   vertex(397, 415.1875);
   vertex(393, 441.1875);
   vertex(392, 449.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCorbata() {
   beginShape();
   fill(189, 25, 10)
   vertex(394, 288.1875);
@@ -1930,9 +1913,8 @@
   vertex(393, 312.1875);
   vertex(389, 305.1875);
   vertex(393, 288.1875);
-  endShape();}
+  endShape();
 
-  function dibujarSombrero() {
   beginShape();
   fill(0,0,0)
   vertex(349, 173.1875);
@@ -1980,11 +1962,10 @@
   vertex(437, 165.1875);
   vertex(444, 169.1875);
   vertex(447, 172.1875);
-  endShape();}
+  endShape();
 
-  function dibujarCara() {
   beginShape();
-  fill(r,g,b)
+  fill(253,221,202)
   vertex(397, 273.1875);
   vertex(385, 270.1875);
   vertex(371, 260.1875);
@@ -2068,9 +2049,8 @@
   vertex(415, 268.1875);
   vertex(407, 271.1875);
   vertex(397, 273.1875);
-  endShape();}
+  endShape();
 
-  function dibujarManzana() {
     beginShape();
   fill(158, 216, 43)
   vertex(399, 187.1875);
@@ -2180,11 +2160,10 @@
   vertex(409, 243.1875);
   vertex(396, 246.1875);
   endShape();
-  }
+  
 
-  function dibujarCuello() {
     beginShape();
-  fill(r,g,b)
+  fill(253,221,202)
   vertex(410, 269.1875);
   vertex(423, 259.1875);
   vertex(433, 250.1875);
@@ -2206,10 +2185,8 @@
   vertex(396, 272.1875);
   vertex(409, 270.1875);
   endShape();
-  }
-  function dibujarManos() {
+  
     beginShape();
-    fill(r,g,b)
   vertex(280, 702.1875);
   vertex(280, 706.1875);
   vertex(283, 716.1875);
@@ -2334,9 +2311,8 @@
   vertex(541, 704.1875);
   vertex(547, 702.1875);
   endShape();
-  }
-  }
- }
+}
+    }
     function figuraFastiguejat(intensity) {
     r = map(intensity, 0, 1, 255, 0);
     g = map(intensity, 0, 1, 255, 255);

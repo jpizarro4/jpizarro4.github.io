@@ -1,148 +1,1512 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projecte d'Arduino de música i llums</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background: #f0f4f8;
-            color: #333d4b;
-        }
-        .content-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 30px 40px;
-            box-shadow: 0 8px 20px rgba(0, 0, 50, 0.1);
-            border-radius: 12px;
-            border: 1px solid #d1dbe8;
-        }
-        h1, h2, h3 {
-            color: #1a3e72;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            border-bottom: 3px solid #4a90e2;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 40px;
-        }
-        h3 {
-            font-size: 1.4rem;
-            margin-top: 30px;
-        }
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #495a6b;
-        }
-        b {
-            color: #3467c1;
-        }
-        img {
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .images-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        pre {
-            background: #e7efff;
-            padding: 15px;
-            overflow-x: auto;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #0d1a42;
-        }
-        code {
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .copy-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            color: #4a90e2;
-        }
-        @media (max-width: 600px) {
-            .content-container {
-                padding: 20px;
-                margin: 20px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
-    <script>
-        function copyCode(button) {
-            const codeBlock = button.nextElementSibling.innerText;
-            navigator.clipboard.writeText(codeBlock).then(() => {
-                button.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
-            });
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
 </head>
 <body>
 
-<div class="content-container">
-    <h1>Projecte:</h1>
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
 
-    <h3>Introducció</h3>
-    <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
-        melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+<main>
+  <h1>Projecte:</h1>
 
-    <h3>Objectius</h3>
-    <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
-        reproduir música i per encendre els LEDs.</p>
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
 
-    <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
-        color mentre sonava la música.</p>
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
 
-    <h3>Explicació del projecte</h3>
-    <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
-        connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
 
-    <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
-        i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
-        corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
 
-    <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
-        per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
-        ser clau perquè el projecte funcionés bé.</p>
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
 
-    <div class="images-container">
-        <img src="Circuit.png" alt="Captura de pantalla" style="max-width: 100%; height: auto;">
-        <img src="placa.jpg" alt="Captura de pantalla" style="max-width: 50%; height: auto;">
-    </div>
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
 
-    <h2>Problemes:</h2>
-    <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
-        solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
-</div>
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Projecte:</h1>
+
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
+
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
+
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
+
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
+
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Projecte:</h1>
+
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
+
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
+
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
+
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
+
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Projecte:</h1>
+
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
+
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
+
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
+
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
+
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Projecte:</h1>
+
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
+
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
+
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
+
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
+
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projecte d'Arduino de música i llums</title>
+
+  <!-- Fuentes y estilos FUT.GG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: url('https://static.fut.gg/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #3ea6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #141414cc; /* Fondo negro semitransparente */
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3ea6ff33;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: #1f1f1fdd;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgb(62 166 255 / 0.4);
+      padding: 2.5rem 3rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #3ea6ff;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #59a7ff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #7fb7ff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+      color: #c1d1ffdd;
+    }
+
+    b {
+      color: #3ea6ff;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .images-container img {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(62, 166, 255, 0.5);
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 45%;
+    }
+
+    pre {
+      background-color: #0d1a42;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #a6cdfc;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #3ea6ffbb;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #a6cdfc;
+    }
+
+    /* Botón copiar, si usas */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #3ea6ff;
+      transition: color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #a0d1ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .images-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .images-container img {
+        flex: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo">FUT.GG</div>
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Projecte</a>
+    <a href="#">Contacte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Projecte:</h1>
+
+  <h3>Introducció</h3>
+  <p>En aquest projecte hem creat un sistema interactiu amb una placa <b>Arduino nRF52832</b> que combina so i llum per fer-ho més divertit. La idea principal era que sonés la 
+      melodia de Star Wars en un <b>altaveu</b>, mentre que un <b>LED RGB</b> canviava de color segons la nota que estigués sonant.</p>
+
+  <h3>Objectius</h3>
+  <p>Els nostres objectius eren fer un circuit que funcionés amb Arduino, amb un codi que nosaltres mateixos programéssim i que fos funcional. Aquest codi havia de servir per 
+      reproduir música i per encendre els LEDs.</p>
+
+  <p>Des del principi volíem que, amb un botó, es pogués encendre o apagar un altaveu que sonés la cançó de Star Wars, i que a la vegada un LED RGB connectat anés canviant de 
+      color mentre sonava la música.</p>
+
+  <h3>Explicació del projecte</h3>
+  <p>La placa <b>Arduino nRF52832</b> és bastant potent i versàtil, així que ens anava perfecte per a aquest projecte. A més, té bona potència de processament i es pot 
+      connectar per Bluetooth. Vam connectar l’altaveu a un dels pins digitals de la placa i li vam posar els valors de les notes que volíem que sonessin.</p>
+
+  <p>Pel LED RGB, vam connectar els tres colors (vermell, verd i blau) als pins PWM de l’Arduino. Això ens va permetre controlar la intensitat de cada color per separat, 
+      i així poder fer molts colors diferents. La idea era que cada nota tingués assignat un color o combinació, i que quan sonés la nota, el LED es posés del color 
+      corresponent, creant un efecte visual ben xulo i dinàmic.</p>
+
+  <p>La programació la vam fer a l’entorn d’Arduino. Primer vam definir les freqüències de les notes de Star Wars i les vam guardar en arrays. Després vam fer una funció que, 
+      per cada nota, enviava la freqüència a l’altaveu i, al mateix temps, ajustava els valors PWM del LED perquè canviés de color. La sincronització entre el so i la llum va 
+      ser clau perquè el projecte funcionés bé.</p>
+
+  <div class="images-container">
+      <img src="Circuit.png" alt="Captura de pantalla" />
+      <img src="placa.jpg" alt="Captura de pantalla" />
+  </div>
+
+  <h2>Problemes:</h2>
+  <p>Com passa sovint, vam tenir un problema: quan volíem carregar el codi a la placa, l’ordinador no detectava bé el port USB i no podíem connectar-nos. Per sort, vam poder 
+      solucionar-ho ràpid amb l’ordinador d’un company, i així vam carregar el codi sense problemes i vam veure com el projecte funcionava de veritat.</p>
+</main>
 
 </body>
 </html>

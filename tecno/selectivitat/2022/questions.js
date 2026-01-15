@@ -1,7 +1,6 @@
 const questions_2022 = [
     {
-        // --- EXERCICI 1: QÜESTIONS (TEST) 2022 SÈRIE 2 ---
-{
+        
     type: "questions",
     category: "materials",
     text: "Qüestió 1: Per a realitzar un assaig de Charpy s’utilitza un pèndol d’1 m de longitud que a l’extrem té una massa de 22 kg. S’usa una proveta amb una entalla en forma de U i una secció de 80 mm². A l’instant inicial, el pèndol està en posició horitzontal, i després de xocar contra la proveta, el seu extrem s’eleva 250 mm. Quanta energia s’ha absorbit en el xoc?",

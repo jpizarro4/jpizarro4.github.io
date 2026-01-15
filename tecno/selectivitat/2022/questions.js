@@ -1,4 +1,4 @@
-const questions_2022 = [
+const questions = [
     {
         
     type: "questions",

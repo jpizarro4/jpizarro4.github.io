@@ -746,12 +746,7 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">A) Diagrama de cos lliure</span>
-                <p>Sobre el taulell actuen les següents forces:</p>
-                <ul>
-                    <li>El pes (\\(P = m \\cdot g\\)) aplicat al centre de gravetat (a distància \\(1,5L\\) de l'extrem esquerre).</li>
-                    <li>La força aplicada \\(F\\) en el punt \\(O\\).</li>
-                    <li>Les forces de les barres \\(F_{AB}\\) i \\(F_{CD}\\) aplicades en els punts \\(B\\) i \\(D\\), amb la direcció de les barres (\\(60^\\circ\\)).</li>
-                </ul>
+               '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r14a.png" style="max-width:300px;"></div>'
             </div>
             <div class="step-block">
                 <span class="step-header">B) Valor de la força F aplicada</span>
@@ -770,6 +765,34 @@ const questions = [
                 <p>Per simetria del suport respecte a la càrrega total, si analitzem moments detalladament, les dues barres suporten la mateixa càrrega:</p>
                 \\[ F_{AB} = F_{CD} = \\frac{56,64}{2} = 28,32 \\text{ N} \\]
                 <p><b>Estat de les barres:</b> Com que han d'empènyer el taulell cap amunt per compensar el pes i la força \\(F\\), les barres estan treballant a <b>compressió</b>.</p>
+            </div>`
+    },
+    {
+        type: "exercicis",
+        category: "electrics",
+        text: "S’instaŀlen \\(n = 7\\) estufes elèctriques de potència \\(P_1 = 900 \\text{ W}\\) a la terrassa d’un bar i s’alimenten a una tensió \\(U_1 = 230 \\text{ V}\\). Determineu:",
+        options: [],
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Corrent per estufa (\\(I_i\\)) i corrent total (\\(I\\))</span>
+                <p>Per a cada estufa (assumint càrrega purament resistiva):</p>
+                \\[ I_i = \\frac{P_1}{U_1} = \\frac{900 \\text{ W}}{230 \\text{ V}} = 3,913 \\text{ A} \\]
+                <p>Com que les estufes es connecten en paral·lel a la xarxa, el corrent total és la suma dels corrents individuals:</p>
+                \\[ I = n \\cdot I_i = 7 \\cdot 3,913 = 27,39 \\text{ A} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Resistència elèctrica de cada estufa (R)</span>
+                <p>Podem utilitzar la llei d'Ohm o la relació amb la potència:</p>
+                \\[ R = \\frac{U_1}{I_i} = \\frac{230 \\text{ V}}{3,913 \\text{ A}} = 58,77 \\, \\Omega \\]
+                <p>O també:</p>
+                \\[ R = \\frac{U_1^2}{P_1} = \\frac{230^2}{900} = 58,78 \\, \\Omega \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Potència a tensió reduïda (\\(P_2\\) a \\(125 \\text{ V}\\))</span>
+                <p>La resistència de l'estufa es manté constant. Calculem la nova potència amb la tensió \\(U_2\\):</p>
+                \\[ P_2 = \\frac{U_2^2}{R} = \\frac{125^2}{58,78} = \\frac{15625}{58,78} = 265,82 \\text{ W} \\]
+                <p>S'observa que en reduir la tensió a quasi la meitat, la potència es redueix dràsticament (proporcional al quadrat de la tensió).</p>
             </div>`
     }
 ];

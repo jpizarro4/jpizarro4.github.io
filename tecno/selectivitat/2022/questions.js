@@ -95,35 +95,35 @@ const questions = [
     {
         type: "exercicis",
         category: "maquines",
-        text: `Un volant amb un moment d’inèrcia al voltant del seu eix I = 0,9 kg · m<sup>2</sup> gira a n<sub>0</sub> = 5 000 min<sup>–1</sup> gràcies a l’acció d’un motor. Es desconnecta el motor i s’observa que el volant triga t = 1 min a quedar-se en repòs a causa d’un parell de fricció que se suposa constant.
+        text: `Un volant amb un moment d’inèrcia al voltant del seu eix \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\) gràcies a l’acció d’un motor. Es desconnecta el motor i s’observa que el volant triga \\(t = 1 \\text{ min}\\) a quedar-se en repòs a causa d’un parell de fricció que se suposa constant.
         <br><br>Determineu:
-        <br><strong>a)</strong> L’acceleració angular del volant α. [0,5 punts]
-        <br><strong>b)</strong> El nombre de voltes n que farà el volant abans d’aturar-se. [1 punt]
-        <br><strong>c)</strong> L’energia mecànica dissipada en aquest procés E<sub>diss</sub>. [1 punt]`,
+        <br><strong>a)</strong> L’acceleració angular del volant \\(\\alpha\\). [0,5 punts]
+        <br><strong>b)</strong> El nombre de voltes \\(n\\) que farà el volant abans d’aturar-se. [1 punt]
+        <br><strong>c)</strong> L’energia mecànica dissipada en aquest procés \\(E_{\\text{diss}}\\). [1 punt]`,
         correctAnswer: "",
         steps: `
         <strong>Resolució pas a pas:</strong>
         <br><br>
-        <strong>a) Acceleració angular $\\alpha$:</strong>
-        <br>Convertim unitats al SI:
+        <strong>a) Acceleració angular \\(\\alpha\\):</strong>
+        <br>
         \\[
-        \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,60 \\, \\text{rad/s} \\, ; \\quad t = 60 \\, \\text{s}
+        \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,60 \\text{ rad/s} ; \\quad t = 60 \\text{ s}
         \\]
         \\[
-        \\alpha = \\frac{\\omega - \\omega_0}{t} = \\frac{0 - 523,60}{60} = -8,727 \\, \\text{rad/s}^2
-        \\]
-
-        <strong>b) Nombre de voltes $n$:</strong>
-        \\[
-        \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 = 523,60 \\cdot 60 + \\frac{1}{2} (-8,727) \\cdot 60^2 = 15708 \\, \\text{rad}
-        \\]
-        \\[
-        n = \\frac{\\theta}{2\\pi} = \\frac{15708}{2\\pi} = 2500 \\, \\text{voltes}
+        \\alpha = \\frac{\\omega - \\omega_0}{t} = \\frac{0 - 523,60}{60} = -8,727 \\text{ rad/s}^2
         \\]
 
-        <strong>c) Energia mecànica dissipada $E_{\\text{diss}}$:</strong>
+        <strong>b) Nombre de voltes \\(n\\):</strong>
         \\[
-        E_{\\text{diss}} = \\frac{1}{2} I \\cdot \\omega_0^2 = \\frac{1}{2} \\cdot 0,9 \\cdot 523,60^2 = 123414 \\, \\text{J} = 123,41 \\, \\text{kJ}
+        \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 = 523,60 \\cdot 60 + \\frac{1}{2} (-8,727) \\cdot 60^2 = 15708 \\text{ rad}
+        \\]
+        \\[
+        n = \\frac{\\theta}{2\\pi} = \\frac{15708}{2\\pi} = 2500 \\text{ voltes}
+        \\]
+
+        <strong>c) Energia mecànica dissipada \\(E_{\\text{diss}}\\):</strong>
+        \\[
+        E_{\\text{diss}} = \\frac{1}{2} I \\cdot \\omega_0^2 = \\frac{1}{2} \\cdot 0,9 \\cdot 523,60^2 = 123414 \\text{ J} = 123,41 \\text{ kJ}
         \\]`
     },
     {

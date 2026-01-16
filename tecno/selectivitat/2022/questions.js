@@ -653,15 +653,11 @@ const questions = [
     correctAnswer: "",
     steps: `
         <div class="step-block">
-            <span class="step-header">A) Funció lògica i simplificació</span>
-            <p>A partir de l'anàlisi de les portes lògiques de l'esquema:</p>
-            \\[ S = overline{(bar{a} + b)(a + b)} + (overline{c cdot d}) \\]
-            <p>Simplificant la funció mitjançant les lleis de l'àlgebra de Boole i De Morgan:</p>
-            \\[ S = bar{b} + bar{c} + bar{d} \\]
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11a.png" alt="Solució" style="max-width:100%; border-radius:4px;"> 
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>
-           <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;"> 
+           <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Taula" style="max-width:100%; border-radius:4px;"> 
 
                 </div>
         </div>

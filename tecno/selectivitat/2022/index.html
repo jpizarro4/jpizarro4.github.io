@@ -7,34 +7,63 @@
     <script src="questions.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Ajustos ràpids per assegurar que la navbar es vegi bé */
         .ocult { display: none; }
         .visible { display: block; }
         .question-images { margin: 10px 0; }
-        #load-time { margin: 20px; font-style: italic; color: #555; font-size: 0.8rem; }
+        
+        /* Navbar fixa amb flexbox per separar títol i lluna */
+        .navbar-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            z-index: 2000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Espaiat per sota de la navbar */
+        body { padding-top: 80px; }
+        
+        #load-time { text-align: center; margin: 20px; font-style: italic; color: #555; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-<header class="navbar-header" style="position: fixed; top: 0; left: 0; width: 100%; background: var(--bg-card); border-bottom: 1px solid var(--border); z-index: 1000; padding: 15px 0;">
-    <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-        <h2 style="margin: 0; font-size: 1.2rem;">Problemes de Tecnologia</h2>
+<header class="navbar-header">
+    <div class="nav-content">
+        <h2 style="margin: 0; font-size: 1.1rem; font-weight: 800; color: var(--text-main);">Problemes de Tecnologia</h2>
         <span id="dark-toggle" style="cursor:pointer; font-size: 1.5rem;">🌙</span>
     </div>
 </header>
 
-<div class="filter-group-container" style="margin-top: 100px;">
-    <label>Tipus de preguntes:</label>
+<div class="filter-group-container">
+    <div style="margin-bottom: 10px; font-weight: bold; font-size: 0.9rem;">Tipus:</div>
     <div id="type-filter-buttons" class="filter-group">
         <button class="filter-button active" data-filter="totes" onclick="selectFilter(this, 'type')">Totes</button>
         <button class="filter-button" data-filter="questions" onclick="selectFilter(this, 'type')">Qüestions</button>
         <button class="filter-button" data-filter="exercicis" onclick="selectFilter(this, 'type')">Exercicis</button>
     </div>
 
-    <label>Tria una categoria:</label>
+    <div style="margin: 15px 0 10px 0; font-weight: bold; font-size: 0.9rem;">Categoria:</div>
     <div id="category-filter-buttons" class="filter-group">
         <button class="filter-button active" data-filter="tot" onclick="selectFilter(this, 'category')">Tot</button>
         <button class="filter-button" data-filter="energia" onclick="selectFilter(this, 'category')">Energia</button>
-        <button class="filter-button" data-filter="materials" onclick="selectFilter(this, 'category')">Materials i assaigs</button>
+        <button class="filter-button" data-filter="materials" onclick="selectFilter(this, 'category')">Materials</button>
         <button class="filter-button" data-filter="metrologia" onclick="selectFilter(this, 'category')">Metrologia</button>
         <button class="filter-button" data-filter="pneumatica" onclick="selectFilter(this, 'category')">Pneumàtica</button>
         <button class="filter-button" data-filter="motors" onclick="selectFilter(this, 'category')">Motors</button>
@@ -46,22 +75,18 @@
 <div id="load-time"></div>
 
 <script>
-/* ----------------- Log de càrrega ----------------- */
-let domReadyTime = 0;
-document.addEventListener("DOMContentLoaded", () => { domReadyTime = (performance.now()).toFixed(2); });
-window.addEventListener('load', () => {
-    const loadDiv = document.getElementById("load-time");
-    if(loadDiv) loadDiv.innerHTML = `Pàgina carregada en ${performance.now().toFixed(2)} ms`;
-});
-
-/* ----------------- Mode fosc ----------------- */
+/* ----------------- Mode fosc i inicialització ----------------- */
 const toggle = document.getElementById("dark-toggle");
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
 });
-if(localStorage.getItem("theme")==="dark") { document.body.classList.add("dark-mode"); toggle.textContent="☀️"; }
+
+if(localStorage.getItem("theme")==="dark") { 
+    document.body.classList.add("dark-mode"); 
+    toggle.textContent="☀️"; 
+}
 
 /* ----------------- Lògica de Filtres ----------------- */
 let activeFilters = { type: 'totes', category: 'tot' };
@@ -73,11 +98,11 @@ function selectFilter(button, filterType) {
     renderQuiz();
 }
 
-/* ----------------- Render i Funcions Auxiliars ----------------- */
+/* ----------------- Renderitzat ----------------- */
 function renderImages(q) {
     let html = '';
     if(q.images) html += `<div class="question-images">${q.images}</div>`;
-    if(q.answerImage) html += `<img src="${q.answerImage}" style="max-width:100%; height:auto; margin-top:10px;">`;
+    if(q.answerImage) html += `<img src="${q.answerImage}" style="max-width:100%; height:auto; margin-top:10px; border-radius: 8px;">`;
     return html;
 }
 
@@ -122,21 +147,18 @@ function renderQuiz() {
     MathJax.typesetPromise();
 }
 
-/* ----------------- FUNCIONS CLAU CORREGIDES ----------------- */
+/* ----------------- Funcions Resposta ----------------- */
 function checkAnswer(selected, correct, answerId, stepsId, resultId, correctText, buttonElement) {
     const a = document.getElementById(answerId);
     const r = document.getElementById(resultId);
 
-    // 1. Netejar seleccions anteriors
     const ul = buttonElement.closest('ul');
     ul.querySelectorAll('button').forEach(btn => {
         btn.classList.remove('selected', 'selected-correct', 'selected-incorrect');
     });
 
-    // 2. Comprovar resposta
     const isCorrect = selected.trim().toLowerCase() === correct.trim().toLowerCase();
 
-    // 3. Feedback visual
     if (isCorrect) {
         buttonElement.classList.add('selected-correct');
         a.innerHTML = `<div class="correcta">✅ Correcte! Has seleccionat la resposta correcta.</div>`;
@@ -145,11 +167,9 @@ function checkAnswer(selected, correct, answerId, stepsId, resultId, correctText
         a.innerHTML = `<div class="incorrecta">❌ Incorrecte. La resposta correcta és: ${correctText}.</div>`;
     }
         
-    // 4. Mostrar resultats i solució
     r.classList.add('visible');
     r.classList.remove('ocult');
     
-    // Si és exercici, actualitzem el botó de sota
     const solBtn = r.nextElementSibling;
     if(solBtn && solBtn.classList.contains('solution-button')) solBtn.textContent = 'Amaga solució';
 
@@ -168,17 +188,13 @@ function toggleSolution(idx, btn) {
     MathJax.typesetPromise();
 }
 
-function calculateGlobalNumbers() {
-    let qCount = 1, eCount = 1;
+function initializeQuiz() {
     if (typeof questions === 'undefined') return;
+    let qCount = 1, eCount = 1;
     questions.forEach(q => {
         if (q.type === 'questions') { q.globalNumber = qCount++; q.typeText = 'Qüestió'; }
         else { q.globalNumber = eCount++; q.typeText = 'Exercici'; }
     });
-}
-
-function initializeQuiz() {
-    calculateGlobalNumbers();
     renderQuiz();
 }
 

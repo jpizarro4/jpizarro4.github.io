@@ -178,7 +178,7 @@ const questions = [
                 <span class="step-header">C) Energia dissipada</span>
                 \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
             </div>`
-    }
+    },
     {
         type: "exercicis",
         category: "maquines",

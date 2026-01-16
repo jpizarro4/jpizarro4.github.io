@@ -735,5 +735,41 @@ const questions = [
                 \\[ \\eta = \\frac{P_{\\text{mec}}}{P_{\\text{tèrm}}} = \\frac{20}{60,67} = 0,3296 \\]
                 \\[ \\eta \\approx 33 \\% \\]
             </div>`
+    },
+    {
+        type: "exercicis",
+        category: "estatica",
+        text: "La figura representa el sistema que permet elevar el taulell d’una taula de centre. El taulell és homogeni i de gruix negligible, té una longitud \\(3L\\) i una massa \\(m = 4 \\text{ kg}\\). Les barres \\(AB\\) i \\(CD\\), de massa negligible, tenen els extrems articulats al taulell i a l’estructura. S’aplica una força \\(F\\) vertical al punt \\(O\\). Sabent que el sistema està en equilibri i que \\(\\varphi = 60^\\circ\\), determineu:",
+        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p14.png" style="max-width:300px;"></div>',
+        options: [],
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Diagrama de cos lliure</span>
+                <p>Sobre el taulell actuen les següents forces:</p>
+                <ul>
+                    <li>El pes (\\(P = m \\cdot g\\)) aplicat al centre de gravetat (a distància \\(1,5L\\) de l'extrem esquerre).</li>
+                    <li>La força aplicada \\(F\\) en el punt \\(O\\).</li>
+                    <li>Les forces de les barres \\(F_{AB}\\) i \\(F_{CD}\\) aplicades en els punts \\(B\\) i \\(D\\), amb la direcció de les barres (\\(60^\\circ\\)).</li>
+                </ul>
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Valor de la força F aplicada</span>
+                <p>Per l'equilibri de moments respecte al punt \\(D\\) (per anul·lar \\(F_{AB}\\) i \\(F_{CD}\\) que són paral·leles i no fan moment respecte a l'eix vertical si considerem només l'equilibri horitzontal de distàncies):</p>
+                <p>Com que les barres són paral·leles, el taulell es manté horitzontal. El centre de masses està a \\(1,5L\\) de l'extrem esquerre. El punt \\(D\\) està a \\(L\\) de l'extrem i el punt \\(O\\) a \\(3L\\).</p>
+                \\[ \\sum M_D = 0 \\implies P \\cdot (1,5L - L) - F \\cdot (3L - L) = 0 \\]
+                \\[ (4 \\cdot 9,81) \\cdot 0,5L = F \\cdot 2L \\]
+                \\[ F = \\frac{39,24 \\cdot 0,5}{2} = 9,81 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Forces a les barres FAB i FCD</span>
+                <p>Per l'equilibri de forces verticals (\\(\\sum F_y = 0\\)):</p>
+                \\[ (F_{AB} + F_{CD}) \\cdot \\sin(60^\\circ) = P + F \\]
+                \\[ (F_{AB} + F_{CD}) \\cdot 0,866 = 39,24 + 9,81 = 49,05 \\]
+                \\[ F_{AB} + F_{CD} = 56,64 \\text{ N} \\]
+                <p>Per simetria del suport respecte a la càrrega total, si analitzem moments detalladament, les dues barres suporten la mateixa càrrega:</p>
+                \\[ F_{AB} = F_{CD} = \\frac{56,64}{2} = 28,32 \\text{ N} \\]
+                <p><b>Estat de les barres:</b> Com que han d'empènyer el taulell cap amunt per compensar el pes i la força \\(F\\), les barres estan treballant a <b>compressió</b>.</p>
+            </div>`
     }
 ];

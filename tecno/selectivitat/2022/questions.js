@@ -746,27 +746,26 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">A) Diagrama de cos lliure</span>
-               '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r14a.png" style="max-width:300px;"></div>'
+                <div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r14a.png" style="max-width:300px;"></div>
             </div>
             <div class="step-block">
                 <span class="step-header">B) Valor de la força F aplicada</span>
-                <p>Per l'equilibri de moments respecte al punt \\(D\\) (per anul·lar \\(F_{AB}\\) i \\(F_{CD}\\) que són paral·leles i no fan moment respecte a l'eix vertical si considerem només l'equilibri horitzontal de distàncies):</p>
-                <p>Com que les barres són paral·leles, el taulell es manté horitzontal. El centre de masses està a \\(1,5L\\) de l'extrem esquerre. El punt \\(D\\) està a \\(L\\) de l'extrem i el punt \\(O\\) a \\(3L\\).</p>
-                \\[ \\sum M_D = 0 \\implies P \\cdot (1,5L - L) - F \\cdot (3L - L) = 0 \\]
-                \\[ (4 \\cdot 9,81) \\cdot 0,5L = F \\cdot 2L \\]
-                \\[ F = \\frac{39,24 \\cdot 0,5}{2} = 9,81 \\text{ N} \\]
+                <p>A partir de les equacions d'equilibri estàtic:</p>
+                \\[ \\sum F_{\\text{horitzontals}} = 0 \\implies F_{AB} \\cdot \\cos(\\varphi) - F_{CD} \\cdot \\cos(\\varphi) = 0 \\implies F_{AB} = F_{CD} \\]
+                \\[ \\sum F_{\\text{verticals}} = 0 \\implies F - F_{AB} \\cdot \\sin(\\varphi) + F_{CD} \\cdot \\sin(\\varphi) - m \\cdot g = 0 \\]
+                <p>Com que \\(F_{AB} = F_{CD}\\), els termes amb sinus s'anul·len en l'equació de forces verticals:</p>
+                \\[ F = m \\cdot g = 4 \\cdot 9,81 = 39,24 \\text{ N} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">C) Forces a les barres FAB i FCD</span>
-                <p>Per l'equilibri de forces verticals (\\(\\sum F_y = 0\\)):</p>
-                \\[ (F_{AB} + F_{CD}) \\cdot \\sin(60^\\circ) = P + F \\]
-                \\[ (F_{AB} + F_{CD}) \\cdot 0,866 = 39,24 + 9,81 = 49,05 \\]
-                \\[ F_{AB} + F_{CD} = 56,64 \\text{ N} \\]
-                <p>Per simetria del suport respecte a la càrrega total, si analitzem moments detalladament, les dues barres suporten la mateixa càrrega:</p>
-                \\[ F_{AB} = F_{CD} = \\frac{56,64}{2} = 28,32 \\text{ N} \\]
-                <p><b>Estat de les barres:</b> Com que han d'empènyer el taulell cap amunt per compensar el pes i la força \\(F\\), les barres estan treballant a <b>compressió</b>.</p>
+                <span class="step-header">C) Forces a les barres i estat de treball</span>
+                <p>Apliquem l'equilibri de moments respecte al punt A (articulació esquerra):</p>
+                \\[ \\sum M(A) = 0 \\implies F \\cdot L + m \\cdot g \\cdot \\frac{L}{2} - F_{CD} \\cdot L \\cdot \\sin(60^\\circ) = 0 \\]
+                <p>Aïllem \\(F_{CD}\\):</p>
+                \\[ F_{CD} = \\frac{F + \\frac{m \\cdot g}{2}}{\\sin(60^\\circ)} = \\frac{39,24 + 19,62}{0,866} = 67,97 \\text{ N} \\]
+                <p>Per tant: \\(F_{AB} = F_{CD} = 67,97 \\text{ N}\\).</p>
+                <p><b>Estat de les barres:</b> Segons el sentit de les forces per mantenir l'equilibri, la barra <b>AB treballa a tracció</b> i la barra <b>CD a compressió</b>.</p>
             </div>`
-    },
+    }
     {
         type: "exercicis",
         category: "electrics",

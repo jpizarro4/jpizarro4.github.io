@@ -371,67 +371,39 @@ const questions = [
             </div>
         </div>`
 },
-[
-    {
-        type: "exercicis",
-        category: "control",
-        text: `Exercici 2 [2,5 punts en total]
-        <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-        <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
-        <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
-        <br>led: l = { 1: actiu, 0: no actiu }.
-        <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
-        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-        <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
-        correctAnswer: "",
-        steps: `
-            <div class="step-block">
-                <span class="step-header">A) Taula de Veritat</span> 
-                <p>Múltiples de 4 i el zero (0, 4, 8, 12):</p>
-                <div style="text-align:center; margin-bottom: 10px;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Taula de veritat" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
-                </div>
-            </div>
-            <div class="step-block">
-                <span class="step-header">B) Funció lògica i simplificació</span>
-                <p>A partir de la taula de veritat, la funció com a suma de productes (mintermis) és:</p>
-                \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
-                <p>Extreient factor comú de $\\bar{c} \\bar{d}$:</p>
-                \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\bar{b} + \\bar{a} b + a \\bar{b} + a b) = \\bar{c} \\bar{d} \\cdot 1 \\]
-                \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
-            </div>
-            <div class="step-block">
-                <span class="step-header">C) Esquema de contactes</span>
-                <div style="text-align:center; margin: 15px 0;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
-                </div>
-            </div>`
-    },
-    {
-        type: "exercicis",
-        category: "maquines",
-        text: `Exercici 5 [2,5 punts en total]
-        <br>El sistema de la figura permet manipular una barra de longitud 2L mitjançant un motor que s'uneix a un tambor de diàmetre d = 450 mm. La barra és homogènia i té una massa m = 50 kg. El sistema està en equilibri amb α = φ = 30°.
-        <br><br><strong>a)</strong> Dibuixeu el diagrama de cos lliure de la barra OA.
-        <br><strong>b)</strong> Determineu la força T del cable.
-        <br><strong>c)</strong> Determineu les forces horitzontal i vertical a l'articulació O.
-        <br><strong>d)</strong> Determineu el parell Γ que fa el motor sobre el tambor.`,
-        correctAnswer: "",
-        steps: `
-            <div class="step-block">
-                <span class="step-header">B) Força T del cable</span>
-                \\[ \\sum M(O) = 0 \\rightarrow T \\cos(30) \\cdot 2L - m g \\cos(30) \\cdot L = 0 \\]
-                \\[ T = \\frac{m g}{2} = \\frac{50 \\cdot 9,81}{2} = 245,2 \\text{ N} \\]
-            </div>
-            <div class="step-block">
-                <span class="step-header">C) Forces a l'articulació O</span>
-                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\cos(30) - F_H = 0 \\rightarrow F_H = 212,3 \\text{ N} \\]
-                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30) - mg + F_V = 0 \\rightarrow F_V = 367,8 \\text{ N} \\]
-            </div>
-            <div class="step-block">
-                <span class="step-header">D) Parell motor</span>
-                \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,2 \\cdot \\frac{0,450}{2} = 55,16 \\text{ Nm} \\]
-            </div>`
-    }
-]
+{
+    type: "exercicis",
+    category: "energia",
+    text: `Exercici 3 [2,5 punts en total]
+    <br>Una persona fa un trajecte diari de d_extraurbà = 120 km i d_urbà = 10 km durant 280 dies l'any. Es planteja comprar un cotxe elèctric o un de gasoil.
+    <br><br><strong>a)</strong> Les emissions diàries equivalents de CO2 amb cada vehicle m_elèctr i m_gas. [1 punt]
+    <br><strong>b)</strong> El cost diari associat al consum d’energia de cada vehicle cd_elèctr i cd_gas. [0,5 punts]
+    <br><strong>c)</strong> Quants anys t tardarà a recuperar el sobrecost d’adquisició del vehicle elèctric? [1 punt]`,
+    correctAnswer: "",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Emissions diàries (m)</span>
+            <p><b>Vehicle elèctric:</b></p>
+            \\[ d_{total} = 120 + 10 = 130 \\text{ km} \\]
+            \\[ E_{diària} = 130 \\text{ km} \\cdot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
+            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\cdot 241 \\text{ g/kWh} = 4166,89 \\text{ g CO2} \\approx 4,167 \\text{ kg} \\]
+            <p><b>Vehicle gasoil:</b></p>
+            \\[ Consum_{L} = \\left(120 \\cdot \\frac{3,6}{100}\\right) + \\left(10 \\cdot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
+            \\[ m_{gas} = 4,76 \\text{ L} \\cdot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO2} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Cost diari (cd)</span>
+            \\[ cd_{elèctr} = 17,29 \\text{ kWh} \\cdot 0,14 \\text{ €/kWh} = 2,421 \\text{ €} \\]
+            \\[ cd_{gas} = 4,76 \\text{ L} \\cdot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">C) Temps d'amortització (t)</span>
+            <p>Sobrecost d'adquisició:</p>
+            \\[ \\Delta C = 25700 - 18000 = 7700 \\text{ €} \\]
+            <p>Estalvi anual (280 dies):</p>
+            \\[ \\text{Estalvi} = (5,755 - 2,421) \\text{ €/dia} \\cdot 280 \\text{ dies/any} = 933,52 \\text{ €/any} \\]
+            <p>Anys per recuperar la inversió:</p>
+            \\[ t = \\frac{7700 \\text{ €}}{933,52 \\text{ €/any}} = 8,248 \\text{ anys} \\]
+        </div>`
+}
 ];

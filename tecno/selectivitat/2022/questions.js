@@ -194,7 +194,8 @@ const questions = [
     category: "materials",
     text: `La taula següent mostra les característiques dels materials de quatre provetes normalitzades que s’utilitzen en un assaig de tracció. (Totes les provetes tenen les mateixes dimensions.)
     <div style="margin: 15px 0; overflow-x:auto;">
-    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5q11.png" alt="Taula">', 
+    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5q11.png" alt="Taula" style="max-width:100%; border-radius:4px;">
+    
     </div>
     Es pot afirmar que, per a un mateix esforç de tracció, la proveta que menys es deformarà és la que està feta`,
     options: [

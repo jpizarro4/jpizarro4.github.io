@@ -214,4 +214,34 @@ const questions = [
                 \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,2 \\cdot \\frac{0,45}{2} = 55,16 \\text{ Nm} \\]
             </div>`
     },
+    {
+        type: "exercicis",
+        category: "electrics",
+        text: `Un circuit elèctric està format per quatre resistències. Les tres primeres, de valor \\(R_1 = R_2 = R_3 = 20 \\, \\Omega\\), estan connectades en sèrie, i la quarta, de valor \\(R_4 = 100 \\, \\Omega\\), es connecta en paraŀlel al conjunt anterior. El circuit s’alimenta entre els extrems de \\(R_4\\) a una tensió sinusoidal \\(U = 230 \\text{ V}\\).
+        <br><br>Determineu:
+        <br><strong>a)</strong> Dibuixeu l’esquema elèctric del circuit. [0,5 p]
+        <br><strong>b)</strong> El valor de la resistència equivalent total \\(R_{eq}\\). [1 p]
+        <br><strong>c)</strong> Els valors de la intensitat \\(I\\) i la potència \\(P\\) consumides pel circuit elèctric. [1 p]`,
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Esquema elèctric</span>
+                <p>L'esquema ha de mostrar una branca amb \\(R_1, R_2\\) i \\(R_3\\) en línia, i una altra branca en paraŀlel amb \\(R_4\\), tot connectat a la font de 230V.</p>
+                
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Resistència equivalent (Req)</span>
+                <p>Primer sumem les tres resistències en sèrie (branca 1):</p>
+                \\[ R_{123} = R_1 + R_2 + R_3 = 20 + 20 + 20 = 60 \\, \\Omega \\]
+                <p>Ara calculem el paraŀlel de \\(R_{123}\\) amb \\(R_4\\):</p>
+                \\[ R_{eq} = \\frac{R_{123} \\cdot R_4}{R_{123} + R_4} = \\frac{60 \\cdot 100}{60 + 100} = \\frac{6000}{160} = 37,5 \\, \\Omega \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Intensitat i Potència</span>
+                <p>Apliquem la Llei d'Ohm per a la intensitat total:</p>
+                \\[ I = \\frac{U}{R_{eq}} = \\frac{230}{37,5} = 6,133 \\text{ A} \\]
+                <p>Calculem la potència activa consumida:</p>
+                \\[ P = U \\cdot I = 230 \\cdot 6,133 = 1410,67 \\text{ W} \\approx 1,41 \\text{ kW} \\]
+            </div>`
+    }
 ];

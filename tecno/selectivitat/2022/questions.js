@@ -460,26 +460,25 @@ const questions = [
     correctAnswer: "",
     steps: `
         <div class="step-block">
-            <span class="step-header">A) Diagrama de cos lliure (DCL)</span>
-            <p>El DCL ha d'incloure: el Pes ($P$) vertical cap avall al centre de la porta, la força aplicada ($F$) vertical cap amunt al punt P, i les dues forces de les barres ($T_{AO}$ i $T_{BQ}$) aplicades a les articulacions A i B amb la direcció de les barres (angle $\\phi$ respecte a la vertical).</p>
-            <div style="text-align:center; margin: 10px 0;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
-            </div>
+            <span class="step-header">a) Diagrama de cos lliure (DCL)</span>
+            <p>Sobre la porta actuen el pes aplicat al centre de gravetat, la força vertical \\(F\\) al punt \\(P\\) i les reaccions de les barres \\(T_{AO}\\) i \\(T_{BQ}\\) seguint la direcció de les pròpies barres.</p>
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
+            
         </div>
         <div class="step-block">
-            <span class="step-header">B) Valor de la força F aplicada</span>
-            <p>Com que el sistema forma un paral·lelogram articulat, la porta sempre es manté vertical. Si apliquem el mètode dels treballs virtuals o fem sumatori de moments respecte a l'eix de rotació instantani (que es troba a l'infinit en aquest cas de translació), observem que:</p>
-            \\[ F = m \\cdot g \\]
-            \\[ F = 3 \\text{ kg} \\cdot 9,81 \\text{ m/s}^2 = 29,43 \\text{ N} \\]
+            <span class="step-header">b) Valor de la força F aplicada</span>
+            <p>Atès que la porta es troba en repòs i el mecanisme de barres paral·leles fa que pugi mantenint-se sempre vertical (translació), el sumatori de forces verticals ha de ser zero:</p>
+            \\[ \\sum F_y = 0 \\implies F - m \\cdot g = 0 \\]
+            \\[ F = 3 \\; \\text{kg} \\cdot 9,81 \\; \\text{m/s}^2 = 29,43 \\; \\text{N} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">C) Forces a les barres (φ = 30°)</span>
-            <p>Per l'equilibri de moments respecte al punt central entre les articulacions A i B:</p>
-            \\[ \\sum M = 0 \\implies F \\cdot s + (T_{AO} \\cdot \\sin \\phi) \\cdot 0,5L - (T_{BQ} \\cdot \\sin \\phi) \\cdot 0,5L = 0 \\]
-            <p>Per l'equilibri horitzontal, les components de les barres han de ser iguals i de sentit contrari. Substituint els valors $s = 30 \\text{ mm}$ i $L = 50 \\text{ mm}$:</p>
-            \\[ 29,43 \\cdot 0,03 + 2 \\cdot (T \\cdot \\sin 30^\\circ \\cdot 0,025) = 0 \\]
-            \\[ T_{AO} = 35,32 \\text{ N} \\text{ (tracció)} \\]
-            \\[ T_{BQ} = 35,32 \\text{ N} \\text{ (compressió)} \\]
+            <span class="step-header">c) Forces a les barres per a φ = 30°</span>
+            <p>Per l'equilibri de moments respecte al centre de la porta (punt mig entre A i B) i considerant que per equilibri horitzontal les components de les forces a les barres han de ser oposades:</p>
+            \\[ \\sum M = 0 \\implies F \\cdot s + 2 \\cdot (T \\cdot \\sin \\phi \\cdot 0,5L) = 0 \\]
+            <p>Substituint els valors de les dades del gràfic (\\(s = 30 \\; \\text{mm}\\) i \\(L = 50 \\; \\text{mm}\\)):</p>
+            \\[ T_{AO} = 35,32 \\; \\text{N} \\quad (\\text{tracció}) \\]
+            \\[ T_{BQ} = 35,32 \\; \\text{N} \\quad (\\text{compressió}) \\]
+            
         </div>`
 }
 ];

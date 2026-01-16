@@ -194,43 +194,7 @@ const questions = [
     category: "materials",
     text: `La taula següent mostra les característiques dels materials de quatre provetes normalitzades que s’utilitzen en un assaig de tracció. (Totes les provetes tenen les mateixes dimensions.)
     <div style="margin: 15px 0; overflow-x:auto;">
-        <table style="width:100%; border-collapse: collapse; font-size: 0.9em; text-align: center;">
-            <tr style="background-color: #f2f2f2;">
-                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Material</th>
-                <th style="border: 1px solid #ddd; padding: 8px;">Densitat<br>\\( (\\text{kg/m}^3) \\)</th>
-                <th style="border: 1px solid #ddd; padding: 8px;">Mòdul d’elasticitat<br>\\( (\\text{GPa}) \\)</th>
-                <th style="border: 1px solid #ddd; padding: 8px;">Límit elàstic<br>\\( (\\text{MPa}) \\)</th>
-                <th style="border: 1px solid #ddd; padding: 8px;">Tensió de ruptura<br>\\( (\\text{MPa}) \\)</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Alumini pur</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">2 710</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">69</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">85</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">100</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Molibdè pur</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">10 220</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">324</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">565</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">655</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Níquel</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">8 900</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">207</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">138</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">483</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Plata</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">10 490</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">76</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">55</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">125</td>
-            </tr>
-        </table>
+      images: '<img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5q11.png" alt="Taula">', 
     </div>
     Es pot afirmar que, per a un mateix esforç de tracció, la proveta que menys es deformarà és la que està feta`,
     options: [

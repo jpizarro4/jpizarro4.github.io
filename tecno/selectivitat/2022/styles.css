@@ -1,104 +1,89 @@
-/* ===== ESTIL PROPI: INDUSTRIAL CARBON ===== */
+/* ===== ESTIL INDUSTRIAL PROPI ===== */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0f172a; /* Blau fosc carboni */
-    background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px);
-    background-size: 30px 30px; /* Quadrícula d'enginyeria */
+    background-color: #0f172a;
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+    background-size: 25px 25px; /* Quadrícula de fons */
     color: #f1f5f9;
     margin: 0;
     padding: 0;
 }
 
-/* NAVBAR AMB DIFERENCIACIÓ */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 0; width: 100%;
     background: #1e293b;
-    border-bottom: 4px solid #38bdf8; /* Blau cian viu */
-    z-index: 100;
+    border-bottom: 3px solid #00f2ff;
     padding: 15px 0;
-    text-align: center;
+    z-index: 100;
 }
 
-/* CONTENIDORS AMB ESTIL "OFFSET SHADOW" */
 .content-container, #quiz-container {
     margin: 120px auto 50px auto;
-    max-width: 850px;
-    background-color: #1e293b;
-    padding: 30px;
-    border: 2px solid #334155;
-    border-radius: 4px; /* Menys arrodonit per ser més "tech" */
-    box-shadow: 12px 12px 0px #38bdf8; /* Ombra sòlida molt original */
-}
-
-/* BOTONS DE FILTRE TIPUS TAB */
-.filter-button {
-    background: transparent;
-    color: #94a3b8;
-    border: 1px solid #334155;
-    padding: 8px 16px;
-    margin: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.filter-button.active {
-    background: #38bdf8;
-    color: #0f172a;
-    border-color: #38bdf8;
-}
-
-/* BOTONS DE RESPOSTA ESTIL TERMINAL */
-li button {
-    width: 100%;
-    background: #0f172a;
-    border: 1px solid #334155;
-    color: #cbd5e1;
-    padding: 15px;
-    margin-bottom: 10px;
-    text-align: left;
-    cursor: pointer;
-    border-left: 5px solid #334155;
-}
-
-li button:hover {
-    border-left-color: #38bdf8;
+    max-width: 800px;
     background: #1e293b;
+    padding: 40px;
+    border: 2px solid #334155;
+    /* Ombra sòlida desplaçada: Això és el que la fa original */
+    box-shadow: 12px 12px 0px #00f2ff; 
+    border-radius: 4px;
 }
 
-li button.selected {
-    border-left-color: #38bdf8;
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-}
-
-/* BOTÓ DE SOLUCIÓ */
-.solution-button {
-    width: 100%;
-    background: #38bdf8;
-    color: #0f172a;
-    border: none;
-    padding: 15px;
-    font-weight: 900;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px #0369a1;
-}
-
-/* APARTATS DE LA SOLUCIÓ */
+/* APARTATS DE LA SOLUCIÓ REORGANITZATS */
 .step-block {
-    margin-top: 15px;
-    padding: 10px;
-    border-top: 1px solid #334155;
+    margin: 10px 0;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.5);
+    border-left: 3px solid #00f2ff;
 }
 
 .step-letter {
-    color: #38bdf8;
-    font-weight: bold;
+    color: #00f2ff;
+    font-weight: 800;
+    font-size: 1.1em;
     margin-right: 10px;
 }
 
-/* FIX PER LATEX */
-.mjx-chtml { color: #38bdf8 !important; }
+li button {
+    width: 100%;
+    background: #111b2d;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 18px;
+    margin-bottom: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+li button:hover {
+    border-color: #00f2ff;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+li button.selected {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: #00f2ff;
+    color: #00f2ff;
+}
+
+.solution-button {
+    width: 100%;
+    background: #00f2ff;
+    color: #0f172a;
+    border: none;
+    padding: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+/* FIX PER A LES IMATGES EN DARK MODE */
+img {
+    filter: brightness(0.9) contrast(1.1);
+    border-radius: 4px;
+}
+
+.mjx-chtml { color: #00f2ff !important; }

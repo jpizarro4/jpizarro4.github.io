@@ -12,15 +12,15 @@ const questions = [
         correctAnswer: "d",
         steps: `
             <div class="step-block">
-                <span class="step-letter">A) Energia inicial (E1)</span>
+                <span class="step-header">A) Energia inicial (E1)</span>
                 \\[ E_1 = m \\cdot g \\cdot h_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">B) Energia final (E2)</span>
+                <span class="step-header">B) Energia final (E2)</span>
                 \\[ E_2 = m \\cdot g \\cdot h_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">C) Energia absorbida (ΔE)</span>
+                <span class="step-header">C) Energia absorbida (ΔE)</span>
                 \\[ \\Delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
             </div>`
     },
@@ -37,7 +37,7 @@ const questions = [
         correctAnswer: "b",
         steps: `
             <div class="step-block">
-                <span class="step-letter">Càlcul de la Tolerància</span>
+                <span class="step-header">Càlcul de la Tolerància</span>
                 \\[ \\text{Tol} = \\frac{V_{\\text{màx}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\cdot 100 = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]
             </div>`
     },
@@ -54,11 +54,11 @@ const questions = [
         correctAnswer: "a",
         steps: `
             <div class="step-block">
-                <span class="step-letter">A) Distància recorreguda</span>
+                <span class="step-header">A) Distància recorreguda</span>
                 \\[ d = \\frac{60 \\text{ L}}{5,6 \\text{ L}/100 \\text{ km}} = 1071,43 \\text{ km} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">B) Emissions totals</span>
+                <span class="step-header">B) Emissions totals</span>
                 \\[ m = 1071,43 \\text{ km} \\cdot 157,8 \\text{ g/km} = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]
             </div>`
     },
@@ -75,7 +75,7 @@ const questions = [
         correctAnswer: "c",
         steps: `
             <div class="step-block">
-                <span class="step-letter">Explicació</span>
+                <span class="step-header">Explicació</span>
                 La potència es defineix com l'energia per unitat de temps. En el cas elèctric, la unitat és el <b>Watt (W)</b> o el <b>quilowatt (kW)</b>. El kW·h és unitat d'energia, no de potència.
             </div>`
     },
@@ -83,7 +83,7 @@ const questions = [
         type: "questions",
         category: "maquines",
         text: "Un tren d'engranatges està format per dos eixos paral·lels amb les següents característiques: \\(z_1 = 14\\), \\(z_2 = 48\\), \\(z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió total del sistema expressada com \\(\\tau = \\omega_{\\text{sortida}}/\\omega_{\\text{entrada}}\\).",
-        images: '<div style="text-align:center; margin:15px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges" style="max-width:100%; height:auto; border-radius:4px;"></div>',
+        images: '<img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges">',
         options: [
             { text: "0,186 7", value: "a" },
             { text: "5,357", value: "b" },
@@ -93,7 +93,7 @@ const questions = [
         correctAnswer: "a",
         steps: `
             <div class="step-block">
-                <span class="step-letter">Càlcul de τ</span>
+                <span class="step-header">Càlcul de τ</span>
                 \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} = \\frac{224}{1200} = 0,1867 \\]
             </div>`
     },
@@ -107,16 +107,16 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-letter">A) Taula de Veritat</span>
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" style="max-width:100%; border: 1px solid #333; margin-top:10px;">
+                <span class="step-header">A) Taula de Veritat</span>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Taula de veritat">
             </div>
             <div class="step-block">
-                <span class="step-letter">B) Funció simplificada</span>
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" style="max-width:100%; border: 1px solid #333; margin-top:10px;">
+                <span class="step-header">B) Funció simplificada</span>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Simplificació Karnaugh">
             </div>
             <div class="step-block">
-                <span class="step-letter">C) Esquema de portes</span>
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" style="max-width:100%; border: 1px solid #333; margin-top:10px;">
+                <span class="step-header">C) Esquema de portes</span>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Diagrama de portes">
             </div>`
     },
     {
@@ -130,20 +130,20 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-letter">A) Energia total</span>
+                <span class="step-header">A) Energia total</span>
                 \\[ E_{\\text{cons}} = (2000 \\cdot 0,5) + (250 \\cdot 1) = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">B) % Fase Rentada</span>
+                <span class="step-header">B) % Fase Rentada</span>
                 \\[ c_r = \\frac{1000 \\text{ Wh}}{1250 \\text{ Wh}} \\cdot 100 = 80 \\% \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">C) Costos per rentada</span>
+                <span class="step-header">C) Costos per rentada</span>
                 \\[ c_{\\text{punta}} = 1,25 \\cdot 0,3429 = 0,4287 \\text{ €} \\]
                 \\[ c_{\\text{vall}} = 1,25 \\cdot 0,2169 = 0,2712 \\text{ €} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">D) Estalvi anual</span>
+                <span class="step-header">D) Estalvi anual</span>
                 \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]
             </div>`
     },
@@ -157,17 +157,17 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-letter">A) Acceleració angular</span>
+                <span class="step-header">A) Acceleració angular</span>
                 \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
                 \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">B) Voltes totals</span>
+                <span class="step-header">B) Voltes totals</span>
                 \\[ \\theta = 523,6 \\cdot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\]
                 \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
             </div>
             <div class="step-block">
-                <span class="step-letter">C) Energia dissipada</span>
+                <span class="step-header">C) Energia dissipada</span>
                 \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
             </div>`
     }

@@ -645,6 +645,7 @@ const questions = [
     category: "sistemes combinacionals",
     text: `Un sistema digital té l’esquema de portes lògiques següent:
     <div style="display: flex; justify-content: center; margin: 20px 0;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5p11.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
         </div>
     <strong>a)</strong> Determineu la funció lògica entre les variables \\(a\\), \\(b\\), \\(c\\), \\(d\\) i \\(S\\) i, si escau, simplifiqueu-la. [1 punt]
     <br><strong>b)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
@@ -658,15 +659,15 @@ const questions = [
                 <li>Sortida de la porta NOT: \\(\\bar{a}\\)</li>
                 <li>Sortida de la primera porta OR: \\(\\bar{a} + b\\)</li>
                 <li>Sortida de la segona porta OR: \\(b + c\\)</li>
-                <li>Sortida de la porta AND superior: \\((\bar{a} + b) \\cdot (b + c)\\)</li>
+                <li>Sortida de la porta AND superior: \\((bar{a} + b) \\cdot (b + c)\\)</li>
                 <li>Sortida de la porta AND inferior: \\(c \\cdot d\\)</li>
-                <li>Funció final (porta OR de sortida): \\(S = [(\bar{a} + b) \\cdot (b + c)] + (c \\cdot d)\\)</li>
+                <li>Funció final (porta OR de sortida): \\(S = [(bar{a} + b) \\cdot (b + c)] + (c \\cdot d)\\)</li>
             </ul>
             <p>Simplificació aplicant propietats de l'àlgebra de Boole:</p>
-            \\[ S = \bar{a}b + \bar{a}c + b \\cdot b + bc + cd \\]
-            \\[ S = \bar{a}b + \bar{a}c + b + bc + cd \\]
-            <p>Com que \\(b + \bar{a}b + bc = b\\) (llei d'absorció):</p>
-            \\[ S = b + \bar{a}c + cd \\]
+            \\[ S = bar{a}b + bar{a}c + b \\cdot b + bc + cd \\]
+            \\[ S = bar{a}b + bar{a}c + b + bc + cd \\]
+            <p>Com que \\(b + bar{a}b + bc = b\\) (llei d'absorció):</p>
+            \\[ S = b + bar{a}c + cd \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>

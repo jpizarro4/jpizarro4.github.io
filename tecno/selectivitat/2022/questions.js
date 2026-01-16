@@ -12,9 +12,11 @@ const questions = [
         correctAnswer: "d",
         steps: `
         <strong>Resolució:</strong>
+        <br>L'energia absorbida és la diferència d'energia potencial:
         \\[ E_1 = m \\cdot g \\cdot h_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
         \\[ E_2 = m \\cdot g \\cdot h_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
-        \\[ \\Delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]`
+        \\[ \\Delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
+        `
     },
     {
         type: "questions",
@@ -29,7 +31,10 @@ const questions = [
         correctAnswer: "b",
         steps: `
         <strong>Resolució:</strong>
-        \\[ \\text{Tolerància} = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]`
+        <br>Calculem la desviació respecte al valor nominal:
+        \\[ \\text{Tolerància} = \\frac{V_{\\text{max}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\cdot 100 \\]
+        \\[ \\text{Tolerància} = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]
+        `
     },
     {
         type: "questions",
@@ -44,8 +49,12 @@ const questions = [
         correctAnswer: "a",
         steps: `
         <strong>Resolució:</strong>
-        \\[ \\text{Distància} = \\frac{60 \\text{ L}}{5,6 \\text{ L}/100\\text{km}} = 1071,43 \\text{ km} \\]
-        \\[ \\text{Emissions} = 1071,43 \\text{ km} \\cdot 157,8 \\text{ g/km} = 169071 \\text{ g} \\approx 169,1 \\text{ kg} \\]`
+        <br>1. Calculem la distància total recorreguda:
+        \\[ d = \\frac{60 \\text{ L}}{5,6 \\text{ L}/100\\text{km}} = 1071,43 \\text{ km} \\]
+        <br>2. Calculem la massa total de \\(\\text{CO}_2\\):
+        \\[ m = 1071,43 \\text{ km} \\cdot 157,8 \\text{ g/km} = 169071,65 \\text{ g} \\]
+        \\[ m \\approx 169,1 \\text{ kg de CO}_2 \\]
+        `
     },
     {
         type: "questions",
@@ -58,7 +67,11 @@ const questions = [
             { text: "kJ · s", value: "d" }
         ],
         correctAnswer: "c",
-        steps: "La potència es mesura en Watts (W) o quilowatts (kW). El kW·h és una unitat d'energia."
+        steps: `
+        <strong>Explicació:</strong>
+        <br>La potència elèctrica és el treball per unitat de temps. En el Sistema Internacional es mesura en Watts (W) o els seus múltiples com el quilowatt (kW). 
+        <br>Nota: El kW·h és una unitat d'<b>energia</b>, no de potència.
+        `
     },
     {
         type: "questions",
@@ -74,12 +87,15 @@ const questions = [
         correctAnswer: "a",
         steps: `
         <strong>Resolució:</strong>
-        \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} = \\frac{224}{1200} = 0,1867 \\]`
+        <br>La relació de transmissió total és el producte de les dents de les rodes conductores dividit pel producte de les conduïdes:
+        \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} \\]
+        \\[ \\tau = \\frac{224}{1200} = 0,1867 \\]
+        `
     },
     {
         type: "exercicis",
         category: "control",
-        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). El sistema té com a entrades 4 variables digitals \\((a, b, c, d)\\) per a codificar la planta on es troba l’ascensor \\((a, b)\\) i la planta on vol anar l’usuari \\((c, d)\\). La sortida \\(z\\) pren valor 1 si l’ascensor ha de pujar i 0 en cas contrari. Per fer-ho:
+        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). El sistema té com a entrades 4 variables digitals \\((a, b, c, d)\\) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari. Utilitzant les variables d’estat descrites, dissenyeu el sistema digital:
         <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
         <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
         <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
@@ -115,11 +131,14 @@ const questions = [
         <br><br>
         <strong>a) Acceleració angular \\(\\alpha\\):</strong>
         \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,60 \\text{ rad/s} \\]
-        \\[ \\alpha = \\frac{0 - 523,60}{60} = -8,727 \\text{ rad/s}^2 \\]
+        \\[ \\alpha = \\frac{\\omega - \\omega_0}{t} = \\frac{0 - 523,60}{60} = -8,727 \\text{ rad/s}^2 \\]
+
         <strong>b) Nombre de voltes \\(n\\):</strong>
-        \\[ \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 = 15708 \\text{ rad} \\]
-        \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
-        <strong>c) Energia dissipada \\(E_{\\text{diss}}\\):</strong>
-        \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = \\frac{1}{2} \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\]`
+        \\[ \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 = 523,60 \\cdot 60 + \\frac{1}{2} (-8,727) \\cdot 60^2 = 15708 \\text{ rad} \\]
+        \\[ n = \\frac{\\theta}{2\\pi} = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
+
+        <strong>c) Energia mecànica dissipada \\(E_{\\text{diss}}\\):</strong>
+        \\[ E_{\\text{diss}} = \\frac{1}{2} I \\cdot \\omega_0^2 = \\frac{1}{2} \\cdot 0,9 \\cdot 523,60^2 = 123414 \\text{ J} = 123,41 \\text{ kJ} \\]
+        `
     }
 ];

@@ -678,11 +678,11 @@ const questions = [
         <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
         correctAnswer: "",
         steps: `
-          <div class="step-block">
-                <span class="step-header">A) Velocitat de rotació del reductor (\\(\omega_{red}\\))</span>
-                <p>Primer, convertim la velocitat de rotació del motor de min⁻¹ a rad/s:</p>
+         <div class="step-block">
+                <span class="step-header">A) Velocitat de rotació de l'eix de sortida del reductor \\(\\omega_{red}\\) en \\(\\text{rad/s}\\).</span>
+                <p>Primer, passem la velocitat del motor de revolucions per minut a rad/s:</p>
                 \\[ \\omega_{mot} = n_{mot} \\dot \\frac{2\\pi}{60} = 1470 \\dot \\frac{2\\pi}{60} = 153,94 \\text{ rad/s} \\]
-                <p>Utilitzem la relació de transmissió \\(\tau\\) per trobar la velocitat de l'eix de sortida:</p>
+                <p>A continuació, calculem la velocitat de l'eix de sortida aplicant la relació de transmissió (\\(\\tau\\)):</p>
                 \\[ \\omega_{red} = \\tau \\dot \\omega_{mot} = 0,009 \\dot 153,94 = 1,385 \\text{ rad/s} \\]
             </div>
             <div class="step-block">

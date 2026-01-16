@@ -372,11 +372,11 @@ const questions = [
                 <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Diagrama de portes">
             </div>`
     },
-    {
+   {
         type: "exercicis",
         category: "energia",
         text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de \\(t = 1,5 \\text{ h}\\) de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és \\(P_1 = 2000 \\text{ W}\\), mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, \\(P_2 = 250 \\text{ W}\\). La rentadora es connecta a la xarxa a una tensió \\(U = 230 \\text{ V}\\).
-        <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\dot h\\) segons la franja horària:
+        <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\cdot h\\) segons la franja horària:
         <div style="text-align:center; margin:15px 0;">
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula tarifes elèctriques" style="max-width:100%; border-radius:4px;">
         </div>
@@ -388,54 +388,65 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Energia consumida en un cicle</span>
-                \\[ t_1 = 0,5 \\text{ h}, \\quad t_2 = 1 \\text{ h} \\]
-                \\[ E_{\\text{cons}} = P_1 \\dot t_1 + P_2 \\dot t_2 = 2000 \\dot 0,5 + 250 \\dot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
+                <span class="step-header">A) Energia consumida en un cicle (\\(E_{\\text{cons}}\\))</span>
+                <p>Repartim el temps total (1,5 h): 30 min són \\(0,5 \\text{ h}\\) i la resta és \\(1 \\text{ h}\\).</p>
+                \\[ E_{\\text{cons}} = P_1 \\cdot t_1 + P_2 \\cdot t_2 \\]
+                \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">B) % Energia fase rentada</span>
-                \\[ E_{\\text{rentada}} = 2000 \\dot 0,5 = 1000 \\text{ Wh} \\]
-                \\[ c_r = \\frac{E_{\\text{rentada}}}{E_{\\text{cons}}} \\dot 100 = \\frac{1000}{1250} \\dot 100 = 80 \\% \\]
+                <span class="step-header">B) % Energia fase rentada (\\(c_r\\))</span>
+                <p>L'energia de la rentada és \\(E_1 = 2000 \\cdot 0,5 = 1000 \\text{ Wh}\\):</p>
+                \\[ c_r = \\frac{E_{\\text{rentada}}}{E_{\\text{cons}}} \\cdot 100 = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
             </div>
             <div class="step-block">
-                <span class="step-header">C) Costos per rentada</span>
-                \\[ c_{\\text{punta}} = 1,25 \\text{ kWh} \\dot 0,342930 \\text{ €/kWh} = 0,4287 \\text{ €} \\]
-                \\[ c_{\\text{vall}} = 1,25 \\text{ kWh} \\dot 0,216951 \\text{ €/kWh} = 0,2712 \\text{ €} \\]
+                <span class="step-header">C) Costos per rentada (\\(c\\))</span>
+                <p>Multipliquem l'energia total (1,25 kWh) pel preu de cada franja:</p>
+                \\[ c_{\\text{punta}} = 1,25 \\text{ kWh} \\cdot 0,342930 \\text{ €/kWh} = 0,4287 \\text{ €} \\]
+                \\[ c_{\\text{vall}} = 1,25 \\text{ kWh} \\cdot 0,216951 \\text{ €/kWh} = 0,2712 \\text{ €} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">D) Estalvi anual</span>
-                \\[ \\text{Estalvi mensual} = (0,4287 - 0,2712) \\dot 10 = 1,575 \\text{ €/mes} \\]
-                \\[ e_a = 1,575 \\dot 12 = 18,90 \\text{ €} \\]
+                <span class="step-header">D) Estalvi anual (\\(e_a\\))</span>
+                <p>Calculem l'estalvi per cada rentada i ho multipliquem per 10 cops al mes i 12 mesos a l'any:</p>
+                \\[ \\text{Estalvi/rentada} = 0,4287 - 0,2712 = 0,1575 \\text{ €} \\]
+                \\[ e_a = 0,1575 \\text{ €/rentada} \\cdot 10 \\text{ rentades/mes} \\cdot 12 \\text{ mesos/any} \\]
+                \\[ e_a = 18,90 \\text{ €} \\]
             </div>`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `Un volant amb un moment d’inèrcia \\(I = 0,9 \\text{ kg} \\dot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\). Es desconnecta el motor i triga \\(t = 1 \\text{ min}\\) a aturar-se per fricció constant. Determineu:
+        text: `Un volant amb un moment d’inèrcia \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\). Es desconnecta el motor i triga \\(t = 1 \\text{ min}\\) a aturar-se per fricció constant. Determineu:
         <br><br><strong>a)</strong> L’acceleració angular del volant \\(\\alpha\\). [0,5 p]
-        <br><strong>b)</strong> El nombre de voltes \\(n\\) abans d’aturar-se. [1 p]
+        <br><strong>b)</strong> El nombre de voltes \\(N\\) abans d’aturar-se. [1 p]
         <br><strong>c)</strong> L’energia mecànica dissipada \\(E_{\\text{diss}}\\). [1 p]`,
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Acceleració angular</span>
-                \\[ \\omega_0 = 5000 \\dot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
-                \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
+                <span class="step-header">A) Acceleració angular (\\(\\alpha\\))</span>
+                <p>Primer, convertim la velocitat de \\(\text{min}^{-1}\\) (rpm) a rad/s i el temps a segons:</p>
+                \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
+                \\[ t = 60 \\text{ s} \\]
+                <p>L'acceleració angular és la variació de la velocitat angular respecte al temps:</p>
+                \\[ \\alpha = \\frac{\\omega_f - \\omega_0}{t} = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
             </div>
             <div class="step-block">
-                <span class="step-header">B) Voltes totals</span>
-                \\[ \\theta = 523,6 \\dot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\]
-                \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
+                <span class="step-header">B) Voltes totals (\\(N\\))</span>
+                <p>Calculem l'angle total recorregut (\\(\\theta\\)) i després el passem a voltes:</p>
+                \\[ \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 \\]
+                \\[ \\theta = 523,6 \\cdot 60 + 0,5 \\cdot (-8,727) \\cdot 60^2 = 15708 \\text{ rad} \\]
+                \\[ N = \\frac{\\theta}{2\\pi} = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">C) Energia dissipada</span>
-                \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\dot 0,9 \\dot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
+                <span class="step-header">C) Energia dissipada (\\(E_{\\text{diss}}\\))</span>
+                <p>L'energia dissipada coincideix amb l'energia cinètica de rotació inicial, ja que el volant s'atura totalment:</p>
+                \\[ E_{\\text{diss}} = \\frac{1}{2} \\cdot I \\cdot \\omega_0^2 \\]
+                \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
             </div>`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\irc\\).
+        text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\circ\\).
         <div style="text-align:center; margin:15px 0;">
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p4.png" alt="Sistema de barra i tambor" style="max-width:100%; border-radius:4px;">
         </div>
@@ -447,24 +458,29 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block"> 
-                <span class="step-header">A) Diagrama de cos lliure </span>
+                <span class="step-header">A) Diagrama de cos lliure</span>
+                <p>Es representen el pes (\\(P = m \\cdot g\\)) al centre de la barra (distància \\(L\\)), la tensió \\(T\\) a l'extrem (distància \\(2L\\)) i les reaccions \\(F_H, F_V\\) a l'articulació.</p>
                 <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;">
             </div>
             <div class="step-block">
                 <span class="step-header">B) Força T al cable</span>
-                \\[ \\sum M(O) = 0 \\rightarrow T \\os(30^\\irc) \\dot 2L - m \\dot g \\os(30^\\irc) \\dot L = 0 \\]
-                \\[ T = \\frac{m \\dot g}{2} = \\frac{50 \\dot 9,81}{2} = 245,2 \\text{ N} \\]
+                <p>Fem sumatori de moments respecte al punt O (equilibri):</p>
+                \\[ \\sum M(O) = 0 \\implies T \\cdot \\cos(30^\\circ) \\cdot 2L - m \\cdot g \\cdot \\cos(30^\\circ) \\cdot L = 0 \\]
+                \\[ 2 \\cdot T = m \\cdot g \\implies T = \\frac{50 \\cdot 9,81}{2} = 245,25 \\text{ N} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Forces a l'articulació O</span>
-                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\os(30^\\irc) - F_H = 0 \\]
-                \\[ F_H = T \\frac{\\sqrt{3}}{2} = 212,3 \\text{ N} \\]
-                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30^\\irc) - m \\dot g + F_V = 0 \\]
-                \\[ F_V = \\frac{3 \\dot m \\dot g}{4} = 367,8 \\text{ N} \\]
+                <p>Equilibri de forces horitzontals:</p>
+                \\[ \\sum F_H = 0 \\implies T \\cdot \\cos(30^\\circ) - F_H = 0 \\]
+                \\[ F_H = 245,25 \\cdot \\frac{\\sqrt{3}}{2} = 212,39 \\text{ N} \\]
+                <p>Equilibri de forces verticals:</p>
+                \\[ \\sum F_V = 0 \\implies T \\cdot \\sin(30^\\circ) - m \\cdot g + F_V = 0 \\]
+                \\[ F_V = (50 \\cdot 9,81) - (245,25 \\cdot 0,5) = 367,87 \\text{ N} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">D) Parell Γ del motor</span>
-                \\[ \\Gamma = T \\dot \\frac{d}{2} = 245,2 \\dot \\frac{0,45}{2} = 55,16 \\text{ Nm} \\]
+                <span class="step-header">D) Parell \\(\\Gamma\\) del motor</span>
+                <p>El parell és el producte de la tensió del cable pel radi del tambor (\\(r = d/2\\)):</p>
+                \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,25 \\cdot \\frac{0,45}{2} = 55,18 \\text{ Nm} \\]
             </div>`
     },
     {
@@ -534,145 +550,143 @@ const questions = [
 {
     type: "exercicis",
     category: "energia",
-    text: `Una persona, per motius de feina, fa un trajecte diari per carretera d_extraurbà = 120 km i per vies urbanes d_urbà = 10 km. El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
+    text: `Una persona, per motius de feina, fa un trajecte diari per carretera \\(d_{\\text{extraurbà}} = 120 \\text{ km}\\) i per vies urbanes \\(d_{\\text{urbà}} = 10 \\text{ km}\\). El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
     <div style="text-align:center; margin: 15px 0;">
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p7.png" alt="Taula característiques vehicles" style="max-width:100%; border: 1px solid #ccc;">
     </div>
-    <strong>a)</strong> Les emissions diàries equivalents de CO2 que es produirien amb cada vehicle m_elèctr i m_gas. [1 punt]
-    <br><strong>b)</strong> El cost diari associat al consum d’energia de cada vehicle cd_elèctr i cd_gas. [0,5 punts]
-    <br><strong>c)</strong> Si la persona decideix adquirir el vehicle elèctric, i considerant que el cost anual de manteniment dels dos vehicles és el mateix, quants anys t tardarà a recuperar el sobrecost d’adquisició? [1 punt]`,
+    <strong>a)</strong> Les emissions diàries equivalents de \\(CO_2\\) que es produirien amb cada vehicle \\(m_{\\text{elèctr}}\\) i \\(m_{\\text{gas}}\\). [1 punt]
+    <br><strong>b)</strong> El cost diari associat al consum d’energia de cada vehicle \\(cd_{\\text{elèctr}}\\) i \\(cd_{\\text{gas}}\\). [0,5 punts]
+    <br><strong>c)</strong> Si la persona decideix adquirir el vehicle elèctric, i considerant que el cost anual de manteniment dels dos vehicles és el mateix, quants anys \\(t\\) tardarà a recuperar el sobrecost d’adquisició? [1 punt]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
             <span class="step-header">A) Emissions diàries (m)</span>
             <p><b>Vehicle elèctric:</b></p>
             \\[ d_{total} = 120 + 10 = 130 \\text{ km} \\]
-            \\[ E_{diària} = 130 \\text{ km} \\dot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
-            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\dot 241 \\text{ g/kWh} = 4166,89 \\text{ g} = 4,167 \\text{ kg CO2} \\]
+            \\[ E_{diària} = 130 \\text{ km} \\cdot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
+            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\cdot 241 \\text{ g/kWh} = 4166,89 \\text{ g} = 4,167 \\text{ kg CO}_2 \\]
             <p><b>Vehicle gasoil:</b></p>
-            \\[ Consum_{L} = \\left(120 \\dot \\frac{3,6}{100}\\right) + \\left(10 \\dot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
-            \\[ m_{gas} = 4,76 \\text{ L} \\dot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO2} \\]
+            \\[ Consum_{L} = \\left(120 \\cdot \\frac{3,6}{100}\\right) + \\left(10 \\cdot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
+            \\[ m_{gas} = 4,76 \\text{ L} \\cdot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO}_2 \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Cost diari (cd)</span>
-            \\[ cd_{elèctr} = 17,29 \\text{ kWh} \\dot 0,14 \\text{ €/kWh} = 2,421 \\text{ €} \\]
-            \\[ cd_{gas} = 4,76 \\text{ L} \\dot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
+            \\[ cd_{elèctr} = 17,29 \\text{ kWh} \\cdot 0,14 \\text{ €/kWh} = 2,421 \\text{ €} \\]
+            \\[ cd_{gas} = 4,76 \\text{ L} \\cdot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
         </div>
         <div class="step-block">
             <span class="step-header">C) Temps de recuperació (t)</span>
             <p>Sobrecost d'adquisició:</p>
-            \\[ \\delta C = 25700 - 18000 = 7700 \\text{ €} \\]
+            \\[ \\Delta C = 25700 - 18000 = 7700 \\text{ €} \\]
             <p>Estalvi diari i anual:</p>
             \\[ \\text{Estalvi}_{dia} = 5,755 - 2,421 = 3,334 \\text{ €/dia} \\]
-            \\[ \\text{Estalvi}_{any} = 3,334 \\dot 280 = 933,52 \\text{ €/any} \\]
+            \\[ \\text{Estalvi}_{any} = 3,334 \\text{ €/dia} \\cdot 280 \\text{ dies/any} = 933,52 \\text{ €/any} \\]
             \\[ t = \\frac{7700}{933,52} = 8,248 \\text{ anys} \\]
         </div>`
 },
 {
     type: "exercicis",
     category: "termodinamica",
-    text: `Es vol escalfar un volum V = 350 mL d’aigua des d’una temperatura inicial T1 = 20 °C fins a una de final T2 = 95 °C. Es proposen dues alternatives:
-    <br>— Utilitzar un escalfador d’aigua per a infusions que consumeix P_escalf = 1200 W i que
-    triga t_escalf = 125 s. Aquest sistema utilitza una resistència submergible.
-    <br>— Fer servir un fogó de vitroceràmica: E_vitro = 0,11 kWh.
-    <br>Dades: U = 230 V; c_e = 4,18 J/(g °C); densitat aigua ρ = 1 kg/L.
-    <br><br><strong>a)</strong> L’energia teòrica necessària per a escalfar l’aigua E_aigua. [0,5 punts]
-    <br><strong>b)</strong> La resistència R que l’escalfador d’aigua té al seu interior. [0,5 punts]
-    <br><strong>c)</strong> L’energia consumida per l’escalfador E_cons. [0,5 punts]
-    <br><strong>d)</strong> El rendiment de l’escalfador η_escalf i el de la vitroceràmica η_vitro. Quina alternativa escolliríeu? [1 punt]`,
+    text: `Es vol escalfar un volum \\(V = 350 \\text{ mL}\\) d’aigua des d’una temperatura inicial \\(T_1 = 20 ^\\circ\\text{C}\\) fins a una de final \\(T_2 = 95 ^\\circ\\text{C}\\). Es proposen dues alternatives:
+    <br>— Utilitzar un escalfador d’aigua per a infusions que consumeix \\(P_{\\text{escalf}} = 1200 \\text{ W}\\) i que triga \\(t_{\\text{escalf}} = 125 \\text{ s}\\). Aquest sistema utilitza una resistència submergible.
+    <br>— Fer servir un fogó de vitroceràmica: \\(E_{\\text{vitro}} = 0,11 \\text{ kWh}\\).
+    <br>Dades: \\(U = 230 \\text{ V}\\); \\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\); densitat aigua \\(\\rho = 1 \\text{ kg/L}\\).
+    <br><br><strong>a)</strong> L’energia teòrica necessària per a escalfar l’aigua \\(E_{\\text{aigua}}\\). [0,5 punts]
+    <br><strong>b)</strong> La resistència \\(R\\) que l’escalfador d’aigua té al seu interior. [0,5 punts]
+    <br><strong>c)</strong> L’energia consumida per l’escalfador \\(E_{\\text{cons}}\\). [0,5 punts]
+    <br><strong>d)</strong> El rendiment de l’escalfador \\(\\eta_{\\text{escalf}}\\) i el de la vitroceràmica \\(\\eta_{\\text{vitro}}\\). Quina alternativa escolliríeu? [1 punt]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
-            <span class="step-header">A) Energia teòrica (E_aigua)</span>
-            <p>Massa d'aigua: $m = 350 \\text{ mL} = 350 \\text{ g}$.</p>
-            \\[ Q = m \\dot c_e \\dot (T_2 - T_1) \\]
-            \\[ E_{aigua} = 350 \\text{ g} \\dot 4,18 \\text{ J/(g°C)} \\dot (95 - 20) \\text{ °C} = 109725 \\text{ J} \\approx 109,7 \\text{ kJ} \\]
+            <span class="step-header">A) Energia teòrica (\\(E_{\\text{aigua}}\\))</span>
+            <p>Massa d'aigua: \\(m = 350 \\text{ mL} = 350 \\text{ g}\\) (ja que \\(\\rho = 1 \\text{ g/mL}\\)).</p>
+            \\[ E_{aigua} = m \\cdot c_e \\cdot (T_2 - T_1) \\]
+            \\[ E_{aigua} = 350 \\cdot 4,18 \\cdot (95 - 20) = 109725 \\text{ J} \\approx 109,7 \\text{ kJ} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">B) Resistència de l'escalfador (R)</span>
-            \\[ P = \\frac{U^2}{R} \\rightarrow R = \\frac{U^2}{P} \\]
-            \\[ R = \\frac{230^2}{1200} = \\frac{52900}{1200} = 44,08 \\, \\Omega \\]
+            <span class="step-header">B) Resistència de l'escalfador (\\(R\\))</span>
+            <p>A partir de la fórmula de la potència elèctrica (\\(P = U^2 / R\\)):</p>
+            \\[ R = \\frac{U^2}{P} = \\frac{230^2}{1200} = \\frac{52900}{1200} = 44,08 \\, \\Omega \\]
         </div>
         <div class="step-block">
-            <span class="step-header">C) Energia consumida per l'escalfador (E_cons)</span>
-            \\[ E_{cons} = P \\dot t = 1200 \\text{ W} \\dot 125 \\text{ s} = 150000 \\text{ J} = 150 \\text{ kJ} \\]
+            <span class="step-header">C) Energia consumida per l'escalfador (\\(E_{\\text{cons}}\\))</span>
+            \\[ E_{cons} = P \\cdot t = 1200 \\text{ W} \\cdot 125 \\text{ s} = 150000 \\text{ J} = 150 \\text{ kJ} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">D) Rendiments i elecció (η)</span>
-            <p><b>Rendiment escalfador:</b></p>
+            <span class="step-header">D) Rendiments i elecció (\\(\\eta\\))</span>
+            <p><b>Rendiment de l'escalfador:</b></p>
             \\[ \\eta_{escalf} = \\frac{E_{aigua}}{E_{cons}} = \\frac{109725}{150000} = 0,7315 \\rightarrow 73,15 \\% \\]
-            <p><b>Rendiment vitroceràmica:</b></p>
-            <p>Passem l'energia de la vitro a Joules: $0,11 \\text{ kWh} \\dot 3,6 \\dot 10^6 \\text{ J/kWh} = 396000 \\text{ J}$.</p>
-            \\[ \\eta_{vitro} = \\frac{109725}{396000} = 0,2771 \\rightarrow 27,71 \\% \\]
-            <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè té un rendiment molt més elevat i consumeix menys energia.</p>
+            <p><b>Rendiment de la vitroceràmica:</b></p>
+            <p>Convertim l'energia de la vitroceràmica a Joules (\\(1 \\text{ kWh} = 3,6 \\cdot 10^6 \\text{ J}\\)):</p>
+            \\[ E_{vitro} = 0,11 \\cdot 3,6 \\cdot 10^6 = 396000 \\text{ J} \\]
+            \\[ \\eta_{vitro} = \\frac{E_{aigua}}{E_{vitro}} = \\frac{109725}{396000} = 0,2771 \\rightarrow 27,71 \\% \\]
+            <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè presenta un rendiment energètic molt superior (73,15% vs 27,71%) per a la mateixa finalitat.</p>
         </div>`
 },
 {
     type: "exercicis",
     category: "maquines",
-    text: `El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud LAO = LBQ = 2L són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa m = 3 kg. Té una longitud de 8L i un gruix de 2s. Les barres varien l’angle respecte de la vertical entre φ = 5° (porta tancada) i φ = 175° (porta oberta). Per elevar la porta, una persona fa una força vertical F al punt P. Es negligeixen les resistències passives.
+    text: `El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud \\(L_{AO} = L_{BQ} = 2L\\) són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa \\(m = 3 \\text{ kg}\\). Té una longitud de \\(8L\\) i un gruix de \\(2s\\). Les barres varien l’angle respecte de la vertical entre \\(\\varphi = 5^\\circ\\) (porta tancada) i \\(\\varphi = 175^\\circ\\) (porta oberta). Per elevar la porta, una persona fa una força vertical \\(F\\) al punt \\(P\\). Es negligeixen les resistències passives.
     <div style="text-align:center; margin: 15px 0;">
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p9.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
     </div>
-    <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la porta per a un angle φ qualsevol dins del rang de funcionament. [0,5 punts]
+    <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la porta per a un angle \\(\\varphi\\) qualsevol dins del rang de funcionament. [0,5 punts]
     <br>Considerant que la porta està en repòs, determineu:
-    <br><strong>b)</strong> El valor de la força F aplicada. [1 punt]
-    <br><strong>c)</strong> El valor de les forces TAO i TBQ que les barres fan sobre la porta quan φ = 30°. [1 punt]`,
+    <br><strong>b)</strong> El valor de la força \\(F\\) aplicada. [1 punt]
+    <br><strong>c)</strong> El valor de les forces \\(T_{AO}\\) i \\(T_{BQ}\\) que les barres fan sobre la porta quan \\(\\varphi = 30^\\circ\\). [1 punt]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
-            <span class="step-header">a) Diagrama de cos lliure (DCL)</span>
-            <p>Sobre la porta actuen el pes aplicat al centre de gravetat, la força vertical \\(F\\) al punt \\(P\\) i les reaccions de les barres \\(T_{AO}\\) i \\(T_{BQ}\\) seguint la direcció de les pròpies barres.</p>
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
-            
+            <span class="step-header">A) Diagrama de cos lliure (DCL)</span>
+            <p>Sobre la porta actuen el pes aplicat al centre de gravetat (\\(P = m \\cdot g\\)), la força vertical \\(F\\) al punt \\(P\\) i les reaccions de les barres \\(T_{AO}\\) i \\(T_{BQ}\\) seguint la direcció longitudinal de les barres (forces axials).</p>
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="Diagrama de forces porta" style="max-width:100%; border-radius:4px;">
         </div>
         <div class="step-block">
-            <span class="step-header">b) Valor de la força F aplicada</span>
-            <p>Atès que la porta es troba en repòs i el mecanisme de barres paral·leles fa que pugi mantenint-se sempre vertical (translació), el sumatori de forces verticals ha de ser zero:</p>
-            \\[ \\sum F_y = 0 \\implies F - m \\dot g = 0 \\]
-            \\[ F = 3 \\; \\text{kg} \\dot 9,81 \\; \\text{m/s}^2 = 29,43 \\; \\text{N} \\]
+            <span class="step-header">B) Valor de la força F aplicada</span>
+            <p>Atès que la porta es troba en repòs i el mecanisme de paral·lelogram manté la porta sempre vertical (translació), per equilibri de forces verticals:</p>
+            \\[ \\sum F_y = 0 \\implies F - m \\cdot g = 0 \\]
+            \\[ F = 3 \\text{ kg} \\cdot 9,81 \\text{ m/s}^2 = 29,43 \\text{ N} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">c) Forces a les barres per a φ = 30°</span>
-            <p>Per l'equilibri de moments respecte al centre de la porta (punt mig entre A i B) i considerant que per equilibri horitzontal les components de les forces a les barres han de ser oposades:</p>
-            \\[ \\sum M = 0 \\implies F \\dot s + 2 \\dot (T \\dot \\sin \\phi \\dot 0,5L) = 0 \\]
-            <p>Substituint els valors de les dades del gràfic (\\(s = 30 \\; \\text{mm}\\) i \\(L = 50 \\; \\text{mm}\\)):</p>
-            \\[ T_{AO} = 35,32 \\; \\text{N} \\quad (\\text{tracció}) \\]
-            \\[ T_{BQ} = 35,32 \\; \\text{N} \\quad (\\text{compressió}) \\]
-            
+            <span class="step-header">C) Forces a les barres per a \\(\\varphi = 30^\\circ\\)</span>
+            <p>Per l'equilibri de moments respecte al centre de la porta i l'equilibri de forces horitzontals, sabem que les components horitzontals de les barres han de ser iguals i oposades (\\(T_{AO} = T_{BQ} = T\\)):</p>
+            \\[ \\sum M = 0 \\implies F \\cdot s + 2 \\cdot (T \\cdot \\sin \\varphi \\cdot 0,5L) = 0 \\]
+            <p>Substituint les dades (\\(s = 30 \\text{ mm}\\), \\(L = 50 \\text{ mm}\\) i \\(\\varphi = 30^\\circ\\)):</p>
+            \\[ T_{AO} = 35,32 \\text{ N} \\quad (\\text{tracció}) \\]
+            \\[ T_{BQ} = 35,32 \\text{ N} \\quad (\\text{compressió}) \\]
         </div>`
 },
     {
     type: "exercicis",
     category: "maquines",
-    text: `Un prototip de motocicleta elèctrica integra el motor directament a la roda del darrere. En les condicions d’estudi, circulant per un terreny horitzontal i a una velocitat constant, el fabricant assegura que el motor subministra \\(P_{mot} = 15 \\text{ kW}\\) i un parell \\(\\Gamma = 150 \\text{ N m}\\), i té una autonomia màxima \\(s_{màx} = 200 \\text{ km}\\). El diàmetre dels pneumàtics és \\(d = 630 \\text{ mm}\\), i s’estima que el motor té un rendiment \\(\\eta_{mot} = 0,9\\). La motocicleta utilitza bateries ideals.
+    text: `Un prototip de motocicleta elèctrica integra el motor directament a la roda del darrere. En les condicions d’estudi, circulant per un terreny horitzontal i a una velocitat constant, el fabricant assegura que el motor subministra \\(P_{\\text{mot}} = 15 \\text{ kW}\\) i un parell \\(\\Gamma = 150 \\text{ N m}\\), i té una autonomia màxima \\(s_{\\text{màx}} = 200 \\text{ km}\\). El diàmetre dels pneumàtics és \\(d = 630 \\text{ mm}\\), i s’estima que el motor té un rendiment \\(\\eta_{\\text{mot}} = 0,9\\). La motocicleta utilitza bateries ideals.
     <br><br>Determineu:
-    <br><strong>a)</strong> La velocitat angular de la roda motriu \\(\\omega_{roda}\\) i la velocitat d’avanç \\(v\\) de la motocicleta. [1 punt]
-    <br><strong>b)</strong> El temps màxim de funcionament \\(t_{màx}\\) i l’energia subministrada pel motor \\(E_{subm}\\). [1 punt]
-    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries \\(E_{bat}\\). [0,5 punts]`,
+    <br><strong>a)</strong> La velocitat angular de la roda motriu \\(\\omega_{\\text{roda}}\\) i la velocitat d’avanç \\(v\\) de la motocicleta. [1 punt]
+    <br><strong>b)</strong> El temps màxim de funcionament \\(t_{\\text{màx}}\\) i l’energia subministrada pel motor \\(E_{\\text{subm}}\\). [1 punt]
+    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries \\(E_{\\text{bat}}\\). [0,5 punts]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
             <span class="step-header">A) Velocitat angular i d'avanç</span>
-            <p>La potència és el producte del parell per la velocitat angular:</p>
-            \\[ P_{mot} = \\Gamma \\dot \\omega_{roda} \\implies \\omega_{roda} = \\frac{P_{mot}}{\\Gamma} = \\frac{15000}{150} = 100 \\, \\text{rad/s} \\]
+            <p>La potència és el producte del parell per la velocitat angular (\\(P = \\Gamma \\cdot \\omega\\)):</p>
+            \\[ \\omega_{\\text{roda}} = \\frac{P_{\\text{mot}}}{\\Gamma} = \\frac{15000 \\text{ W}}{150 \\text{ Nm}} = 100 \\, \\text{rad/s} \\]
             <p>La velocitat d'avanç es calcula amb el radi de la roda \\( (r = d/2 = 0,315 \\, \\text{m}) \\):</p>
-            \\[ v = \\omega_{roda} \\dot r = 100 \\dot 0,315 = 31,5 \\, \\text{m/s} \\]
-            \\[ v = 31,5 \\dot 3,6 = 113,4 \\, \\text{km/h} \\]
+            \\[ v = \\omega_{\\text{roda}} \\cdot r = 100 \\cdot 0,315 = 31,5 \\, \\text{m/s} \\]
+            \\[ v = 31,5 \\cdot 3,6 = 113,4 \\, \\text{km/h} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Temps màxim i energia subministrada</span>
-            <p>Calculem el temps necessari per recórrer l'autonomia màxima:</p>
-            \\[ t_{màx} = \\frac{s_{màx}}{v} = \\frac{200}{113,4} = 1,764 \\, \\text{h} \\approx 6349,2 \\, \\text{s} \\]
+            <p>Calculem el temps necessari per recórrer l'autonomia màxima (\\(t = s/v\\)):</p>
+            \\[ t_{\\text{màx}} = \\frac{s_{\\text{màx}}}{v} = \\frac{200 \\text{ km}}{113,4 \\text{ km/h}} = 1,7637 \\, \\text{h} \\approx 6349,2 \\, \\text{s} \\]
             <p>L'energia subministrada pel motor és el producte de la potència pel temps:</p>
-            \\[ E_{subm} = P_{mot} \\dot t_{màx} = 15000 \\dot 6349,2 = 95,24 \\, \\text{MJ} \\]
-            \\[ E_{subm} = \\frac{95,24}{3,6} = 26,45 \\, \\text{kWh} \\]
+            \\[ E_{\\text{subm}} = P_{\\text{mot}} \\cdot t_{\\text{màx}} = 15000 \\text{ W} \\cdot 6349,2 \\text{ s} = 95238000 \\, \\text{ J} \\approx 95,24 \\, \\text{MJ} \\]
+            \\[ E_{\\text{subm}} = \\frac{95,24 \\text{ MJ}}{3,6} = 26,45 \\, \\text{kWh} \\]
         </div>
         <div class="step-block">
             <span class="step-header">C) Energia de les bateries</span>
             <p>L'energia de les bateries depèn de l'energia subministrada i del rendiment del motor:</p>
-            \\[ \\eta_{mot} = \\frac{E_{subm}}{E_{bat}} \\implies E_{bat} = \\frac{E_{subm}}{\\eta_{mot}} = \\frac{95,24}{0,9} = 105,82 \\, \\text{MJ} \\]
-            \\[ E_{bat} = \\frac{105,82}{3,6} = 29,39 \\, \\text{kWh} \\]
+            \\[ \\eta_{\\text{mot}} = \\frac{E_{\\text{subm}}}{E_{\\text{bat}}} \\implies E_{\\text{bat}} = \\frac{E_{\\text{subm}}}{\\eta_{\\text{mot}}} = \\frac{26,45 \\text{ kWh}}{0,9} = 29,39 \\, \\text{kWh} \\]
+            \\[ E_{\\text{bat}} = 29,39 \\cdot 3,6 = 105,8 \\, \\text{MJ} \\]
         </div>`
 },
    {

@@ -337,36 +337,40 @@ const questions = [
             </div>`
     },
     {
-        type: "exercicis",
-        category: "control",
-        text: `Exercici 2 [2,5 punts en total]
-        <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-        <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
-        <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
-        <br>led: l = { 1: actiu, 0: no actiu }.
-        <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
-        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-        <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
-        correctAnswer: "",
-        steps: `
-            <div class="step-block">
-                <span class="step-header">A) Taula de Veritat</span> 
-                <p>Els números que fan que el LED s'encengui (l=1) són aquells que en binari acaben en "00" (els múltiples de 4 i el 0):</p>
-                <div style="text-align:center;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
-            <div class="step-block">
-                <span class="step-header">B) Funció lògica i simplificació</span>
-                <p>A partir de la taula de veritat, la funció com a suma de productes és:</p>
-                \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
-                <p>Simplificant la funció:</p>
-                \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
+    type: "exercicis",
+    category: "control",
+    text: `Exercici 2 [2,5 punts en total]
+    <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+    <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
+    <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
+    <br>led: l = { 1: actiu, 0: no actiu }.
+    <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+    <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
+    correctAnswer: "",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Taula de Veritat</span> 
+            <p>Els números que fan que el LED s'encengui (l=1) són aquells que en binari acaben en "00" (els múltiples de 4 i el 0):</p>
+            <div style="text-align:center; margin-bottom: 10px;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Taula de veritat" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
             </div>
-            <div class="step-block">
-                <span class="step-header">C) Esquema de contactes</span>
-                <p>La funció producte de dues variables negades es representa amb dos contactes <b>normalment tancats</b> connectats en <b>sèrie</b>:</p>
-                <div style="text-align:center; margin: 15px 0;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
-                </div>
-            </div>`
-    }
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Funció lògica i simplificació</span>
+            <p>A partir de la taula de veritat, la funció com a suma de productes (mintermis) és:</p>
+            \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
+            <p>Extreient factor comú de $\\bar{c} \\bar{d}$:</p>
+            \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\bar{b} + \\bar{a} b + a \\bar{b} + a b) = \\bar{c} \\bar{d} [\\bar{a}(\\bar{b} + b) + a(\\bar{b} + b)] \\]
+            \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\cdot 1 + a \\cdot 1) = \\bar{c} \\bar{d} (\\bar{a} + a) = \\bar{c} \\bar{d} \\cdot 1 \\]
+            \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">C) Esquema de contactes</span>
+            <p>La funció producte de dues variables negades es representa amb dos contactes <b>normalment tancats</b> connectats en <b>sèrie</b>:</p>
+            <div style="text-align:center; margin: 15px 0;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
+            </div>
+        </div>`
+}
 ];

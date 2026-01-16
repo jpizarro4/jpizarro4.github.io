@@ -655,9 +655,9 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Funció lògica i simplificació</span>
             <p>A partir de l'anàlisi de les portes lògiques de l'esquema:</p>
-            \\[ S = \overline{(\bar{a} + b)(a + b)} + (\overline{c \cdot d}) \\]
+            \\[ S = overline{(bar{a} + b)(a + b)} + (overline{c cdot d}) \\]
             <p>Simplificant la funció mitjançant les lleis de l'àlgebra de Boole i De Morgan:</p>
-            \\[ S = \bar{b} + \bar{c} + \bar{d} \\]
+            \\[ S = bar{b} + bar{c} + bar{d} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>

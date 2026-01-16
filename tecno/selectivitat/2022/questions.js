@@ -339,8 +339,7 @@ const questions = [
     {
     type: "exercicis",
     category: "control",
-    text: `Exercici 2 [2,5 punts en total]
-    <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+    text: `Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
     <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
     <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
     <br>led: l = { 1: actiu, 0: no actiu }.
@@ -374,8 +373,7 @@ const questions = [
 {
     type: "exercicis",
     category: "energia",
-    text: `Exercici 3 [2,5 punts en total]
-    <br>Una persona, per motius de feina, fa un trajecte diari per carretera d_extraurbà = 120 km i per vies urbanes d_urbà = 10 km. El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
+    text: `Una persona, per motius de feina, fa un trajecte diari per carretera d_extraurbà = 120 km i per vies urbanes d_urbà = 10 km. El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
     <div style="text-align:center; margin: 15px 0;">
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p7.png" alt="Taula característiques vehicles" style="max-width:100%; border: 1px solid #ccc;">
     </div>
@@ -412,8 +410,7 @@ const questions = [
 {
     type: "exercicis",
     category: "termodinamica",
-    text: `Exercici 4 [2,5 punts en total]
-    <br>Es vol escalfar un volum V = 350 mL d’aigua des d’una temperatura inicial T1 = 20 °C fins a una de final T2 = 95 °C. Es proposen dues alternatives:
+    text: `Es vol escalfar un volum V = 350 mL d’aigua des d’una temperatura inicial T1 = 20 °C fins a una de final T2 = 95 °C. Es proposen dues alternatives:
     <br>— Utilitzar un escalfador d’aigua per a infusions que consumeix P_escalf = 1200 W i que
     triga t_escalf = 125 s. Aquest sistema utilitza una resistència submergible.
     <br>— Fer servir un fogó de vitroceràmica: E_vitro = 0,11 kWh.
@@ -452,8 +449,7 @@ const questions = [
 {
     type: "exercicis",
     category: "maquines",
-    text: `Exercici 5 [2,5 punts en total]
-    <br>El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud LAO = LBQ = 2L són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa m = 3 kg. Té una longitud de 8L i un gruix de 2s. Les barres varien l’angle respecte de la vertical entre φ = 5° (porta tancada) i φ = 175° (porta oberta). Per elevar la porta, una persona fa una força vertical F al punt P. Es negligeixen les resistències passives.
+    text: `El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud LAO = LBQ = 2L són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa m = 3 kg. Té una longitud de 8L i un gruix de 2s. Les barres varien l’angle respecte de la vertical entre φ = 5° (porta tancada) i φ = 175° (porta oberta). Per elevar la porta, una persona fa una força vertical F al punt P. Es negligeixen les resistències passives.
     <div style="text-align:center; margin: 15px 0;">
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p9.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
     </div>

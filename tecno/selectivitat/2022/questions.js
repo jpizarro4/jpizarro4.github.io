@@ -360,10 +360,8 @@ const questions = [
             <span class="step-header">B) Funció lògica i simplificació</span>
             <p>A partir de la taula de veritat, la funció com a suma de productes (mintermis) és:</p>
             \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
-            <p>Extreient factor comú de $\\bar{c} \\bar{d}$:</p>
-            \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\bar{b} + \\bar{a} b + a \\bar{b} + a b) = \\bar{c} \\bar{d} [\\bar{a}(\\bar{b} + b) + a(\\bar{b} + b)] \\]
-            \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\cdot 1 + a \\cdot 1) = \\bar{c} \\bar{d} (\\bar{a} + a) = \\bar{c} \\bar{d} \\cdot 1 \\]
-            \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
+            <p>simplificant:</p>
+            \\[ l = \\bar{c} \\bar{d} \\]
         </div>
         <div class="step-block">
             <span class="step-header">C) Esquema de contactes</span>

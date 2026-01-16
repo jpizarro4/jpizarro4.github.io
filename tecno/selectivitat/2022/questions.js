@@ -184,7 +184,7 @@ const questions = [
         category: "maquines",
         text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\circ\\).
         <div style="text-align:center; margin:15px 0;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s1r5_diag.png" alt="Sistema de barra i tambor" style="max-width:100%; border-radius:4px;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p4.png" alt="Sistema de barra i tambor" style="max-width:100%; border-radius:4px;">
         </div>
         Determineu:
         <br><br><strong>a)</strong> El diagrama de cos lliure de la barra OA. [0,5 p]
@@ -193,8 +193,8 @@ const questions = [
         <br><strong>d)</strong> El parell \\(\\Gamma\\) que subministra el motor. [0,5 p]`,
         correctAnswer: "",
         steps: `
-            <div class="step-block">
-                <span class="step-header">A) Diagrama de cos lliure</span>
+            <div class="step-block"> 
+                <span class="step-header">A) <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></span>
                 <p>Cal dibuixar la barra amb el pes (\\(mg\\)) al centre, la tensió (\\(T\\)) a l'extrem A amb angle \\(\\alpha\\), i les reaccions \\(F_H\\) i \\(F_V\\) al punt O.</p>
             </div>
             <div class="step-block">

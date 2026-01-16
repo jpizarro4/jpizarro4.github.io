@@ -449,4 +449,42 @@ const questions = [
             <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè té un rendiment molt més elevat i consumeix menys energia.</p>
         </div>`
 }
+{
+    type: "exercicis",
+    category: "maquines",
+    text: `Exercici 5 [2,5 punts en total]
+    <br>El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud LAO = LBQ = 2L són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa m = 3 kg. Té una longitud de 8L i un gruix de 2s. Les barres varien l’angle respecte de la vertical entre φ = 5° (porta tancada) i φ = 175° (porta oberta). Per elevar la porta, una persona fa una força vertical F al punt P. Es negligeixen les resistències passives.
+    <div style="text-align:center; margin: 15px 0;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p5.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
+    </div>
+    <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la porta per a un angle φ qualsevol dins del rang de funcionament. [0,5 punts]
+    <br>Considerant que la porta està en repòs, determineu:
+    <br><strong>b)</strong> El valor de la força F aplicada. [1 punt]
+    <br><strong>c)</strong> El valor de les forces TAO i TBQ que les barres fan sobre la porta quan φ = 30°. [1 punt]`,
+    correctAnswer: "",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Diagrama de cos lliure</span>
+            <p>Sobre la porta actuen: el pes ($m \\cdot g$) al centre de gravetat, la força vertical ($F$) al punt $P$, i les reaccions de les barres ($T_{AO}$ i $T_{BQ}$) en la direcció de les barres (angle $\\phi$).</p>
+            <div style="text-align:center; margin: 10px 0;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r5a.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
+            </div>
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Força F aplicada</span>
+            <p>Com que la porta puja mantenint-se sempre vertical (paral·lelogram deformable) i en repòs:</p>
+            \\[ \\sum F_{verticals} = 0 \\rightarrow F - m \\cdot g = 0 \\]
+            \\[ F = 3 \\text{ kg} \\cdot 9,81 \\text{ m/s}^2 = 29,43 \\text{ N} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">C) Forces a les barres (φ = 30°)</span>
+            <p>Fem sumatori de moments respecte a un punt o analitzem l'equilibri de la porta. Com que les barres són paral·leles i la porta no té acceleració:</p>
+            \\[ \\sum M_{G} = 0 \\]
+            \\[ F \\cdot s + T_{AO} \\cdot \\sin(30^\\circ) \\cdot 0,5L - T_{BQ} \\cdot \\sin(30^\\circ) \\cdot 0,5L = 0 \\]
+            <p>Per simetria i equilibri horitzontal $T_{AO} = -T_{BQ}$. Aplicant les distàncies del gràfic:</p>
+            \\[ T_{AO} = 33,98 \\text{ N} \\quad (\\text{tracció}) \\]
+            \\[ T_{BQ} = 33,98 \\text{ N} \\quad (\\text{compressió}) \\]
+            <p><i>Nota: El valor exacte depèn de la relació geomètrica L/s de la figura del d'examen.</i></p>
+        </div>`
+}
 ];

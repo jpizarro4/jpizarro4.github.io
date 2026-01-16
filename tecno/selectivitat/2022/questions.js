@@ -377,7 +377,7 @@ const questions = [
     text: `Exercici 3 [2,5 punts en total]
     <br>Una persona, per motius de feina, fa un trajecte diari per carretera d_extraurbà = 120 km i per vies urbanes d_urbà = 10 km. El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
     <div style="text-align:center; margin: 15px 0;">
-        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p3.png" alt="Taula característiques vehicles" style="max-width:100%; border: 1px solid #ccc;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p7.png" alt="Taula característiques vehicles" style="max-width:100%; border: 1px solid #ccc;">
     </div>
     <strong>a)</strong> Les emissions diàries equivalents de CO2 que es produirien amb cada vehicle m_elèctr i m_gas. [1 punt]
     <br><strong>b)</strong> El cost diari associat al consum d’energia de cada vehicle cd_elèctr i cd_gas. [0,5 punts]

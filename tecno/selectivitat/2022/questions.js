@@ -195,7 +195,7 @@ const questions = [
         steps: `
             <div class="step-block"> 
                 <span class="step-header">A) Diagrama de cos lliure </span>
-                <p><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></p>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;">
             </div>
             <div class="step-block">
                 <span class="step-header">B) Força T al cable</span>
@@ -225,8 +225,8 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Esquema elèctric</span>
-                <p>L'esquema ha de mostrar una branca amb \\(R_1, R_2\\) i \\(R_3\\) en línia, i una altra branca en paraŀlel amb \\(R_4\\), tot connectat a la font de 230V.</p>
+                <span class="step-header">A) Esquema elèctric</span> 202206s2r5.png
+                <p><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r5.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></p>
                 
             </div>
             <div class="step-block">

@@ -68,16 +68,26 @@ const questions = [
     },
     
     {
+        {
         type: "exercicis",
         category: "control",
-        text: "El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). Per a aconseguir això, es dissenya un sistema digital on la sortida z pren valor 1 si l’ascensor ha de pujar i 0 en cas contrari. El sistema té com a entrades 4 variables digitals (a, b, c, d) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari de les quatre possibles: planta 0, planta 1, planta 2 i planta 3. Les dues primeres entrades codifiquen, en numeració binària, la planta en què es troba l’ascensor (per exemple, si es troba a la planta 3 els valors seran a = 1 i b = 1); les altres dues entrades (c, d) codifiquen, de la mateixa manera, el número de la planta que l’usuari selecciona.Utilitzant les variables d’estat descrites, dissenyeu el sistema digital que permeti determinar quan l’ascensor ha de moure’s en sentit ascendent. Per fer-ho:,
-               <br><strong>a)</strong> Elaboreu la taula de veritat del sistema.[1 punt]
-               <br><strong>b)</strong>  Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-               <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
-               <br><br>
-             `,
+        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). Per a aconseguir això, es dissenya un sistema digital on la sortida z pren valor 1 si l’ascensor ha de pujar i 0 en cas contrari. El sistema té com a entrades 4 variables digitals (a, b, c, d) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari de les quatre possibles: planta 0, planta 1, planta 2 i planta 3. Les dues primeres entrades codifiquen, en numeració binària, la planta en què es troba l’ascensor (per exemple, si es troba a la planta 3 els valors seran a = 1 i b = 1); les altres dues entrades (c, d) codifiquen, de la mateixa manera, el número de la planta que l’usuari selecciona. Utilitzant les variables d’estat descrites, dissenyeu el sistema digital que permeti determinar quan l’ascensor ha de moure’s en sentit ascendent. Per fer-ho:
+        
+        <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+        <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
+        <br><br>`,
         correctAnswer: "",
-        steps: "<strong>a) Taula:</strong> La sortida z=1 quan el destí (c,d) és numèricament superior a la posició actual (a,b).<br><br><strong>b) Funció simplificada:</strong> \\\\[ z = \\\\bar{a}c + \\\\bar{a}\\\\bar{b}d + \\\\bar{b}cd \\\\]"
+        steps: `
+        <strong>Resolució:</strong><br>
+        La sortida z val 1 sempre que el binari (c,d) > (a,b).
+        <br><br>
+        <strong>a) Taula de veritat:</strong> Hi ha 16 combinacions. z=1 en 6 casos (ex: 00-01, 00-10, 00-11, 01-10, 01-11, 10-11).
+        <br><strong>b) Simplificació:</strong> \\[ z = \\bar{a}c + \\bar{a}\\bar{b}d + \\bar{b}cd \\]
+        <br><strong>c) Diagrama:</strong> Es dibuixa el circuit amb 3 portes AND, 1 OR i inversors.
+        <br><br>
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2.png" alt="Resolució Exercici 2" width="900">
+        `
     },
     
     {

@@ -12,7 +12,6 @@ const questions = [
         correctAnswer: "d",
         steps: ""
     },
-    
     {
         type: "questions",
         category: "metrologia",
@@ -66,17 +65,13 @@ const questions = [
         correctAnswer: "a",
         steps: ""
     },
-    
     {
-        {
         type: "exercicis",
         category: "control",
         text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). Per a aconseguir això, es dissenya un sistema digital on la sortida z pren valor 1 si l’ascensor ha de pujar i 0 en cas contrari. El sistema té com a entrades 4 variables digitals (a, b, c, d) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari de les quatre possibles: planta 0, planta 1, planta 2 i planta 3. Les dues primeres entrades codifiquen, en numeració binària, la planta en què es troba l’ascensor (per exemple, si es troba a la planta 3 els valors seran a = 1 i b = 1); les altres dues entrades (c, d) codifiquen, de la mateixa manera, el número de la planta que l’usuari selecciona. Utilitzant les variables d’estat descrites, dissenyeu el sistema digital que permeti determinar quan l’ascensor ha de moure’s en sentit ascendent. Per fer-ho:
-        
         <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
         <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-        <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
-        <br><br>`,
+        <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
         correctAnswer: "",
         steps: `
         <strong>Resolució:</strong><br>
@@ -89,12 +84,18 @@ const questions = [
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2.png" alt="Resolució Exercici 2" width="900">
         `
     },
-    
     {
         type: "exercicis",
         category: "materials",
-        text: "Barra d'acer de diàmetre d = 10 mm i longitud L = 0,5 m. El límit elàstic és σe = 300 MPa i el mòdul de Young E = 210 GPa.<br><br><strong>a)</strong> El valor de la força F que marca el límit elàstic.<br><strong>b)</strong> L'allargament de la barra en aquest punt.",
+        text: `Barra d'acer de diàmetre d = 10 mm i longitud L = 0,5 m. El límit elàstic és σe = 300 MPa i el mòdul de Young E = 210 GPa.
+        <br><br><strong>a)</strong> El valor de la força F que marca el límit elàstic. [1,25 punts]
+        <br><strong>b)</strong> L'allargament de la barra en aquest punt. [1,25 punts]`,
         correctAnswer: "",
-        steps: "<strong>a) Força:</strong> \\\\[ F = \\\\sigma_e \\\\cdot S = 300 \\\\cdot 10^6 \\\\cdot \\\\frac{\\\\pi \\\\cdot 0,01^2}{4} = 23562 \\\\, N \\\\]<br><strong>b) Allargament:</strong> \\\\[ \\\\Delta L = \\\\epsilon \\\\cdot L = \\\\frac{\\\\sigma_e}{E} \\\\cdot L = \\\\frac{300 \\\\cdot 10^6}{210 \\\\cdot 10^9} \\\\cdot 0,5 = 0,714 \\\\, mm \\\\]"
+        steps: `
+        <strong>a) Força:</strong><br>
+        \\[ F = \\sigma_e \\cdot S = 300 \\cdot 10^6 \\cdot \\frac{\\pi \\cdot 0,01^2}{4} = 23562 \\; N \\]
+        <br><strong>b) Allargament:</strong><br>
+        \\[ \\Delta L = \\frac{\\sigma_e}{E} \\cdot L = \\frac{300 \\cdot 10^6}{210 \\cdot 10^9} \\cdot 0,5 = 0,714 \\; mm \\]
+        `
     }
 ];

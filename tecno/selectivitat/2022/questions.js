@@ -83,28 +83,28 @@ const questions = [
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" style="max-width:100%; margin-top:10px;">
         </div>`
     },
-    {
+   {
         type: "exercicis",
         category: "energia",
-        text: `El cicle de funcionament d’una rentadora es divideix en: rentada (30 min) amb \\(P_1 = 2000 \\text{ W}\\), i esbandida/centrifugació amb \\(P_2 = 250 \\text{ W}\\). La durada total és \\(t = 1,5 \\text{ h}\\). Tensió \\(U = 230 \\text{ V}\\). Ús: \\(n = 10 \\text{ vegades/mes}\\).
-        
-        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
-        </div>
-
-        Determineu:
-        <br><strong>a)</strong> L'energia consumida en un cicle \\(E_{\\text{cons}}\\). [0,5 p]
-        <br><strong>b)</strong> El percentatge d'energia en la fase de rentada \\(c_r\\). [0,5 p]
-        <br><strong>c)</strong> El cost en hores punta \\(c_{\\text{punta}}\\) i hores vall \\(c_{\\text{vall}}\\). [1 p]
-        <br><strong>d)</strong> L'estalvi anual \\(e_a\\) entre ambdues tarifes. [0,5 p]`,
+        text: `Rentadora: \\(t = 1,5 \\text{ h}\\). Rentada (30 min): \\(P_1 = 2000 \\text{ W}\\). Altres: \\(P_2 = 250 \\text{ W}\\). Ús: 10 cops/mes.`,
         correctAnswer: "",
         steps: `
-        \\[ E_{\\text{cons}} = (2000 \\cdot 0,5) + (250 \\cdot 1) = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
-        \\[ c_r = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
-        \\[ c_{\\text{punta}} = 1,25 \\cdot 0,342930 = 0,4287 \\text{ €/rentada} \\]
-        \\[ c_{\\text{vall}} = 1,25 \\cdot 0,216951 = 0,2712 \\text{ €/rentada} \\]
-        \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €/any} \\]`
+        <div class="step-block"><span class="step-letter">a)</span> \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]</div>
+        <div class="step-block"><span class="step-letter">b)</span> \\[ c_r = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]</div>
+        <div class="step-block"><span class="step-letter">c)</span> \\[ c_{\\text{punta}} = 1,25 \\cdot 0,3429 = 0,4287 \\text{ €} \\]
+                                   \\[ c_{\\text{vall}} = 1,25 \\cdot 0,2169 = 0,2712 \\text{ €} \\]</div>
+        <div class="step-block"><span class="step-letter">d)</span> \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]</div>`
     },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `Volant: \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\), \\(n_0 = 5000 \\text{ min}^{-1}\\), \\(t_{\\text{aturada}} = 1 \\text{ min}\\).`,
+        correctAnswer: "",
+        steps: `
+        <div class="step-block"><span class="step-letter">a)</span> \\[ \\omega_0 = 523,6 \\text{ rad/s} \\rightarrow \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]</div>
+        <div class="step-block"><span class="step-letter">b)</span> \\[ \\theta = 523,6 \\cdot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\rightarrow n = 2500 \\text{ voltes} \\]</div>
+        <div class="step-block"><span class="step-letter">c)</span> \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\]</div>`
+    }
     {
         type: "exercicis",
         category: "maquines",

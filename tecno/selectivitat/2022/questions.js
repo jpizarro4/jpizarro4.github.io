@@ -156,7 +156,7 @@ const questions = [
         type: "test",
         category: "maquines",
         text: "Un sòlid de massa \\(m = 5 kg\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?",
-        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q4.png" style="max-width:150px;"></div>',
+        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p9.png" style="max-width:150px;"></div>',
         options: [
             { text: "49,04 N", value: "a" },
             { text: "12,25 N", value: "b" },

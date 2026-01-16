@@ -1,136 +1,194 @@
-/* ===== ESTIL MINIMALISTA TIPUS FOTMOB ===== */
-body {
-    font-family: 'Inter', 'Poppins', sans-serif;
-    background-color: #121212; /* Fons general fosc, no negre pur */
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+/* ===== CONFIGURACIÓ DE COLORS (Variables) ===== */
+:root {
+    /* MODO CLARO (Por defecto) */
+    --bg-page: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-main: #111827;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --accent: #d4ff00; /* Amarillo */
+    --success: #10b981; /* Verde */
+    --success-bg: #ecfdf5;
+    --error: #ef4444; /* Rojo */
+    --error-bg: #fef2f2;
+    --btn-bg: #f3f4f6;
 }
 
-/* NAVBAR NETA */
+/* MODO OSCURO (Se activa añadiendo class="dark-mode" al body) */
+body.dark-mode {
+    --bg-page: #121212;
+    --bg-card: #1a1a1a;
+    --text-main: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border: #2a2a2a;
+    --btn-bg: #242424;
+    --success-bg: #1e2a22;
+    --error-bg: #2a1a1a;
+}
+
+/* ===== ESTILS GENERALS ===== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+/* NAVBAR ORDENADA */
 .navbar {
     position: fixed;
     top: 0; 
     width: 100%;
-    background: #1a1a1a;
-    border-bottom: 1px solid #2a2a2a;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
     padding: 12px 0;
     z-index: 1000;
 }
 
-/* FILTRES ESTIL "CHIPS" */
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+/* FILTRES (CHIPS) */
 .filter-group-container {
-    margin-top: 100px;
+    margin-top: 100px; /* Baixem per la navbar fixa */
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding-bottom: 10px;
 }
 
 .filter-button {
-    background: #242424;
-    color: #a0a0a0;
-    border: 1px solid #333;
-    padding: 8px 16px;
-    border-radius: 20px; /* Estil píndola de FotMob */
+    background: var(--btn-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: 0.2s;
 }
 
 .filter-button.active {
-    background: #d4ff00; /* El teu groc exòtic */
-    color: #000;
-    border-color: #d4ff00;
+    background: var(--text-main);
+    color: var(--bg-card);
+    border-color: var(--text-main);
 }
 
-/* TARGETES D'EXERCICIS (Cards) */
+/* TARGETES D'EXERCICIS */
 .content-container, #quiz-container {
     margin: 20px auto;
     max-width: 700px;
-    background: #1a1a1a; /* Contrast amb el fons del body */
-    padding: 25px;
+    background: var(--bg-card);
+    padding: 30px;
     border-radius: 12px;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* ENUNCIATS */
 h2, .question-text {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
-/* BOTONS D'OPCIONS (Files de llista netes) */
+/* BOTONS D'OPCIONS */
 ul { list-style: none; padding: 0; }
 
 li button {
     width: 100%;
-    background: #242424;
-    border: 1px solid #333;
-    color: #efefef;
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
     padding: 14px 18px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-align: left;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 0.95rem;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 li button:hover {
-    background: #2d2d2d;
-    border-color: #444;
+    border-color: var(--text-secondary);
 }
 
 li button.selected {
-    border-left: 4px solid #00ff66; /* Verd de validació */
-    background: #1e2a22;
+    border: 2px solid var(--text-main);
 }
 
-/* BOTÓ MOSTRAR SOLUCIÓ (Compacte i centrat) */
+/* QUADRADETS DE FEEDBACK (Correcte / Incorrecte) */
+.feedback-box {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.feedback-box.correct {
+    background: var(--success-bg);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.feedback-box.incorrect {
+    background: var(--error-bg);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+/* BOTONS D'ACCIÓ */
 .solution-button {
     display: block;
-    margin: 20px 0;
-    background: #d4ff00;
+    background: var(--accent);
     color: #000;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 800;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-/* BLOCS DE SOLUCIÓ (Dalt a l'esquerra amb títol destacat) */
+/* SOLUCIONS (Steps) */
 .step-block {
     margin-top: 20px;
     padding: 15px;
-    background: #212121;
-    border-radius: 8px;
-    text-align: left;
+    background: var(--btn-bg);
+    border-radius: 10px;
+    border-top: 2px solid var(--success);
 }
 
 .step-letter {
     display: block;
-    color: #00ff66; /* Verd accent */
+    color: var(--success);
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-/* IMATGES DINS DE LES SOLUCIONS */
-.step-block img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 10px;
-    display: block;
+    margin-bottom: 10px;
 }
 
 /* LATEX */
-.mjx-chtml { font-size: 1.1em !important; color: #fff !important; }
+.mjx-chtml { color: var(--text-main) !important; }

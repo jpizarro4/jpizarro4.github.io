@@ -448,7 +448,7 @@ const questions = [
             \\[ \\eta_{vitro} = \\frac{109725}{396000} = 0,2771 \\rightarrow 27,71 \\% \\]
             <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè té un rendiment molt més elevat i consumeix menys energia.</p>
         </div>`
-}
+},
 {
     type: "exercicis",
     category: "maquines",

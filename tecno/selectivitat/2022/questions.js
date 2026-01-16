@@ -86,24 +86,24 @@ const questions = [
     {
         type: "exercicis",
         category: "energia",
-        text: `Rentadora: \\(t = 1,5 \\text{ h}\\). Rentada (30 min): \\(P_1 = 2000 \\text{ W}\\). Esbandida/centrifugació: \\(P_2 = 250 \\text{ W}\\). \\(U = 230 \\text{ V}\\). Ús: \\(n = 10 \\text{ vegades/mes}\\).
+        text: `El cicle de funcionament d’una rentadora es divideix en: rentada (30 min) amb \\(P_1 = 2000 \\text{ W}\\), i esbandida/centrifugació amb \\(P_2 = 250 \\text{ W}\\). La durada total és \\(t = 1,5 \\text{ h}\\). Tensió \\(U = 230 \\text{ V}\\). Ús: \\(n = 10 \\text{ vegades/mes}\\).
         
         <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" style="max-width:100%;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
         </div>
 
         Determineu:
-        <br><strong>a)</strong> \\(E_{\\text{cons}}\\) en un cicle. [0,5 p]
-        <br><strong>b)</strong> % d'energia en rentada \\(c_r\\). [0,5 p]
-        <br><strong>c)</strong> Cost \\(c_{\\text{punta}}\\) i \\(c_{\\text{vall}}\\). [1 p]
-        <br><strong>d)</strong> Estalvi anual \\(e_a\\) vall vs punta. [0,5 p]`,
+        <br><strong>a)</strong> L'energia consumida en un cicle \\(E_{\\text{cons}}\\). [0,5 p]
+        <br><strong>b)</strong> El percentatge d'energia en la fase de rentada \\(c_r\\). [0,5 p]
+        <br><strong>c)</strong> El cost en hores punta \\(c_{\\text{punta}}\\) i hores vall \\(c_{\\text{vall}}\\). [1 p]
+        <br><strong>d)</strong> L'estalvi anual \\(e_a\\) entre ambdues tarifes. [0,5 p]`,
         correctAnswer: "",
         steps: `
-        \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
+        \\[ E_{\\text{cons}} = (2000 \\cdot 0,5) + (250 \\cdot 1) = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
         \\[ c_r = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
-        \\[ c_{\\text{punta}} = 1,25 \\cdot 0,342930 = 0,4287 \\text{ €} \\]
-        \\[ c_{\\text{vall}} = 1,25 \\cdot 0,216951 = 0,2712 \\text{ €} \\]
-        \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]`
+        \\[ c_{\\text{punta}} = 1,25 \\cdot 0,342930 = 0,4287 \\text{ €/rentada} \\]
+        \\[ c_{\\text{vall}} = 1,25 \\cdot 0,216951 = 0,2712 \\text{ €/rentada} \\]
+        \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €/any} \\]`
     },
     {
         type: "exercicis",

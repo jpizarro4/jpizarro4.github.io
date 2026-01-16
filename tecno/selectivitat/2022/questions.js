@@ -98,7 +98,7 @@ const questions = [
             </div>`
     },
    {
-        type: "test",
+        type: "questions",
         category: "materials",
         text: "La resistència a la tracció d’un aliatge de titani és de \\(325 \\text{ MPa}\\). Si es vol utilitzar una barra cilíndrica d’aquest material per a aguantar una força de tracció de \\(20 \\text{ kN}\\), quin diàmetre mínim ha de tenir la barra perquè no es trenqui?",
         options: [
@@ -116,7 +116,7 @@ const questions = [
             </div>`
     },
     {
-        type: "test",
+        type: "questions",
         category: "fabricacio",
         text: "Si es té un ajust \\(90 \\text{ H7/k6}\\), la tolerància \\(H7\\) del forat és de \\(\\binom{+35}{0} \\, \\mu\\text{m}\\) i la tolerància \\(k6\\) de l'eix és de \\(\\binom{+25}{+3} \\, \\mu\\text{m}\\), es pot afirmar que:",
         options: [
@@ -135,7 +135,7 @@ const questions = [
             </div>`
     },
     {
-        type: "test",
+        type: "questions",
         category: "energia",
         text: "Un complex poliesportiu té un consum tèrmic de \\(382,8 \\text{ MWh}\\) anuals. Es decideix fer una instaŀlació solar tèrmica que produeix \\(79 \\text{ MWh/any}\\). Si el gas natural té un factor d'emissió de \\(2,15 \\text{ kg CO}_2/\\text{m}^3\\) i un PC de \\(11,79 \\text{ kWh/m}^3\\), quin és l'estalvi d'emissions anual?",
         options: [
@@ -153,7 +153,7 @@ const questions = [
             </div>`
     },
     {
-        type: "test",
+        type: "questions",
         category: "maquines",
         text: "Un sòlid de massa \\(m = 5 kg\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?",
         images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p9.png" style="max-width:150px;"></div>',
@@ -172,7 +172,7 @@ const questions = [
             </div>`
     },
     {
-        type: "test",
+        type: "questions",
         category: "termodinamica",
         text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\))",
         options: [

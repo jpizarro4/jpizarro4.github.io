@@ -97,12 +97,17 @@ const questions = [
                 \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} = \\frac{224}{1200} = 0,1867 \\]
             </div>`
     },
-    {
+   {
         type: "test",
         category: "materials",
-        text: `La resistència a la tracció d’un aliatge de titani és de \\(325 \\text{ MPa}\\). Si es vol utilitzar una barra cilíndrica d’aquest material per a aguantar una força de tracció de \\(20 \\text{ kN}\\), quin diàmetre mínim ha de tenir la barra perquè no es trenqui?`,
-        options: ["6,154 mm", "14,38 mm", "8,852 mm", "6,259 mm"],
-        correctAnswer: "8,852 mm",
+        text: "La resistència a la tracció d’un aliatge de titani és de \\(325 \\text{ MPa}\\). Si es vol utilitzar una barra cilíndrica d’aquest material per a aguantar una força de tracció de \\(20 \\text{ kN}\\), quin diàmetre mínim ha de tenir la barra perquè no es trenqui?",
+        options: [
+            { text: "6,154 mm", value: "a" },
+            { text: "14,38 mm", value: "b" },
+            { text: "8,852 mm", value: "c" },
+            { text: "6,259 mm", value: "d" }
+        ],
+        correctAnswer: "c",
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul del diàmetre mínim</span>
@@ -113,51 +118,55 @@ const questions = [
     {
         type: "test",
         category: "fabricacio",
-        text: `Si es té un ajust \\(90 \\text{ H7/k6}\\), la tolerància \\(H7\\) del forat és de \\(\\binom{+35}{0} \\, \\mu\\text{m}\\) i la tolerància \\(k6\\) de l'eix és de \\(\\binom{+25}{+3} \\, \\mu\\text{m}\\), es pot afirmar que:`,
+        text: "Si es té un ajust \\(90 \\text{ H7/k6}\\), la tolerància \\(H7\\) del forat és de \\(\\binom{+35}{0} \\, \\mu\\text{m}\\) i la tolerància \\(k6\\) de l'eix és de \\(\\binom{+25}{+3} \\, \\mu\\text{m}\\), es pot afirmar que:",
         options: [
-            "El joc màxim és de 35 μm",
-            "El joc màxim és de 32 μm",
-            "El serratge màxim és de 3 μm",
-            "El serratge màxim és de 32 μm"
+            { text: "El joc màxim és de 35 μm", value: "a" },
+            { text: "El joc màxim és de 32 μm", value: "b" },
+            { text: "El serratge màxim és de 3 μm", value: "c" },
+            { text: "El serratge màxim és de 32 μm", value: "d" }
         ],
-        correctAnswer: "El joc màxim és de 32 μm",
+        correctAnswer: "b",
         steps: `
             <div class="step-block">
                 <span class="step-header">Anàlisi de l'ajust</span>
                 <p>Forat (H7): màx = 90,035 mm; mín = 90,000 mm</p>
                 <p>Eix (k6): màx = 90,025 mm; mín = 90,003 mm</p>
-                \\[ \\text{Joc màxim} = D_{\\text{max}} - d_{\\text{min}} = 90,035 - 90,003 = 0,032 \\text{ mm} = 32 \\, \\mu\\text{m} \\]
-                \\[ \\text{Joc mínim} = D_{\\text{min}} - d_{\\text{max}} = 90,000 - 90,025 = -0,025 \\, \\text{mm (Serratge de 25 } \\mu\\text{m)} \\]
+                \\[ \\text{Joc màxim} = D_{\\text{max}} - d_{\\text{min}} = 90,035 - 90,003 = 32 \\, \\mu\\text{m} \\]
             </div>`
     },
     {
         type: "test",
         category: "energia",
-        text: `Un complex poliesportiu té un consum tèrmic de \\(382,8 \\text{ MWh}\\) anuals. Es decideix fer una instaŀlació d'energia solar tèrmica que representa una producció de \\(79 \\text{ MWh/any}\\). Si el gas natural té un poder calorífic de \\(11,79 \\text{ kWh/m}^3\\) i un factor d'emissió de \\(2,15 \\text{ kg CO}_2/\\text{m}^3\\), quin és l'estalvi d'emissions anual?`,
-        options: ["14,41 tones de CO2", "69,81 tones de CO2", "55,40 tones de CO2", "20,03 tones de CO2"],
-        correctAnswer: "14,41 tones de CO2",
+        text: "Un complex poliesportiu té un consum tèrmic de \\(382,8 \\text{ MWh}\\) anuals. Es decideix fer una instaŀlació solar tèrmica que produeix \\(79 \\text{ MWh/any}\\). Si el gas natural té un factor d'emissió de \\(2,15 \\text{ kg CO}_2/\\text{m}^3\\) i un PC de \\(11,79 \\text{ kWh/m}^3\\), quin és l'estalvi d'emissions anual?",
+        options: [
+            { text: "14,41 tones de CO2", value: "a" },
+            { text: "69,81 tones de CO2", value: "b" },
+            { text: "55,40 tones de CO2", value: "c" },
+            { text: "20,03 tones de CO2", value: "d" }
+        ],
+        correctAnswer: "a",
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul d'emissions estalviades</span>
-                <p>Volum de gas estalviat:</p>
-                \\[ V = \\frac{E_{solar}}{PC} = \\frac{79000 \\text{ kWh}}{11,79 \\text{ kWh/m}^3} = 6700,59 \\text{ m}^3 \\]
-                <p>Emissions estalviades:</p>
-                \\[ \\text{Estalvi} = V \\cdot \\text{Factor emissió} = 6700,59 \\cdot 2,15 = 14406,27 \\text{ kg CO}_2 = 14,41 \\text{ t} \\]
+                \\[ V = \\frac{79000 \\text{ kWh}}{11,79 \\text{ kWh/m}^3} = 6700,59 \\text{ m}^3 \\]
+                \\[ \\text{Estalvi} = V \\cdot 2,15 = 14406,27 \\text{ kg} \\approx 14,41 \\text{ t} \\]
             </div>`
     },
     {
         type: "test",
         category: "maquines",
-        text: `Un sòlid de massa \\(m = 5 kg\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?
-        <div style="text-align:center; margin:10px 0;">
-            <img src="path_to_politja_image.png" style="max-width:150px;">
-        </div>`,
-        options: ["49,04 N", "12,25 N", "6,129 N", "24,52 N"],
-        correctAnswer: "24,52 N",
+        text: "Un sòlid de massa \\(m = 5 kg\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?",
+        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q4.png" style="max-width:150px;"></div>',
+        options: [
+            { text: "49,04 N", value: "a" },
+            { text: "12,25 N", value: "b" },
+            { text: "6,129 N", value: "c" },
+            { text: "24,52 N", value: "d" }
+        ],
+        correctAnswer: "d",
         steps: `
             <div class="step-block">
                 <span class="step-header">Equilibri de politges</span>
-                <p>En una politja mòbil connectada d'aquesta manera, la força es divideix per 2:</p>
                 \\[ P = m \\cdot g = 5 \\cdot 9,81 = 49,05 \\text{ N} \\]
                 \\[ F = \\frac{P}{2} = \\frac{49,05}{2} = 24,52 \\text{ N} \\]
             </div>`
@@ -165,15 +174,19 @@ const questions = [
     {
         type: "test",
         category: "termodinamica",
-        text: `S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\))`,
-        options: ["28,23 °C", "2,823 °C", "282,3 °C", "49,32 °C"],
-        correctAnswer: "28,23 °C",
+        text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\))",
+        options: [
+            { text: "28,23 °C", value: "a" },
+            { text: "2,823 °C", value: "b" },
+            { text: "282,3 °C", value: "c" },
+            { text: "49,32 °C", value: "d" }
+        ],
+        correctAnswer: "a",
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul tèrmic</span>
-                \\[ Q = m_{carbó} \\cdot PC = 0,5 \\text{ kg} \\cdot 23,6 \\cdot 10^6 \\text{ J/kg} = 11,8 \\cdot 10^6 \\text{ J} \\]
-                \\[ Q = m_{aigua} \\cdot c_e \\cdot \\Delta T \\rightarrow \\Delta T = \\frac{Q}{m_{aigua} \\cdot c_e} \\]
-                \\[ \\Delta T = \\frac{11,8 \\cdot 10^6 \\text{ J}}{100000 \\text{ g} \\cdot 4,18 \\text{ J/g}^\\circ\\text{C}} = 28,23 \\, ^\\circ\\text{C} \\]
+                \\[ Q = 0,5 \\text{ kg} \\cdot 23,6 \\cdot 10^6 \\text{ J/kg} = 11,8 \\cdot 10^6 \\text{ J} \\]
+                \\[ \\Delta T = \\frac{11,8 \\cdot 10^6}{100000 \\text{ g} \\cdot 4,18} = 28,23 \\, ^\\circ\\text{C} \\]
             </div>`
     },
     {

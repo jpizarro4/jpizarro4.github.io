@@ -225,7 +225,7 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Esquema elèctric</span> 202206s2r5.png
+                <span class="step-header">A) Esquema elèctric</span> 
                 <p><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r5.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></p>
                 
             </div>

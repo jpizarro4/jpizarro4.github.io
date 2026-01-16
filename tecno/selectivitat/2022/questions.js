@@ -354,25 +354,12 @@ const questions = [
                 <p>Els números que fan que el LED s'encengui (l=1) són aquells que en binari acaben en "00" (els múltiples de 4 i el 0):</p>
                 <div style="text-align:center;">
                     <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
-                        <thead>
-                            <tr style="background-color: #f2f2f2;">
-                                <th>#</th><th>a</th><th>b</th><th>c</th><th>d</th><th>l</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color: #e6f3ff;"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr style="background-color: #e6f3ff;"><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr style="background-color: #e6f3ff;"><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr style="background-color: #e6f3ff;"><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr><td colspan="5">Resta de combinacions (1, 2, 3, 5...)</td><td>0</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             <div class="step-block">
-                <span class="step-header">B) Funció lògica simplificada</span>
-                <p>Analitzant la taula o mitjançant un mapa de Karnaugh, s'observa que la sortida és independent de <b>a</b> i <b>b</b>. Només depèn que <b>c</b> i <b>d</b> siguin 0:</p>
-                \\[ l = \\bar{c} \\cdot \\bar{d} \\]
+                <span class="step-header">B) Funció lògica i simplificació</span>
+                <p>A partir de la taula de veritat, la funció com a suma de productes és:</p>
+                \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
+                <p>Simplificant la funció:</p>
+                \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Esquema de contactes</span>

@@ -645,7 +645,7 @@ const questions = [
     category: "sistemes combinacionals",
     text: `Un sistema digital té l’esquema de portes lògiques següent:
     <div style="display: flex; justify-content: center; margin: 20px 0;">
-        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5p11.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5p11.png" alt="Sistema" style="max-width:100%; border-radius:4px;">
         </div>
     <strong>a)</strong> Determineu la funció lògica entre les variables \\(a\\), \\(b\\), \\(c\\), \\(d\\) i \\(S\\) i, si escau, simplifiqueu-la. [1 punt]
     <br><strong>b)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
@@ -654,30 +654,20 @@ const questions = [
     steps: `
         <div class="step-block">
             <span class="step-header">A) Funció lògica i simplificació</span>
-            <p>Analitzant l'esquema de portes lògiques sortida a sortida:</p>
-            <ul>
-                <li>Sortida de la porta NOT: \\(\\bar{a}\\)</li>
-                <li>Sortida de la primera porta OR: \\(\\bar{a} + b\\)</li>
-                <li>Sortida de la segona porta OR: \\(b + c\\)</li>
-                <li>Sortida de la porta AND superior: \\((bar{a} + b) \\cdot (b + c)\\)</li>
-                <li>Sortida de la porta AND inferior: \\(c \\cdot d\\)</li>
-                <li>Funció final (porta OR de sortida): \\(S = [(bar{a} + b) \\cdot (b + c)] + (c \\cdot d)\\)</li>
-            </ul>
-            <p>Simplificació aplicant propietats de l'àlgebra de Boole:</p>
-            \\[ S = bar{a}b + bar{a}c + b \\cdot b + bc + cd \\]
-            \\[ S = bar{a}b + bar{a}c + b + bc + cd \\]
-            <p>Com que \\(b + bar{a}b + bc = b\\) (llei d'absorció):</p>
-            \\[ S = b + bar{a}c + cd \\]
+            <p>A partir de l'anàlisi de les portes lògiques de l'esquema:</p>
+            \\[ S = \overline{(\bar{a} + b)(a + b)} + (\overline{c \cdot d}) \\]
+            <p>Simplificant la funció mitjançant les lleis de l'àlgebra de Boole i De Morgan:</p>
+            \\[ S = \bar{b} + \bar{c} + \bar{d} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>
-            <p>La sortida \\(S\\) serà 1 quan \\(b=1\\), o quan \\(a=0\\) i \\(c=1\\), o quan \\(c=1\\) i \\(d=1\\).</p>
-            <div style="display: flex; justify-content: center; margin: 10px 0;">
+           <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;"> 
+
                 </div>
         </div>
         <div class="step-block">
             <span class="step-header">C) Esquema de contactes</span>
-            <p>L'esquema de contactes de la funció simplificada \\(S = b + \bar{a}c + cd\\) presenta tres branques en paral·lel:</p>
+            <p>L'esquema de contactes de la funció simplificada \\(S = b + bar{a}c + cd\\) presenta tres branques en paral·lel:</p>
             <ul>
                 <li>Una branca amb el contacte obert \\(b\\).</li>
                 <li>Una branca amb el contacte tancat \\(a\\) en sèrie amb el contacte obert \\(c\\).</li>

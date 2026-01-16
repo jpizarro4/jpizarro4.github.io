@@ -339,7 +339,11 @@ const questions = [
     {
         type: "exercicis",
         category: "control",
-        text: `Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions utilitzant les variables d'estat: a, b, c, d (entrades) i l (led).
+        text: `Exercici 2 [2,5 punts en total]
+        <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+        <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
+        <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
+        <br>led: l = { 1: actiu, 0: no actiu }.
         <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
         <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
         <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
@@ -347,34 +351,34 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">A) Taula de Veritat</span>
-                <p>El LED s'activa (l=1) per als números: 0 (0000), 4 (0100), 8 (1000) i 12 (1100).</p>
+                <p>Els números que fan que el LED s'encengui (l=1) són aquells que en binari acaben en "00" (els múltiples de 4 i el 0):</p>
                 <div style="text-align:center;">
-                    <table style="margin: auto; border-collapse: collapse; width: 150px; text-align: center;" border="1">
+                    <table style="margin: auto; border-collapse: collapse; width: 200px; text-align: center; font-size: 0.9em;" border="1">
                         <thead>
                             <tr style="background-color: #f2f2f2;">
-                                <th>a</th><th>b</th><th>c</th><th>d</th><th style="background-color: #e6f3ff;">l</th>
+                                <th>#</th><th>a</th><th>b</th><th>c</th><th>d</th><th>l</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr><td>0</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr><td>1</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
-                            <tr><td colspan="4">Altres combinacions</td><td>0</td></tr>
+                            <tr style="background-color: #e6f3ff;"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
+                            <tr style="background-color: #e6f3ff;"><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
+                            <tr style="background-color: #e6f3ff;"><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr>
+                            <tr style="background-color: #e6f3ff;"><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr>
+                            <tr><td colspan="5">Resta de combinacions (1, 2, 3, 5...)</td><td>0</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="step-block">
                 <span class="step-header">B) Funció lògica simplificada</span>
-                <p>Observem que el LED només s'encén quan els dos últims dígits (c i d) són zero, independentment dels valors de a i b.</p>
+                <p>Analitzant la taula o mitjançant un mapa de Karnaugh, s'observa que la sortida és independent de <b>a</b> i <b>b</b>. Només depèn que <b>c</b> i <b>d</b> siguin 0:</p>
                 \\[ l = \\bar{c} \\cdot \\bar{d} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Esquema de contactes</span>
-                <p>L'esquema equivalent consisteix en dos contactes <b>normalment tancats</b> (NC) connectats en <b>sèrie</b>:</p>
-                <div style="text-align:center; margin: 10px 0;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2c.png" alt="Esquema de contactes l = c' · d'" style="max-width:200px; filter: contrast(1.2);">
+                <p>La funció producte de dues variables negades es representa amb dos contactes <b>normalment tancats</b> connectats en <b>sèrie</b>:</p>
+                <div style="text-align:center; margin: 15px 0;">
+                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
                 </div>
             </div>`
     }

@@ -655,24 +655,16 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Funció lògica i simplificació</span>
             <br>
-            Analitzant les portes lògiques de l'esquema:
-            \\[ S = (a \\cdot b) + (\\overline{a} \\cdot b) + (c \\cdot d) \\]
-            Simplificant mitjançant factor comú:
-            \\[ S = b \\cdot (a + \\overline{a}) + (c \\cdot d) \\]
-            Com que \\(a + \\overline{a} = 1\\):
-            \\[ S = b + (c \\cdot d) \\]
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11a.png" alt="Solució" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>
-            <br>
-            A partir de la funció simplificada \\(S = b + (c \\cdot d)\\):
+            
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Taula" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>
         <div class="step-block">
             <span class="step-header">C) Esquema de contactes</span>
-            <br>
-            L'esquema equivalent a la funció \\(S = b + (c \\cdot d)\\) presenta el contacte \\(b\\) en paral·lel amb la sèrie de \\(c\\) i \\(d\\):
+    
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11c.png" alt="Esquema de contactes" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>`
 },

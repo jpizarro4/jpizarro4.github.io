@@ -10,7 +10,7 @@ const questions = [
             { text: "161,8 J", value: "d" }
         ],
         correctAnswer: "d",
-        steps: "L'energia absorbida és la variació d'energia potencial: \\\\[ \\\\Delta E = m \\\\cdot g \\\\cdot (h_1 - h_2) \\\\] \\\\[ \\\\Delta E = 22 \\\\cdot 9,807 \\\\cdot (1 - 0,25) = 161,8 \\\\, J \\\\]"
+        steps:
     },
     
     {
@@ -24,7 +24,7 @@ const questions = [
             { text: "±10 %", value: "d" }
         ],
         correctAnswer: "b",
-        steps: "Variació: \\\\[ 397,8 - 390 = 7,8 \\\\, \\\\Omega \\\\] Tolerància: \\\\[ \\\\frac{7,8}{390} \\\\cdot 100 = 2 \\\\% \\\\]"
+        steps: 
     },
     {
         type: "questions",
@@ -37,7 +37,7 @@ const questions = [
             { text: "16,91 kg de CO2", value: "d" }
         ],
         correctAnswer: "a",
-        steps: "Distància: \\\\[ d = \\\\frac{60}{5,6/100} = 1071,43 \\\\, km \\\\] Petjada: \\\\[ 1071,43 \\\\cdot 157,8 = 169111,6 \\\\, g \\\\approx 169,1 \\\\, kg \\\\]"
+        steps: 
     },
     {
         type: "questions",
@@ -50,12 +50,13 @@ const questions = [
             { text: "kJ · s", value: "d" }
         ],
         correctAnswer: "c",
-        steps: "La potència elèctrica es mesura en Watts (W) o quilowatts (kW). El kW·h és una unitat d'energia."
+        steps: 
     },
     {
         type: "questions",
         category: "maquines",
         text: "Un tren d'engranatges es connecta entre els eixos d'un motor elèctric i d'una roda. Disposa de 4 rodes dentades de z1 = 14, z2 = 48, z3 = 16 i z4 = 25. Determineu la relació de transmissió ωroda/ωmotor.",
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Imatge relacionada amb la pregunta" width="900">
         options: [
             { text: "0,186 7", value: "a" },
             { text: "5,357", value: "b" },
@@ -63,8 +64,7 @@ const questions = [
             { text: "0,411 0", value: "d" }
         ],
         correctAnswer: "a",
-        steps: "Relació de transmissió: \\\\[ i = \\\\frac{z_1 \\\\cdot z_3}{z_2 \\\\cdot z_4} = \\\\frac{14 \\\\cdot 16}{48 \\\\cdot 25} = 0,1867 \\\\]"
-    },
+        steps: 
     
     {
         type: "exercicis",

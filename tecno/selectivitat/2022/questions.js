@@ -474,13 +474,12 @@ const questions = [
         </div>
         <div class="step-block">
             <span class="step-header">C) Forces a les barres (φ = 30°)</span>
-            <p>Fem sumatori de moments respecte a un punt o analitzem l'equilibri de la porta. Com que les barres són paral·leles i la porta no té acceleració:</p>
-            \\[ \\sum M_{G} = 0 \\]
-            \\[ F \\cdot s + T_{AO} \\cdot \\sin(30^\\circ) \\cdot 0,5L - T_{BQ} \\cdot \\sin(30^\\circ) \\cdot 0,5L = 0 \\]
-            <p>Per simetria i equilibri horitzontal $T_{AO} = -T_{BQ}$. Aplicant les distàncies del gràfic:</p>
-            \\[ T_{AO} = 33,98 \\text{ N} \\quad (\\text{tracció}) \\]
-            \\[ T_{BQ} = 33,98 \\text{ N} \\quad (\\text{compressió}) \\]
-            <p><i>Nota: El valor exacte depèn de la relació geomètrica L/s de la figura del d'examen.</i></p>
+            <p>Per l'equilibri de moments respecte al punt central entre les articulacions A i B:</p>
+            \\[ \\sum M = 0 \\implies F \\cdot s + (T_{AO} \\cdot \\sin \\phi) \\cdot 0,5L - (T_{BQ} \\cdot \\sin \\phi) \\cdot 0,5L = 0 \\]
+            <p>Per l'equilibri horitzontal, les components de les barres han de ser iguals i de sentit contrari. Substituint els valors $s = 30 \\text{ mm}$ i $L = 50 \\text{ mm}$:</p>
+            \\[ 29,43 \\cdot 0,03 + 2 \\cdot (T \\cdot \\sin 30^\\circ \\cdot 0,025) = 0 \\]
+            \\[ T_{AO} = 35,32 \\text{ N} \\text{ (tracció)} \\]
+            \\[ T_{BQ} = 35,32 \\text{ N} \\text{ (compressió)} \\]
         </div>`
 }
 ];

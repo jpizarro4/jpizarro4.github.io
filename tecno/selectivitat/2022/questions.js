@@ -13,15 +13,15 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">A) Energia inicial (E1)</span>
-                \\[ E_1 = m \\cdot g \\cdot h_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
+                \\[ E_1 = m \\dot g \\dot h_1 = 22 \\dot 9,8 \\dot 1 = 215,6 \\text{ J} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">B) Energia final (E2)</span>
-                \\[ E_2 = m \\cdot g \\cdot h_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
+                \\[ E_2 = m \\dot g \\dot h_2 = 22 \\dot 9,8 \\dot 0,25 = 53,9 \\text{ J} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Energia absorbida (ΔE)</span>
-                \\[ \\Delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
+                \\[ \\delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
             </div>`
     },
     {
@@ -38,7 +38,7 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul de la Tolerància</span>
-                \\[ \\text{Tol} = \\frac{V_{\\text{màx}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\cdot 100 = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]
+                \\[ \\text{Tol} = \\frac{V_{\\text{màx}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\dot 100 = \\frac{397,8 - 390}{390} \\dot 100 = 2 \\% \\]
             </div>`
     },
     {
@@ -59,7 +59,7 @@ const questions = [
             </div>
             <div class="step-block">
                 <span class="step-header">B) Emissions totals</span>
-                \\[ m = 1071,43 \\text{ km} \\cdot 157,8 \\text{ g/km} = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]
+                \\[ m = 1071,43 \\text{ km} \\dot 157,8 \\text{ g/km} = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]
             </div>`
     },
     {
@@ -94,7 +94,7 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul de τ</span>
-                \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} = \\frac{224}{1200} = 0,1867 \\]
+                \\[ \\tau = \\frac{z_1 \\dot z_3}{z_2 \\dot z_4} = \\frac{14 \\dot 16}{48 \\dot 25} = \\frac{224}{1200} = 0,1867 \\]
             </div>`
     },
    {
@@ -111,8 +111,8 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul del diàmetre mínim</span>
-                \\[ \\sigma = \\frac{F}{S} \\rightarrow S = \\frac{F}{\\sigma} = \\frac{20000 \\text{ N}}{325 \\cdot 10^6 \\text{ Pa}} = 6,1538 \\cdot 10^{-5} \\text{ m}^2 \\]
-                \\[ S = \\frac{\\pi \\cdot d^2}{4} \\rightarrow d = \\sqrt{\\frac{4 \\cdot S}{\\pi}} = \\sqrt{\\frac{4 \\cdot 6,1538 \\cdot 10^{-5}}{\\pi}} = 0,008852 \\text{ m} = 8,852 \\text{ mm} \\]
+                \\[ \\sigma = \\frac{F}{S} \\rightarrow S = \\frac{F}{\\sigma} = \\frac{20000 \\text{ N}}{325 \\dot 10^6 \\text{ Pa}} = 6,1538 \\dot 10^{-5} \\text{ m}^2 \\]
+                \\[ S = \\frac{\\pi \\dot d^2}{4} \\rightarrow d = \\sqrt{\\frac{4 \\dot S}{\\pi}} = \\sqrt{\\frac{4 \\dot 6,1538 \\dot 10^{-5}}{\\pi}} = 0,008852 \\text{ m} = 8,852 \\text{ mm} \\]
             </div>`
     },
     {
@@ -149,7 +149,7 @@ const questions = [
             <div class="step-block">
                 <span class="step-header">Càlcul d'emissions estalviades</span>
                 \\[ V = \\frac{79000 \\text{ kWh}}{11,79 \\text{ kWh/m}^3} = 6700,59 \\text{ m}^3 \\]
-                \\[ \\text{Estalvi} = V \\cdot 2,15 = 14406,27 \\text{ kg} \\approx 14,41 \\text{ t} \\]
+                \\[ \\text{Estalvi} = V \\dot 2,15 = 14406,27 \\text{ kg} \\approx 14,41 \\text{ t} \\]
             </div>`
     },
     {
@@ -167,14 +167,14 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Equilibri de politges</span>
-                \\[ P = m \\cdot g = 5 \\cdot 9,81 = 49,05 \\text{ N} \\]
+                \\[ P = m \\dot g = 5 \\dot 9,81 = 49,05 \\text{ N} \\]
                 \\[ F = \\frac{P}{2} = \\frac{49,05}{2} = 24,52 \\text{ N} \\]
             </div>`
     },
     {
         type: "questions",
         category: "termodinamica",
-        text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\))",
+        text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\irc\\text{C)}\\))",
         options: [
             { text: "28,23 °C", value: "a" },
             { text: "2,823 °C", value: "b" },
@@ -185,8 +185,8 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul tèrmic</span>
-                \\[ Q = 0,5 \\text{ kg} \\cdot 23,6 \\cdot 10^6 \\text{ J/kg} = 11,8 \\cdot 10^6 \\text{ J} \\]
-                \\[ \\Delta T = \\frac{11,8 \\cdot 10^6}{100000 \\text{ g} \\cdot 4,18} = 28,23 \\, ^\\circ\\text{C} \\]
+                \\[ Q = 0,5 \\text{ kg} \\dot 23,6 \\dot 10^6 \\text{ J/kg} = 11,8 \\dot 10^6 \\text{ J} \\]
+                \\[ \\delta T = \\frac{11,8 \\dot 10^6}{100000 \\text{ g} \\dot 4,18} = 28,23 \\, ^\\irc\\text{C} \\]
             </div>`
     },
     {
@@ -208,7 +208,7 @@ const questions = [
         <div class="step-block">
             <span class="step-header">Raonament</span>
             <p>Segons la Llei de Hooke, la deformació \\(\\epsilon\\) és inversament proporcional al Mòdul d'Elasticitat (o Mòdul de Young, \\(E\\)) per a una mateixa tensió \\(\\sigma\\):</p>
-            \\[ \\sigma = E \\cdot \\epsilon \\implies \\epsilon = \\frac{\\sigma}{E} \\]
+            \\[ \\sigma = E \\dot \\epsilon \\implies \\epsilon = \\frac{\\sigma}{E} \\]
             <p>Per tant, el material que menys es deforma (menor \\(\\epsilon\\)) és el que té el Mòdul d'elasticitat més alt (major \\(E\\)).</p>
             
 
@@ -238,9 +238,9 @@ const questions = [
         <div class="step-block">
             <span class="step-header">Explicació</span>
             <p>La potència \\(P\\) es defineix com l'energia \\(E\\) per unitat de temps \\(t\\):</p>
-            \\[ P = \\frac{E}{t} \\implies E = P \\cdot t \\]
+            \\[ P = \\frac{E}{t} \\implies E = P \\dot t \\]
             <p>Si mesurem la potència en quilowatts (kW) i el temps en hores (h), la unitat d'energia resultant és el quilowatt-hora.</p>
-            \\[ \\text{kW} \\cdot \\text{h} \\]
+            \\[ \\text{kW} \\dot \\text{h} \\]
             <p>Nota: J/s correspon a Watts (Potència).</p>
         </div>`
 },
@@ -264,14 +264,14 @@ const questions = [
         <div class="step-block">
             <span class="step-header">Càlcul de la Resistència Màxima</span>
             <p>Amb una tolerància de \\(\\pm 5 \\%\\), el valor màxim serà un 105% del nominal:</p>
-            \\[ R_{màx} = R_{eq} \\cdot \\left(1 + \\frac{5}{100}\\right) = 440 \\cdot 1,05 \\]
+            \\[ R_{màx} = R_{eq} \\dot \\left(1 + \\frac{5}{100}\\right) = 440 \\dot 1,05 \\]
             \\[ R_{màx} = 462 \\, \\Omega \\]
         </div>`
 },
     {
     type: "questions",
     category: "energia",
-    text: "Quina potència necessita una cafetera per a escalfar \\(75 \\text{ mL}\\) d’aigua que es troba a temperatura ambient \\((T_a = 21 ^\\circ \\text{C})\\) fins a \\(88 ^\\circ \\text{C}\\) en \\(20 \\text{ s}\\)? La calor específica de l’aigua és \\(c_e = 4,187 \\text{ J/(g K)}\\).",
+    text: "Quina potència necessita una cafetera per a escalfar \\(75 \\text{ mL}\\) d’aigua que es troba a temperatura ambient \\((T_a = 21 ^\\irc \\text{C})\\) fins a \\(88 ^\\irc \\text{C}\\) en \\(20 \\text{ s}\\)? La calor específica de l’aigua és \\(c_e = 4,187 \\text{ J/(g K)}\\).",
     options: [
         { text: "420,7 W", value: "a" },
         { text: "4,207 kW", value: "b" },
@@ -283,8 +283,8 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Càlcul de l'Energia (Calor)</span>
             <p>Primer passem el volum a massa (assumint densitat de l'aigua \\(1 \\text{ g/mL}\\)): \\(m = 75 \\text{ g}\\).</p>
-            <p>Calculem l'increment de temperatura: \\(\\Delta T = 88 - 21 = 67 \\text{ K}\\).</p>
-            \\[ Q = m \\cdot c_e \\cdot \\Delta T = 75 \\cdot 4,187 \\cdot 67 = 21039,7 \\text{ J} \\]
+            <p>Calculem l'increment de temperatura: \\(\\delta T = 88 - 21 = 67 \\text{ K}\\).</p>
+            \\[ Q = m \\dot c_e \\dot \\delta T = 75 \\dot 4,187 \\dot 67 = 21039,7 \\text{ J} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Càlcul de la Potència</span>
@@ -306,12 +306,12 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Consum total de gas</span>
             <p>Calculem el consum total tenint en compte les 5 estufes, les hores i el consum unitari:</p>
-            \\[ m_{gas} = 5 \\text{ estufes} \\cdot 9 \\text{ h} \\cdot 0,8 \\text{ kg/h} = 36 \\text{ kg de butà} \\]
+            \\[ m_{gas} = 5 \\text{ estufes} \\dot 9 \\text{ h} \\dot 0,8 \\text{ kg/h} = 36 \\text{ kg de butà} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Càlcul de les emissions (Petjada de carboni)</span>
             <p>Multipliquem la massa de combustible pel Factor d'Emissió (FE):</p>
-            \\[ \\text{Emissions} = m_{gas} \\cdot FE = 36 \\text{ kg} \\cdot 2,96 \\frac{\\text{kg CO}_2}{\\text{kg butà}} \\]
+            \\[ \\text{Emissions} = m_{gas} \\dot FE = 36 \\text{ kg} \\dot 2,96 \\frac{\\text{kg CO}_2}{\\text{kg butà}} \\]
             \\[ \\text{Emissions} = 106,56 \\text{ kg de CO}_2 \\]
         </div>`
 },
@@ -341,7 +341,7 @@ const questions = [
         type: "exercicis",
         category: "energia",
         text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de \\(t = 1,5 \\text{ h}\\) de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és \\(P_1 = 2000 \\text{ W}\\), mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, \\(P_2 = 250 \\text{ W}\\). La rentadora es connecta a la xarxa a una tensió \\(U = 230 \\text{ V}\\).
-        <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\cdot h\\) segons la franja horària:
+        <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\dot h\\) segons la franja horària:
         <div style="text-align:center; margin:15px 0;">
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula tarifes elèctriques" style="max-width:100%; border-radius:4px;">
         </div>
@@ -355,28 +355,28 @@ const questions = [
             <div class="step-block">
                 <span class="step-header">A) Energia consumida en un cicle</span>
                 \\[ t_1 = 0,5 \\text{ h}, \\quad t_2 = 1 \\text{ h} \\]
-                \\[ E_{\\text{cons}} = P_1 \\cdot t_1 + P_2 \\cdot t_2 = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
+                \\[ E_{\\text{cons}} = P_1 \\dot t_1 + P_2 \\dot t_2 = 2000 \\dot 0,5 + 250 \\dot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">B) % Energia fase rentada</span>
-                \\[ E_{\\text{rentada}} = 2000 \\cdot 0,5 = 1000 \\text{ Wh} \\]
-                \\[ c_r = \\frac{E_{\\text{rentada}}}{E_{\\text{cons}}} \\cdot 100 = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
+                \\[ E_{\\text{rentada}} = 2000 \\dot 0,5 = 1000 \\text{ Wh} \\]
+                \\[ c_r = \\frac{E_{\\text{rentada}}}{E_{\\text{cons}}} \\dot 100 = \\frac{1000}{1250} \\dot 100 = 80 \\% \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Costos per rentada</span>
-                \\[ c_{\\text{punta}} = 1,25 \\text{ kWh} \\cdot 0,342930 \\text{ €/kWh} = 0,4287 \\text{ €} \\]
-                \\[ c_{\\text{vall}} = 1,25 \\text{ kWh} \\cdot 0,216951 \\text{ €/kWh} = 0,2712 \\text{ €} \\]
+                \\[ c_{\\text{punta}} = 1,25 \\text{ kWh} \\dot 0,342930 \\text{ €/kWh} = 0,4287 \\text{ €} \\]
+                \\[ c_{\\text{vall}} = 1,25 \\text{ kWh} \\dot 0,216951 \\text{ €/kWh} = 0,2712 \\text{ €} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">D) Estalvi anual</span>
-                \\[ \\text{Estalvi mensual} = (0,4287 - 0,2712) \\cdot 10 = 1,575 \\text{ €/mes} \\]
-                \\[ e_a = 1,575 \\cdot 12 = 18,90 \\text{ €} \\]
+                \\[ \\text{Estalvi mensual} = (0,4287 - 0,2712) \\dot 10 = 1,575 \\text{ €/mes} \\]
+                \\[ e_a = 1,575 \\dot 12 = 18,90 \\text{ €} \\]
             </div>`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `Un volant amb un moment d’inèrcia \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\). Es desconnecta el motor i triga \\(t = 1 \\text{ min}\\) a aturar-se per fricció constant. Determineu:
+        text: `Un volant amb un moment d’inèrcia \\(I = 0,9 \\text{ kg} \\dot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\). Es desconnecta el motor i triga \\(t = 1 \\text{ min}\\) a aturar-se per fricció constant. Determineu:
         <br><br><strong>a)</strong> L’acceleració angular del volant \\(\\alpha\\). [0,5 p]
         <br><strong>b)</strong> El nombre de voltes \\(n\\) abans d’aturar-se. [1 p]
         <br><strong>c)</strong> L’energia mecànica dissipada \\(E_{\\text{diss}}\\). [1 p]`,
@@ -384,23 +384,23 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">A) Acceleració angular</span>
-                \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
+                \\[ \\omega_0 = 5000 \\dot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
                 \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
             </div>
             <div class="step-block">
                 <span class="step-header">B) Voltes totals</span>
-                \\[ \\theta = 523,6 \\cdot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\]
+                \\[ \\theta = 523,6 \\dot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\]
                 \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Energia dissipada</span>
-                \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
+                \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\dot 0,9 \\dot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
             </div>`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\circ\\).
+        text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\irc\\).
         <div style="text-align:center; margin:15px 0;">
             <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p4.png" alt="Sistema de barra i tambor" style="max-width:100%; border-radius:4px;">
         </div>
@@ -417,19 +417,19 @@ const questions = [
             </div>
             <div class="step-block">
                 <span class="step-header">B) Força T al cable</span>
-                \\[ \\sum M(O) = 0 \\rightarrow T \\cos(30^\\circ) \\cdot 2L - m \\cdot g \\cos(30^\\circ) \\cdot L = 0 \\]
-                \\[ T = \\frac{m \\cdot g}{2} = \\frac{50 \\cdot 9,81}{2} = 245,2 \\text{ N} \\]
+                \\[ \\sum M(O) = 0 \\rightarrow T \\os(30^\\irc) \\dot 2L - m \\dot g \\os(30^\\irc) \\dot L = 0 \\]
+                \\[ T = \\frac{m \\dot g}{2} = \\frac{50 \\dot 9,81}{2} = 245,2 \\text{ N} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Forces a l'articulació O</span>
-                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\cos(30^\\circ) - F_H = 0 \\]
+                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\os(30^\\irc) - F_H = 0 \\]
                 \\[ F_H = T \\frac{\\sqrt{3}}{2} = 212,3 \\text{ N} \\]
-                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30^\\circ) - m \\cdot g + F_V = 0 \\]
-                \\[ F_V = \\frac{3 \\cdot m \\cdot g}{4} = 367,8 \\text{ N} \\]
+                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30^\\irc) - m \\dot g + F_V = 0 \\]
+                \\[ F_V = \\frac{3 \\dot m \\dot g}{4} = 367,8 \\text{ N} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">D) Parell Γ del motor</span>
-                \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,2 \\cdot \\frac{0,45}{2} = 55,16 \\text{ Nm} \\]
+                \\[ \\Gamma = T \\dot \\frac{d}{2} = 245,2 \\dot \\frac{0,45}{2} = 55,16 \\text{ Nm} \\]
             </div>`
     },
     {
@@ -452,14 +452,14 @@ const questions = [
                 <p>Primer sumem les tres resistències en sèrie (branca 1):</p>
                 \\[ R_{123} = R_1 + R_2 + R_3 = 20 + 20 + 20 = 60 \\, \\Omega \\]
                 <p>Ara calculem el paraŀlel de \\(R_{123}\\) amb \\(R_4\\):</p>
-                \\[ R_{eq} = \\frac{R_{123} \\cdot R_4}{R_{123} + R_4} = \\frac{60 \\cdot 100}{60 + 100} = \\frac{6000}{160} = 37,5 \\, \\Omega \\]
+                \\[ R_{eq} = \\frac{R_{123} \\dot R_4}{R_{123} + R_4} = \\frac{60 \\dot 100}{60 + 100} = \\frac{6000}{160} = 37,5 \\, \\Omega \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Intensitat i Potència</span>
                 <p>Apliquem la Llei d'Ohm per a la intensitat total:</p>
                 \\[ I = \\frac{U}{R_{eq}} = \\frac{230}{37,5} = 6,133 \\text{ A} \\]
                 <p>Calculem la potència activa consumida:</p>
-                \\[ P = U \\cdot I = 230 \\cdot 6,133 = 1410,67 \\text{ W} \\approx 1,41 \\text{ kW} \\]
+                \\[ P = U \\dot I = 230 \\dot 6,133 = 1410,67 \\text{ W} \\approx 1,41 \\text{ kW} \\]
             </div>`
     },
     {
@@ -512,24 +512,24 @@ const questions = [
             <span class="step-header">A) Emissions diàries (m)</span>
             <p><b>Vehicle elèctric:</b></p>
             \\[ d_{total} = 120 + 10 = 130 \\text{ km} \\]
-            \\[ E_{diària} = 130 \\text{ km} \\cdot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
-            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\cdot 241 \\text{ g/kWh} = 4166,89 \\text{ g} = 4,167 \\text{ kg CO2} \\]
+            \\[ E_{diària} = 130 \\text{ km} \\dot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
+            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\dot 241 \\text{ g/kWh} = 4166,89 \\text{ g} = 4,167 \\text{ kg CO2} \\]
             <p><b>Vehicle gasoil:</b></p>
-            \\[ Consum_{L} = \\left(120 \\cdot \\frac{3,6}{100}\\right) + \\left(10 \\cdot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
-            \\[ m_{gas} = 4,76 \\text{ L} \\cdot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO2} \\]
+            \\[ Consum_{L} = \\left(120 \\dot \\frac{3,6}{100}\\right) + \\left(10 \\dot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
+            \\[ m_{gas} = 4,76 \\text{ L} \\dot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO2} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Cost diari (cd)</span>
-            \\[ cd_{elèctr} = 17,29 \\text{ kWh} \\cdot 0,14 \\text{ €/kWh} = 2,421 \\text{ €} \\]
-            \\[ cd_{gas} = 4,76 \\text{ L} \\cdot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
+            \\[ cd_{elèctr} = 17,29 \\text{ kWh} \\dot 0,14 \\text{ €/kWh} = 2,421 \\text{ €} \\]
+            \\[ cd_{gas} = 4,76 \\text{ L} \\dot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
         </div>
         <div class="step-block">
             <span class="step-header">C) Temps de recuperació (t)</span>
             <p>Sobrecost d'adquisició:</p>
-            \\[ \\Delta C = 25700 - 18000 = 7700 \\text{ €} \\]
+            \\[ \\delta C = 25700 - 18000 = 7700 \\text{ €} \\]
             <p>Estalvi diari i anual:</p>
             \\[ \\text{Estalvi}_{dia} = 5,755 - 2,421 = 3,334 \\text{ €/dia} \\]
-            \\[ \\text{Estalvi}_{any} = 3,334 \\cdot 280 = 933,52 \\text{ €/any} \\]
+            \\[ \\text{Estalvi}_{any} = 3,334 \\dot 280 = 933,52 \\text{ €/any} \\]
             \\[ t = \\frac{7700}{933,52} = 8,248 \\text{ anys} \\]
         </div>`
 },
@@ -550,8 +550,8 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Energia teòrica (E_aigua)</span>
             <p>Massa d'aigua: $m = 350 \\text{ mL} = 350 \\text{ g}$.</p>
-            \\[ Q = m \\cdot c_e \\cdot (T_2 - T_1) \\]
-            \\[ E_{aigua} = 350 \\text{ g} \\cdot 4,18 \\text{ J/(g°C)} \\cdot (95 - 20) \\text{ °C} = 109725 \\text{ J} \\approx 109,7 \\text{ kJ} \\]
+            \\[ Q = m \\dot c_e \\dot (T_2 - T_1) \\]
+            \\[ E_{aigua} = 350 \\text{ g} \\dot 4,18 \\text{ J/(g°C)} \\dot (95 - 20) \\text{ °C} = 109725 \\text{ J} \\approx 109,7 \\text{ kJ} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Resistència de l'escalfador (R)</span>
@@ -560,14 +560,14 @@ const questions = [
         </div>
         <div class="step-block">
             <span class="step-header">C) Energia consumida per l'escalfador (E_cons)</span>
-            \\[ E_{cons} = P \\cdot t = 1200 \\text{ W} \\cdot 125 \\text{ s} = 150000 \\text{ J} = 150 \\text{ kJ} \\]
+            \\[ E_{cons} = P \\dot t = 1200 \\text{ W} \\dot 125 \\text{ s} = 150000 \\text{ J} = 150 \\text{ kJ} \\]
         </div>
         <div class="step-block">
             <span class="step-header">D) Rendiments i elecció (η)</span>
             <p><b>Rendiment escalfador:</b></p>
             \\[ \\eta_{escalf} = \\frac{E_{aigua}}{E_{cons}} = \\frac{109725}{150000} = 0,7315 \\rightarrow 73,15 \\% \\]
             <p><b>Rendiment vitroceràmica:</b></p>
-            <p>Passem l'energia de la vitro a Joules: $0,11 \\text{ kWh} \\cdot 3,6 \\cdot 10^6 \\text{ J/kWh} = 396000 \\text{ J}$.</p>
+            <p>Passem l'energia de la vitro a Joules: $0,11 \\text{ kWh} \\dot 3,6 \\dot 10^6 \\text{ J/kWh} = 396000 \\text{ J}$.</p>
             \\[ \\eta_{vitro} = \\frac{109725}{396000} = 0,2771 \\rightarrow 27,71 \\% \\]
             <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè té un rendiment molt més elevat i consumeix menys energia.</p>
         </div>`
@@ -594,13 +594,13 @@ const questions = [
         <div class="step-block">
             <span class="step-header">b) Valor de la força F aplicada</span>
             <p>Atès que la porta es troba en repòs i el mecanisme de barres paral·leles fa que pugi mantenint-se sempre vertical (translació), el sumatori de forces verticals ha de ser zero:</p>
-            \\[ \\sum F_y = 0 \\implies F - m \\cdot g = 0 \\]
-            \\[ F = 3 \\; \\text{kg} \\cdot 9,81 \\; \\text{m/s}^2 = 29,43 \\; \\text{N} \\]
+            \\[ \\sum F_y = 0 \\implies F - m \\dot g = 0 \\]
+            \\[ F = 3 \\; \\text{kg} \\dot 9,81 \\; \\text{m/s}^2 = 29,43 \\; \\text{N} \\]
         </div>
         <div class="step-block">
             <span class="step-header">c) Forces a les barres per a φ = 30°</span>
             <p>Per l'equilibri de moments respecte al centre de la porta (punt mig entre A i B) i considerant que per equilibri horitzontal les components de les forces a les barres han de ser oposades:</p>
-            \\[ \\sum M = 0 \\implies F \\cdot s + 2 \\cdot (T \\cdot \\sin \\phi \\cdot 0,5L) = 0 \\]
+            \\[ \\sum M = 0 \\implies F \\dot s + 2 \\dot (T \\dot \\sin \\phi \\dot 0,5L) = 0 \\]
             <p>Substituint els valors de les dades del gràfic (\\(s = 30 \\; \\text{mm}\\) i \\(L = 50 \\; \\text{mm}\\)):</p>
             \\[ T_{AO} = 35,32 \\; \\text{N} \\quad (\\text{tracció}) \\]
             \\[ T_{BQ} = 35,32 \\; \\text{N} \\quad (\\text{compressió}) \\]
@@ -620,17 +620,17 @@ const questions = [
         <div class="step-block">
             <span class="step-header">A) Velocitat angular i d'avanç</span>
             <p>La potència és el producte del parell per la velocitat angular:</p>
-            \\[ P_{mot} = \\Gamma \\cdot \\omega_{roda} \\implies \\omega_{roda} = \\frac{P_{mot}}{\\Gamma} = \\frac{15000}{150} = 100 \\, \\text{rad/s} \\]
+            \\[ P_{mot} = \\Gamma \\dot \\omega_{roda} \\implies \\omega_{roda} = \\frac{P_{mot}}{\\Gamma} = \\frac{15000}{150} = 100 \\, \\text{rad/s} \\]
             <p>La velocitat d'avanç es calcula amb el radi de la roda \\( (r = d/2 = 0,315 \\, \\text{m}) \\):</p>
-            \\[ v = \\omega_{roda} \\cdot r = 100 \\cdot 0,315 = 31,5 \\, \\text{m/s} \\]
-            \\[ v = 31,5 \\cdot 3,6 = 113,4 \\, \\text{km/h} \\]
+            \\[ v = \\omega_{roda} \\dot r = 100 \\dot 0,315 = 31,5 \\, \\text{m/s} \\]
+            \\[ v = 31,5 \\dot 3,6 = 113,4 \\, \\text{km/h} \\]
         </div>
         <div class="step-block">
             <span class="step-header">B) Temps màxim i energia subministrada</span>
             <p>Calculem el temps necessari per recórrer l'autonomia màxima:</p>
             \\[ t_{màx} = \\frac{s_{màx}}{v} = \\frac{200}{113,4} = 1,764 \\, \\text{h} \\approx 6349,2 \\, \\text{s} \\]
             <p>L'energia subministrada pel motor és el producte de la potència pel temps:</p>
-            \\[ E_{subm} = P_{mot} \\cdot t_{màx} = 15000 \\cdot 6349,2 = 95,24 \\, \\text{MJ} \\]
+            \\[ E_{subm} = P_{mot} \\dot t_{màx} = 15000 \\dot 6349,2 = 95,24 \\, \\text{MJ} \\]
             \\[ E_{subm} = \\frac{95,24}{3,6} = 26,45 \\, \\text{kWh} \\]
         </div>
         <div class="step-block">
@@ -669,52 +669,55 @@ const questions = [
                 </div>
         </div>`
 },
-    {
-    type: "exercicis",
-    category: "maquines",
-    text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(cos phi = 0,85\\). La relació de transmissió del reductor és \\(tau = omega_{red}/omega_{mot} = 0,009\\). El motor gira a \\(n_{mot} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant.
-    <br><br>Determineu:
-    <br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(omega_{red}\\) en \\(text{rad/s}\\). [0,5 punts]
-    <br><strong>b)</strong> El treball necessari que ha de realitzar el muntacàrregues \\(W\\). [0,5 punts]
-    <br><strong>c)</strong> La potència elèctrica consumida pel conjunt \\(P_{elèc}\\). [1 punt]
-    <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
-    correctAnswer: "",
-    steps: `
        {
     type: "exercicis",
     category: "maquines",
-    text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(\eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(\cos \phi = 0,85\\). La relació de transmissió del reductor és \\(\tau = \omega_{red}/\omega_{mot} = 0,009\\). El motor gira a \\(n_{mot} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant.
-    <br><br>Determineu:
-    <br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(\omega_{red}\\) en \\(\text{rad/s}\\). [0,5 punts]
+    text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(\\eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(\\cos \\phi = 0,85\\). La relació de transmissió del reductor és \\(\\tau = \\omega_{red}/\\omega_{mot} = 0,009\\). El motor gira a \\(n_{mot} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant. Determineu:
+    <br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(\\omega_{red}\\) en \\(\\text{rad/s}\\). [0,5 punts]
     <br><strong>b)</strong> El treball necessari que ha de realitzar el muntacàrregues \\(W\\). [0,5 punts]
     <br><strong>c)</strong> La potència elèctrica consumida pel conjunt \\(P_{elèc}\\). [1 punt]
-    <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
+    <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]
+    <br><br>`,
     correctAnswer: "",
     steps: `
-        <div class="step-block">
-            <span class="step-header">A) Velocitat de rotació del reductor (\(\omega_{red}\))</span>
-            <p>Primer, convertim la velocitat del motor de \(\text{min}^{-1}\) a \(\text{rad/s}\):</p>
-            \\[ \omega_{mot} = 1470 \cdot \frac{2\pi}{60} = 153,94 \\, \text{rad/s} \\]
-            <p>Utilitzant la relació de transmissió \\(\tau\\):</p>
-            \\[ \omega_{red} = \tau \cdot \omega_{mot} = 0,009 \cdot 153,94 = 1,385 \\, \text{rad/s} \\]
-        </div>
-        <div class="step-block">
-            <span class="step-header">B) Treball necessari (\(W\))</span>
-            <p>El treball per elevar la càrrega a velocitat constant és la variació de l'energia potencial:</p>
-            \\[ W = m \cdot g \cdot h = 2000 \cdot 9,8 \cdot 8 = 156800 \\, \text{J} = 156,8 \\, \text{kJ} \\]
-        </div>
-        <div class="step-block">
-            <span class="step-header">C) Potència elèctrica consumida (\(P_{elèc}\))</span>
-            <p>Primer calculem la potència útil de sortida (mecànica) en Watts:</p>
-            \\[ P_{útil} = \frac{W}{t} = \frac{156800}{1,5 \cdot 60} = 1742,22 \\, \text{W} \\]
-            <p>Considerant el rendiment del conjunt motor-reductor:</p>
-            \\[ P_{elèc} = \frac{P_{útil}}{\eta} = \frac{1742,22}{0,6} = 2903,7 \\, \text{W} \approx 2,9 \\, \text{kW} \\]
-        </div>
-        <div class="step-block">
-            <span class="step-header">D) Intensitat de corrent (\(I\))</span>
-            <p>En un sistema monofàsic, la potència elèctrica segueix la fórmula:</p>
-            \\[ P_{elèc} = U \cdot I \cdot \cos \phi \\]
-            \\[ I = \frac{P_{elèc}}{U \cdot \cos \phi} = \frac{2903,7}{230 \cdot 0,85} = 14,85 \\, \text{A} \\]
-        </div>`
+        <strong>a) Velocitat de rotació de l’eix de sortida del reductor \\(\\omega_{red}\\):</strong>
+        <br>
+        Primer, passem la velocitat del motor a rad/s:
+        \\[
+        \\omega_{mot} = n_{mot} \\cdot \\frac{2\\pi}{60} = 1470 \\cdot \\frac{2\\pi}{60} = 153,94 \\; \\text{rad/s}
+        \\]
+        Ara apliquem la relació de transmissió \\(\tau\\):
+        \\[
+        \\omega_{red} = \\tau \\cdot \\omega_{mot} = 0,009 \\cdot 153,94 = 1,385 \\; \\text{rad/s}
+        \\]
+        <br>
+        <strong>b) Treball necessari \\(W\\):</strong>
+        <br>
+        El treball és l'energia potencial guanyada per la càrrega:
+        \\[
+        W = m \\cdot g \\cdot h = 2000 \\cdot 9,81 \\cdot 8 = 156960 \\; \\text{J} = 156,96 \\; \\text{kJ}
+        \\]
+        <br>
+        <strong>c) Potència elèctrica consumida \\(P_{elèc}\\):</strong>
+        <br>
+        Primer calculem la potència útil de l'aparell (treball per unitat de temps):
+        \\[
+        P_{útil} = \\frac{W}{t} = \\frac{156960}{1,5 \\cdot 60} = \\frac{156960}{90} = 1744 \\; \\text{W}
+        \\]
+        A partir del rendiment \\(\\eta\\) del conjunt, trobem la potència elèctrica:
+        \\[
+        P_{elèc} = \\frac{P_{útil}}{\\eta} = \\frac{1744}{0,6} = 2906,67 \\; \\text{W}
+        \\]
+        <br>
+        <strong>d) Intensitat de corrent \\(I\\):</strong>
+        <br>
+        En un motor monofàsic de corrent altern:
+        \\[
+        P_{elèc} = U \\cdot I \\cdot \\cos \\phi
+        \\]
+        \\[
+        I = \\frac{P_{elèc}}{U \\cdot \\cos \\phi} = \\frac{2906,67}{230 \\cdot 0,85} = 14,87 \\; \\text{A}
+        \\]
+        <br><br>`
 }
 ];

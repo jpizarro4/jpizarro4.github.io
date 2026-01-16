@@ -1,110 +1,105 @@
-/* ===== CONFIGURACIÓ DE COLORS (Variables) ===== */
+/* ===== CONFIGURACIÓ DE COLORS ===== */
 :root {
-    /* MODO CLARO (Per defecte) */
     --bg-page: #f0f2f5;
     --bg-card: #ffffff;
     --text-main: #111827;
     --text-secondary: #6b7280;
     --border: #e5e7eb;
-    --accent: #d4ff00; /* Groc */
-    --success: #10b981; /* Verd */
+    --accent: #d4ff00;
+    --success: #10b981;
     --success-bg: #ecfdf5;
-    --error: #ef4444; /* Vermell */
+    --error: #ef4444;
     --error-bg: #fef2f2;
-    --btn-bg: #f3f4f6;
-    --selection-green: #00ff66; /* El teu verd de selecció */
+    --selection-green: #00ff66;
 }
 
-/* MODO OSCURO */
 body.dark-mode {
     --bg-page: #121212;
     --bg-card: #1a1a1a;
     --text-main: #ffffff;
     --text-secondary: #a0a0a0;
     --border: #2a2a2a;
-    --btn-bg: #242424;
     --success-bg: #1e2a22;
     --error-bg: #2a1a1a;
 }
 
-/* ===== ESTILS GENERALS ===== */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
-    margin: 0; padding: 0;
-    transition: background 0.3s ease;
+    margin: 0; padding-top: 80px; /* Espai per la navbar fixa */
+    transition: 0.3s;
 }
 
-/* NAVBAR ORDENADA (Amb espai fixat) */
-.navbar {
+/* NAVBAR ORDENADA */
+h2 {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 60px; /* Altura fixa per control */
+    top: 0; left: 0; width: 100%;
     background: var(--bg-card);
+    margin: 0; padding: 15px 20px;
     border-bottom: 1px solid var(--border);
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    font-size: 1.2rem;
     z-index: 1000;
-}
-
-.nav-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; /* Títol a l'esquerra, Lluna a la dreta */
-    align-items: center;
-    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* FILTRES */
 .filter-group-container {
-    margin-top: 100px; /* Espai suficient per no xocar amb la navbar */
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.filter-group {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 20px 0;
 }
 
 .filter-button {
-    background: var(--btn-bg);
+    background: var(--bg-page);
     color: var(--text-secondary);
     border: 1px solid var(--border);
-    padding: 8px 18px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
 .filter-button.active {
     background: var(--text-main);
     color: var(--bg-card);
+    border-color: var(--text-main);
 }
 
-/* TARGETES */
-.content-container, #quiz-container, .exercise-card {
-    margin: 20px auto;
-    max-width: 700px;
+/* TARGETES D'EXERCICIS */
+.quiz-item {
     background: var(--bg-card);
+    max-width: 800px;
+    margin: 20px auto;
     padding: 30px;
     border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* BOTONS D'OPCIONS I SELECCIÓ VERDA */
+/* BOTONS D'OPCIONS */
 ul { list-style: none; padding: 0; }
-
-li button, .option-btn {
+li button {
     width: 100%;
-    background: var(--btn-bg);
+    background: var(--bg-page);
     border: 1px solid var(--border);
     color: var(--text-main);
-    padding: 15px 20px;
-    margin-bottom: 10px;
+    padding: 14px 20px;
+    margin-bottom: 8px;
     text-align: left;
     border-radius: 10px;
     cursor: pointer;
@@ -112,53 +107,51 @@ li button, .option-btn {
     transition: 0.2s;
 }
 
-/* EL QUE DEMANAVES: Selecció en verd */
-li button.selected, .option-btn.selected {
+/* SELECCIÓ EN VERD */
+li button.selected {
     border: 2px solid var(--selection-green) !important;
     background: var(--success-bg) !important;
-    color: var(--text-main);
+    font-weight: 600;
 }
 
-/* QUADRADETS DE FEEDBACK (S'activen per JS) */
-.feedback-box {
-    margin: 20px 0;
+/* FEEDBACK (Els quadradets) */
+.feedback-container {
+    margin: 15px 0;
     padding: 15px;
     border-radius: 8px;
     font-weight: 700;
-    display: flex; /* Canviar a 'none' si vols que el JS el faci aparèixer */
-    align-items: center;
-    gap: 10px;
-    border: 2px solid;
 }
 
-.feedback-box.correct {
+.correcta {
+    display: block;
     background: var(--success-bg);
     color: var(--success);
-    border-color: var(--success);
+    border: 1px solid var(--success);
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.feedback-box.incorrect {
+.incorrecta {
+    display: block;
     background: var(--error-bg);
     color: var(--error);
-    border-color: var(--error);
+    border: 1px solid var(--error);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* SOLUCIONS */
-.step-block {
+.result-box {
     margin-top: 20px;
-    padding: 15px;
-    background: var(--btn-bg);
+    padding: 20px;
+    background: var(--bg-page);
     border-radius: 10px;
-    border-left: 4px solid var(--success); /* Marca verda lateral */
 }
 
-.step-letter {
-    display: block;
-    color: var(--success);
-    font-size: 0.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+.step-block {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid var(--success);
 }
 
 .solution-button {
@@ -169,5 +162,5 @@ li button.selected, .option-btn.selected {
     border-radius: 8px;
     font-weight: 800;
     cursor: pointer;
-    margin-top: 15px;
+    text-transform: uppercase;
 }

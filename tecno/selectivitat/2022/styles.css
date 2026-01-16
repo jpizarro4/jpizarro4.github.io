@@ -1,77 +1,81 @@
-/* ===== CONFIGURACIÓ GENERAL (Estil FotMob) ===== */
+/* ===== CONFIGURACIÓ DE COLORS (Variables) ===== */
 :root {
-    --bg-page: #f0f2f5;       /* Gris clar de fons */
-    --bg-card: #ffffff;       /* Blanc per a les targetes */
-    --text-main: #111827;     /* Negre suau per al text */
-    --text-secondary: #6b7280; /* Gris per a subtítols */
-    --border: #e5e7eb;        /* Vores fines */
-    --accent: #d4ff00;        /* Groc llimona (el teu toc exòtic) */
-    --success: #10b981;       /* Verd per a encerts */
-    --success-bg: #ecfdf5;    /* Fons verd suau */
-    --error: #ef4444;         /* Vermell per a errors */
-    --error-bg: #fef2f2;      /* Fons vermell suau */
+    /* MODO CLARO (Por defecto) */
+    --bg-page: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-main: #111827;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --accent: #d4ff00; /* Amarillo */
+    --success: #10b981; /* Verde */
+    --success-bg: #ecfdf5;
+    --error: #ef4444; /* Rojo */
+    --error-bg: #fef2f2;
+    --btn-bg: #f3f4f6;
 }
 
-/* Transició per al mode fosc */
+/* MODO OSCURO (Se activa añadiendo class="dark-mode" al body) */
+body.dark-mode {
+    --bg-page: #121212;
+    --bg-card: #1a1a1a;
+    --text-main: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border: #2a2a2a;
+    --btn-bg: #242424;
+    --success-bg: #1e2a22;
+    --error-bg: #2a1a1a;
+}
+
+/* ===== ESTILS GENERALS ===== */
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
     margin: 0;
-    line-height: 1.5;
+    padding: 0;
     transition: background 0.3s ease;
 }
 
-/* NAVBAR NETEJA */
+/* NAVBAR ORDENADA */
 .navbar {
+    position: fixed;
+    top: 0; 
+    width: 100%;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
+    padding: 12px 0;
     z-index: 1000;
 }
 
-.nav-content {
+.nav-container {
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* FILTRES EN FILA (Com a la teva captura però ordenats) */
-.filters-container {
-    max-width: 900px;
-    margin: 20px auto;
     padding: 0 20px;
 }
 
-.filter-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    gap: 15px;
-}
-
-.filter-label {
-    font-size: 0.75rem;
+.nav-logo {
     font-weight: 800;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    min-width: 110px;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
 }
 
-.chips-group {
+/* FILTRES (CHIPS) */
+.filter-group-container {
+    margin-top: 100px; /* Baixem per la navbar fixa */
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
 }
 
-.chip {
-    background: var(--bg-card);
+.filter-button {
+    background: var(--btn-bg);
+    color: var(--text-secondary);
     border: 1px solid var(--border);
-    padding: 6px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -79,112 +83,112 @@ body {
     transition: 0.2s;
 }
 
-.chip.active {
+.filter-button.active {
     background: var(--text-main);
-    color: white;
+    color: var(--bg-card);
     border-color: var(--text-main);
 }
 
-/* TARGETES D'EXERCICIS (Cards) */
-.card, .exercise-card {
-    background: var(--bg-card);
-    max-width: 800px;
+/* TARGETES D'EXERCICIS */
+.content-container, #quiz-container {
     margin: 20px auto;
+    max-width: 700px;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* BOTONS DE RESPOSTA (Test) */
-.option-btn, .options-list button {
+/* ENUNCIATS */
+h2, .question-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* BOTONS D'OPCIONS */
+ul { list-style: none; padding: 0; }
+
+li button {
     width: 100%;
-    text-align: left;
-    padding: 14px 20px;
-    margin-bottom: 10px;
-    background: var(--bg-page);
+    background: var(--btn-bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    color: var(--text-main);
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: 0.2s;
 }
 
-.option-btn:hover {
+li button:hover {
     border-color: var(--text-secondary);
-    background: #ebedf0;
 }
 
-/* FEEDBACK (Els quadradets que demanaves) */
+li button.selected {
+    border: 2px solid var(--text-main);
+}
+
+/* QUADRADETS DE FEEDBACK (Correcte / Incorrecte) */
 .feedback-box {
-    margin: 15px 0;
+    margin: 20px 0;
     padding: 15px;
     border-radius: 8px;
-    font-weight: 600;
-    display: none; /* Es mostra per JS */
+    font-weight: 700;
+    display: flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid;
+    font-size: 0.9rem;
 }
 
 .feedback-box.correct {
-    display: flex;
     background: var(--success-bg);
     color: var(--success);
-    border-color: var(--success);
+    border: 1px solid var(--success);
 }
 
 .feedback-box.incorrect {
-    display: flex;
     background: var(--error-bg);
     color: var(--error);
-    border-color: var(--error);
+    border: 1px solid var(--error);
 }
 
-/* APARTATS SOLUCIÓ (Dalt a l'esquerra) */
-.step-block {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    text-align: left;
-}
-
-.step-header {
-    color: var(--success);
-    font-weight: 800;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+/* BOTONS D'ACCIÓ */
+.solution-button {
     display: block;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-}
-
-.btn-solution {
     background: var(--accent);
     color: #000;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 800;
     text-transform: uppercase;
     font-size: 0.75rem;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-/* IMATGES */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 15px 0;
+/* SOLUCIONS (Steps) */
+.step-block {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--btn-bg);
+    border-radius: 10px;
+    border-top: 2px solid var(--success);
 }
 
-/* MODE FOSC (Per si cliques la lluna) */
-body.dark-mode {
-    --bg-page: #0b0e14;
-    --bg-card: #1a1d23;
-    --text-main: #f0f0f0;
-    --text-secondary: #94a3b8;
-    --border: #334155;
+.step-letter {
+    display: block;
+    color: var(--success);
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
+
+/* LATEX */
+.mjx-chtml { color: var(--text-main) !important; }

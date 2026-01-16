@@ -740,7 +740,7 @@ const questions = [
         type: "exercicis",
         category: "estatica",
         text: "La figura representa el sistema que permet elevar el taulell d’una taula de centre. El taulell és homogeni i de gruix negligible, té una longitud \\(3L\\) i una massa \\(m = 4 \\text{ kg}\\). Les barres \\(AB\\) i \\(CD\\), de massa negligible, tenen els extrems articulats al taulell i a l’estructura. S’aplica una força \\(F\\) vertical al punt \\(O\\). Sabent que el sistema està en equilibri i que \\(\\varphi = 60^\\circ\\), determineu:",
-        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p14.png" style="max-width:300px;"></div>',
+        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5p14.png" style="max-width:300px;"></div>',
         options: [],
         correctAnswer: "",
         steps: `

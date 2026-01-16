@@ -94,16 +94,31 @@ const questions = [
     },
     {
         type: "exercicis",
-        category: "materials",
-        text: `Barra d'acer de diàmetre d = 10 mm i longitud L = 0,5 m. El límit elàstic és σe = 300 MPa i el mòdul de Young E = 210 GPa.
-        <br><br><strong>a)</strong> El valor de la força F que marca el límit elàstic. [1,25 punts]
-        <br><strong>b)</strong> L'allargament de la barra en aquest punt. [1,25 punts]`,
+        category: "energia",
+        text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de t = 1,5 h de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és P₁ = 2 000 W, mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, P₂ = 250 W. La rentadora es connecta a la xarxa a una tensió U = 230 V.
+        <br>S’ha contractat una tarifa amb discriminació horària que determina el preu del kW · h segons la franja horària en què es consumeix l’electricitat, tal com es mostra en la taula:
+        
+        <div style="text-align:center; margin: 15px 0;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2e3_taula.png" alt="Taula de preus elèctrics" style="max-width:100%; height:auto; border-radius:8px;">
+        </div>
+
+        Es considera que s’utilitza el programa estàndard n = 10 vegades al mes. Determineu:
+        <br><br><strong>a)</strong> L’energia consumida en un cicle de funcionament Econs. [0,5 punts]
+        <br><strong>b)</strong> El percentatge d’energia consumida en la fase de rentada cr. [0,5 punts]
+        <br><strong>c)</strong> El cost de posar una rentadora en hores punta cpunta i en hores vall cvall. [1 punt]
+        <br><strong>d)</strong> L’estalvi anual ea que s’obtindrà si la rentadora sempre es posa en hores vall respecte al cost de posar-la sempre en hores punta. [0,5 punts]`,
         correctAnswer: "",
         steps: `
-        <strong>a) Força:</strong><br>
-        \\[ F = \\sigma_e \\cdot S = 300 \\cdot 10^6 \\cdot \\frac{\\pi \\cdot 0,01^2}{4} = 23562 \\; N \\]
-        <br><strong>b) Allargament:</strong><br>
-        \\[ \\Delta L = \\frac{\\sigma_e}{E} \\cdot L = \\frac{300 \\cdot 10^6}{210 \\cdot 10^9} \\cdot 0,5 = 0,714 \\; mm \\]
-        `
-    }
-];
+        <strong>Resolució:</strong>
+        <div style="margin-top: 20px;">
+            <strong>a) i b) Energia consumida i percentatge:</strong>
+            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r3ab.png" alt="Resolució apartats a i b" style="max-width:100%; height:auto;">
+            </div>
+            
+            <strong>c) i d) Costos i estalvi anual:</strong>
+            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r3cd.png" alt="Resolució apartats c i d" style="max-width:100%; height:auto;">
+            </div>
+        </div>`
+    },

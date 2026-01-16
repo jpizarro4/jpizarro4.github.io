@@ -350,10 +350,10 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Taula de Veritat</span>
+                <span class="step-header">A) Taula de Veritat</span> 
                 <p>Els números que fan que el LED s'encengui (l=1) són aquells que en binari acaben en "00" (els múltiples de 4 i el 0):</p>
                 <div style="text-align:center;">
-                    <table style="margin: auto; border-collapse: collapse; width: 200px; text-align: center; font-size: 0.9em;" border="1">
+                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
                         <thead>
                             <tr style="background-color: #f2f2f2;">
                                 <th>#</th><th>a</th><th>b</th><th>c</th><th>d</th><th>l</th>
@@ -378,7 +378,7 @@ const questions = [
                 <span class="step-header">C) Esquema de contactes</span>
                 <p>La funció producte de dues variables negades es representa amb dos contactes <b>normalment tancats</b> connectats en <b>sèrie</b>:</p>
                 <div style="text-align:center; margin: 15px 0;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
+                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
                 </div>
             </div>`
     }

@@ -463,7 +463,7 @@ const questions = [
             <span class="step-header">A) Diagrama de cos lliure (DCL)</span>
             <p>El DCL ha d'incloure: el Pes ($P$) vertical cap avall al centre de la porta, la força aplicada ($F$) vertical cap amunt al punt P, i les dues forces de les barres ($T_{AO}$ i $T_{BQ}$) aplicades a les articulacions A i B amb la direcció de les barres (angle $\\phi$ respecte a la vertical).</p>
             <div style="text-align:center; margin: 10px 0;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r5a.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
             </div>
         </div>
         <div class="step-block">

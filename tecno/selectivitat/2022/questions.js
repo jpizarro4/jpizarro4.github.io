@@ -471,9 +471,9 @@ const questions = [
             </div>
         </div>
         <div class="step-block">
-            <span class="step-header">B) Força F aplicada</span>
-            <p>Com que la porta puja mantenint-se sempre vertical (paral·lelogram deformable) i en repòs:</p>
-            \\[ \\sum F_{verticals} = 0 \\rightarrow F - m \\cdot g = 0 \\]
+            <span class="step-header">B) Valor de la força F aplicada</span>
+            <p>Com que el sistema forma un paral·lelogram articulat, la porta sempre es manté vertical. Si apliquem el mètode dels treballs virtuals o fem sumatori de moments respecte a l'eix de rotació instantani (que es troba a l'infinit en aquest cas de translació), observem que:</p>
+            \\[ F = m \\cdot g \\]
             \\[ F = 3 \\text{ kg} \\cdot 9,81 \\text{ m/s}^2 = 29,43 \\text{ N} \\]
         </div>
         <div class="step-block">

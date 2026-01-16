@@ -765,7 +765,7 @@ const questions = [
                 <p>Per tant: \\(F_{AB} = F_{CD} = 67,97 \\text{ N}\\).</p>
                 <p><b>Estat de les barres:</b> Segons el sentit de les forces per mantenir l'equilibri, la barra <b>AB treballa a tracció</b> i la barra <b>CD a compressió</b>.</p>
             </div>`
-    }
+    },
     {
         type: "exercicis",
         category: "electrics",

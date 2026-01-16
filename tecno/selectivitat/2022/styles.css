@@ -31,8 +31,9 @@ body {
     background-color: var(--bg-page);
     color: var(--text-main);
     margin: 0; 
-    padding-top: 80px; /* Evita que la navbar tapi el contingut */
+    padding-top: 100px; /* Augmentat per deixar respirar la navbar */
     transition: background 0.3s ease;
+    line-height: 1.6; /* Millora l'espaiat general entre línies */
 }
 
 /* FILTRES ESTIL CHIPS */
@@ -81,6 +82,21 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
+.question-text {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.7; /* Espaiat extra per als enunciats */
+}
+
+/* IMATGES (Centrades per defecte) */
+.question-images img, .result-box img {
+    display: block;
+    margin: 20px auto; /* Centra la imatge */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 /* BOTONS D'OPCIONS */
 ul { list-style: none; padding: 0; margin-top: 20px; }
 
@@ -90,19 +106,21 @@ li button {
     border: 1px solid var(--border);
     color: var(--text-main);
     padding: 16px 20px;
-    margin-bottom: 12px;
+    margin-bottom: 15px; /* Més espai entre botons */
     text-align: left;
     border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
     transition: all 0.2s ease;
+    line-height: 1.4;
 }
 
 li button:hover {
     border-color: var(--text-secondary);
+    transform: translateY(-1px);
 }
 
-/* SELECCIÓ DINÀMICA (Verd o Vermell) */
+/* SELECCIÓ DINÀMICA */
 li button.selected-correct {
     border: 2.5px solid var(--success) !important;
     background: var(--success-bg) !important;
@@ -115,9 +133,9 @@ li button.selected-incorrect {
     font-weight: 700;
 }
 
-/* QUADRADETS DE FEEDBACK (Correcte / Incorrecte) */
+/* QUADRADETS DE FEEDBACK */
 .feedback-container {
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .correcta, .incorrecta {
@@ -130,21 +148,12 @@ li button.selected-incorrect {
     animation: slideIn 0.3s ease-out;
 }
 
-.correcta {
-    background: var(--success-bg);
-    color: var(--success);
-    border-color: var(--success);
-}
+.correcta { background: var(--success-bg); color: var(--success); border-color: var(--success); }
+.incorrecta { background: var(--error-bg); color: var(--error); border-color: var(--error); }
 
-.incorrecta {
-    background: var(--error-bg);
-    color: var(--error);
-    border-color: var(--error);
-}
-
-/* SOLUCIONS PAS A PAS (L'estil que t'agrada) */
+/* SOLUCIONS PAS A PAS */
 .result-box {
-    margin-top: 30px;
+    margin-top: 35px;
     padding: 25px;
     background: var(--bg-page);
     border-radius: 14px;
@@ -152,8 +161,9 @@ li button.selected-incorrect {
 
 .step-block {
     margin-top: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    line-height: 1.8; /* Molt espaiat per a fórmules i càlculs */
 }
 
 .step-block:last-child { border-bottom: none; }
@@ -164,8 +174,9 @@ li button.selected-incorrect {
     font-size: 0.85rem;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
+    text-align: left; /* Sempre a l'esquerra */
 }
 
 /* BOTONS D'ACCIÓ */
@@ -180,7 +191,10 @@ li button.selected-incorrect {
     text-transform: uppercase;
     font-size: 0.75rem;
     margin-top: 15px;
+    transition: opacity 0.2s;
 }
+
+.solution-button:hover { opacity: 0.9; }
 
 @keyframes slideIn {
     from { opacity: 0; transform: translateY(-10px); }

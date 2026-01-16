@@ -208,15 +208,42 @@ function renderQuiz() {
 }
 
 /* ----------------- Comprovació resposta ----------------- */
+/* ----------------- Comprovació resposta (VERSIÓ MILLORADA) ----------------- */
 function checkAnswer(selected, correct, answerId, stepsId, resultId, correctText, buttonElement) {
-    const a = document.getElementById(answerId), s = document.getElementById(stepsId), r = document.getElementById(resultId);
+    const a = document.getElementById(answerId);
+    const r = document.getElementById(resultId);
 
-    // --- Lógica para marcar la opción seleccionada ---
+    // 1. Netejar classes de selecció de tots els botons del grup
     const ul = buttonElement.closest('ul');
     ul.querySelectorAll('button').forEach(btn => {
-        btn.classList.remove('selected');
+        btn.classList.remove('selected', 'selected-correct', 'selected-incorrect');
     });
-    buttonElement.classList.add('selected');
+
+    // 2. Comprovar si és correcta
+    const isCorrect = selected.trim().toLowerCase() === correct.trim().toLowerCase();
+
+    // 3. Aplicar color al botó i mostrar el quadrat de feedback segons el resultat
+    if (isCorrect) {
+        buttonElement.classList.add('selected-correct');
+        a.innerHTML = `<div class="correcta">✅ Correcte! Has seleccionat la resposta correcta.</div>`;
+    } else {
+        buttonElement.classList.add('selected-incorrect');
+        a.innerHTML = `<div class="incorrecta">❌ Incorrecte. La resposta correcta és: ${correctText}.</div>`;
+    }
+        
+    // 4. Mostrar el bloc de solució pas a pas
+    r.classList.add('visible');
+    r.classList.remove('ocult');
+    
+    // Si hi ha un botó de "Mostra solució", l'actualitzem
+    const solBtn = r.nextElementSibling; // O previous segons la teva estructura
+    if(solBtn && solBtn.classList.contains('solution-button')) {
+        solBtn.textContent = 'Amaga solució';
+    }
+
+    // Tornar a carregar el LaTeX perquè es vegi bé la solució
+    MathJax.typesetPromise();
+}
     // --- Fin Lógica de selección ---
     
     // Retroalimentación visual

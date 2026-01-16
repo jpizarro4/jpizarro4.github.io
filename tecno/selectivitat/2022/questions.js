@@ -194,8 +194,8 @@ const questions = [
         correctAnswer: "",
         steps: `
             <div class="step-block"> 
-                <span class="step-header">A) <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></span>
-                <p>Cal dibuixar la barra amb el pes (\\(mg\\)) al centre, la tensió (\\(T\\)) a l'extrem A amb angle \\(\\alpha\\), i les reaccions \\(F_H\\) i \\(F_V\\) al punt O.</p>
+                <span class="step-header">A) Diagrama de cos lliure </span>
+                <p><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r4.png" alt="Diagrama" style="max-width:100%; border-radius:4px;"></p>
             </div>
             <div class="step-block">
                 <span class="step-header">B) Força T al cable</span>

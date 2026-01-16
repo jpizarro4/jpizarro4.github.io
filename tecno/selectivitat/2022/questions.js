@@ -375,10 +375,13 @@ const questions = [
     type: "exercicis",
     category: "energia",
     text: `Exercici 3 [2,5 punts en total]
-    <br>Una persona fa un trajecte diari de d_extraurbà = 120 km i d_urbà = 10 km durant 280 dies l'any. Es planteja comprar un cotxe elèctric o un de gasoil.
-    <br><br><strong>a)</strong> Les emissions diàries equivalents de CO2 amb cada vehicle m_elèctr i m_gas. [1 punt]
+    <br>Una persona, per motius de feina, fa un trajecte diari per carretera d_extraurbà = 120 km i per vies urbanes d_urbà = 10 km. El recorregut el fa 280 dies l’any. Aquesta persona es planteja l’opció d’adquirir un cotxe elèctric o un de gasoil. Les característiques dels possibles vehicles es resumeixen en la taula següent:
+    <div style="text-align:center; margin: 15px 0;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p3.png" alt="Taula característiques vehicles" style="max-width:100%; border: 1px solid #ccc;">
+    </div>
+    <strong>a)</strong> Les emissions diàries equivalents de CO2 que es produirien amb cada vehicle m_elèctr i m_gas. [1 punt]
     <br><strong>b)</strong> El cost diari associat al consum d’energia de cada vehicle cd_elèctr i cd_gas. [0,5 punts]
-    <br><strong>c)</strong> Quants anys t tardarà a recuperar el sobrecost d’adquisició del vehicle elèctric? [1 punt]`,
+    <br><strong>c)</strong> Si la persona decideix adquirir el vehicle elèctric, i considerant que el cost anual de manteniment dels dos vehicles és el mateix, quants anys t tardarà a recuperar el sobrecost d’adquisició? [1 punt]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
@@ -386,7 +389,7 @@ const questions = [
             <p><b>Vehicle elèctric:</b></p>
             \\[ d_{total} = 120 + 10 = 130 \\text{ km} \\]
             \\[ E_{diària} = 130 \\text{ km} \\cdot \\frac{13,3 \\text{ kWh}}{100 \\text{ km}} = 17,29 \\text{ kWh} \\]
-            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\cdot 241 \\text{ g/kWh} = 4166,89 \\text{ g CO2} \\approx 4,167 \\text{ kg} \\]
+            \\[ m_{elèctr} = 17,29 \\text{ kWh} \\cdot 241 \\text{ g/kWh} = 4166,89 \\text{ g} = 4,167 \\text{ kg CO2} \\]
             <p><b>Vehicle gasoil:</b></p>
             \\[ Consum_{L} = \\left(120 \\cdot \\frac{3,6}{100}\\right) + \\left(10 \\cdot \\frac{4,4}{100}\\right) = 4,32 + 0,44 = 4,76 \\text{ L} \\]
             \\[ m_{gas} = 4,76 \\text{ L} \\cdot 2,87 \\text{ kg/L} = 13,661 \\text{ kg CO2} \\]
@@ -397,13 +400,13 @@ const questions = [
             \\[ cd_{gas} = 4,76 \\text{ L} \\cdot 1,209 \\text{ €/L} = 5,755 \\text{ €} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">C) Temps d'amortització (t)</span>
+            <span class="step-header">C) Temps de recuperació (t)</span>
             <p>Sobrecost d'adquisició:</p>
             \\[ \\Delta C = 25700 - 18000 = 7700 \\text{ €} \\]
-            <p>Estalvi anual (280 dies):</p>
-            \\[ \\text{Estalvi} = (5,755 - 2,421) \\text{ €/dia} \\cdot 280 \\text{ dies/any} = 933,52 \\text{ €/any} \\]
-            <p>Anys per recuperar la inversió:</p>
-            \\[ t = \\frac{7700 \\text{ €}}{933,52 \\text{ €/any}} = 8,248 \\text{ anys} \\]
+            <p>Estalvi diari i anual:</p>
+            \\[ \\text{Estalvi}_{dia} = 5,755 - 2,421 = 3,334 \\text{ €/dia} \\]
+            \\[ \\text{Estalvi}_{any} = 3,334 \\cdot 280 = 933,52 \\text{ €/any} \\]
+            \\[ t = \\frac{7700}{933,52} = 8,248 \\text{ anys} \\]
         </div>`
 }
 ];

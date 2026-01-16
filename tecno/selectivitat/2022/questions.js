@@ -122,29 +122,37 @@ const questions = [
     {
         type: "exercicis",
         category: "energia",
-        text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. En un programa estàndard de \\(t = 1,5 \\text{ h}\\) de durada, en els primers 30 min (rentada) la potència mitjana és \\(P_1 = 2000 \\text{ W}\\), mentre que la resta del temps (esbandida i centrifugació) consumeix \\(P_2 = 250 \\text{ W}\\). Es té una tarifa amb discriminació (Punta: 0,342930 €/kWh, Vall: 0,216951 €/kWh). Ús: 10 vegades/mes. Determineu:
+        text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de \\(t = 1,5 \\text{ h}\\) de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és \\(P_1 = 2000 \\text{ W}\\), mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, \\(P_2 = 250 \\text{ W}\\). La rentadora es connecta a la xarxa a una tensió \\(U = 230 \\text{ V}\\).
+        <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\cdot h\\) segons la franja horària:
+        <div style="text-align:center; margin:15px 0;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s1r1_table.png" alt="Taula tarifes elèctriques" style="max-width:100%; border-radius:4px;">
+        </div>
+        Es considera que s’utilitza el programa estàndard \\(n = 10\\) vegades al mes. Determineu:
         <br><br><strong>a)</strong> L’energia consumida en un cicle \\(E_{\\text{cons}}\\). [0,5 p]
         <br><strong>b)</strong> El percentatge d’energia en la fase de rentada \\(c_r\\). [0,5 p]
         <br><strong>c)</strong> El cost en hores punta \\(c_{\\text{punta}}\\) i vall \\(c_{\\text{vall}}\\). [1 p]
-        <br><strong>d)</strong> L’estalvi anual \\(e_a\\) si s'usa sempre en hores vall. [0,5 p]`,
+        <br><strong>d)</strong> L’estalvi anual \\(e_a\\) si s'usa sempre en hores vall en lloc de punta. [0,5 p]`,
         correctAnswer: "",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Energia total</span>
-                \\[ E_{\\text{cons}} = (2000 \\cdot 0,5) + (250 \\cdot 1) = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
+                <span class="step-header">A) Energia consumida en un cicle</span>
+                \\[ t_1 = 0,5 \\text{ h}, \\quad t_2 = 1 \\text{ h} \\]
+                \\[ E_{\\text{cons}} = P_1 \\cdot t_1 + P_2 \\cdot t_2 = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">B) % Fase Rentada</span>
-                \\[ c_r = \\frac{1000 \\text{ Wh}}{1250 \\text{ Wh}} \\cdot 100 = 80 \\% \\]
+                <span class="step-header">B) % Energia fase rentada</span>
+                \\[ E_{\\text{rentada}} = 2000 \\cdot 0,5 = 1000 \\text{ Wh} \\]
+                \\[ c_r = \\frac{E_{\\text{rentada}}}{E_{\\text{cons}}} \\cdot 100 = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Costos per rentada</span>
-                \\[ c_{\\text{punta}} = 1,25 \\cdot 0,3429 = 0,4287 \\text{ €} \\]
-                \\[ c_{\\text{vall}} = 1,25 \\cdot 0,2169 = 0,2712 \\text{ €} \\]
+                \\[ c_{\\text{punta}} = 1,25 \\text{ kWh} \\cdot 0,342930 \\text{ €/kWh} = 0,4287 \\text{ €} \\]
+                \\[ c_{\\text{vall}} = 1,25 \\text{ kWh} \\cdot 0,216951 \\text{ €/kWh} = 0,2712 \\text{ €} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">D) Estalvi anual</span>
-                \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]
+                \\[ \\text{Estalvi mensual} = (0,4287 - 0,2712) \\cdot 10 = 1,575 \\text{ €/mes} \\]
+                \\[ e_a = 1,575 \\cdot 12 = 18,90 \\text{ €} \\]
             </div>`
     },
     {

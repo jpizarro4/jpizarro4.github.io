@@ -119,6 +119,48 @@ const questions = [
     },
     {
         type: "exercicis",
+        category: "energia",
+        text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de t = 1,5 h de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és P₁ = 2 000 W, mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, P₂ = 250 W. La rentadora es connecta a la xarxa a una tensió U = 230 V.
+        <br>S’ha contractat una tarifa amb discriminació horària que determina el preu del kW · h segons la franja horària en què es consumeix l’electricitat, tal com es mostra en la taula:
+        
+        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
+        </div>
+
+        Es considera que s’utilitza el programa estàndard n = 10 vegades al mes. Determineu:
+        <br><br><strong>a)</strong> L’energia consumida en un cicle de funcionament Econs. [0,5 punts]
+        <br><strong>b)</strong> El percentatge d’energia consumida en la fase de rentada cr. [0,5 punts]
+        <br><strong>c)</strong> El cost de posar una rentadora en hores punta cpunta i en hores vall cvall. [1 punt]
+        <br><strong>d)</strong> L’estalvi anual ea que s’obtindrà si la rentadora sempre es posa en hores vall respecte al cost de posar-la sempre en hores punta. [0,5 punts]`,
+        correctAnswer: "",
+        steps: `
+        <strong>Resolució pas a pas:</strong>
+        <br><br>
+        <strong>a) Energia consumida en un cicle $E_{\\text{cons}}$:</strong>
+        \\[
+        E_{\\text{cons}} = P_1 \\cdot t_1 + P_2 \\cdot (t - t_1) = 2000 \\cdot 0,5 + 250 \\cdot (1,5 - 0,5) = 1250 \\, \\text{Wh} = 4500 \\, \\text{kJ}
+        \\]
+        
+        <strong>b) Percentatge d'energia en la rentada $c_r$:</strong>
+        \\[
+        c_r = \\frac{P_1 \\cdot t_1}{E_{\\text{cons}}} \\cdot 100 = \\frac{2000 \\cdot 0,5}{1250} \\cdot 100 = 80 \\%
+        \\]
+        
+        <strong>c) Cost en hores punta $c_{\\text{punta}}$ i hores vall $c_{\\text{vall}}$:</strong>
+        \\[
+        c_{\\text{punta}} = E_{\\text{cons}} \\cdot p_{\\text{punta}} = 1,250 \\, \\text{kWh} \\cdot 0,342930 \\, \\text{€/kWh} = 0,4287 \\, \\text{€}
+        \\]
+        \\[
+        c_{\\text{vall}} = E_{\\text{cons}} \\cdot p_{\\text{vall}} = 1,250 \\, \\text{kWh} \\cdot 0,216951 \\, \\text{€/kWh} = 0,2712 \\, \\text{€}
+        \\]
+        
+        <strong>d) Estalvi anual $e_a$:</strong>
+        \\[
+        e_a = (c_{\\text{punta}} - c_{\\text{vall}}) \\cdot n \\cdot 12 = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\, \\text{€}
+        \\]`
+    },
+    {
+        type: "exercicis",
         category: "maquines",
         text: `Un volant amb un moment d’inèrcia al voltant del seu eix \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\) gràcies a l’acció d’un motor. Es desconnecta el motor i s’observa que el volant triga \\(t = 1 \\text{ min}\\) a quedar-se en repòs a causa d’un parell de fricció que se suposa constant.
         <br><br>Determineu:

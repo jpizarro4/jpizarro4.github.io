@@ -335,5 +335,30 @@ const questions = [
                 <p>Calculem la potència activa consumida:</p>
                 \\[ P = U \\cdot I = 230 \\cdot 6,133 = 1410,67 \\text{ W} \\approx 1,41 \\text{ kW} \\]
             </div>`
+    },
+    {
+        type: "exercicis",
+        category: "control",
+        text: `Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (sistema binari). La sortida encén un led (l=1) quan el número és 0 o un múltiple de 4. Responeu:
+        <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+        <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Taula de Veritat</span>
+                <p>Els números que activen el LED són el 0 (0000), 4 (0100), 8 (1000) i 12 (1100). En tots aquests casos, els bits <b>c</b> i <b>d</b> són 0.</p>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2a.png" alt="Taula de veritat LED" style="max-width:100%; border-radius:4px;">
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Funció lògica i simplificació</span>
+                <p>Si fem el mapa de Karnaugh, veurem que les variables <b>a</b> i <b>b</b> s'eliminen perquè el LED s'encén independentment del seu valor, sempre que c=0 i d=0:</p>
+                \\[ l = \\bar{c} \\cdot \\bar{d} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Esquema de contactes</span>
+                <p>Com que és un producte de dues variables negades, els contactes han d'estar en <b>sèrie</b> i ser <b>normalment tancats</b>:</p>
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2c.png" alt="Esquema de contactes" style="max-width:100%; border-radius:4px;">
+            </div>`
     }
 ];

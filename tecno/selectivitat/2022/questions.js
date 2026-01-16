@@ -74,15 +74,23 @@ const questions = [
         <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
         correctAnswer: "",
         steps: `
-        <strong>Resolució:</strong><br>
-        La sortida z val 1 sempre que el binari (c,d) > (a,b).
-        <br><br>
-        <strong>a) Taula de veritat:</strong> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Resolució Exercici 1 a" width="900">
-        <br><strong>b) Simplificació:</strong> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Resolució Exercici 1 b" width="900">
-        <br><strong>c) Diagrama:</strong><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Resolució Exercici 1 c" width="900">
-        <br><br>
-        
-        `
+        <strong>Resolució:</strong>
+        <div style="margin-top: 20px;">
+            <strong>a) Taula de veritat:</strong>
+            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Resolució Exercici 1 a" style="max-width:100%; height:auto;">
+            </div>
+            
+            <strong>b) Simplificació:</strong>
+            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Resolució Exercici 1 b" style="max-width:100%; height:auto;">
+            </div>
+            
+            <strong>c) Diagrama de portes:</strong>
+            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Resolució Exercici 1 c" style="max-width:100%; height:auto;">
+            </div>
+        </div>`
     },
     {
         type: "exercicis",

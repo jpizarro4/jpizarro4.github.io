@@ -99,7 +99,7 @@ const questions = [
         <br>S’ha contractat una tarifa amb discriminació horària que determina el preu del kW · h segons la franja horària en què es consumeix l’electricitat, tal com es mostra en la taula:
         
         <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2e3_taula.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
         </div>
 
         Es considera que s’utilitza el programa estàndard n = 10 vegades al mes. Determineu:

@@ -671,35 +671,36 @@ const questions = [
        {
         type: "exercicis",
         category: "maquines",
-        text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(\\eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(\\cos \\phi = 0,85\\). La relació de transmissió del reductor és \\(\\tau = \\omega_{red}/\\omega_{mot} = 0,009\\). El motor gira a \\(n_{mot} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant. Determineu:
-        <br><br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(\\omega_{red}\\) en \\(\\text{rad/s}\\). [0,5 punts]
+        text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(\\eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(\\cos \\varphi = 0,85\\). La relació de transmissió del reductor és \\(\\tau = \\omega_{\\text{red}}/\\omega_{\\text{mot}} = 0,009\\). El motor gira a \\(n_{\\text{mot}} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant. Determineu:
+        <br><br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(\\omega_{\\text{red}}\\) en \\(\\text{rad/s}\\). [0,5 punts]
         <br><strong>b)</strong> El treball necessari que ha de realitzar el muntacàrregues \\(W\\). [0,5 punts]
-        <br><strong>c)</strong> La potència elèctrica consumida pel conjunt \\(P_{elèc}\\). [1 punt]
+        <br><strong>c)</strong> La potència elèctrica consumida pel conjunt \\(P_{\\text{elèc}}\\). [1 punt]
         <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
         correctAnswer: "",
         steps: `
-         <div class="step-block">
-                <span class="step-header">A) Velocitat de rotació de l'eix de sortida del reductor \\(\\omega_{red}\\) en \\(\\text{rad/s}\\).</span>
-                <p>Primer, passem la velocitat del motor de revolucions per minut a rad/s:</p>
-                \\[ \\omega_{mot} = n_{mot} \\dot \\frac{2\\pi}{60} = 1470 \\dot \\frac{2\\pi}{60} = 153,94 \\text{ rad/s} \\]
-                <p>A continuació, calculem la velocitat de l'eix de sortida aplicant la relació de transmissió (\\(\\tau\\)):</p>
-                \\[ \\omega_{red} = \\tau \\dot \\omega_{mot} = 0,009 \\dot 153,94 = 1,385 \\text{ rad/s} \\]
+            <div class="step-block">
+                <span class="step-header">A) Velocitat de rotació del reductor (ωred)</span>
+                <p>Primer convertim la velocitat del motor a rad/s:</p>
+                \\[ \\omega_{\\text{mot}} = 1470 \\text{ min}^{-1} \\dot \\frac{2\\pi}{60} = 153,94 \\text{ rad/s} \\]
+                <p>Apliquem la relació de transmissió:</p>
+                \\[ \\omega_{\\text{red}} = \\tau \\dot \\omega_{\\text{mot}} = 0,009 \\dot 153,94 = 1,385 \\text{ rad/s} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">B) Treball necessari (W)</span>
-                <p>El treball mecànic equival a l'energia potencial guanyada:</p>
+                <p>El treball correspon a l'energia potencial guanyada per la massa:</p>
                 \\[ W = m \\dot g \\dot h = 2000 \\dot 9,81 \\dot 8 = 156960 \\text{ J} = 156,96 \\text{ kJ} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">C) Potència elèctrica (Pelèc)</span>
-                <p>Calculem la potència útil (treball per unitat de temps) i apliquem el rendiment:</p>
-                \\[ P_{útil} = \\frac{W}{t} = \\frac{156960 \\text{ J}}{1,5 \\dot 60 \\text{ s}} = 1744 \\text{ W} \\]
-                \\[ P_{elèc} = \\frac{P_{útil}}{\\eta} = \\frac{1744}{0,6} = 2906,67 \\text{ W} \\]
+                <p>Primer calculem la potència útil (mecànica):</p>
+                \\[ P_u = \\frac{W}{t} = \\frac{156960 \\text{ J}}{90 \\text{ s}} = 1744 \\text{ W} \\]
+                <p>Considerant el rendiment del conjunt:</p>
+                \\[ P_{\\text{elèc}} = \\frac{P_u}{\\eta} = \\frac{1744}{0,6} = 2906,67 \\text{ W} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">D) Intensitat de corrent (I)</span>
-                <p>A partir de l'expressió de la potència monofàsica:</p>
-                \\[ I = \\frac{P_{elèc}}{U \\dot \\cos \\phi} = \\frac{2906,67}{230 \\dot 0,85} = 14,87 \\text{ A} \\]
+                <p>En un sistema monofàsic: \\( P = U \\dot I \\dot \\cos \\varphi \\)</p>
+                \\[ I = \\frac{P_{\\text{elèc}}}{U \\dot \\cos \\varphi} = \\frac{2906,67}{230 \\dot 0,85} = 14,87 \\text{ A} \\]
             </div>`
     },
 ];

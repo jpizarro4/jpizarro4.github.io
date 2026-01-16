@@ -12,19 +12,21 @@ const questions = [
         correctAnswer: "d",
         steps: `
             <div class="step-block">
-                <span class="step-header">A) Energia inicial (E1)</span>
-                \\[ E_1 = m \\dot g \\dot h_1 = 22 \\dot 9,8 \\dot 1 = 215,6 \\text{ J} \\]
+                <span class="step-header">A) Energia inicial (\\(E_1\\))</span>
+                <p>En posició horitzontal, l'altura és igual a la longitud del pèndol (\\(h_1 = 1 \\text{ m}\\)):</p>
+                \\[ E_1 = m \\cdot g \\cdot h_1 = 22 \\cdot 9,81 \\cdot 1 = 215,82 \\text{ J} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">B) Energia final (E2)</span>
-                \\[ E_2 = m \\dot g \\dot h_2 = 22 \\dot 9,8 \\dot 0,25 = 53,9 \\text{ J} \\]
+                <span class="step-header">B) Energia final (\\(E_2\\))</span>
+                <p>Després del xoc, s'eleva \\(250 \\text{ mm} = 0,25 \\text{ m}\\):</p>
+                \\[ E_2 = m \\cdot g \\cdot h_2 = 22 \\cdot 9,81 \\cdot 0,25 = 53,955 \\text{ J} \\]
             </div>
             <div class="step-block">
-                <span class="step-header">C) Energia absorbida (ΔE)</span>
-                \\[ \\delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
+                <span class="step-header">C) Energia absorbida (\\(\\Delta E\\))</span>
+                \\[ \\Delta E = E_1 - E_2 = 215,82 - 53,955 = 161,865 \\text{ J} \\approx 161,8 \\text{ J} \\]
             </div>`
     },
-    {
+   {
         type: "questions",
         category: "metrologia",
         text: "Una resistència elèctrica normalitzada de \\(390 \\, \\Omega\\) el valor de la qual pot estar comprès entre \\(382,2 \\, \\Omega\\) i \\(397,8 \\, \\Omega\\) té una tolerància del:",
@@ -38,7 +40,10 @@ const questions = [
         steps: `
             <div class="step-block">
                 <span class="step-header">Càlcul de la Tolerància</span>
-                \\[ \\text{Tol} = \\frac{V_{\\text{màx}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\dot 100 = \\frac{397,8 - 390}{390} \\dot 100 = 2 \\% \\]
+                <p>La tolerància es calcula com el quocient entre l'error absolut màxim i el valor nominal:</p>
+                \\[ \\text{Tol} = \\frac{V_{\\text{màx}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\cdot 100 \\]
+                \\[ \\text{Tol} = \\frac{397,8 - 390}{390} \\cdot 100 = \\frac{7,8}{390} \\cdot 100 = 2 \\% \\]
+                <p>Això significa que la resistència és de \\(390 \\, \\Omega \\pm 2 \\%\\).</p>
             </div>`
     },
     {
@@ -82,7 +87,7 @@ const questions = [
     {
         type: "questions",
         category: "maquines",
-        text: "Un tren d'engranatges està format per dos eixos paral·lels amb les següents característiques: \\(z_1 = 14\\), \\(z_2 = 48\\), \\(z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió total del sistema expressada com \\(\\tau = \\omega_{\\text{sortida}}/\\omega_{\\text{entrada}}\\).",
+        text: "Un tren d'engranatges està format per dos eixos paral·lels amb les següents característiques: \\(z_1 = 14, z_2 = 48, z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió total del sistema expressada com \\(\\tau = \\omega_{\\text{sortida}}/\\omega_{\\text{entrada}}\\).",
         images: '<img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges">',
         options: [
             { text: "0,186 7", value: "a" },
@@ -93,11 +98,14 @@ const questions = [
         correctAnswer: "a",
         steps: `
             <div class="step-block">
-                <span class="step-header">Càlcul de τ</span>
-                \\[ \\tau = \\frac{z_1 \\dot z_3}{z_2 \\dot z_4} = \\frac{14 \\dot 16}{48 \\dot 25} = \\frac{224}{1200} = 0,1867 \\]
+                <span class="step-header">Càlcul de la relació de transmissió (\\(\\tau\\))</span>
+                <p>En un tren d'engranatges compost, la relació de transmissió total és el producte del nombre de dents de les rodes conductores dividit pel producte de les rodes conduïdes:</p>
+                \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} \\]
+                \\[ \\tau = \\frac{14 \\cdot 16}{48 \\cdot 25} = \\frac{224}{1200} = 0,18666... \\approx 0,1867 \\]
+                <p>Com que \\(\\tau < 1\\), es tracta d'un sistema <b>reductor</b> de velocitat.</p>
             </div>`
     },
-   {
+  {
         type: "questions",
         category: "materials",
         text: "La resistència a la tracció d’un aliatge de titani és de \\(325 \\text{ MPa}\\). Si es vol utilitzar una barra cilíndrica d’aquest material per a aguantar una força de tracció de \\(20 \\text{ kN}\\), quin diàmetre mínim ha de tenir la barra perquè no es trenqui?",
@@ -110,9 +118,15 @@ const questions = [
         correctAnswer: "c",
         steps: `
             <div class="step-block">
-                <span class="step-header">Càlcul del diàmetre mínim</span>
-                \\[ \\sigma = \\frac{F}{S} \\rightarrow S = \\frac{F}{\\sigma} = \\frac{20000 \\text{ N}}{325 \\dot 10^6 \\text{ Pa}} = 6,1538 \\dot 10^{-5} \\text{ m}^2 \\]
-                \\[ S = \\frac{\\pi \\dot d^2}{4} \\rightarrow d = \\sqrt{\\frac{4 \\dot S}{\\pi}} = \\sqrt{\\frac{4 \\dot 6,1538 \\dot 10^{-5}}{\\pi}} = 0,008852 \\text{ m} = 8,852 \\text{ mm} \\]
+                <span class="step-header">1. Càlcul de la secció mínima (S)</span>
+                <p>A partir de la definició de tensió (\\(\\sigma = F/S\\)):</p>
+                \\[ S = \\frac{F}{\\sigma} = \\frac{20000 \\text{ N}}{325 \\cdot 10^6 \\text{ Pa}} = 6,1538 \\cdot 10^{-5} \\text{ m}^2 \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">2. Càlcul del diàmetre (d)</span>
+                <p>Com que la barra és cilíndrica, la seva secció és \\(S = \\frac{\\pi \\cdot d^2}{4}\\):</p>
+                \\[ d = \\sqrt{\\frac{4 \\cdot S}{\\pi}} = \\sqrt{\\frac{4 \\cdot 6,1538 \\cdot 10^{-5}}{\\pi}} \\]
+                \\[ d = 0,008852 \\text{ m} = 8,852 \\text{ mm} \\]
             </div>`
     },
     {
@@ -147,16 +161,24 @@ const questions = [
         correctAnswer: "a",
         steps: `
             <div class="step-block">
-                <span class="step-header">Càlcul d'emissions estalviades</span>
-                \\[ V = \\frac{79000 \\text{ kWh}}{11,79 \\text{ kWh/m}^3} = 6700,59 \\text{ m}^3 \\]
-                \\[ \\text{Estalvi} = V \\dot 2,15 = 14406,27 \\text{ kg} \\approx 14,41 \\text{ t} \\]
+                <span class="step-header">1. Conversió d'energia i càlcul del volum de gas estalviat (V)</span>
+                <p>Primer passem l'energia solar de MWh a kWh (\\(1 \\text{ MWh} = 1000 \\text{ kWh}\\)):</p>
+                \\[ E_{solar} = 79 \\text{ MWh} = 79000 \\text{ kWh} \\]
+                <p>Calculem el volum de gas que ja no caldrà cremar:</p>
+                \\[ V = \\frac{E_{solar}}{PC} = \\frac{79000 \\text{ kWh}}{11,79 \\text{ kWh/m}^3} = 6700,59 \\text{ m}^3 \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">2. Càlcul de l'estalvi d'emissions</span>
+                <p>Multipliquem el volum estalviat pel factor d'emissió (FE):</p>
+                \\[ \\text{Estalvi} = V \\cdot FE = 6700,59 \\text{ m}^3 \\cdot 2,15 \\text{ kg CO}_2/\\text{m}^3 \\]
+                \\[ \\text{Estalvi} = 14406,27 \\text{ kg} \\approx 14,41 \\text{ tones de CO}_2 \\]
             </div>`
     },
     {
         type: "questions",
         category: "maquines",
-        text: "Un sòlid de massa \\(m = 5 kg\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?",
-        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q9.png" style="max-width:150px;"></div>',
+        text: "Un sòlid de massa \\(m = 5 \\text{ kg}\\) està unit a una politja mòbil. Una corda ideal passa per una politja fixa al sostre i després per la politja mòbil fins a l'eix de la fixa. Quina força \\(F\\) cal aplicar per mantenir el conjunt en repòs?",
+        images: '<div style="text-align:center; margin:10px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5q9.png" style="max-width:150px;"></div>',
         options: [
             { text: "49,04 N", value: "a" },
             { text: "12,25 N", value: "b" },
@@ -166,15 +188,19 @@ const questions = [
         correctAnswer: "d",
         steps: `
             <div class="step-block">
-                <span class="step-header">Equilibri de politges</span>
-                \\[ P = m \\dot g = 5 \\dot 9,81 = 49,05 \\text{ N} \\]
-                \\[ F = \\frac{P}{2} = \\frac{49,05}{2} = 24,52 \\text{ N} \\]
+                <span class="step-header">1. Càlcul del pes del sòlid (P)</span>
+                \\[ P = m \\cdot g = 5 \\text{ kg} \\cdot 9,81 \\text{ m/s}^2 = 49,05 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">2. Equilibri a la politja mòbil</span>
+                <p>En una politja mòbil amb els dos trams de corda paral·lels, la força \\(F\\) necessària és la meitat de la càrrega:</p>
+                \\[ F = \\frac{P}{2} = \\frac{49,05 \\text{ N}}{2} = 24,525 \\text{ N} \\approx 24,52 \\text{ N} \\]
             </div>`
     },
     {
         type: "questions",
         category: "termodinamica",
-        text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\irc\\text{C)}\\))",
+        text: "S'utilitzen \\(500 \\text{ g}\\) de carbó (\\(PC = 23,6 \\text{ MJ/kg}\\)) per a escalfar \\(100 \\text{ L}\\) d'aigua. Quin increment de temperatura es produirà? (\\(c_e = 4,18 \\text{ J/(g } ^\\circ\\text{C)}\\))",
         options: [
             { text: "28,23 °C", value: "a" },
             { text: "2,823 °C", value: "b" },
@@ -184,9 +210,16 @@ const questions = [
         correctAnswer: "a",
         steps: `
             <div class="step-block">
-                <span class="step-header">Càlcul tèrmic</span>
-                \\[ Q = 0,5 \\text{ kg} \\dot 23,6 \\dot 10^6 \\text{ J/kg} = 11,8 \\dot 10^6 \\text{ J} \\]
-                \\[ \\delta T = \\frac{11,8 \\dot 10^6}{100000 \\text{ g} \\dot 4,18} = 28,23 \\, ^\\irc\\text{C} \\]
+                <span class="step-header">1. Càlcul de la calor total (Q)</span>
+                <p>L'energia s'obté de la combustió del carbó (\\(Q = m \\cdot PC\\)):</p>
+                \\[ Q = 0,5 \\text{ kg} \\cdot 23,6 \\cdot 10^6 \\text{ J/kg} = 11,8 \\cdot 10^6 \\text{ J} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">2. Càlcul de l'increment de temperatura (\\(\\Delta T\\))</span>
+                <p>Utilitzem la fórmula de la calorimetria (\\(Q = m_{aigua} \\cdot c_e \\cdot \\Delta T\\)):</p>
+                <p>Nota: \\(100 \\text{ L}\\) d'aigua equivalen a \\(100000 \\text{ g}\\).</p>
+                \\[ \\Delta T = \\frac{Q}{m \\cdot c_e} = \\frac{11,8 \\cdot 10^6 \\text{ J}}{100000 \\text{ g} \\cdot 4,18 \\text{ J/(g } ^\\circ\\text{C)}} \\]
+                \\[ \\Delta T = 28,2296... ^\\circ\\text{C} \\approx 28,23 ^\\circ\\text{C} \\]
             </div>`
     },
     {
@@ -238,10 +271,10 @@ const questions = [
         <div class="step-block">
             <span class="step-header">Explicació</span>
             <p>La potència \\(P\\) es defineix com l'energia \\(E\\) per unitat de temps \\(t\\):</p>
-            \\[ P = \\frac{E}{t} \\implies E = P \\dot t \\]
-            <p>Si mesurem la potència en quilowatts (kW) i el temps en hores (h), la unitat d'energia resultant és el quilowatt-hora.</p>
-            \\[ \\text{kW} \\dot \\text{h} \\]
-            <p>Nota: J/s correspon a Watts (Potència).</p>
+            \\[ P = \\frac{E}{t} \\implies E = P \\cdot t \\]
+            <p>Si mesurem la potència en quilowatts (kW) i el temps en hores (h), la unitat d'energia resultant és el quilowatt-hora:</p>
+            \\[ \\text{kW} \\cdot \\text{h} \\]
+            <p><b>Nota:</b> El \\(\\text{J/s}\\) correspon al Watt (W), que és una unitat de potència, no d'energia.</p>
         </div>`
 },
     {
@@ -257,21 +290,21 @@ const questions = [
     correctAnswer: "a",
     steps: `
         <div class="step-block">
-            <span class="step-header">Càlcul de la Resistència Equivalent Nominal</span>
-            <p>En sèrie, les resistències se sumen:</p>
+            <span class="step-header">1. Resistència Equivalent Nominal</span>
+            <p>En sèrie, les resistències se sumen directament:</p>
             \\[ R_{eq} = R_1 + R_2 = 110 + 330 = 440 \\, \\Omega \\]
         </div>
         <div class="step-block">
-            <span class="step-header">Càlcul de la Resistència Màxima</span>
-            <p>Amb una tolerància de \\(\\pm 5 \\%\\), el valor màxim serà un 105% del nominal:</p>
-            \\[ R_{màx} = R_{eq} \\dot \\left(1 + \\frac{5}{100}\\right) = 440 \\dot 1,05 \\]
-            \\[ R_{màx} = 462 \\, \\Omega \\]
+            <span class="step-header">2. Càlcul del valor màxim (Tolerància +5%)</span>
+            <p>Apliquem el factor de tolerància superior:</p>
+            \\[ R_{màx} = R_{eq} \\cdot \\left( 1 + \\frac{5}{100} \\right) \\]
+            \\[ R_{màx} = 440 \\cdot 1,05 = 462 \\, \\Omega \\]
         </div>`
 },
     {
     type: "questions",
     category: "energia",
-    text: "Quina potència necessita una cafetera per a escalfar \\(75 \\text{ mL}\\) d’aigua que es troba a temperatura ambient \\((T_a = 21 ^\\irc \\text{C})\\) fins a \\(88 ^\\irc \\text{C}\\) en \\(20 \\text{ s}\\)? La calor específica de l’aigua és \\(c_e = 4,187 \\text{ J/(g K)}\\).",
+    text: "Quina potència necessita una cafetera per a escalfar \\(75 \\text{ mL}\\) d’aigua que es troba a temperatura ambient \\((T_a = 21 ^\\circ \\text{C})\\) fins a \\(88 ^\\circ \\text{C}\\) en \\(20 \\text{ s}\\)? La calor específica de l’aigua és \\(c_e = 4,187 \\text{ J/(g K)}\\).",
     options: [
         { text: "420,7 W", value: "a" },
         { text: "4,207 kW", value: "b" },
@@ -281,14 +314,16 @@ const questions = [
     correctAnswer: "c",
     steps: `
         <div class="step-block">
-            <span class="step-header">A) Càlcul de l'Energia (Calor)</span>
-            <p>Primer passem el volum a massa (assumint densitat de l'aigua \\(1 \\text{ g/mL}\\)): \\(m = 75 \\text{ g}\\).</p>
-            <p>Calculem l'increment de temperatura: \\(\\delta T = 88 - 21 = 67 \\text{ K}\\).</p>
-            \\[ Q = m \\dot c_e \\dot \\delta T = 75 \\dot 4,187 \\dot 67 = 21039,7 \\text{ J} \\]
+            <span class="step-header">1. Càlcul de l'energia tèrmica (Q)</span>
+            <p>Considerant la densitat de l'aigua \\(1 \\text{ g/mL}\\), tenim una massa \\(m = 75 \\text{ g}\\).</p>
+            <p>L'increment de temperatura és: \\(\\Delta T = 88 - 21 = 67 \\text{ K}\\) (o \\(^\circ \\text{C}\\)).</p>
+            \\[ Q = m \\cdot c_e \\cdot \\Delta T \\]
+            \\[ Q = 75 \\cdot 4,187 \\cdot 67 = 21039,675 \\text{ J} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">B) Càlcul de la Potència</span>
-            \\[ P = \\frac{E}{t} = \\frac{21039,7 \\text{ J}}{20 \\text{ s}} = 1051,98 \\text{ W} \\approx 1052 \\text{ W} \\]
+            <span class="step-header">2. Càlcul de la potència (P)</span>
+            <p>La potència és l'energia dividida pel temps (\\(P = Q/t\\)):</p>
+            \\[ P = \\frac{21039,675 \\text{ J}}{20 \\text{ s}} = 1051,98 \\text{ W} \\approx 1052 \\text{ W} \\]
         </div>`
 },
     {
@@ -304,15 +339,15 @@ const questions = [
     correctAnswer: "d",
     steps: `
         <div class="step-block">
-            <span class="step-header">A) Consum total de gas</span>
-            <p>Calculem el consum total tenint en compte les 5 estufes, les hores i el consum unitari:</p>
-            \\[ m_{gas} = 5 \\text{ estufes} \\dot 9 \\text{ h} \\dot 0,8 \\text{ kg/h} = 36 \\text{ kg de butà} \\]
+            <span class="step-header">1. Càlcul del consum total de gas (m)</span>
+            <p>Primer passem el consum de grams a kilograms (\\(800 \\text{ g/h} = 0,8 \\text{ kg/h}\\)). Multipliquem pel nombre d'estufes i les hores de funcionament:</p>
+            \\[ m_{gas} = 5 \\text{ estufes} \\cdot 9 \\text{ h} \\cdot 0,8 \\text{ kg/h} = 36 \\text{ kg de butà} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">B) Càlcul de les emissions (Petjada de carboni)</span>
-            <p>Multipliquem la massa de combustible pel Factor d'Emissió (FE):</p>
-            \\[ \\text{Emissions} = m_{gas} \\dot FE = 36 \\text{ kg} \\dot 2,96 \\frac{\\text{kg CO}_2}{\\text{kg butà}} \\]
-            \\[ \\text{Emissions} = 106,56 \\text{ kg de CO}_2 \\]
+            <span class="step-header">2. Càlcul de les emissions (Petjada de carboni)</span>
+            <p>Multipliquem la massa total de gas consumit pel Factor d'Emissió (FE):</p>
+            \\[ \\text{Emissions} = m_{gas} \\cdot FE \\]
+            \\[ \\text{Emissions} = 36 \\text{ kg} \\cdot 2,96 \\, \\frac{\\text{kg CO}_2}{\\text{kg}} = 106,56 \\text{ kg de CO}_2 \\]
         </div>`
 },
     {

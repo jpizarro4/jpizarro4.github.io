@@ -639,5 +639,51 @@ const questions = [
             \\[ \\eta_{mot} = \\frac{E_{subm}}{E_{bat}} \\implies E_{bat} = \\frac{E_{subm}}{\\eta_{mot}} = \\frac{95,24}{0,9} = 105,82 \\, \\text{MJ} \\]
             \\[ E_{bat} = \\frac{105,82}{3,6} = 29,39 \\, \\text{kWh} \\]
         </div>`
-}
+},
+    {
+    type: "exercicis",
+    category: "sistemes combinacionals",
+    text: `Un sistema digital té l’esquema de portes lògiques següent:
+    <div style="display: flex; justify-content: center; margin: 20px 0;">
+        </div>
+    <strong>a)</strong> Determineu la funció lògica entre les variables \\(a\\), \\(b\\), \\(c\\), \\(d\\) i \\(S\\) i, si escau, simplifiqueu-la. [1 punt]
+    <br><strong>b)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br><strong>c)</strong> Dibuixeu l’esquema de contactes de la funció simplificada. [0,5 punts]`,
+    correctAnswer: "",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Funció lògica i simplificació</span>
+            <p>Analitzant l'esquema de portes lògiques sortida a sortida:</p>
+            <ul>
+                <li>Sortida de la porta NOT: \\(\\bar{a}\\)</li>
+                <li>Sortida de la primera porta OR: \\(\\bar{a} + b\\)</li>
+                <li>Sortida de la segona porta OR: \\(b + c\\)</li>
+                <li>Sortida de la porta AND superior: \\((\bar{a} + b) \\cdot (b + c)\\)</li>
+                <li>Sortida de la porta AND inferior: \\(c \\cdot d\\)</li>
+                <li>Funció final (porta OR de sortida): \\(S = [(\bar{a} + b) \\cdot (b + c)] + (c \\cdot d)\\)</li>
+            </ul>
+            <p>Simplificació aplicant propietats de l'àlgebra de Boole:</p>
+            \\[ S = \bar{a}b + \bar{a}c + b \\cdot b + bc + cd \\]
+            \\[ S = \bar{a}b + \bar{a}c + b + bc + cd \\]
+            <p>Com que \\(b + \bar{a}b + bc = b\\) (llei d'absorció):</p>
+            \\[ S = b + \bar{a}c + cd \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Taula de veritat</span>
+            <p>La sortida \\(S\\) serà 1 quan \\(b=1\\), o quan \\(a=0\\) i \\(c=1\\), o quan \\(c=1\\) i \\(d=1\\).</p>
+            <div style="display: flex; justify-content: center; margin: 10px 0;">
+                </div>
+        </div>
+        <div class="step-block">
+            <span class="step-header">C) Esquema de contactes</span>
+            <p>L'esquema de contactes de la funció simplificada \\(S = b + \bar{a}c + cd\\) presenta tres branques en paral·lel:</p>
+            <ul>
+                <li>Una branca amb el contacte obert \\(b\\).</li>
+                <li>Una branca amb el contacte tancat \\(a\\) en sèrie amb el contacte obert \\(c\\).</li>
+                <li>Una branca amb el contacte obert \\(c\\) en sèrie amb el contacte obert \\(d\\).</li>
+            </ul>
+            <div style="display: flex; justify-content: center; margin: 10px 0;">
+                </div>
+        </div>`
+},
 ];

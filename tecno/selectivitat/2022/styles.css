@@ -1,137 +1,104 @@
-/* ===== GLOBAL STYLES - REORGANITZATS ===== */
+/* ===== ESTIL PROPI: INDUSTRIAL CARBON ===== */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Fons fosc neutre */
-    background-image: radial-gradient(#1e1e1e 1px, transparent 1px); /* Patró de punts tècnic */
-    background-size: 20px 20px;
-    color: #e0e0e0;
+    background-color: #0f172a; /* Blau fosc carboni */
+    background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px);
+    background-size: 30px 30px; /* Quadrícula d'enginyeria */
+    color: #f1f5f9;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
-/* TÍTOLS AMB ESTIL DINÀMIC */
-h1, h2 {
-    text-align: center;
-    color: #00ffcc; /* Cian neó per destacar */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-}
-
-/* ===== NAVBAR REDISSENYADA ===== */
+/* NAVBAR AMB DIFERENCIACIÓ */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background: #1a1a1a;
+    background: #1e293b;
+    border-bottom: 4px solid #38bdf8; /* Blau cian viu */
+    z-index: 100;
     padding: 15px 0;
-    border-bottom: 2px solid #00ffcc; /* Línia de tall neta */
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-/* ===== CONTENT CONTAINERS (MÉS QUADRATS) ===== */
-.content-container, #quiz-container {
-    margin: 100px auto 50px auto;
-    max-width: 850px;
-    background-color: #1e1e1e;
-    padding: 35px;
-    border-radius: 4px; /* Estil més industrial, menys arrodonit */
-    border: 1px solid #333;
-    box-shadow: 10px 10px 0px #00ffcc; /* Ombra sòlida desplaçada (molt original) */
-    animation: slideUp 0.8s ease-out;
-}
-
-/* ===== FILTER BUTTONS (ESTIL TAB) ===== */
-.filter-group-container {
     text-align: center;
-    margin-bottom: 30px;
 }
 
+/* CONTENIDORS AMB ESTIL "OFFSET SHADOW" */
+.content-container, #quiz-container {
+    margin: 120px auto 50px auto;
+    max-width: 850px;
+    background-color: #1e293b;
+    padding: 30px;
+    border: 2px solid #334155;
+    border-radius: 4px; /* Menys arrodonit per ser més "tech" */
+    box-shadow: 12px 12px 0px #38bdf8; /* Ombra sòlida molt original */
+}
+
+/* BOTONS DE FILTRE TIPUS TAB */
 .filter-button {
-    background-color: transparent; 
-    color: #888;
-    border: 1px solid #444;
-    padding: 8px 18px;
-    margin: 0 5px;
-    border-radius: 2px;
-    font-size: 0.9rem;
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    margin: 5px;
     cursor: pointer;
-    transition: all 0.3s;
-}
-
-.filter-button:hover {
-    color: #00ffcc;
-    border-color: #00ffcc;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .filter-button.active {
-    background: #00ffcc;
-    color: #121212;
-    border-color: #00ffcc;
-    font-weight: bold;
+    background: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
 }
 
-/* ===== BOTONS DE RESPOSTA (ESTIL TERMINAL) ===== */
-ul { padding: 0; }
-
+/* BOTONS DE RESPOSTA ESTIL TERMINAL */
 li button {
     width: 100%;
-    background-color: #252525; 
-    border: 1px solid #333;
-    color: #bbb;
-    padding: 15px 20px;
-    margin-bottom: 12px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: left;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.2s;
-    border-left: 4px solid #333; /* Detall a l'esquerra */
+    border-left: 5px solid #334155;
 }
 
 li button:hover {
-    background-color: #2a2a2a;
-    border-left: 4px solid #00ffcc;
-    color: #fff;
-    transform: scale(1.01);
+    border-left-color: #38bdf8;
+    background: #1e293b;
 }
 
 li button.selected {
-    background: #2a2a2a;
-    border-left: 4px solid #00ffcc;
-    color: #00ffcc;
-    font-weight: 600;
+    border-left-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
 }
 
-/* ===== SOLUTION BUTTON (EL BOTÓ D'ACCIÓ) ===== */
+/* BOTÓ DE SOLUCIÓ */
 .solution-button {
     width: 100%;
-    background: #00ffcc;
-    color: #121212;
+    background: #38bdf8;
+    color: #0f172a;
     border: none;
     padding: 15px;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-weight: 900;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 4px 4px 0px #008866;
+    box-shadow: 4px 4px 0px #0369a1;
 }
 
-.solution-button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #008866;
+/* APARTATS DE LA SOLUCIÓ */
+.step-block {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #334155;
 }
 
-/* ===== FEEDBACK (MODERN) ===== */
-.correcta { border-left: 8px solid #27ae60; background: #1b2e22; color: #7cfc00; padding: 15px; }
-.incorrecta { border-left: 8px solid #e74c3c; background: #2e1b1b; color: #ff6b6b; padding: 15px; }
-
-/* ===== ANIMATIONS ===== */
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.step-letter {
+    color: #38bdf8;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
-/* LATEX COLOR */
-.mjx-chtml { color: #00ffcc !important; }
+/* FIX PER LATEX */
+.mjx-chtml { color: #38bdf8 !important; }

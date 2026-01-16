@@ -77,11 +77,11 @@ const questions = [
         <strong>Resolució:</strong><br>
         La sortida z val 1 sempre que el binari (c,d) > (a,b).
         <br><br>
-        <strong>a) Taula de veritat:</strong> Hi ha 16 combinacions. z=1 en 6 casos (ex: 00-01, 00-10, 00-11, 01-10, 01-11, 10-11).
-        <br><strong>b) Simplificació:</strong> \\[ z = \\bar{a}c + \\bar{a}\\bar{b}d + \\bar{b}cd \\]
-        <br><strong>c) Diagrama:</strong> Es dibuixa el circuit amb 3 portes AND, 1 OR i inversors.
+        <strong>a) Taula de veritat:</strong> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Resolució Exercici 1 a" width="900">
+        <br><strong>b) Simplificació:</strong> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Resolució Exercici 1 b" width="900">
+        <br><strong>c) Diagrama:</strong><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Resolució Exercici 1 c" width="900">
         <br><br>
-        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1.png" alt="Resolució Exercici 2" width="900">
+        
         `
     },
     {

@@ -370,5 +370,68 @@ const questions = [
                 <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder c i d en sèrie" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
             </div>
         </div>`
-}
+},
+[
+    {
+        type: "exercicis",
+        category: "control",
+        text: `Exercici 2 [2,5 punts en total]
+        <br>Un circuit combinacional de quatre entrades rep números del 0 al 15 expressats en base 2 (en sistema binari). La sortida encén un led quan el número és 0 o un múltiple de 4. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+        <br>primer dígit (el de més a l’esquerra): a = { 1, 0 };
+        <br>segon dígit: b = { 1, 0 }; tercer dígit: c = { 1, 0 }; quart dígit: d = { 1, 0 };
+        <br>led: l = { 1: actiu, 0: no actiu }.
+        <br><br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+        <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Taula de Veritat</span> 
+                <p>Múltiples de 4 i el zero (0, 4, 8, 12):</p>
+                <div style="text-align:center; margin-bottom: 10px;">
+                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6a.png" alt="Taula de veritat" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
+                </div>
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Funció lògica i simplificació</span>
+                <p>A partir de la taula de veritat, la funció com a suma de productes (mintermis) és:</p>
+                \\[ l = \\bar{a} \\bar{b} \\bar{c} \\bar{d} + \\bar{a} b \\bar{c} \\bar{d} + a \\bar{b} \\bar{c} \\bar{d} + a b \\bar{c} \\bar{d} \\]
+                <p>Extreient factor comú de $\\bar{c} \\bar{d}$:</p>
+                \\[ l = \\bar{c} \\bar{d} (\\bar{a} \\bar{b} + \\bar{a} b + a \\bar{b} + a b) = \\bar{c} \\bar{d} \\cdot 1 \\]
+                \\[ \\text{simplificant: } l = \\bar{c} \\bar{d} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Esquema de contactes</span>
+                <div style="text-align:center; margin: 15px 0;">
+                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r6c.png" alt="Esquema ladder" style="max-width:220px; border: 1px solid #ddd; padding: 5px;">
+                </div>
+            </div>`
+    },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `Exercici 5 [2,5 punts en total]
+        <br>El sistema de la figura permet manipular una barra de longitud 2L mitjançant un motor que s'uneix a un tambor de diàmetre d = 450 mm. La barra és homogènia i té una massa m = 50 kg. El sistema està en equilibri amb α = φ = 30°.
+        <br><br><strong>a)</strong> Dibuixeu el diagrama de cos lliure de la barra OA.
+        <br><strong>b)</strong> Determineu la força T del cable.
+        <br><strong>c)</strong> Determineu les forces horitzontal i vertical a l'articulació O.
+        <br><strong>d)</strong> Determineu el parell Γ que fa el motor sobre el tambor.`,
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">B) Força T del cable</span>
+                \\[ \\sum M(O) = 0 \\rightarrow T \\cos(30) \\cdot 2L - m g \\cos(30) \\cdot L = 0 \\]
+                \\[ T = \\frac{m g}{2} = \\frac{50 \\cdot 9,81}{2} = 245,2 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Forces a l'articulació O</span>
+                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\cos(30) - F_H = 0 \\rightarrow F_H = 212,3 \\text{ N} \\]
+                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30) - mg + F_V = 0 \\rightarrow F_V = 367,8 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">D) Parell motor</span>
+                \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,2 \\cdot \\frac{0,450}{2} = 55,16 \\text{ Nm} \\]
+            </div>`
+    }
+]
 ];

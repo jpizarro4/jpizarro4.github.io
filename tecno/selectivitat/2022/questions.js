@@ -700,5 +700,40 @@ const questions = [
                 <p>En sistemes monofàsics: \\( P = U \\cdot I \\cdot \\cos \\varphi \\)</p>
                 \\[ I = \\frac{P_{\\text{elèc}}}{U \\cdot \\cos \\varphi} = \\frac{2906,67}{230 \\cdot 0,85} = 14,87 \\text{ A} \\]
             </div>`
+    },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: "Un automòbil està equipat amb un motor de \\(n_c = 6\\) cilindres de cursa \\(s = 91 \\text{ mm}\\) i diàmetre \\(d = 83 \\text{ mm}\\). La relació de compressió és \\(r_c = 12\\). Quan l’automòbil es desplaça a velocitat constant, el motor desenvolupa una potència \\(P_{\\text{mec}} = 20 \\text{ kW}\\), gira a \\(n = 3000 \\text{ min}^{-1}\\) i consumeix \\(c = 6,5 \\text{ L/h}\\) de benzina (\\(p_c = 42000 \\text{ kJ/kg}\\) i \\(\\rho = 0,8 \\text{ kg/L}\\)). Determineu:",
+        options: [],
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Cilindrada total (V) en \\(\\text{cm}^3\\)</span>
+                <p>Primer calculem la cilindrada d'un sol cilindre (unitats en cm per obtenir \\(\\text{cm}^3\\)):</p>
+                \\[ V_u = \\frac{\\pi \\cdot d^2}{4} \\cdot s = \\frac{\\pi \\cdot 8,3^2}{4} \\cdot 9,1 = 492,45 \\text{ cm}^3 \\]
+                <p>Multipliquem pel nombre de cilindres:</p>
+                \\[ V = n_c \\cdot V_u = 6 \\cdot 492,45 = 2954,7 \\text{ cm}^3 \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Parell motor (\\(\\Gamma\\))</span>
+                <p>Convertim la velocitat de rotació a rad/s:</p>
+                \\[ \\omega = 3000 \\cdot \\frac{2\\pi}{60} = 314,16 \\text{ rad/s} \\]
+                <p>A partir de la potència mecànica:</p>
+                \\[ \\Gamma = \\frac{P_{\\text{mec}}}{\\omega} = \\frac{20000 \\text{ W}}{314,16 \\text{ rad/s}} = 63,66 \\text{ N} \\cdot \\text{m} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Potència tèrmica consumida (\\(P_{\\text{tèrm}}\\)) en kW</span>
+                <p>Calculem el consum de massa per segon:</p>
+                \\[ \\dot{m} = c \\cdot \\rho = 6,5 \\text{ L/h} \\cdot 0,8 \\text{ kg/L} = 5,2 \\text{ kg/h} \\]
+                \\[ \\dot{m} = \\frac{5,2}{3600} = 0,00144 \\text{ kg/s} \\]
+                <p>Calculem la potència tèrmica:</p>
+                \\[ P_{\\text{tèrm}} = \\dot{m} \\cdot p_c = 0,00144 \\cdot 42000 = 60,67 \\text{ kW} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">D) Rendiment del motor (\\(\\eta\\))</span>
+                \\[ \\eta = \\frac{P_{\\text{mec}}}{P_{\\text{tèrm}}} = \\frac{20}{60,67} = 0,3296 \\]
+                \\[ \\eta \\approx 33 \\% \\]
+            </div>`
     }
 ];

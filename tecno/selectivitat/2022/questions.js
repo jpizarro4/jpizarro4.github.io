@@ -193,9 +193,8 @@ const questions = [
     type: "questions",
     category: "materials",
     text: `La taula següent mostra les característiques dels materials de quatre provetes normalitzades que s’utilitzen en un assaig de tracció. (Totes les provetes tenen les mateixes dimensions.)
-    <div style="margin: 15px 0; overflow-x:auto;">
-    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5q11.png" alt="Taula" style="max-width:100%; border-radius:4px;">
-    
+    <div style="display: flex; justify-content: center; margin: 20px 0;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5q11.png" alt="Taula característiques materials" style="width: 90%; max-width: 800px; border-radius: 4px; border: 1px solid #ddd;">
     </div>
     Es pot afirmar que, per a un mateix esforç de tracció, la proveta que menys es deformarà és la que està feta`,
     options: [
@@ -210,13 +209,17 @@ const questions = [
             <span class="step-header">Raonament</span>
             <p>Segons la Llei de Hooke, la deformació \\(\\epsilon\\) és inversament proporcional al Mòdul d'Elasticitat (o Mòdul de Young, \\(E\\)) per a una mateixa tensió \\(\\sigma\\):</p>
             \\[ \\sigma = E \\cdot \\epsilon \\implies \\epsilon = \\frac{\\sigma}{E} \\]
-            <p>Per tant, el material que menys es deforma és el que té el Mòdul d'elasticitat més alt.</p>
-            <p>Observant la taula:</p>
+            <p>Per tant, el material que menys es deforma (menor \\(\\epsilon\\)) és el que té el Mòdul d'elasticitat més alt (major \\(E\\)).</p>
+            
+
+[Image of stress-strain graph illustrating Young's modulus]
+
+            <p>Observant els valors de la imatge:</p>
             <ul>
-                <li>Alumini: 69 GPa</li>
-                <li><b>Molibdè: 324 GPa (Màxim)</b></li>
-                <li>Níquel: 207 GPa</li>
-                <li>Plata: 76 GPa</li>
+                <li>Alumini pur: \\(69 \\text{ GPa}\\)</li>
+                <li><b>Molibdè pur: \\(324 \\text{ GPa}\\) (Valor màxim)</b></li>
+                <li>Níquel: \\(207 \\text{ GPa}\\)</li>
+                <li>Plata: \\(76 \\text{ GPa}\\)</li>
             </ul>
         </div>`
 },

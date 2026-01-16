@@ -190,6 +190,164 @@ const questions = [
             </div>`
     },
     {
+    type: "questions",
+    category: "materials",
+    text: `La taula següent mostra les característiques dels materials de quatre provetes normalitzades que s’utilitzen en un assaig de tracció. (Totes les provetes tenen les mateixes dimensions.)
+    <div style="margin: 15px 0; overflow-x:auto;">
+        <table style="width:100%; border-collapse: collapse; font-size: 0.9em; text-align: center;">
+            <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Material</th>
+                <th style="border: 1px solid #ddd; padding: 8px;">Densitat<br>\\( (\\text{kg/m}^3) \\)</th>
+                <th style="border: 1px solid #ddd; padding: 8px;">Mòdul d’elasticitat<br>\\( (\\text{GPa}) \\)</th>
+                <th style="border: 1px solid #ddd; padding: 8px;">Límit elàstic<br>\\( (\\text{MPa}) \\)</th>
+                <th style="border: 1px solid #ddd; padding: 8px;">Tensió de ruptura<br>\\( (\\text{MPa}) \\)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Alumini pur</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">2 710</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">69</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">85</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">100</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Molibdè pur</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">10 220</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">324</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">565</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">655</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Níquel</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">8 900</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">207</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">138</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">483</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Plata</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">10 490</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">76</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">55</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">125</td>
+            </tr>
+        </table>
+    </div>
+    Es pot afirmar que, per a un mateix esforç de tracció, la proveta que menys es deformarà és la que està feta`,
+    options: [
+        { text: "d’alumini pur.", value: "a" },
+        { text: "de molibdè pur.", value: "b" },
+        { text: "de níquel.", value: "c" },
+        { text: "de plata.", value: "d" }
+    ],
+    correctAnswer: "b",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">Raonament</span>
+            <p>Segons la Llei de Hooke, la deformació \\(\\epsilon\\) és inversament proporcional al Mòdul d'Elasticitat (o Mòdul de Young, \\(E\\)) per a una mateixa tensió \\(\\sigma\\):</p>
+            \\[ \\sigma = E \\cdot \\epsilon \\implies \\epsilon = \\frac{\\sigma}{E} \\]
+            <p>Per tant, el material que menys es deforma és el que té el Mòdul d'elasticitat més alt.</p>
+            <p>Observant la taula:</p>
+            <ul>
+                <li>Alumini: 69 GPa</li>
+                <li><b>Molibdè: 324 GPa (Màxim)</b></li>
+                <li>Níquel: 207 GPa</li>
+                <li>Plata: 76 GPa</li>
+            </ul>
+        </div>`
+},
+    {
+    type: "questions",
+    category: "electrics",
+    text: "Amb quines unitats es pot expressar l’energia elèctrica consumida en una llar?",
+    options: [
+        { text: "kW/h", value: "a" },
+        { text: "kW · h", value: "b" },
+        { text: "J/s", value: "c" },
+        { text: "J/h", value: "d" }
+    ],
+    correctAnswer: "b",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">Explicació</span>
+            <p>La potència \\(P\\) es defineix com l'energia \\(E\\) per unitat de temps \\(t\\):</p>
+            \\[ P = \\frac{E}{t} \\implies E = P \\cdot t \\]
+            <p>Si mesurem la potència en quilowatts (kW) i el temps en hores (h), la unitat d'energia resultant és el quilowatt-hora.</p>
+            \\[ \\text{kW} \\cdot \\text{h} \\]
+            <p>Nota: J/s correspon a Watts (Potència).</p>
+        </div>`
+},
+    {
+    type: "questions",
+    category: "electrics",
+    text: "En un circuit elèctric, es connecten en sèrie dues resistències de valors nominals \\(110 \\, \\Omega\\) i \\(330 \\, \\Omega\\) i tolerància \\(\\pm 5 \\%\\). Es pot afirmar que",
+    options: [
+        { text: "la resistència màxima equivalent és de 462 Ω.", value: "a" },
+        { text: "la resistència màxima equivalent és de 484 Ω.", value: "b" },
+        { text: "la resistència mínima equivalent és de 440 Ω.", value: "c" },
+        { text: "la resistència mínima equivalent és de 396 Ω.", value: "d" }
+    ],
+    correctAnswer: "a",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">Càlcul de la Resistència Equivalent Nominal</span>
+            <p>En sèrie, les resistències se sumen:</p>
+            \\[ R_{eq} = R_1 + R_2 = 110 + 330 = 440 \\, \\Omega \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">Càlcul de la Resistència Màxima</span>
+            <p>Amb una tolerància de \\(\\pm 5 \\%\\), el valor màxim serà un 105% del nominal:</p>
+            \\[ R_{màx} = R_{eq} \\cdot \\left(1 + \\frac{5}{100}\\right) = 440 \\cdot 1,05 \\]
+            \\[ R_{màx} = 462 \\, \\Omega \\]
+        </div>`
+},
+    {
+    type: "questions",
+    category: "energia",
+    text: "Quina potència necessita una cafetera per a escalfar \\(75 \\text{ mL}\\) d’aigua que es troba a temperatura ambient \\((T_a = 21 ^\\circ \\text{C})\\) fins a \\(88 ^\\circ \\text{C}\\) en \\(20 \\text{ s}\\)? La calor específica de l’aigua és \\(c_e = 4,187 \\text{ J/(g K)}\\).",
+    options: [
+        { text: "420,7 W", value: "a" },
+        { text: "4,207 kW", value: "b" },
+        { text: "1 052 W", value: "c" },
+        { text: "10,52 kW", value: "d" }
+    ],
+    correctAnswer: "c",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Càlcul de l'Energia (Calor)</span>
+            <p>Primer passem el volum a massa (assumint densitat de l'aigua \\(1 \\text{ g/mL}\\)): \\(m = 75 \\text{ g}\\).</p>
+            <p>Calculem l'increment de temperatura: \\(\\Delta T = 88 - 21 = 67 \\text{ K}\\).</p>
+            \\[ Q = m \\cdot c_e \\cdot \\Delta T = 75 \\cdot 4,187 \\cdot 67 = 21039,7 \\text{ J} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Càlcul de la Potència</span>
+            \\[ P = \\frac{E}{t} = \\frac{21039,7 \\text{ J}}{20 \\text{ s}} = 1051,98 \\text{ W} \\approx 1052 \\text{ W} \\]
+        </div>`
+},
+    {
+    type: "questions",
+    category: "medi ambient",
+    text: "Una terrassa d’un bar té instaŀlades 5 estufes de gas butà que funcionen durant \\(9 \\text{ h}\\) al dia i cadascuna d’elles consumeix \\(800 \\text{ g/h}\\) de butà. L’Oficina Catalana del Canvi Climàtic estima un factor d’emissió \\(FE = 2,96 \\text{ kg de CO}_2\\) per cada kilogram de gas butà. Quina és la petjada de carboni que deixen les 5 estufes al cap d’un dia de funcionament?",
+    options: [
+        { text: "21,31 kg de CO2", value: "a" },
+        { text: "11,84 kg de CO2", value: "b" },
+        { text: "36 kg de CO2", value: "c" },
+        { text: "106,56 kg de CO2", value: "d" }
+    ],
+    correctAnswer: "d",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Consum total de gas</span>
+            <p>Calculem el consum total tenint en compte les 5 estufes, les hores i el consum unitari:</p>
+            \\[ m_{gas} = 5 \\text{ estufes} \\cdot 9 \\text{ h} \\cdot 0,8 \\text{ kg/h} = 36 \\text{ kg de butà} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Càlcul de les emissions (Petjada de carboni)</span>
+            <p>Multipliquem la massa de combustible pel Factor d'Emissió (FE):</p>
+            \\[ \\text{Emissions} = m_{gas} \\cdot FE = 36 \\text{ kg} \\cdot 2,96 \\frac{\\text{kg CO}_2}{\\text{kg butà}} \\]
+            \\[ \\text{Emissions} = 106,56 \\text{ kg de CO}_2 \\]
+        </div>`
+},
+    {
         type: "exercicis",
         category: "control",
         text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). El sistema té com a entrades 4 variables digitals \\((a, b, c, d)\\) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari. Utilitzant les variables d’estat descrites, dissenyeu el sistema digital:

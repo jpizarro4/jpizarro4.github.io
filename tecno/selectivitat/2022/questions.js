@@ -77,18 +77,18 @@ const questions = [
         <strong>Resolució:</strong>
         <div style="margin-top: 20px;">
             <strong>a) Taula de veritat:</strong>
-            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Resolució Exercici 1 a" style="max-width:100%; height:auto;">
+            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Taula de veritat" style="max-width:100%; height:auto;">
             </div>
             
             <strong>b) Simplificació:</strong>
-            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Resolució Exercici 1 b" style="max-width:100%; height:auto;">
+            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Simplificació de la funció" style="max-width:100%; height:auto;">
             </div>
             
             <strong>c) Diagrama de portes:</strong>
-            <div style="text-align:center; margin: 10px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Resolució Exercici 1 c" style="max-width:100%; height:auto;">
+            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Esquema lògic" style="max-width:100%; height:auto;">
             </div>
         </div>`
     },

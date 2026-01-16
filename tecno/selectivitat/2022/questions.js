@@ -10,9 +10,10 @@ const questions = [
             { text: "161,8 J", value: "d" }
         ],
         correctAnswer: "d",
-        steps: `\\[ E_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
-                \\[ E_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
-                \\[ \\Delta E = 215,6 - 53,9 = 161,7 \\text{ J} \\]`
+        steps: `
+            <div class="step-block"><span class="step-letter">a)</span> \\[ E_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]</div>
+            <div class="step-block"><span class="step-letter">b)</span> \\[ E_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]</div>
+            <div class="step-block"><span class="step-letter">c)</span> \\[ \\Delta E = 215,6 - 53,9 = 161,7 \\text{ J} \\]</div>`
     },
     {
         type: "questions",
@@ -25,7 +26,7 @@ const questions = [
             { text: "±10 %", value: "d" }
         ],
         correctAnswer: "b",
-        steps: `\\[ \\text{Tol} = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]`
+        steps: `<div class="step-block"><span class="step-letter">Tol:</span> \\[ \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]</div>`
     },
     {
         type: "questions",
@@ -38,8 +39,9 @@ const questions = [
             { text: "16,91 kg de CO2", value: "d" }
         ],
         correctAnswer: "a",
-        steps: `\\[ d = \\frac{60}{5,6/100} = 1071,43 \\text{ km} \\]
-                \\[ m = 1071,43 \\cdot 157,8 = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]`
+        steps: `
+            <div class="step-block"><span class="step-letter">a)</span> \\[ d = \\frac{60}{5,6/100} = 1071,43 \\text{ km} \\]</div>
+            <div class="step-block"><span class="step-letter">b)</span> \\[ m = 1071,43 \\cdot 157,8 = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]</div>`
     },
     {
         type: "questions",
@@ -52,13 +54,13 @@ const questions = [
             { text: "kJ · s", value: "d" }
         ],
         correctAnswer: "c",
-        steps: "La potència es mesura en Watts (W) o quilowatts (kW)."
+        steps: `<div class="step-block">La potència es mesura en <b>Watts (W)</b> o <b>quilowatts (kW)</b>.</div>`
     },
     {
         type: "questions",
         category: "maquines",
         text: "Un tren d'engranatges amb \\(z_1 = 14\\), \\(z_2 = 48\\), \\(z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió \\(\\omega_{\\text{roda}}/\\omega_{\\text{motor}}\\).",
-        images: '<div style="text-align:center; margin:15px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges" style="max-width:100%; height:auto; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></div>',
+        images: '<div style="text-align:center; margin:15px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges" style="max-width:100%; height:auto; border-radius:8px;"></div>',
         options: [
             { text: "0,186 7", value: "a" },
             { text: "5,357", value: "b" },
@@ -66,59 +68,40 @@ const questions = [
             { text: "0,411 0", value: "d" }
         ],
         correctAnswer: "a",
-        steps: `\\[ \\tau = \\frac{14 \\cdot 16}{48 \\cdot 25} = 0,1867 \\]`
+        steps: `<div class="step-block"><span class="step-letter">τ:</span> \\[ \\tau = \\frac{14 \\cdot 16}{48 \\cdot 25} = 0,1867 \\]</div>`
     },
     {
         type: "exercicis",
         category: "control",
-        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor. Entrades \\((a, b, c, d)\\). Sortida \\(z=1\\) si puja:
-        <br><br><strong>a)</strong> Taula de veritat. [1 punt]
-        <br><strong>b)</strong> Funció lògica i simplificació. [1 punt]
-        <br><strong>c)</strong> Diagrama de portes lògiques. [0,5 punts]`,
+        text: `El controlador d’un motor d’ascensor. Entrades \\((a, b, c, d)\\). Sortida \\(z=1\\) si puja:
+        <br><br><strong>a)</strong> Taula de veritat.
+        <br><strong>b)</strong> Funció lògica.
+        <br><strong>c)</strong> Diagrama de portes.`,
         correctAnswer: "",
         steps: `
-        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" style="max-width:100%;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" style="max-width:100%; margin-top:10px;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" style="max-width:100%; margin-top:10px;">
-        </div>`
+        <div class="step-block"><span class="step-letter">a)</span> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" style="max-width:100%; filter: invert(0.8);"></div>
+        <div class="step-block"><span class="step-letter">b)</span> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" style="max-width:100%; margin-top:10px; filter: invert(0.8);"></div>
+        <div class="step-block"><span class="step-letter">c)</span> <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" style="max-width:100%; margin-top:10px; filter: invert(0.8);"></div>`
     },
-   {
+    {
         type: "exercicis",
         category: "energia",
-        text: `Rentadora: \\(t = 1,5 \\text{ h}\\). Rentada (30 min): \\(P_1 = 2000 \\text{ W}\\). Altres: \\(P_2 = 250 \\text{ W}\\). Ús: 10 cops/mes.`,
+        text: `Rentadora: \\(t = 1,5 \\text{ h}\\). Rentada (30 min): \\(P_1 = 2000 \\text{ W}\\). Altres: \\(P_2 = 250 \\text{ W}\\).`,
         correctAnswer: "",
         steps: `
-        <div class="step-block"><span class="step-letter">a)</span> \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]</div>
+        <div class="step-block"><span class="step-letter">a)</span> \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1,25 \\text{ kWh} \\]</div>
         <div class="step-block"><span class="step-letter">b)</span> \\[ c_r = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]</div>
-        <div class="step-block"><span class="step-letter">c)</span> \\[ c_{\\text{punta}} = 1,25 \\cdot 0,3429 = 0,4287 \\text{ €} \\]
-                                   \\[ c_{\\text{vall}} = 1,25 \\cdot 0,2169 = 0,2712 \\text{ €} \\]</div>
+        <div class="step-block"><span class="step-letter">c)</span> \\[ c_{\\text{punta}} = 0,4287 \\text{ €} \\text{ , } c_{\\text{vall}} = 0,2712 \\text{ €} \\]</div>
         <div class="step-block"><span class="step-letter">d)</span> \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]</div>`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `Volant: \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\), \\(n_0 = 5000 \\text{ min}^{-1}\\), \\(t_{\\text{aturada}} = 1 \\text{ min}\\).`,
+        text: `Volant: \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\), \\(n_0 = 5000 \\text{ min}^{-1}\\), \\(t = 1 \\text{ min}\\).`,
         correctAnswer: "",
         steps: `
-        <div class="step-block"><span class="step-letter">a)</span> \\[ \\omega_0 = 523,6 \\text{ rad/s} \\rightarrow \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]</div>
-        <div class="step-block"><span class="step-letter">b)</span> \\[ \\theta = 523,6 \\cdot 60 + 0,5(-8,727)60^2 = 15708 \\text{ rad} \\rightarrow n = 2500 \\text{ voltes} \\]</div>
-        <div class="step-block"><span class="step-letter">c)</span> \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\]</div>`
-    }
-    {
-        type: "exercicis",
-        category: "maquines",
-        text: `Volant d'inèrcia: \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\), \\(n_0 = 5000 \\text{ min}^{-1}\\). Triga \\(t = 1 \\text{ min}\\) a aturar-se.
-        <br>Determineu:
-        <br><strong>a)</strong> \\(\\alpha\\). [0,5 p]
-        <br><strong>b)</strong> Voltes \\(n\\). [1 p]
-        <br><strong>c)</strong> \\(E_{\\text{diss}}\\). [1 p]`,
-        correctAnswer: "",
-        steps: `
-        \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
-        \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
-        \\[ \\theta = 523,6 \\cdot 60 + 0,5 \\cdot (-8,727) \\cdot 60^2 = 15708 \\text{ rad} \\]
-        \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
-        \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\]`
+        <div class="step-block"><span class="step-letter">a)</span> \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]</div>
+        <div class="step-block"><span class="step-letter">b)</span> \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]</div>
+        <div class="step-block"><span class="step-letter">c)</span> \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123,41 \\text{ kJ} \\]</div>`
     }
 ];

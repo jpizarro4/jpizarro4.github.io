@@ -408,5 +408,44 @@ const questions = [
             \\[ \\text{Estalvi}_{any} = 3,334 \\cdot 280 = 933,52 \\text{ €/any} \\]
             \\[ t = \\frac{7700}{933,52} = 8,248 \\text{ anys} \\]
         </div>`
+},
+{
+    type: "exercicis",
+    category: "termodinamica",
+    text: `Exercici 4 [2,5 punts en total]
+    <br>Es vol escalfar un volum V = 350 mL d’aigua des d’una temperatura inicial T1 = 20 °C fins a una de final T2 = 95 °C. Es proposen dues alternatives:
+    <br>— Utilitzar un escalfador d’infusions: P_escalf = 1200 W, t_escalf = 125 s.
+    <br>— Fer servir un fogó de vitroceràmica: E_vitro = 0,11 kWh.
+    <br>Dades: U = 230 V; c_e = 4,18 J/(g °C); densitat aigua ρ = 1 kg/L.
+    <br><br><strong>a)</strong> L’energia teòrica necessària per a escalfar l’aigua E_aigua. [0,5 punts]
+    <br><strong>b)</strong> La resistència R que l’escalfador d’aigua té al seu interior. [0,5 punts]
+    <br><strong>c)</strong> L’energia consumida per l’escalfador E_cons. [0,5 punts]
+    <br><strong>d)</strong> El rendiment de l’escalfador η_escalf i el de la vitroceràmica η_vitro. Quina alternativa escolliríeu? [1 punt]`,
+    correctAnswer: "",
+    steps: `
+        <div class="step-block">
+            <span class="step-header">A) Energia teòrica (E_aigua)</span>
+            <p>Massa d'aigua: $m = 350 \\text{ mL} = 350 \\text{ g}$.</p>
+            \\[ Q = m \\cdot c_e \\cdot (T_2 - T_1) \\]
+            \\[ E_{aigua} = 350 \\text{ g} \\cdot 4,18 \\text{ J/(g°C)} \\cdot (95 - 20) \\text{ °C} = 109725 \\text{ J} \\approx 109,7 \\text{ kJ} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">B) Resistència de l'escalfador (R)</span>
+            \\[ P = \\frac{U^2}{R} \\rightarrow R = \\frac{U^2}{P} \\]
+            \\[ R = \\frac{230^2}{1200} = \\frac{52900}{1200} = 44,08 \\, \\Omega \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">C) Energia consumida per l'escalfador (E_cons)</span>
+            \\[ E_{cons} = P \\cdot t = 1200 \\text{ W} \\cdot 125 \\text{ s} = 150000 \\text{ J} = 150 \\text{ kJ} \\]
+        </div>
+        <div class="step-block">
+            <span class="step-header">D) Rendiments i elecció (η)</span>
+            <p><b>Rendiment escalfador:</b></p>
+            \\[ \\eta_{escalf} = \\frac{E_{aigua}}{E_{cons}} = \\frac{109725}{150000} = 0,7315 \\rightarrow 73,15 \\% \\]
+            <p><b>Rendiment vitroceràmica:</b></p>
+            <p>Passem l'energia de la vitro a Joules: $0,11 \\text{ kWh} \\cdot 3,6 \\cdot 10^6 \\text{ J/kWh} = 396000 \\text{ J}$.</p>
+            \\[ \\eta_{vitro} = \\frac{109725}{396000} = 0,2771 \\rightarrow 27,71 \\% \\]
+            <p><b>Conclusió:</b> Escolliríem l'<b>escalfador d'infusions</b> perquè té un rendiment molt més elevat i consumeix menys energia.</p>
+        </div>`
 }
 ];

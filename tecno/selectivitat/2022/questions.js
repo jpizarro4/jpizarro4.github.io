@@ -179,4 +179,39 @@ const questions = [
                 \\[ E_{\\text{diss}} = \\frac{1}{2} I \\omega_0^2 = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\approx 123,4 \\text{ kJ} \\]
             </div>`
     }
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `El sistema de la figura permet manipular una barra de longitud \\(2L\\) mitjançant un motor que s’uneix a un tambor de diàmetre \\(d = 450 \\text{ mm}\\) on s’enrotlla el cable. La barra, que és homogènia i té una massa \\(m = 50 \\text{ kg}\\), es troba articulada al punt \\(O\\), el qual està fixat a terra. La resta d’elements són de massa negligible. En la posició mostrada en la figura, el sistema està en equilibri estàtic i \\(\\alpha = \\varphi = 30^\\circ\\).
+        <div style="text-align:center; margin:15px 0;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s1r5_diag.png" alt="Sistema de barra i tambor" style="max-width:100%; border-radius:4px;">
+        </div>
+        Determineu:
+        <br><br><strong>a)</strong> El diagrama de cos lliure de la barra OA. [0,5 p]
+        <br><strong>b)</strong> La força \\(T\\) a la qual està sotmès el cable. [0,5 p]
+        <br><strong>c)</strong> Les forces vertical \\(F_V\\) i horitzontal \\(F_H\\) a l’articulació O. [1 p]
+        <br><strong>d)</strong> El parell \\(\\Gamma\\) que subministra el motor. [0,5 p]`,
+        correctAnswer: "",
+        steps: `
+            <div class="step-block">
+                <span class="step-header">A) Diagrama de cos lliure</span>
+                <p>Cal dibuixar la barra amb el pes (\\(mg\\)) al centre, la tensió (\\(T\\)) a l'extrem A amb angle \\(\\alpha\\), i les reaccions \\(F_H\\) i \\(F_V\\) al punt O.</p>
+            </div>
+            <div class="step-block">
+                <span class="step-header">B) Força T al cable</span>
+                \\[ \\sum M(O) = 0 \\rightarrow T \\cos(30^\\circ) \\cdot 2L - m \\cdot g \\cos(30^\\circ) \\cdot L = 0 \\]
+                \\[ T = \\frac{m \\cdot g}{2} = \\frac{50 \\cdot 9,81}{2} = 245,2 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">C) Forces a l'articulació O</span>
+                \\[ \\sum F_{\\text{horitzontals}} = 0 \\rightarrow T \\cos(30^\\circ) - F_H = 0 \\]
+                \\[ F_H = T \\frac{\\sqrt{3}}{2} = 212,3 \\text{ N} \\]
+                \\[ \\sum F_{\\text{verticals}} = 0 \\rightarrow T \\sin(30^\\circ) - m \\cdot g + F_V = 0 \\]
+                \\[ F_V = \\frac{3 \\cdot m \\cdot g}{4} = 367,8 \\text{ N} \\]
+            </div>
+            <div class="step-block">
+                <span class="step-header">D) Parell Γ del motor</span>
+                \\[ \\Gamma = T \\cdot \\frac{d}{2} = 245,2 \\cdot \\frac{0,45}{2} = 55,16 \\text{ Nm} \\]
+            </div>`
+    },
 ];

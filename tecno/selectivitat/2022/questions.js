@@ -455,7 +455,7 @@ const questions = [
     text: `Exercici 5 [2,5 punts en total]
     <br>El mecanisme de la figura s’utilitza per a elevar la porta d’un armari. Les dues barres de longitud LAO = LBQ = 2L són de massa negligible i estan articulades a la paret i a la porta. La porta és homogènia i de massa m = 3 kg. Té una longitud de 8L i un gruix de 2s. Les barres varien l’angle respecte de la vertical entre φ = 5° (porta tancada) i φ = 175° (porta oberta). Per elevar la porta, una persona fa una força vertical F al punt P. Es negligeixen les resistències passives.
     <div style="text-align:center; margin: 15px 0;">
-        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p5.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p9.png" alt="Mecanisme porta armari" style="max-width:100%; border-radius:4px;">
     </div>
     <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la porta per a un angle φ qualsevol dins del rang de funcionament. [0,5 punts]
     <br>Considerant que la porta està en repòs, determineu:
@@ -467,7 +467,7 @@ const questions = [
             <span class="step-header">A) Diagrama de cos lliure</span>
             <p>Sobre la porta actuen: el pes ($m \\cdot g$) al centre de gravetat, la força vertical ($F$) al punt $P$, i les reaccions de les barres ($T_{AO}$ i $T_{BQ}$) en la direcció de les barres (angle $\\phi$).</p>
             <div style="text-align:center; margin: 10px 0;">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5p9.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
+                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s5r9a.png" alt="DCL Porta" style="max-width:200px; border: 1px solid #ddd;">
             </div>
         </div>
         <div class="step-block">

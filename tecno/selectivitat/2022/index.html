@@ -7,57 +7,80 @@
     <script src="questions.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* RESET DE SEGURETAT PER EVITAR DOBLE LINIA */
+        h2 { display: none; } /* Amaguem qualsevol h2 que vingui de styles.css */
+        
         .ocult { display: none; }
         .visible { display: block; }
-        .question-images { margin: 10px 0; }
-        
-        /* NAVBAR FIXA */
-        .navbar-header {
+
+        /* NAVBAR UNIFICADA */
+        .header-fix {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-            z-index: 2000;
-            height: 70px;
+            height: 65px;
+            background-color: #1a1a1a; /* Fons fosc per defecte */
+            color: white;
             display: flex;
             align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            border-bottom: 1px solid #333;
         }
 
-        .nav-content {
+        .header-content {
             width: 100%;
             max-width: 1000px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
-        body { padding-top: 100px; }
-        
-        #load-time { text-align: center; margin: 20px; font-style: italic; color: #555; font-size: 0.8rem; }
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        #dark-toggle {
+            font-size: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            padding: 5px;
+        }
+
+        /* AJUST DE COS PER NO QUEDAR TAPAT */
+        body { padding-top: 90px; }
+
+        /* Estil per a les categories perquè no s'amunteguin */
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
-<header class="navbar-header">
-    <div class="nav-content">
-        <h2 style="margin: 0; font-size: 1.3rem; font-weight: 800; color: var(--text-main);">Problemes de Tecnologia i Enginyeria</h2>
-        <span id="dark-toggle" style="cursor:pointer; font-size: 1.6rem;">🌙</span>
+<header class="header-fix">
+    <div class="header-content">
+        <p class="header-title">Tecnologia i Enginyeria</p>
+        <span id="dark-toggle">🌙</span>
     </div>
 </header>
 
 <div class="filter-group-container">
-    <div style="margin-bottom: 10px; font-weight: bold; font-size: 0.9rem;">Tipus de preguntes:</div>
+    <div style="margin-bottom: 10px; font-weight: bold;">Tipus:</div>
     <div id="type-filter-buttons" class="filter-group">
         <button class="filter-button active" data-filter="totes" onclick="selectFilter(this, 'type')">Totes</button>
         <button class="filter-button" data-filter="questions" onclick="selectFilter(this, 'type')">Qüestions</button>
         <button class="filter-button" data-filter="exercicis" onclick="selectFilter(this, 'type')">Exercicis</button>
     </div>
 
-    <div style="margin: 20px 0 10px 0; font-weight: bold; font-size: 0.9rem;">Tria una categoria:</div>
+    <div style="margin-bottom: 10px; font-weight: bold;">Categories:</div>
     <div id="category-filter-buttons" class="filter-group">
         <button class="filter-button active" data-filter="tot" onclick="selectFilter(this, 'category')">Tot</button>
         <button class="filter-button" data-filter="energia" onclick="selectFilter(this, 'category')">Energia</button>
@@ -73,23 +96,25 @@
 </div>
 
 <div id="quiz-container"></div>
-<div id="load-time"></div>
 
 <script>
 /* ----------------- Mode fosc ----------------- */
 const toggle = document.getElementById("dark-toggle");
+const body = document.body;
+
 toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    body.classList.toggle("dark-mode");
+    const isDark = body.classList.contains("dark-mode");
+    toggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-if(localStorage.getItem("theme")==="dark") { 
-    document.body.classList.add("dark-mode"); 
-    toggle.textContent="☀️"; 
+if(localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggle.textContent = "☀️";
 }
 
-/* ----------------- Lògica de Filtres ----------------- */
+/* ----------------- Filtres i Render ----------------- */
 let activeFilters = { type: 'totes', category: 'tot' };
 
 function selectFilter(button, filterType) {
@@ -99,12 +124,32 @@ function selectFilter(button, filterType) {
     renderQuiz();
 }
 
-/* ----------------- Renderitzat del Quiz ----------------- */
-function renderImages(q) {
-    let html = '';
-    if(q.images) html += `<div class="question-images">${q.images}</div>`;
-    if(q.answerImage) html += `<img src="${q.answerImage}" style="max-width:100%; height:auto; margin-top:10px; border-radius: 8px;">`;
-    return html;
+function renderQuiz() {
+    const container = document.getElementById("quiz-container");
+    container.innerHTML = '';
+
+    const filtered = questions.map((q, i) => ({...q, originalIndex: i}))
+        .filter(q => (activeFilters.category === 'tot' || q.category === activeFilters.category)
+                  && (activeFilters.type === 'totes' || q.type === activeFilters.type));
+
+    filtered.forEach(q => {
+        const div = document.createElement("div");
+        div.className = 'quiz-item';
+        div.innerHTML = `
+            <h3>${q.typeText} ${q.globalNumber}</h3>
+            <div class="question-text">${q.text}</div>
+            ${q.images ? `<div class="question-images">${q.images}</div>` : ''}
+            ${generateOptions(q.options, q.originalIndex, q.correctAnswer)}
+            <div id="result${q.originalIndex}" class="result-box ocult">
+                <div id="answer${q.originalIndex}" class="feedback-container"></div>
+                <p><strong>Solució pas a pas:</strong></p>
+                <div id="steps${q.originalIndex}">${q.steps || ''}</div>
+            </div>
+            ${q.type === 'exercicis' ? `<button class="solution-button" onclick="toggleSolution(${q.originalIndex},this)">Mostra solució</button>` : ''}
+        `;
+        container.appendChild(div);
+    });
+    MathJax.typesetPromise();
 }
 
 function generateOptions(options, idx, correctAnswer) {
@@ -120,72 +165,32 @@ function generateOptions(options, idx, correctAnswer) {
         </li>`).join('')}</ul>`;
 }
 
-function renderQuiz() {
-    const container = document.getElementById("quiz-container");
-    container.innerHTML = '';
-
-    const filtered = questions.map((q,i)=>({...q, originalIndex:i}))
-        .filter(q => (activeFilters.category==='tot' || q.category===activeFilters.category)
-                  && (activeFilters.type==='totes' || q.type===activeFilters.type));
-
-    filtered.forEach(q => {
-        const div = document.createElement("div");
-        div.className = 'quiz-item';
-        div.innerHTML = `
-            <h3>${q.typeText} ${q.globalNumber}</h3>
-            <div class="question-text">${q.text}</div>
-            ${renderImages(q)}
-            ${generateOptions(q.options, q.originalIndex, q.correctAnswer)}
-            <div id="result${q.originalIndex}" class="result-box ocult">
-                <div id="answer${q.originalIndex}" class="feedback-container"></div>
-                <p><strong>Solució pas a pas:</strong></p>
-                <div id="steps${q.originalIndex}">${q.steps || ''}</div>
-            </div>
-            ${q.type==='exercicis' ? `<button class="solution-button" onclick="toggleSolution(${q.originalIndex},this)">Mostra solució</button>` : ''}
-        `;
-        container.appendChild(div);
-    });
-    MathJax.typesetPromise();
-}
-
-/* ----------------- Logica de respostes i solucions ----------------- */
 function checkAnswer(selected, correct, answerId, stepsId, resultId, correctText, buttonElement) {
     const a = document.getElementById(answerId);
     const r = document.getElementById(resultId);
-
     const ul = buttonElement.closest('ul');
-    ul.querySelectorAll('button').forEach(btn => {
-        btn.classList.remove('selected', 'selected-correct', 'selected-incorrect');
-    });
+    
+    ul.querySelectorAll('button').forEach(btn => btn.classList.remove('selected', 'selected-correct', 'selected-incorrect'));
 
     const isCorrect = selected.trim().toLowerCase() === correct.trim().toLowerCase();
-
     if (isCorrect) {
         buttonElement.classList.add('selected-correct');
-        a.innerHTML = `<div class="correcta">✅ Correcte! Has seleccionat la resposta correcta.</div>`;
+        a.innerHTML = `<div class="correcta">✅ Correcte!</div>`;
     } else {
         buttonElement.classList.add('selected-incorrect');
-        a.innerHTML = `<div class="incorrecta">❌ Incorrecte. La resposta correcta és: ${correctText}.</div>`;
+        a.innerHTML = `<div class="incorrecta">❌ Incorrecte. La resposta és: ${correctText}</div>`;
     }
-        
     r.classList.add('visible');
     r.classList.remove('ocult');
-    
-    const solBtn = r.nextElementSibling;
-    if(solBtn && solBtn.classList.contains('solution-button')) solBtn.textContent = 'Amaga solució';
-
     MathJax.typesetPromise();
 }
 
 function toggleSolution(idx, btn) {
     const r = document.getElementById(`result${idx}`);
-    if(r.classList.contains('visible')) {
-        r.classList.replace('visible','ocult');
-        btn.textContent = 'Mostra solució';
-    } else {
-        r.classList.replace('ocult','visible');
-        btn.textContent = 'Amaga solució';
-    }
+    const isVisible = r.classList.contains('visible');
+    r.classList.toggle('visible', !isVisible);
+    r.classList.toggle('ocult', isVisible);
+    btn.textContent = isVisible ? 'Mostra solució' : 'Amaga solució';
     MathJax.typesetPromise();
 }
 

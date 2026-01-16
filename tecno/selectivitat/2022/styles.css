@@ -1,136 +1,161 @@
-/* ===== ESTIL MINIMALISTA TIPUS FOTMOB ===== */
-body {
-    font-family: 'Inter', 'Poppins', sans-serif;
-    background-color: #121212; /* Fons general fosc, no negre pur */
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+/* ===== TEMA CLAR ESTIL FOTMOB (Per defecte) ===== */
+:root {
+    --bg-page: #f0f2f5;       /* Gris clar de fons */
+    --bg-card: #ffffff;       /* Blanc per a les targetes */
+    --text-main: #111827;     /* Negre suau per al text */
+    --text-secondary: #6b7280; /* Gris per a subtítols */
+    --border: #e5e7eb;        /* Vores fines */
+    --accent: #d4ff00;        /* Groc llimona exòtic */
+    --success: #10b981;       /* Verd per a encerts */
+    --success-bg: #ecfdf5;    /* Fons verd suau */
+    --error: #ef4444;         /* Vermell per a errors */
+    --error-bg: #fef2f2;      /* Fons vermell suau */
 }
 
-/* NAVBAR NETA */
+/* Mode fosc (S'activa si el body té la classe .dark-mode) */
+body.dark-mode {
+    --bg-page: #0b0e14;
+    --bg-card: #1a1d23;
+    --text-main: #f0f0f0;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* NAVBAR */
 .navbar {
-    position: fixed;
-    top: 0; 
-    width: 100%;
-    background: #1a1a1a;
-    border-bottom: 1px solid #2a2a2a;
-    padding: 12px 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-/* FILTRES ESTIL "CHIPS" */
-.filter-group-container {
-    margin-top: 100px;
+.nav-content {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.filter-button {
-    background: #242424;
-    color: #a0a0a0;
-    border: 1px solid #333;
-    padding: 8px 16px;
-    border-radius: 20px; /* Estil píndola de FotMob */
-    font-size: 0.85rem;
+/* FILTRES ORDENATS */
+.filters-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.filter-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    width: 90px;
+}
+
+.chips-group {
+    display: flex;
+    gap: 8px;
+}
+
+.chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
-.filter-button.active {
-    background: #d4ff00; /* El teu groc exòtic */
-    color: #000;
-    border-color: #d4ff00;
+.chip.active {
+    background: var(--text-main);
+    color: white;
 }
 
-/* TARGETES D'EXERCICIS (Cards) */
-.content-container, #quiz-container {
-    margin: 20px auto;
-    max-width: 700px;
-    background: #1a1a1a; /* Contrast amb el fons del body */
+/* TARGETES I FEEDBACK */
+.card {
+    background: var(--bg-card);
+    max-width: 760px;
+    margin: 15px auto;
     padding: 25px;
     border-radius: 12px;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
 }
 
-/* ENUNCIATS */
-h2, .question-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* BOTONS D'OPCIONS (Files de llista netes) */
-ul { list-style: none; padding: 0; }
-
-li button {
+.option-btn {
     width: 100%;
-    background: #242424;
-    border: 1px solid #333;
-    color: #efefef;
-    padding: 14px 18px;
-    margin-bottom: 8px;
     text-align: left;
+    padding: 14px;
+    margin-bottom: 8px;
+    background: var(--bg-page);
+    border: 1px solid var(--border);
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.2s;
 }
 
-li button:hover {
-    background: #2d2d2d;
-    border-color: #444;
+/* EL QUADRADET VERD/VERMELL QUE VOLIES */
+.feedback-box {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: none; /* Es mostra per JS */
+    align-items: center;
+    gap: 10px;
+    border: 1px solid;
 }
 
-li button.selected {
-    border-left: 4px solid #00ff66; /* Verd de validació */
-    background: #1e2a22;
+.feedback-box.correct {
+    display: flex;
+    background: var(--success-bg);
+    color: var(--success);
+    border-color: var(--success);
 }
 
-/* BOTÓ MOSTRAR SOLUCIÓ (Compacte i centrat) */
-.solution-button {
+.feedback-box.incorrect {
+    display: flex;
+    background: var(--error-bg);
+    color: var(--error);
+    border-color: var(--error);
+}
+
+/* SOLUCIONS (Dalt a l'esquerra) */
+.step-block {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.step-header {
+    color: var(--success); /* Verd */
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
     display: block;
-    margin: 20px 0;
-    background: #d4ff00;
-    color: #000;
+    margin-bottom: 5px;
+}
+
+.btn-solution {
+    background: var(--accent); /* Groc */
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 6px;
     font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
     cursor: pointer;
 }
-
-/* BLOCS DE SOLUCIÓ (Dalt a l'esquerra amb títol destacat) */
-.step-block {
-    margin-top: 20px;
-    padding: 15px;
-    background: #212121;
-    border-radius: 8px;
-    text-align: left;
-}
-
-.step-letter {
-    display: block;
-    color: #00ff66; /* Verd accent */
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-/* IMATGES DINS DE LES SOLUCIONS */
-.step-block img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 10px;
-    display: block;
-}
-
-/* LATEX */
-.mjx-chtml { font-size: 1.1em !important; color: #fff !important; }

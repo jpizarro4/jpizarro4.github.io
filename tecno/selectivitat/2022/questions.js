@@ -125,7 +125,7 @@ const questions = [
         text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de \\(t = 1,5 \\text{ h}\\) de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és \\(P_1 = 2000 \\text{ W}\\), mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, \\(P_2 = 250 \\text{ W}\\). La rentadora es connecta a la xarxa a una tensió \\(U = 230 \\text{ V}\\).
         <br><br>S’ha contractat una tarifa amb discriminació horària que determina el preu del \\(kW \\cdot h\\) segons la franja horària:
         <div style="text-align:center; margin:15px 0;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s1r1_table.png" alt="Taula tarifes elèctriques" style="max-width:100%; border-radius:4px;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula tarifes elèctriques" style="max-width:100%; border-radius:4px;">
         </div>
         Es considera que s’utilitza el programa estàndard \\(n = 10\\) vegades al mes. Determineu:
         <br><br><strong>a)</strong> L’energia consumida en un cicle \\(E_{\\text{cons}}\\). [0,5 p]

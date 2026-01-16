@@ -640,33 +640,40 @@ const questions = [
             \\[ E_{bat} = \\frac{105,82}{3,6} = 29,39 \\, \\text{kWh} \\]
         </div>`
 },
-    {
+   {
     type: "exercicis",
     category: "sistemes combinacionals",
     text: `Un sistema digital té l’esquema de portes lògiques següent:
     <div style="display: flex; justify-content: center; margin: 20px 0;">
         <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5p11.png" alt="Sistema" style="max-width:100%; border-radius:4px;">
-        </div>
+    </div>
     <strong>a)</strong> Determineu la funció lògica entre les variables \\(a\\), \\(b\\), \\(c\\), \\(d\\) i \\(S\\) i, si escau, simplifiqueu-la. [1 punt]
     <br><strong>b)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
     <br><strong>c)</strong> Dibuixeu l’esquema de contactes de la funció simplificada. [0,5 punts]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
-             span class="step-header">A) Funció lògica i simplificació</span>
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11a.png" alt="Solució" style="max-width:100%; border-radius:4px;"> 
+            <span class="step-header">A) Funció lògica i simplificació</span>
+            <br>
+            Analitzant les portes lògiques de l'esquema:
+            \\[ S = (a \\cdot b) + (\\overline{a} \\cdot b) + (c \\cdot d) \\]
+            Simplificant mitjançant factor comú:
+            \\[ S = b \\cdot (a + \\overline{a}) + (c \\cdot d) \\]
+            Com que \\(a + \\overline{a} = 1\\):
+            \\[ S = b + (c \\cdot d) \\]
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11a.png" alt="Solució" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>
         <div class="step-block">
             <span class="step-header">B) Taula de veritat</span>
-           <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Taula" style="max-width:100%; border-radius:4px;"> 
-
-                </div>
+            <br>
+            A partir de la funció simplificada \\(S = b + (c \\cdot d)\\):
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11b.png" alt="Taula" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>
         <div class="step-block">
             <span class="step-header">C) Esquema de contactes</span>
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11c.png" alt="Esquema de contactes" style="max-width:100%; border-radius:4px;"> 
-            <div style="display: flex; justify-content: center; margin: 10px 0;">
-                </div>
+            <br>
+            L'esquema equivalent a la funció \\(S = b + (c \\cdot d)\\) presenta el contacte \\(b\\) en paral·lel amb la sèrie de \\(c\\) i \\(d\\):
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11c.png" alt="Esquema de contactes" style="max-width:100%; border-radius:4px; margin-top: 10px;"> 
         </div>`
 },
        {

@@ -81,7 +81,7 @@ const questions = [
         <br><strong>b) Simplificació:</strong> \\[ z = \\bar{a}c + \\bar{a}\\bar{b}d + \\bar{b}cd \\]
         <br><strong>c) Diagrama:</strong> Es dibuixa el circuit amb 3 portes AND, 1 OR i inversors.
         <br><br>
-        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r2.png" alt="Resolució Exercici 2" width="900">
+        <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1.png" alt="Resolució Exercici 2" width="900">
         `
     },
     {

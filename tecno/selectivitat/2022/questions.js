@@ -486,9 +486,9 @@ const questions = [
     category: "maquines",
     text: `Un prototip de motocicleta elèctrica integra el motor directament a la roda del darrere. En les condicions d’estudi, circulant per un terreny horitzontal i a una velocitat constant, el fabricant assegura que el motor subministra \\(P_{mot} = 15 \\text{ kW}\\) i un parell \\(\\Gamma = 150 \\text{ N m}\\), i té una autonomia màxima \\(s_{màx} = 200 \\text{ km}\\). El diàmetre dels pneumàtics és \\(d = 630 \\text{ mm}\\), i s’estima que el motor té un rendiment \\(\\eta_{mot} = 0,9\\). La motocicleta utilitza bateries ideals.
     <br><br>Determineu:
-    <br><strong>a)</strong> La velocitat angular de la roda motriu ωroda i la velocitat d’avanç v de la motocicleta. [1 punt]
-    <br><strong>b)</strong> El temps màxim de funcionament tmàx i l’energia subministrada pel motor Esubm. [1 punt]
-    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries Ebat. [0,5 punts]`,
+    <br><strong>a)</strong> La velocitat angular de la roda motriu \\(\\omega_{roda}\\) i la velocitat d’avanç \\(v\\) de la motocicleta. [1 punt]
+    <br><strong>b)</strong> El temps màxim de funcionament \\(t_{màx}\\) i l’energia subministrada pel motor \\(E_{subm}\\). [1 punt]
+    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries \\(E_{bat}\\). [0,5 punts]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">

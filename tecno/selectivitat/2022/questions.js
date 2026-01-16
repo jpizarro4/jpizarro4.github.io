@@ -10,13 +10,9 @@ const questions = [
             { text: "161,8 J", value: "d" }
         ],
         correctAnswer: "d",
-        steps: `
-        <strong>Resolució:</strong>
-        <br>L'energia absorbida és la diferència d'energia potencial:
-        \\[ E_1 = m \\cdot g \\cdot h_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
-        \\[ E_2 = m \\cdot g \\cdot h_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
-        \\[ \\Delta E = E_1 - E_2 = 215,6 - 53,9 = 161,7 \\text{ J} \\]
-        `
+        steps: `\\[ E_1 = 22 \\cdot 9,8 \\cdot 1 = 215,6 \\text{ J} \\]
+                \\[ E_2 = 22 \\cdot 9,8 \\cdot 0,25 = 53,9 \\text{ J} \\]
+                \\[ \\Delta E = 215,6 - 53,9 = 161,7 \\text{ J} \\]`
     },
     {
         type: "questions",
@@ -29,17 +25,12 @@ const questions = [
             { text: "±10 %", value: "d" }
         ],
         correctAnswer: "b",
-        steps: `
-        <strong>Resolució:</strong>
-        <br>Calculem la desviació respecte al valor nominal:
-        \\[ \\text{Tolerància} = \\frac{V_{\\text{max}} - V_{\\text{nom}}}{V_{\\text{nom}}} \\cdot 100 \\]
-        \\[ \\text{Tolerància} = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]
-        `
+        steps: `\\[ \\text{Tol} = \\frac{397,8 - 390}{390} \\cdot 100 = 2 \\% \\]`
     },
     {
         type: "questions",
         category: "energia",
-        text: "Un automòbil emet \\(157,8 \\text{ g}\\) de \\(\\text{CO}_2\\) per cada kilòmetre recorregut en vies interurbanes. Setmanalment gasta un dipòsit de \\(60 \\text{ L}\\) de gasoil en aquests recorreguts i té un consum mitjà de \\(5,6 \\text{ L}/(100 \\text{ km})\\). Quina és la petjada de carboni que deixarà a l'atmosfera en una setmana?",
+        text: "Un automòbil emet \\(157,8 \\text{ g}\\) de \\(\\text{CO}_2\\) per cada kilòmetre recorregut. Setmanalment gasta un dipòsit de \\(60 \\text{ L}\\) de gasoil i té un consum mitjà de \\(5,6 \\text{ L}/(100 \\text{ km})\\). Quina és la petjada de carboni setmanal?",
         options: [
             { text: "169,1 kg de CO2", value: "a" },
             { text: "169,1 tones de CO2", value: "b" },
@@ -47,14 +38,8 @@ const questions = [
             { text: "16,91 kg de CO2", value: "d" }
         ],
         correctAnswer: "a",
-        steps: `
-        <strong>Resolució:</strong>
-        <br>1. Calculem la distància total recorreguda:
-        \\[ d = \\frac{60 \\text{ L}}{5,6 \\text{ L}/100\\text{km}} = 1071,43 \\text{ km} \\]
-        <br>2. Calculem la massa total de \\(\\text{CO}_2\\):
-        \\[ m = 1071,43 \\text{ km} \\cdot 157,8 \\text{ g/km} = 169071,65 \\text{ g} \\]
-        \\[ m \\approx 169,1 \\text{ kg de CO}_2 \\]
-        `
+        steps: `\\[ d = \\frac{60}{5,6/100} = 1071,43 \\text{ km} \\]
+                \\[ m = 1071,43 \\cdot 157,8 = 169071,6 \\text{ g} \\approx 169,1 \\text{ kg} \\]`
     },
     {
         type: "questions",
@@ -67,16 +52,12 @@ const questions = [
             { text: "kJ · s", value: "d" }
         ],
         correctAnswer: "c",
-        steps: `
-        <strong>Explicació:</strong>
-        <br>La potència elèctrica és el treball per unitat de temps. En el Sistema Internacional es mesura en Watts (W) o els seus múltiples com el quilowatt (kW). 
-        <br>Nota: El kW·h és una unitat d'<b>energia</b>, no de potència.
-        `
+        steps: "La potència es mesura en Watts (W) o quilowatts (kW)."
     },
     {
         type: "questions",
         category: "maquines",
-        text: "Un tren d'engranatges es connecta entre els eixos d'un motor elèctric i d'una roda. Disposa de 4 rodes dentades de \\(z_1 = 14\\), \\(z_2 = 48\\), \\(z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió \\(\\omega_{\\text{roda}}/\\omega_{\\text{motor}}\\).",
+        text: "Un tren d'engranatges amb \\(z_1 = 14\\), \\(z_2 = 48\\), \\(z_3 = 16\\) i \\(z_4 = 25\\). Determineu la relació de transmissió \\(\\omega_{\\text{roda}}/\\omega_{\\text{motor}}\\).",
         images: '<div style="text-align:center; margin:15px 0;"><img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2q5.png" alt="Tren d\'engranatges" style="max-width:100%; height:auto; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></div>',
         options: [
             { text: "0,186 7", value: "a" },
@@ -85,102 +66,59 @@ const questions = [
             { text: "0,411 0", value: "d" }
         ],
         correctAnswer: "a",
-        steps: `
-        <strong>Resolució:</strong>
-        <br>La relació de transmissió total és el producte de les dents de les rodes conductores dividit pel producte de les conduïdes:
-        \\[ \\tau = \\frac{z_1 \\cdot z_3}{z_2 \\cdot z_4} = \\frac{14 \\cdot 16}{48 \\cdot 25} \\]
-        \\[ \\tau = \\frac{224}{1200} = 0,1867 \\]
-        `
+        steps: `\\[ \\tau = \\frac{14 \\cdot 16}{48 \\cdot 25} = 0,1867 \\]`
     },
     {
         type: "exercicis",
         category: "control",
-        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor (per a pujar o baixar). El sistema té com a entrades 4 variables digitals \\((a, b, c, d)\\) per a codificar la planta on es troba l’ascensor i la planta on vol anar l’usuari. Utilitzant les variables d’estat descrites, dissenyeu el sistema digital:
-        <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-        <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
+        text: `El controlador d’un motor d’ascensor necessita un senyal que determini en quin sentit ha de posar-se en marxa l’ascensor. Entrades \\((a, b, c, d)\\). Sortida \\(z=1\\) si puja:
+        <br><br><strong>a)</strong> Taula de veritat. [1 punt]
+        <br><strong>b)</strong> Funció lògica i simplificació. [1 punt]
+        <br><strong>c)</strong> Diagrama de portes lògiques. [0,5 punts]`,
         correctAnswer: "",
         steps: `
-        <strong>Resolució:</strong>
-        <div style="margin-top: 20px;">
-            <strong>a) Taula de veritat:</strong>
-            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" alt="Taula de veritat" style="max-width:100%; height:auto;">
-            </div>
-            <strong>b) Simplificació:</strong>
-            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" alt="Simplificació" style="max-width:100%; height:auto;">
-            </div>
-            <strong>c) Diagrama de portes:</strong>
-            <div style="text-align:center; margin: 15px 0; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" alt="Esquema lògic" style="max-width:100%; height:auto;">
-            </div>
+        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1a.png" style="max-width:100%;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1b.png" style="max-width:100%; margin-top:10px;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2r1c.png" style="max-width:100%; margin-top:10px;">
         </div>`
     },
     {
         type: "exercicis",
         category: "energia",
-        text: `El cicle de funcionament d’una rentadora es pot dividir bàsicament en tres fases: rentada, esbandida i centrifugació. La primera fase concentra el percentatge de consum energètic més elevat perquè escalfa l’aigua mitjançant una resistència. En un programa estàndard de t = 1,5 h de durada, en els primers 30 min (fase de rentada) la potència mitjana consumida és P₁ = 2 000 W, mentre que les fases d’esbandida i centrifugació consumeixen, de mitjana, P₂ = 250 W. La rentadora es connecta a la xarxa a una tensió U = 230 V.
-        <br>S’ha contractat una tarifa amb discriminació horària que determina el preu del kW · h segons la franja horària en què es consumeix l’electricitat, tal com es mostra en la taula:
+        text: `Rentadora: \\(t = 1,5 \\text{ h}\\). Rentada (30 min): \\(P_1 = 2000 \\text{ W}\\). Esbandida/centrifugació: \\(P_2 = 250 \\text{ W}\\). \\(U = 230 \\text{ V}\\). Ús: \\(n = 10 \\text{ vegades/mes}\\).
         
-        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" alt="Taula de tarifes" style="max-width:100%; height:auto;">
+        <div style="text-align:center; margin: 15px 0; background: white; padding: 10px; border-radius: 8px;">
+            <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202206s2p2.png" style="max-width:100%;">
         </div>
 
-        Es considera que s’utilitza el programa estàndard n = 10 vegades al mes. Determineu:
-        <br><br><strong>a)</strong> L’energia consumida en un cicle de funcionament Econs. [0,5 punts]
-        <br><strong>b)</strong> El percentatge d’energia consumida en la fase de rentada cr. [0,5 punts]
-        <br><strong>c)</strong> El cost de posar una rentadora en hores punta cpunta i en hores vall cvall. [1 punt]
-        <br><strong>d)</strong> L’estalvi anual ea que s’obtindrà si la rentadora sempre es posa en hores vall respecte al cost de posar-la sempre en hores punta. [0,5 punts]`,
+        Determineu:
+        <br><strong>a)</strong> \\(E_{\\text{cons}}\\) en un cicle. [0,5 p]
+        <br><strong>b)</strong> % d'energia en rentada \\(c_r\\). [0,5 p]
+        <br><strong>c)</strong> Cost \\(c_{\\text{punta}}\\) i \\(c_{\\text{vall}}\\). [1 p]
+        <br><strong>d)</strong> Estalvi anual \\(e_a\\) vall vs punta. [0,5 p]`,
         correctAnswer: "",
         steps: `
-        <strong>Resolució pas a pas:</strong>
-        <br><br>
-        <strong>a) Energia consumida en un cicle $E_{\\text{cons}}$:</strong>
-        \\[
-        E_{\\text{cons}} = P_1 \\cdot t_1 + P_2 \\cdot (t - t_1) = 2000 \\cdot 0,5 + 250 \\cdot (1,5 - 0,5) = 1250 \\, \\text{Wh} = 4500 \\, \\text{kJ}
-        \\]
-        
-        <strong>b) Percentatge d'energia en la rentada $c_r$:</strong>
-        \\[
-        c_r = \\frac{P_1 \\cdot t_1}{E_{\\text{cons}}} \\cdot 100 = \\frac{2000 \\cdot 0,5}{1250} \\cdot 100 = 80 \\%
-        \\]
-        
-        <strong>c) Cost en hores punta $c_{\\text{punta}}$ i hores vall $c_{\\text{vall}}$:</strong>
-        \\[
-        c_{\\text{punta}} = E_{\\text{cons}} \\cdot p_{\\text{punta}} = 1,250 \\, \\text{kWh} \\cdot 0,342930 \\, \\text{€/kWh} = 0,4287 \\, \\text{€}
-        \\]
-        \\[
-        c_{\\text{vall}} = E_{\\text{cons}} \\cdot p_{\\text{vall}} = 1,250 \\, \\text{kWh} \\cdot 0,216951 \\, \\text{€/kWh} = 0,2712 \\, \\text{€}
-        \\]
-        
-        <strong>d) Estalvi anual $e_a$:</strong>
-        \\[
-        e_a = (c_{\\text{punta}} - c_{\\text{vall}}) \\cdot n \\cdot 12 = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\, \\text{€}
-        \\]`
+        \\[ E_{\\text{cons}} = 2000 \\cdot 0,5 + 250 \\cdot 1 = 1250 \\text{ Wh} = 1,25 \\text{ kWh} \\]
+        \\[ c_r = \\frac{1000}{1250} \\cdot 100 = 80 \\% \\]
+        \\[ c_{\\text{punta}} = 1,25 \\cdot 0,342930 = 0,4287 \\text{ €} \\]
+        \\[ c_{\\text{vall}} = 1,25 \\cdot 0,216951 = 0,2712 \\text{ €} \\]
+        \\[ e_a = (0,4287 - 0,2712) \\cdot 10 \\cdot 12 = 18,90 \\text{ €} \\]`
     },
     {
         type: "exercicis",
         category: "maquines",
-        text: `Un volant amb un moment d’inèrcia al voltant del seu eix \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\) gira a \\(n_0 = 5000 \\text{ min}^{-1}\\) gràcies a l’acció d’un motor. Es desconnecta el motor i s’observa que el volant triga \\(t = 1 \\text{ min}\\) a quedar-se en repòs a causa d’un parell de fricció que se suposa constant.
-        <br><br>Determineu:
-        <br><strong>a)</strong> L’acceleració angular del volant \\(\\alpha\\). [0,5 punts]
-        <br><strong>b)</strong> El nombre de voltes \\(n\\) que farà el volant abans d’aturar-se. [1 punt]
-        <br><strong>c)</strong> L’energia mecànica dissipada en aquest procés \\(E_{\\text{diss}}\\). [1 punt]`,
+        text: `Volant d'inèrcia: \\(I = 0,9 \\text{ kg} \\cdot \\text{m}^2\\), \\(n_0 = 5000 \\text{ min}^{-1}\\). Triga \\(t = 1 \\text{ min}\\) a aturar-se.
+        <br>Determineu:
+        <br><strong>a)</strong> \\(\\alpha\\). [0,5 p]
+        <br><strong>b)</strong> Voltes \\(n\\). [1 p]
+        <br><strong>c)</strong> \\(E_{\\text{diss}}\\). [1 p]`,
         correctAnswer: "",
         steps: `
-        <strong>Resolució pas a pas:</strong>
-        <br><br>
-        <strong>a) Acceleració angular \\(\\alpha\\):</strong>
-        \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,60 \\text{ rad/s} \\]
-        \\[ \\alpha = \\frac{\\omega - \\omega_0}{t} = \\frac{0 - 523,60}{60} = -8,727 \\text{ rad/s}^2 \\]
-
-        <strong>b) Nombre de voltes \\(n\\):</strong>
-        \\[ \\theta = \\omega_0 \\cdot t + \\frac{1}{2} \\alpha \\cdot t^2 = 523,60 \\cdot 60 + \\frac{1}{2} (-8,727) \\cdot 60^2 = 15708 \\text{ rad} \\]
-        \\[ n = \\frac{\\theta}{2\\pi} = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
-
-        <strong>c) Energia mecànica dissipada \\(E_{\\text{diss}}\\):</strong>
-        \\[ E_{\\text{diss}} = \\frac{1}{2} I \\cdot \\omega_0^2 = \\frac{1}{2} \\cdot 0,9 \\cdot 523,60^2 = 123414 \\text{ J} = 123,41 \\text{ kJ} \\]
-        `
+        \\[ \\omega_0 = 5000 \\cdot \\frac{2\\pi}{60} = 523,6 \\text{ rad/s} \\]
+        \\[ \\alpha = \\frac{0 - 523,6}{60} = -8,727 \\text{ rad/s}^2 \\]
+        \\[ \\theta = 523,6 \\cdot 60 + 0,5 \\cdot (-8,727) \\cdot 60^2 = 15708 \\text{ rad} \\]
+        \\[ n = \\frac{15708}{2\\pi} = 2500 \\text{ voltes} \\]
+        \\[ E_{\\text{diss}} = 0,5 \\cdot 0,9 \\cdot 523,6^2 = 123414 \\text{ J} \\]`
     }
 ];

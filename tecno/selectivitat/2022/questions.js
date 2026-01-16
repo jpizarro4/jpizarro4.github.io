@@ -414,7 +414,8 @@ const questions = [
     category: "termodinamica",
     text: `Exercici 4 [2,5 punts en total]
     <br>Es vol escalfar un volum V = 350 mL d’aigua des d’una temperatura inicial T1 = 20 °C fins a una de final T2 = 95 °C. Es proposen dues alternatives:
-    <br>— Utilitzar un escalfador d’infusions: P_escalf = 1200 W, t_escalf = 125 s.
+    <br>— Utilitzar un escalfador d’aigua per a infusions que consumeix P_escalf = 1200 W i que
+    triga t_escalf = 125 s. Aquest sistema utilitza una resistència submergible.
     <br>— Fer servir un fogó de vitroceràmica: E_vitro = 0,11 kWh.
     <br>Dades: U = 230 V; c_e = 4,18 J/(g °C); densitat aigua ρ = 1 kg/L.
     <br><br><strong>a)</strong> L’energia teòrica necessària per a escalfar l’aigua E_aigua. [0,5 punts]

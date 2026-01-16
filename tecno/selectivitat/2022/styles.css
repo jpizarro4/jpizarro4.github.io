@@ -1,18 +1,20 @@
-/* ===== CONFIGURACIÓ DE COLORS ===== */
+/* ===== CONFIGURACIÓ DE COLORS (Variables) ===== */
 :root {
+    /* MODO CLARO (Per defecte) */
     --bg-page: #f0f2f5;
     --bg-card: #ffffff;
     --text-main: #111827;
     --text-secondary: #6b7280;
     --border: #e5e7eb;
-    --accent: #d4ff00;
-    --success: #10b981;
+    --accent: #d4ff00; /* Groc exòtic */
+    --success: #10b981; /* Verd */
     --success-bg: #ecfdf5;
-    --error: #ef4444;
+    --error: #ef4444;   /* Vermell */
     --error-bg: #fef2f2;
-    --selection-green: #00ff66;
+    --selection-neutral: #6b7280;
 }
 
+/* MODO OSCURO */
 body.dark-mode {
     --bg-page: #121212;
     --bg-card: #1a1a1a;
@@ -23,34 +25,39 @@ body.dark-mode {
     --error-bg: #2a1a1a;
 }
 
+/* ===== ESTILS GENERALS ===== */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
-    margin: 0; padding-top: 80px; /* Espai per la navbar fixa */
-    transition: 0.3s;
+    margin: 0; 
+    padding-top: 80px; /* Evita que la navbar tapi el contingut */
+    transition: background 0.3s ease;
 }
 
-/* NAVBAR ORDENADA */
+/* NAVBAR ORDENADA (Substituint el h2 fix) */
 h2 {
     position: fixed;
     top: 0; left: 0; width: 100%;
     background: var(--bg-card);
-    margin: 0; padding: 15px 20px;
+    margin: 0; 
+    padding: 15px 40px;
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 800;
     z-index: 1000;
     box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* FILTRES */
+/* FILTRES ESTIL CHIPS */
 .filter-group-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 25px;
     background: var(--bg-card);
     border-radius: 12px;
     border: 1px solid var(--border);
@@ -59,18 +66,19 @@ h2 {
 .filter-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin: 10px 0 20px 0;
+    gap: 10px;
+    margin: 12px 0 25px 0;
 }
 
 .filter-button {
     background: var(--bg-page);
     color: var(--text-secondary);
     border: 1px solid var(--border);
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.85rem;
     transition: 0.2s;
 }
 
@@ -85,82 +93,114 @@ h2 {
     background: var(--bg-card);
     max-width: 800px;
     margin: 20px auto;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 35px;
+    border-radius: 16px;
     border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 /* BOTONS D'OPCIONS */
-ul { list-style: none; padding: 0; }
+ul { list-style: none; padding: 0; margin-top: 20px; }
+
 li button {
     width: 100%;
     background: var(--bg-page);
     border: 1px solid var(--border);
     color: var(--text-main);
-    padding: 14px 20px;
-    margin-bottom: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
     text-align: left;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.2s;
+    transition: all 0.2s ease;
 }
 
-/* SELECCIÓ EN VERD */
-li button.selected {
-    border: 2px solid var(--selection-green) !important;
+li button:hover {
+    border-color: var(--text-secondary);
+}
+
+/* SELECCIÓ DINÀMICA (Verd o Vermell) */
+li button.selected-correct {
+    border: 2.5px solid var(--success) !important;
     background: var(--success-bg) !important;
-    font-weight: 600;
-}
-
-/* FEEDBACK (Els quadradets) */
-.feedback-container {
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 8px;
     font-weight: 700;
 }
 
-.correcta {
+li button.selected-incorrect {
+    border: 2.5px solid var(--error) !important;
+    background: var(--error-bg) !important;
+    font-weight: 700;
+}
+
+/* QUADRADETS DE FEEDBACK (Correcte / Incorrecte) */
+.feedback-container {
+    margin: 20px 0;
+}
+
+.correcta, .incorrecta {
     display: block;
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: 1px solid;
+    font-size: 0.95rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+.correcta {
     background: var(--success-bg);
     color: var(--success);
-    border: 1px solid var(--success);
-    padding: 10px;
-    border-radius: 8px;
+    border-color: var(--success);
 }
 
 .incorrecta {
-    display: block;
     background: var(--error-bg);
     color: var(--error);
-    border: 1px solid var(--error);
-    padding: 10px;
-    border-radius: 8px;
+    border-color: var(--error);
 }
 
-/* SOLUCIONS */
+/* SOLUCIONS PAS A PAS (L'estil que t'agrada) */
 .result-box {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 25px;
     background: var(--bg-page);
-    border-radius: 10px;
+    border-radius: 14px;
 }
 
 .step-block {
-    margin-bottom: 15px;
-    padding-left: 15px;
-    border-left: 4px solid var(--success);
+    margin-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
 }
 
+.step-block:last-child { border-bottom: none; }
+
+.step-header {
+    display: block;
+    color: var(--success);
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* BOTONS D'ACCIÓ */
 .solution-button {
     background: var(--accent);
     color: #000;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: 800;
     cursor: pointer;
     text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top: 15px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

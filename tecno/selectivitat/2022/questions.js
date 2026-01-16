@@ -678,17 +678,12 @@ const questions = [
         <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
         correctAnswer: "",
         steps: `
-           <div class="step-block">
-                <span class="step-header">A) Funció lògica i simplificació</span>
-                <p>Analitzant l'esquema, la funció de sortida de la porta superior és \\(\\overline{(\\bar{a} + b) \\cdot (a + b)}\\) i la inferior és \\(\\overline{c \\cdot d}\\). La sortida final \\(S\\) és la suma d'ambdues:</p>
-                \\[ S = \\overline{(\\bar{a} + b) \\cdot (a + b)} + (\\overline{c \\cdot d}) \\]
-                <p>Simplificant el primer terme mitjançant Morgan i identitats booleanes:</p>
-                \\[ (\\bar{a} + b)(a + b) = \\bar{a}a + \\bar{a}b + ba + bb = 0 + b(\\bar{a} + a) + b = b + b = b \\]
-                <p>Per tant, la funció simplificada queda:</p>
-                \\[ S = \\bar{b} + \\bar{c} + \\bar{d} \\]
-                <div style="text-align:center; margin-top: 10px;">
-                    <img src="https://jpizarro4.github.io/tecno/selectivitat/2022/images/202209s5r11a.png" alt="Desenvolupament de la simplificació" style="max-width:100%; border-radius:4px;">
-                </div>
+          <div class="step-block">
+                <span class="step-header">A) Velocitat de rotació del reductor (\\(\omega_{red}\\))</span>
+                <p>Primer, convertim la velocitat de rotació del motor de min⁻¹ a rad/s:</p>
+                \\[ \\omega_{mot} = n_{mot} \\dot \\frac{2\\pi}{60} = 1470 \\dot \\frac{2\\pi}{60} = 153,94 \\text{ rad/s} \\]
+                <p>Utilitzem la relació de transmissió \\(\tau\\) per trobar la velocitat de l'eix de sortida:</p>
+                \\[ \\omega_{red} = \\tau \\dot \\omega_{mot} = 0,009 \\dot 153,94 = 1,385 \\text{ rad/s} \\]
             </div>
             <div class="step-block">
                 <span class="step-header">B) Treball necessari (W)</span>

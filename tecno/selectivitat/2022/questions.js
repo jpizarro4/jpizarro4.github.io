@@ -485,41 +485,33 @@ const questions = [
     type: "exercicis",
     category: "maquines",
     text: `Un prototip de motocicleta elèctrica integra el motor directament a la roda del darrere. En les condicions d’estudi, circulant per un terreny horitzontal i a una velocitat constant, el fabricant assegura que el motor subministra Pmot = 15 kW i un parell Γ = 150 N m, i té una autonomia màxima smàx = 200 km. El diàmetre dels pneumàtics és d = 630 mm, i s’estima que el motor té un rendiment ηmot = 0,9. La motocicleta utilitza bateries ideals.
-    <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0;">
-        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-            <li><b>Potència del motor:</b> \(P_{mot} = 15 \; \text{kW}\)</li>
-            <li><b>Parell motor:</b> \(\Gamma = 150 \; \text{N m}\)</li>
-            <li><b>Autonomia màxima:</b> \(s_{màx} = 200 \; \text{km}\)</li>
-            <li><b>Diàmetre de la roda:</b> \(d = 630 \; \text{mm}\)</li>
-            <li><b>Rendiment del motor:</b> \(\eta_{mot} = 0,9\)</li>
-        </ul>
-    </div>
-    En aquestes condicions, determineu:
-    <br><strong>a)</strong> La velocitat angular de la roda motriu ωroda i la velocitat d’avanç v de la motocicleta.
-    <br><strong>b)</strong> El temps màxim de funcionament tmàx i l’energia subministrada pel motor Esubm.
-    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries Ebat.`,
+    <br><br>Determineu:
+    <br><strong>a)</strong> La velocitat angular de la roda motriu ωroda i la velocitat d’avanç v de la motocicleta. [1 punt]
+    <br><strong>b)</strong> El temps màxim de funcionament tmàx i l’energia subministrada pel motor Esubm. [1 punt]
+    <br><strong>c)</strong> L’energia que caldria tenir emmagatzemada a les bateries Ebat. [0,5 punts]`,
     correctAnswer: "",
     steps: `
         <div class="step-block">
-            <span class="step-header">a) Velocitat angular i d'avanç</span>
-            <p>A partir de la potència i el parell:</p>
-            \\[ \omega_{roda} = \frac{P_{mot}}{\Gamma} = \frac{15000}{150} = 100 \; \text{rad/s} \\]
-            <p>La velocitat d'avanç amb el radi \(r = 0,315 \; \text{m}\):</p>
-            \\[ v = \omega_{roda} \cdot r = 100 \cdot 0,315 = 31,5 \; \text{m/s} \\]
-            \\[ v = 31,5 \cdot 3,6 = 113,4 \; \text{km/h} \\]
+            <span class="step-header">A) Velocitat angular i d'avanç</span>
+            <p>La potència és el producte del parell per la velocitat angular:</p>
+            \\[ P_{mot} = \\Gamma \\cdot \\omega_{roda} \\implies \\omega_{roda} = \\frac{P_{mot}}{\\Gamma} = \\frac{15000}{150} = 100 \\, \\text{rad/s} \\]
+            <p>La velocitat d'avanç es calcula amb el radi de la roda \\( (r = d/2 = 0,315 \\, \\text{m}) \\):</p>
+            \\[ v = \\omega_{roda} \\cdot r = 100 \\cdot 0,315 = 31,5 \\, \\text{m/s} \\]
+            \\[ v = 31,5 \\cdot 3,6 = 113,4 \\, \\text{km/h} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">b) Temps màxim i energia subministrada</span>
-            <p>Temps per a recórrer l'autonomia:</p>
-            \\[ t_{màx} = \frac{s_{màx}}{v} = \frac{200}{113,4} = 1,764 \; \text{h} = 6349 \; \text{s} \\]
-            <p>Energia del motor:</p>
-            \\[ E_{subm} = P_{mot} \cdot t_{màx} = 15000 \cdot 6349 = 95,24 \; \text{MJ} \\]
+            <span class="step-header">B) Temps màxim i energia subministrada</span>
+            <p>Calculem el temps necessari per recórrer l'autonomia màxima:</p>
+            \\[ t_{màx} = \\frac{s_{màx}}{v} = \\frac{200}{113,4} = 1,764 \\, \\text{h} \\approx 6349,2 \\, \\text{s} \\]
+            <p>L'energia subministrada pel motor és el producte de la potència pel temps:</p>
+            \\[ E_{subm} = P_{mot} \\cdot t_{màx} = 15000 \\cdot 6349,2 = 95,24 \\, \\text{MJ} \\]
+            \\[ E_{subm} = \\frac{95,24}{3,6} = 26,45 \\, \\text{kWh} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">c) Energia de les bateries</span>
-            <p>Considerant el rendiment:</p>
-            \\[ E_{bat} = \frac{E_{subm}}{\eta_{mot}} = \frac{95,24}{0,9} = 105,82 \; \text{MJ} \\]
-            \\[ E_{bat} = 29,39 \; \text{kW h} \\]
+            <span class="step-header">C) Energia de les bateries</span>
+            <p>L'energia de les bateries depèn de l'energia subministrada i del rendiment del motor:</p>
+            \\[ \\eta_{mot} = \\frac{E_{subm}}{E_{bat}} \\implies E_{bat} = \\frac{E_{subm}}{\\eta_{mot}} = \\frac{95,24}{0,9} = 105,82 \\, \\text{MJ} \\]
+            \\[ E_{bat} = \\frac{105,82}{3,6} = 29,39 \\, \\text{kWh} \\]
         </div>`
 }
 ];

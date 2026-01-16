@@ -680,30 +680,41 @@ const questions = [
     <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
     correctAnswer: "",
     steps: `
+       {
+    type: "exercicis",
+    category: "maquines",
+    text: `Un muntacàrregues és accionat per un motor reductor de rendiment \\(\eta = 0,6\\). El motor d’inducció monofàsic es connecta a una tensió \\(U = 230 \\text{ V}\\) i funciona amb un factor de potència \\(\cos \phi = 0,85\\). La relació de transmissió del reductor és \\(\tau = \omega_{red}/\omega_{mot} = 0,009\\). El motor gira a \\(n_{mot} = 1470 \\text{ min}^{-1}\\) i l’aparell eleva \\(h = 8 \\text{ m}\\) una càrrega de massa \\(m = 2000 \\text{ kg}\\) en \\(t = 1,5 \\text{ min}\\) a una velocitat constant.
+    <br><br>Determineu:
+    <br><strong>a)</strong> La velocitat de rotació de l’eix de sortida del reductor \\(\omega_{red}\\) en \\(\text{rad/s}\\). [0,5 punts]
+    <br><strong>b)</strong> El treball necessari que ha de realitzar el muntacàrregues \\(W\\). [0,5 punts]
+    <br><strong>c)</strong> La potència elèctrica consumida pel conjunt \\(P_{elèc}\\). [1 punt]
+    <br><strong>d)</strong> La intensitat de corrent \\(I\\). [0,5 punts]`,
+    correctAnswer: "",
+    steps: `
         <div class="step-block">
-            <span class="step-header">A) Velocitat de rotació del reductor (ωred)</span>
-            <p>Primer, convertim la velocitat del motor de min⁻¹ a rad/s:</p>
-            \\[ omega_{mot} = 1470 cdot frac{2pi}{60} = 153,94 \\, \text{rad/s} \\]
-            <p>Utilitzant la relació de transmissió \\(tau\\):</p>
-            \\[ omega_{red} = tau cdot omega_{mot} = 0,009 cdot 153,94 = 1,385 \\, text{rad/s} \\]
+            <span class="step-header">A) Velocitat de rotació del reductor (\(\omega_{red}\))</span>
+            <p>Primer, convertim la velocitat del motor de \(\text{min}^{-1}\) a \(\text{rad/s}\):</p>
+            \\[ \omega_{mot} = 1470 \cdot \frac{2\pi}{60} = 153,94 \\, \text{rad/s} \\]
+            <p>Utilitzant la relació de transmissió \\(\tau\\):</p>
+            \\[ \omega_{red} = \tau \cdot \omega_{mot} = 0,009 \cdot 153,94 = 1,385 \\, \text{rad/s} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">B) Treball necessari (W)</span>
+            <span class="step-header">B) Treball necessari (\(W\))</span>
             <p>El treball per elevar la càrrega a velocitat constant és la variació de l'energia potencial:</p>
-            \\[ W = m cdot g cdot h = 2000 cdot 9,81 cdot 8 = 156960 \\, text{J} = 156,96 \\, text{kJ} \\]
+            \\[ W = m \cdot g \cdot h = 2000 \cdot 9,8 \cdot 8 = 156800 \\, \text{J} = 156,8 \\, \text{kJ} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">C) Potència elèctrica consumida (Pelèc)</span>
-            <p>Primer calculem la potència útil de sortida (mecànica):</p>
-            \\[ P_{útil} = frac{W}{t} = frac{156960}{1,5 cdot 60} = frac{156960}{90} = 1744 \\, text{W} \\]
+            <span class="step-header">C) Potència elèctrica consumida (\(P_{elèc}\))</span>
+            <p>Primer calculem la potència útil de sortida (mecànica) en Watts:</p>
+            \\[ P_{útil} = \frac{W}{t} = \frac{156800}{1,5 \cdot 60} = 1742,22 \\, \text{W} \\]
             <p>Considerant el rendiment del conjunt motor-reductor:</p>
-            \\[ P_{elèc} = frac{P_{útil}}{eta} = frac{1744}{0,6} = 2906,67 \\, text{W} = 2,907 \\, text{kW} \\]
+            \\[ P_{elèc} = \frac{P_{útil}}{\eta} = \frac{1742,22}{0,6} = 2903,7 \\, \text{W} \approx 2,9 \\, \text{kW} \\]
         </div>
         <div class="step-block">
-            <span class="step-header">D) Intensitat de corrent (I)</span>
-            <p>En un sistema monofàsic, la potència elèctrica és:</p>
-            \\[ P_{elèc} = U cdot I cdot cos phi \\]
-            \\[ I = frac{P_{elèc}}{U cdot cos phi} = frac{2906,67}{230 cdot 0,85} = 14,87 \\, text{A} \\]
+            <span class="step-header">D) Intensitat de corrent (\(I\))</span>
+            <p>En un sistema monofàsic, la potència elèctrica segueix la fórmula:</p>
+            \\[ P_{elèc} = U \cdot I \cdot \cos \phi \\]
+            \\[ I = \frac{P_{elèc}}{U \cdot \cos \phi} = \frac{2903,7}{230 \cdot 0,85} = 14,85 \\, \text{A} \\]
         </div>`
 }
 ];
